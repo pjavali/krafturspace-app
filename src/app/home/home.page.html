@@ -1,0 +1,52 @@
+
+<ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-button>
+             <ion-menu-button auto-hide="true"></ion-menu-button>
+          </ion-button>
+        </ion-buttons>
+        <ion-title>DashBoard</ion-title>
+</ion-toolbar>
+<ion-content>
+
+  
+  <ion-card>
+  <section text-center margin-bottom>
+    
+    <h1 style="font-size:1.2em" no-margin>Welcome to kraft ur space</h1>
+  </section>
+    <ion-grid>
+    <ion-row *ngIf="isAdmin" >
+    
+      <ion-col col-6 >
+        <ion-card (click)="onprojectsetClick()" text-center padding color="primary">
+          <ion-icon name="rocket"></ion-icon>
+          <h5 >Project Setup/Edit</h5>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card (click)="onapartmentsetClick()" center text-center padding color="primary">
+         <ion-icon  name="business"></ion-icon>
+          <h5 >Apartment Assignment</h5>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-card (click)="oninspectionClick()" text-center padding color="primary">
+         <ion-icon padding name="search"></ion-icon>
+          <h5>Inspection </h5>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card (click)="onReportClick()" text-center padding color="primary">
+         <ion-icon name="folder"></ion-icon>
+          <h5>Report View </h5>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+  </ion-card>
+  
+</ion-content>
