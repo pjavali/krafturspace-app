@@ -39,7 +39,7 @@ export class ApartmentAssignmentPage implements OnInit {
 
   ) {
 
-    this.projectData = {} as projectData;
+    this.projectData = {} as StudentData;
 
 
   }

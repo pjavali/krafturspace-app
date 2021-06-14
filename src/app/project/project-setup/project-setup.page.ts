@@ -32,7 +32,7 @@ interface StudentData {
 export class ProjectSetupPage implements OnInit {
 // data :any[]=[];
 
-projectsetup = [];
+projectsetupList = [];
 projectsetupData: StudentData ;
 projectsetupForm : FormGroup;
 
@@ -54,7 +54,7 @@ Kustostring:string;
    
 
  ){
-   this.projectsetupData = {} as projectsetupData;
+   this.projectsetupData = {} as StudentData;
 
    this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
@@ -64,20 +64,6 @@ Kustostring:string;
     });
 
    
-   this.Platform.ready().then(()=>{
-   fetch('./assets/kus.json').then(res => res.json())
-    .then(json => {
-      this.data2 = json;
-      console.log(this.data2)
-      
-      
-     
-    });
-     
-   
-
-
-   })
  }
   ngOnInit() {
 
