@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray,FormBuilder,FormControl,FormGroup, Validators, } from '@angular/forms';
-import { Platform } from '@ionic/angular';
+
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore} from '@angular/fire/firestore';
 import { HttpClient} from '@angular/common/http';
