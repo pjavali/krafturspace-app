@@ -71,7 +71,7 @@ export class ApartmentAssignmentPage implements OnInit {
 
         };
       })
-      console.log("id",this.projectList.id);
+      console.log("id",this.projectList);
 
     });
   }
