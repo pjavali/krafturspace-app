@@ -99,7 +99,7 @@ Kustostring:string;
     
     console.log("project -->",this.projectsetupForm);
 
-      this.firebaseService.create_project(this.projectForm.value).then(resp => {
+      this.firebaseService.create_project(this.projectsetupForm.value).then(resp => {
       this.projectsetupForm.reset();
 
     })
