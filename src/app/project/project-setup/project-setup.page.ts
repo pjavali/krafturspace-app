@@ -39,7 +39,7 @@ export class ProjectSetupPage implements OnInit {
 // data :any[]=[];
 
 projectsetup = [];
-projectsetupData: StudentData;
+projectsetupData: projectsetupData;
 projectsetupForm : FormGroup;
 
  selectedVal:Number=103;
@@ -60,7 +60,7 @@ Kustostring:string;
    
 
  ){
-   this.projectsetupData = {} as projectData;
+   this.projectsetupData = {} as projectsetupData;
 
    this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
