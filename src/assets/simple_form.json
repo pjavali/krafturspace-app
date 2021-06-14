@@ -1,8 +1,8 @@
 [
     {
         "key": "email",
-        "tyype":"input",
-        "option":{
+        "type":"input",
+        "options":{
             "label":"your best email",
             "placeholder":"foo@bar.com",
             "required": true
@@ -10,8 +10,8 @@
     },
     {
         "key": "password",
-        "tyype":"input",
-        "option":{
+        "type":"input",
+        "options":{
             "label":"min 6 characters",
             "placeholder":"1234",
             "required": true,
@@ -20,26 +20,23 @@
     },
     {
         "key": "newsletter",
-        "tyype":"boolean",
-        "option":{
-            "label":"monthly newsletter",         
-            
+        "type":"boolean",
+        "options":{
+            "label":"monthly newsletter"        
         }
     },
     {
         "key": "birthday",
-        "tyype":"date",
-        "option":{
-            "label":"your birthday",   
-            
+        "type":"date",
+        "options":{
+            "label":"your birthday"              
         }
     },
     {
         "key": "notes",
-        "tyype":"text",
-        "option":{
-            "label":"additional notes for us",         
-            
+        "type":"text",
+        "options":{
+            "label":"additional notes for us"                    
         }
     }
 ]

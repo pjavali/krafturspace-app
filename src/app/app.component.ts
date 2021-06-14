@@ -20,7 +20,12 @@ export class AppComponent {
   constructor(
     private authService: AuthService,
      private router: Router,
-  ) {}
+    
+  ) {
+
+  }
+
+
   ngOnInit() { 
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
@@ -39,6 +44,7 @@ export class AppComponent {
     }
   });
 };
+
 
   async logOut(): Promise<void> {
     await this.authService.logout();

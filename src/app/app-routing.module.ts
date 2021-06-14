@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './services/auth.guard';
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
@@ -13,12 +14,12 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () =>
-      import('./pages/login/login.module').then(m => m.LoginPageModule)
+      import('./pages/login/login.module').then(m => m.LoginPageModule),
   },
   {
     path: 'signup',
     loadChildren: () =>
-      import('./pages/signup/signup.module').then(m => m.SignupPageModule)
+      import('./pages/signup/signup.module').then(m => m.SignupPageModule),
   },
   {
     path: 'reset-password',
@@ -45,6 +46,7 @@ const routes: Routes = [
       import('./project/project-setup/project-setup.module').then(m => m.ProjectSetupPageModule),
     canActivate: [AuthGuard]
   },
+  
 
 {
     path: 'inspection',
@@ -72,10 +74,18 @@ const routes: Routes = [
       import('./project/apartment-assignment/apartment-assignment.module').then(m => m.ApartmentAssignmentPageModule),
     canActivate: [AuthGuard]
   },
-  
-  
-
- 
+ {
+    path: 'assign-project',
+    loadChildren: () =>
+      import('./project/assign-project/assign-project.module').then(m => m.AssignProjectPageModule),
+    canActivate: [AuthGuard]
+  },
+ {
+    path: 'edit-assign',
+    loadChildren: () =>
+      import('./project/edit-assign/edit-assign.module').then(m => m.EditAssignPageModule),
+    canActivate: [AuthGuard]
+  } 
 ];
 
 @NgModule({

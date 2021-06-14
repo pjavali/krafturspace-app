@@ -8,5 +8,18 @@
 </ion-toolbar>
 
 <ion-content>
+<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+  <ion-item *ngFor="let c of simpleForm" >
+  <ion-label position="stacked">{{c.options.label}}</ion-label>
+   </ion-item>
+  <div [ngSwitch]="'c.type'">
+  <ion-toggle *ngSwitchCase="'boolean'" [formControlName]='c.key' ></ion-toggle>
+  </div>
 
+
+
+  <ion-button block color="primary" type="submit" [disabled]="myForm.valid">
+    Submit 
+  </ion-button>
+</form>
 </ion-content>

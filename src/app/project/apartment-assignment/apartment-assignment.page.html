@@ -8,6 +8,116 @@
 </ion-toolbar>
 
 
-<ion-content>
+<ion-content [fullscreen]="true" class="ion-padding">
+
+ 
+ <form [formGroup]="projectForm" (ngSubmit)="CreateRecord()">
+
+    <ion-item>
+      <ion-label position="floating">Project Name :</ion-label>
+      <ion-input formControlName="Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Project Address :</ion-label>
+      <ion-input formControlName="Address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Project Type :</ion-label>
+      <ion-input formControlName="Type"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Project Assigned :</ion-label>
+      <ion-input formControlName="Assigned"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="CreateRecord()" [disabled]="projectForm.invalid">
+        <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
+        &nbsp;Create Record
+      </ion-button>
+    </ion-item>
+
+  </form>
+
+  <ion-card *ngFor="let item of projectList" color="primary">
+    <span *ngIf="!item.isEdit; else elseBlock">
+    
+      <ion-card-header>
+      <ion-item>
+        <ion-label>Project Name :</ion-label>
+        <ion-card-label >{{item.Name}} </ion-card-label>
+      </ion-item>
+        <ion-item>
+         <ion-label>Project Address :</ion-label>
+        <ion-card-label>{{item.Address}} </ion-card-label>
+        </ion-item>
+      <ion-item>
+        <ion-label>Project Type :</ion-label>
+        <ion-card-label>{{item.Type}} </ion-card-label>
+      </ion-item>
+        <ion-item>
+          <ion-label>Project Assigned :</ion-label>
+        <ion-card-label>{{item.Assigned}} </ion-card-label>    
+        </ion-item>
+            
+      </ion-card-header>
+      <ion-card-content>
+
+        <ion-button shape="round" color="secondary" size="small" (click)="EditRecord(item)">
+          <ion-icon size="small" slot="icon-only" name="create"></ion-icon>
+
+        </ion-button>
+        <ion-button shape="round" color="danger" size="small" (click)="RemoveRecord(item.id)">
+          <ion-icon size="small" slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+
+        <ion-button color="secondary" shape="round" size="small"(click)="addasset(item)">
+        <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
+        &nbsp;Add Asset
+      </ion-button>
+      </ion-card-content>
+    </span>
+    <ng-template #elseBlock>
+      <ion-card-header>
+        <ion-card-title>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                Edit
+              </ion-col>
+              <ion-col>
+                <ion-button fill="solid" color="medium" size="small" (click)="item.isEdit = false">
+                  Cancel
+                </ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button fill="solid" color="success" size="small" (click)="UpdateRecord(item)">
+                  Update
+                </ion-button>
+              </ion-col>
+             
+            </ion-row>
+          </ion-grid>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label><strong>Project Name</strong></ion-label>
+          <ion-input type="text" [(ngModel)]="item.EditName"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Project Address</strong></ion-label>
+          <ion-input type="text" [(ngModel)]="item.EditAddress"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Project Type</strong></ion-label>
+          <ion-input type="text" [(ngModel)]="item.EditType"></ion-input>
+        </ion-item>
+         <ion-item>
+          <ion-label><strong>Project Assigned</strong></ion-label>
+          <ion-input type="text" [(ngModel)]="item.EditAssigned"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ng-template>
+  </ion-card>
 
 </ion-content>

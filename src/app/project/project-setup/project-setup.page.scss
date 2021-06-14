@@ -1,0 +1,22 @@
+/* Coworker Card */
+
+component-card .coworker-card .header-img {
+  height: 50px;
+}
+
+component-card .coworker-card h1 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+component-card .coworker-card p {
+  color: var(--text-light);
+}
+
+component-card .coworker-card ion-icon {
+  align-self: start;
+  margin-top: 10px;
+  margin-right: 29px;
+
+  color: var(--text-lightest);
+}

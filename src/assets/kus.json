@@ -1,0 +1,762 @@
+{    
+       "Project": {
+        "Project Name": "",
+        "Project Type": "",
+        "Project Assigned ": "",
+        "Project Address": {
+            "City": "",
+            "Address 2": "",
+            "Pin": 0,
+            "Address1": ""
+        },
+            "Bed Room 1": {
+                "isVisible": false,
+                "Bedroom 01 Area": {
+                    "Doors & Windows": {
+                        "Hardware is as per standard offering": "",
+                        "UPVC hardware is standard": "",
+                        "Door color is consistent": "",
+                        "Door stopper doesn't damage wooden flooring": "",
+                        "UPVC window screen mesh is taut": "",
+                        "Door frame & shutter gaps are consistent": "",
+                        "Door frame is consistent without dent/scratches/marks": "",
+                        "UPVC windows are operable": "",
+                        "UPVC window glass is free of scratches": "",
+                        "Gaskets/sealents are intact": "",
+                        "UPVC window bug screen mesh is operable": ""
+                    },
+                    "Electrical": {
+                        "AC Core cut pipe is finished flush with plaster": "",
+                        "AC Core cut pipe is cleaned ": "",
+                        "Electrical points are as per standard offering": "",
+                        "Wall Light points are covered /capped properly": "",
+                        "Switch plates are aligned": "",
+                        "Switches are operable": "",
+                        "Ceiling electrical points are covered/capped properly": ""
+                    },
+                    "Flooring": {
+                        "Skirting finish & alignment": "",
+                        "Transition betweeen wooden flooring & toilet ": "",
+                        "Wooden flooring is fixed & consistent": "",
+                        "Transition betweeen Corridor marble & wooden flooring": ""
+                    },
+                    "Walls & ceiling": {
+                        "Ceilings are free of stains/undulations etc.,": "",
+                        "Walls are free of cracks/ stains etc.,": "",
+                        "Cornices provided are aligned": ""
+                    }
+                }
+            },
+            "Bed Room 2": {
+                "isVisible": false,
+                "Bedroom 02 Area": {
+                    "Doors & Windows": {
+                        "UPVC window screen mesh is taut": "",
+                        "UPVC windows are operable": "",
+                        "Door color is consistent": "",
+                        "Door frame is consistent without dent/scratches/marks": "",
+                        "Door frame & shutter gaps are consistent": "",
+                        "Gaskets/sealents are intact": "",
+                        "UPVC window bug screen mesh is operable": "",
+                        "UPVC window glass is free of scratches": "",
+                        "Hardware is as per standard offering": "",
+                        "UPVC hardware is standard": "",
+                        "Door stopper doesn't damage wooden flooring": ""
+                    },
+                    "Electrical": {
+                        "AC Core cut pipe is finished flush with plaster": "",
+                        "Electrical points are as per standard offering": "",
+                        "Ceiling electrical points are covered/capped properly": "",
+                        "Switches are operable": "",
+                        "Wall Light points are covered /capped properly": "",
+                        "Switch plates are aligned": "",
+                        "AC Core cut pipe is cleaned ": ""
+                    },
+                    "Flooring": {
+                        "Wooden flooring is fixed & consistent": "",
+                        "Transition betweeen wooden flooring & toilet ": "",
+                        "Transition betweeen Corridor marble & wooden flooring": "",
+                        "Skirting finish & alignment": ""
+                    },
+                    "Walls & ceiling": {
+                        "Walls are free of cracks/ stains etc.,": "",
+                        "Cornices provided are aligned": "",
+                        "Ceilings are free of stainss/undulations/stains etc.,": ""
+                    }
+                },
+                "Toilet": {
+                    "isVisible": false,
+                    "Doors & Windows": {
+                        "Gaskets/sealents are intact": "",
+                        "Door frame is consistent without dent/scratches/marks": "",
+                        "Lock can be operated from both sides": "",
+                        "Door color is consistent": "",
+                        "Door frame & shutter gaps are consistent": "",
+                        "Hardware is as per standard offering": "",
+                        "UPVC ventilators are operable": "",
+                        "UPVC hardware is standard": ""
+                    },
+                    "Electrical": {
+                        "Switches are operable": "",
+                        "Exhaust fan connection": "",
+                        "Wall Light points are covered /capped properly": "",
+                        "Switch plates are aligned": "",
+                        "All sockets/switches above false ceiling are functional": "",
+                        "Ceiling electrical points are covered/capped properly": "",
+                        "Electrical points are as per standard offering": ""
+                    },
+                    "Fixtures & Fittings": {
+                        "Shower head is functional": "",
+                        "Health Faucet is functional": "",
+                        "EWC is fixed with brackets/seat covers & is functional": "",
+                        "Wash Basin": "",
+                        "Wash basin faucet is operable": "",
+                        "Toilet Paper Holder": "",
+                        "Floor trap cover is provided": "",
+                        "Washbasin & counter edges are sealed": "",
+                        "Brackets supporting counter is painted & free of rust": "",
+                        "Granite counter is free of sharp edges": "",
+                        "Floor trap below cover is clean ": "",
+                        "Wash basin faucet is functional": ""
+                    },
+                    "Flooring": {
+                        "Transition betweeen wooden flooring & toilet at entry": "",
+                        "Slopes are adequate": "",
+                        "Tile drop between dry & wet areas ": "",
+                        "Tiles are laid to slope": ""
+                    },
+                    "Standard heights of fixtures": {
+                        "Shower head": "",
+                        "Wash Basin": "",
+                        "EWC": ""
+                    },
+                    "Walls & ceiling": {
+                        "Ceiling tiles are free of stains/undulations/cracks etc.,": "",
+                        "Consistency of corner beading": "",
+                        "Area above false ceiling is painted  ": "",
+                        "Check for uniform line and level of the dadoing at the top": "",
+                        "EWC Ledge wall granite coping": "",
+                        "False ceiling channels are consistent": "",
+                        "Vertical Tiles joints & ceiling support members are aligned": "",
+                        "Hollowness in wall dado": "",
+                        "Service ledge is painted & clean": "",
+                        "Tile surface is consistent": ""
+                    }
+                }
+            },
+            "Common Toilet": {
+                "isVisible": false,
+                "Walls & ceiling": {
+                    "Area above false ceiling is painted  ": "",
+                    "Ceiling tiles are free of stains/undulations/cracks etc.,": "",
+                    "False ceiling channels are consistent": "",
+                    "Hollowness in wall dado": "",
+                    "Tile surface is consistent": "",
+                    "Vertical Tiles joints & ceiling support members are aligned": "",
+                    "EWC Ledge wall granite coping": "",
+                    "Check for uniform line and level of the dadoing at the top": "",
+                    "Consistency of corner beading": "",
+                    "Service ledge is painted & clean": ""
+                },
+                "Flooring": {
+                    "Tiles are laid to slope": "",
+                    "Slopes are adequate": "",
+                    "Tile drop between dry & wet areas ": "",
+                    "Transition betweeen wooden flooring & toilet at entry": ""
+                },
+                "Doors & Windows": {
+                    "Door frame is consistent without dent/scratches/marks": "",
+                    "Door frame & shutter gaps are consistent": "",
+                    "Hardware is as per standard offering": "",
+                    "Door color is consistent": "",
+                    "Lock can be operated from both sides": "",
+                    "UPVC hardware is standard": "",
+                    "UPVC ventilators are operable": "",
+                    "Gaskets/sealents are intact": ""
+                },
+                "Electrical": {
+                    "Electrical points are as per standard offering": "",
+                    "Ceiling electrical points are covered/capped properly ": "",
+                    "Wall Light points are covered /capped properly": "",
+                    "Switch plates are aligned": "",
+                    "Switches are operable": "",
+                    "Exhaust fan connection": "",
+                    "All sockets/switches above false ceiling are functional": ""
+                },
+                "Fixtures & Fittings": {
+                    "Granite counter is free of sharp edges": "",
+                    "Brackets supporting counter is painted & free of rust": "",
+                    "Washbasin & counter edges are sealed": "",
+                    "Wash basin faucet is operable": "",
+                    "Floor trap below cover is clean ": "",
+                    "Floor trap cover is provided": "",
+                    "EWC is fixed with brackets/seat covers & is functional": "",
+                    "Toilet Paper Holder": "",
+                    "Health Faucet is functional": "",
+                    "Wash Basin": "",
+                    "Wash basin faucet is functional": "",
+                    "Shower head is functional": ""
+                },
+                "Standard heights of fixtures": {
+                    "Shower head": "",
+                    "EWC": "",
+                    "Wash Basin": ""
+                }
+            },
+            "Dining": {
+                "isVisible": false,
+                "Dining Area": {
+                    "Doors & Windows": {
+                        "UPVC  utility Bug screen windows are operable": "",
+                        "Hardware is consistent": "",
+                        "UPVC utility door is operable": "",
+                        "Gaskets & Sealants are intact": "",
+                        "UPVC utility bug screen mesh is taut": "",
+                        "UPVC utility door is free of sharp edges": ""
+                    },
+                    "Electrical": {
+                        "Switches are operable": "",
+                        "Switch plates are aligned": "",
+                        "Electrical ceiling points are covered": "",
+                        "Electrical points are as per standard offering": "",
+                        "Electrical wall points are covered ": ""
+                    },
+                    "Walls & Ceiling": {
+                        "Finishing of granite coping on ledges": "",
+                        "Ceilings are free of stains/undulations/cracks etc.,": "",
+                        "Walls around door free of stains/cracks/dampness ": "",
+                        "Cornices provided are aligned": ""
+                    }
+                }
+            },
+            "Foyer": {
+                "isVisible": false,
+                "Electrical": {
+                    "Electrical wall points are covered ": "",
+                    "Electrical ceiling points are covered": "",
+                    "Electrical points are as per standard offering": "",
+                    "Switches are operable": "",
+                    "Switch plates are aligned": "",
+                    "DB is fixed properly": ""
+                },
+                "Exterior Surface": {
+                    "External false ceiling finish over main door is correct": "",
+                    "Walls around door free of stains/cracks/dampness ": ""
+                },
+                "Main Door": {
+                    "Gaskets/sealants are intact": "",
+                    "Confirm door opens & closes properly": "",
+                    "Finishing around the hardware": "",
+                    "Architrave is consistent": "",
+                    "Dents/marks on Main door shutter": "",
+                    "Internal & external shutter alignments ": "",
+                    "Dents/marks on Main door frame": "",
+                    "Hardware as per standard offering": "",
+                    "Lock is functional from both sides": "",
+                    "Door frame & wall junctions are sealed": "",
+                    "Shade variations in shutters": ""
+                },
+                "Miscellaneous": {
+                    "Finishing of granite coping on ledges": ""
+                },
+                "Video Door Phone": {
+                    "Video door phone is functional": "",
+                    "Video door phone alignment": "",
+                    "Video door phone is fixed": ""
+                },
+                "Walls & Ceiling": {
+                    "Ceiling is free of undulations": "",
+                    "Walls are free of stains/undulations/cracks/dampness": ""
+                }
+            },
+            "Kitchen": {
+                "isVisible": false,
+                "Kitchen Area": {
+                    "Core cut": {
+                        "Core cutting for kitchen hood towards exterior": "",
+                        "Core cut area pipe is cleaned": "",
+                        "Core cut pipe is finished on both sides": ""
+                    },
+                    "Doors & Windows": {
+                        "UPVC kitchen windows bug screen is operable": "",
+                        "Hardware is consistent": "",
+                        "UPVC kitchen windows are operable": "",
+                        "Gaskets/Sealants are intact": "",
+                        "UPVC kitchen windows are free of sharp edges": "",
+                        "UPVC kitchen bug screen mesh is taut": ""
+                    },
+                    "Electrical": {
+                        "Switch plates are aligned": "",
+                        "Ceiling electrical points are covered/capped properly": "",
+                        "Electrical points are as per standard offering": "",
+                        "Wall Light points are covered /capped properly": ""
+                    },
+                    "Flooring": {
+                        "Vitrified tiles are uniform & free of cracks": "",
+                        "Skirting finish & alignment": ""
+                    },
+                    "PHE": {
+                        "Floor trap/bottle trap outlets are provided": "",
+                        "Sink inlet is provided": "",
+                        "Floor trap cover is provided": "",
+                        "Floor trap is free of dust/debris": ""
+                    },
+                    "Reticulated Gas": {
+                        "Reticulated gas pipes are clean": "",
+                        "Reticulated gas pipes are clamped properly": ""
+                    },
+                    "Walls & ceiling": {
+                        "Cornices installed are consistent": "",
+                        "Junction between door frame & wall is finished": "",
+                        "Ceilings are free of stains/undulations/cracks etc.,": "",
+                        "Aluminium member betweeen vitrified flooring & marble is consistently finished": "",
+                        "Walls are free of cracks/ stains etc.,": "",
+                        "Granite Ledge finish is without sharp edges": "",
+                        "Wall behind gas pipe assembly are finished": ""
+                    }
+                },
+                "Store": {
+                    "isVisible": false,
+                    "Store Area": {
+                        
+                        "Doors & Windows": {
+                            "Door stopper is functional": "",
+                            "Door frame & shutter gaps are consistent": "",
+                            "UPVC hardware is standard": "",
+                            "Gaskets/sealents are intact": "",
+                            "Door frame is consistent without dent/scratches/marks": "",
+                            "Door color is consistent": "",
+                            "UPVC door glass is free of scratches": "",
+                            "UPVC doors are operable": "",
+                            "Hardware is as per standard offering": ""
+                        },
+                        "Electrical": {
+                            "Switch plates are aligned": "",
+                            "Wall Light points are covered /capped properly": "",
+                            "Ceiling electrical points are covered/capped properly": "",
+                            "Electrical points are as per standard offering": "",
+                            "Switches are operable": ""
+                        },
+                        "Flooring": {
+                            "Skirting finish & alignment": "",
+                            "Vitrified tile flooring is fixed & consistent": "",
+                            "Transition betweeen Corridor & vitrified flooring": ""
+                        },
+                        "Walls & ceiling": {
+                            "Cornices provided are aligned": "",
+                            "Ceilings are free of stains/undulations/stains etc.,": "",
+                            "Walls are free of cracks/ stains etc.,": ""
+                        }
+                    }
+                },
+                "Utility": {
+                    "isVisible": false,
+                    "Doors & Windows": {
+                        "UPVC exterior windows are free of sharp edges": "",
+                        "UPVC utility doors are free of sharp edges": "",
+                        "UPVC exterior windows are operable": "",
+                        "UPVC utility doors are operable": "",
+                        "Gaskets/sealents are intact": "",
+                        "UPVC exterior window bug screen mesh is taut": "",
+                        "UPVC exterior window bug screen is operable": ""
+                    },
+                    "Flooring": {
+                        "Floor slope is adequate": "",
+                        "Skirting finish & alignment": "",
+                        "Vitrified flooring tiles are uniform & free of cracks": ""
+                    },
+                    "PHE": {
+                        "Floor trap cover is provided": "",
+                        "Brackets supporting counter is painted & free of rust": "",
+                        "Granite counter is free of sharp edges": "",
+                        "Sink faucet is operable": "",
+                        "Sink & counter edges are sealed": "",
+                        "Floor trap below cover is clean ": ""
+                    },
+                    "Shafts": {
+                        "MS Duct doors are painted on both sides": "",
+                        "Internal surfaces is cleaned & painted": "",
+                        "Shaft internals to be painted": "",
+                        "MS Duct door frames & wall junctions are sealed": "",
+                        "Shaft internals to be free of debris": ""
+                    },
+                    "Walls & ceiling": {
+                        "Junctions betweeen door frame & wall is finished": "",
+                        "Ceilings are free of stains/undulations/cracks etc.,": "",
+                        "Wall dado is consistent ": "",
+                        "Junction between dado & wall plaster is uniformly finished": "",
+                        "Wall dado is free of hollowness ": "",
+                        "Walls are free of cracks/ stains etc.,": ""
+                    }
+                }
+            },
+            "Living Room": {
+                "isVisible": false,
+                "Living Balcony ": {
+                    "isVisible": false,
+                    "Doors & windows": {
+                        "UPVC balcony doors are operable": "",
+                        "Aluminium channel below balcony door is cleaned ": "",
+                        "Gaskets/Sealants are intact": "",
+                        "UPVC balcony doors are without sharp edges": ""
+                    },
+                    "Electrical": {
+                        "Switch plates are aligned": "",
+                        "AC Core cut pipe is finished ": "",
+                        "Ceiling electrical points are covered/capped properly": "",
+                        "Electrical points are as per standard offering": "",
+                        "Wall Light points are covered /capped properly": "",
+                        "AC Core cut pipe is cleaned ": ""
+                    },
+                    "Floor Traps": {
+                        "Edges of floor trap is finished ": "",
+                        "Floor trap below cover is clean ": ""
+                    },
+                    "Flooring": {
+                        "Floor Slopes provided are adequate": "",
+                        "Vitrified tiles are uniform & free of cracks": "",
+                        "Skirting finish & alignment": ""
+                    },
+                    "Miscellaneous": {
+                        "Granite coping is free of sharp edges/dents etc.,": "",
+                        "Undulations in paint due to textured paints on vertical surfaces": ""
+                    },
+                    "Railing": {
+                        "SS pipe railing is finshed with smooth edges": "",
+                        "SS pipe railing height is consistent": "",
+                        "SS pipe railing end caps are fixed without gaps": "",
+                        "Glass in railing is free of scratches": "",
+                        "Glass railing assembly is sturdy": ""
+                    },
+                    "Shafts": {
+                        "Internal surfaces is cleaned & painted": "",
+                        "MS Duct doors are painted on both sides": "",
+                        "Shaft internalss to be free of debris": "",
+                        "MS Duct door frames & wall junctions are sealed": "",
+                        "Shaft internals to be painted": ""
+                    },
+                    "Walls & Ceiling": {
+                        "Drip moulds in ceiling are consistent": "",
+                        "Ceilings are free of stains/undulations/cracks etc.,": "",
+                        "Elevational ledge horizontal surface finish": "",
+                        "Walls are free of cracks/ stains etc.,": ""
+                    }
+                },
+                "Living Room Marble floor": {
+                    "isVisible": false,
+                    "Doors & Windows": {
+                        "UPVC hardware is standard": "",
+                        "UPVC balcony glass is free of scratches": "",
+                        "UPVC balcony door bug screen mesh is operable": "",
+                        "Gasket/Sealants are intact": "",
+                        "UPVC balcony doors are without sharp edges": "",
+                        "UPVC balcony doors are operable": "",
+                        "UPVC balcony door bug screen mesh is taut": ""
+                    },
+                    "Electrical": {
+                        "Switch plates are aligned": "",
+                        "AC Core cut pipe is finished flush with plaster": "",
+                        "Wall Light points are covered /capped properly": "",
+                        "AC Core cut pipe is cleaned ": "",
+                        "Ceiling electrical points are covered/capped properly": "",
+                        "Switches are operable": "",
+                        "Electrical points are as per standard offering": ""
+                    },
+                    "Flooring": {
+                        "Skirting finish & alignment": "",
+                        "Marble floor polishing": ""
+                    },
+                    "Walls &Ceiling": {
+                        "Cornices provided are aligned": "",
+                        "Walls are free of cracks/ stains etc.,": "",
+                        "Ceilings are free of stainss/undulations/stains etc.,": ""
+                    }
+                }
+            },
+            "Master Bed Room": {
+                "isVisible": false,
+                "Master Bedroom Area": {
+                    "Doors & Windows": {
+                        "UPVC window bug screen mesh is operable": "",
+                        "Door color is consistent": "",
+                        "Gaskets/sealents are intact": "",
+                        "UPVC window screen mesh is taut": "",
+                        "UPVC hardware is standard": "",
+                        "UPVC window glass is free of scratches": "",
+                        "UPVC windows are operable": "",
+                        "Door stopper doesn't damage wooden flooring": "",
+                        "Door frame & shutter gaps are consistent": "",
+                        "Hardware is as per standard offering": "",
+                        "Door frame is consistent without dent/scratches/marks": ""
+                    },
+                    "Electrical": {
+                        "Switches are operable": "",
+                        "Electrical points are as per standard offering": "",
+                        "Switch plates are aligned": "",
+                        "AC Core cut pipe is finished flush with plaster": "",
+                        "AC Core cut pipe is cleaned ": "",
+                        "Ceiling electrical points are covered/capped properly": "",
+                        "Wall Light points are covered /capped properly": ""
+                    },
+                    "Flooring": {
+                        "Wooden flooring is fixed & consistent": "",
+                        "Skirting finish & alignment": "",
+                        "Transition betweeen wooden flooring & toilet ": "",
+                        "Transition betweeen Corridor marble & wooden flooring": ""
+                    },
+                    "Walls & ceiling": {
+                        "Cornices provided are aligned": "",
+                        "Ceilings are free of stainss/undulations/stains etc.,": "",
+                        "Walls are free of cracks/ stains etc.,": ""
+                    }
+                },
+                "Dressing": {
+                    "isVisible": false,
+                    "Doors & Windows": {
+                        "Gaskets/Sealants are intact": "",
+                        "UPVC balcony doors are without sharp edges": "",
+                        "UPVC balcony doors are operable": "",
+                        "Aluminium channel below balcony door is cleaned ": ""
+                    },
+                    "Electrical": {
+                        "Wall Light points are covered /capped properly": "",
+                        "Electrical points are as per standard offering": "",
+                        "AC Core cut pipe is cleaned ": "",
+                        "Ceiling electrical points are covered/capped properly": "",
+                        "AC Core cut pipe is finished ": "",
+                        "Switch plates are aligned": ""
+                    },
+                    "Floor Traps": {
+                        "Edges of floor trap is finished ": "",
+                        "Floor trap below cover is clean ": ""
+                    },
+                    "Flooring": {
+                        "Vitrified tiles are uniform & free of cracks": "",
+                        "Floor Slopes provided are adequate": "",
+                        "Skirting finish & alignment": ""
+                    },
+                    "Miscellaneous": {
+                        "Granite coping is free of sharp edges/dents etc.,": "",
+                        "Undulations in paint due to textured paints on vertical surfaces": ""
+                    },
+                    "Railing": {
+                        "SS pipe railing end caps are fixed without gaps": "",
+                        "Glass in railing is free of scratches": "",
+                        "SS pipe railing is finshed with smooth edges": "",
+                        "SS pipe railing height is consistent": "",
+                        "Glass railing assembly is sturdy": ""
+                    },
+                    "Shafts": {
+                        "MS Duct door frames & wall junctions are sealed": "",
+                        "MS Duct doors are painted on both sides": "",
+                        "Shaft internalss to be free of debris": "",
+                        "Internal surfaces is cleaned & painted": "",
+                        "Shaft internals to be painted": ""
+                    },
+                    "Walls & ceiling": {
+                        "Drip moulds in ceiling are consistent": "",
+                        "Walls are free of cracks/ stains etc.,": "",
+                        "Ceilings are free of stainss/undulations/stains etc.,": "",
+                        "Elevational ledge horizontal surface finish": ""
+                    }
+                },
+                "Toilet": {
+                    "isVisible": false,
+                    "Doors & Windows": {
+                        "UPVC hardware is standard": "",
+                        "Hardware is as per standard offering": "",
+                        "Door color is consistent": "",
+                        "UPVC ventilators are operable": "",
+                        "Lock can be operated from both sides": "",
+                        "Gaskets/sealents are intact": "",
+                        "Door frame is consistent without dent/scratches/marks": "",
+                        "Door frame & shutter gaps are consistent": ""
+                    },
+                    "Electrical": {
+                        "Ceiling electrical points are covered/capped properly": "",
+                        "Wall Light points are covered /capped properly": "",
+                        "Switch plates are aligned": "",
+                        "All sockets/switches above false ceiling are functional": "",
+                        "Electrical points are as per standard offering": "",
+                        "Exhaust fan connection": "",
+                        "Switches are operable": ""
+                    },
+                    "Fixtures & Fittings": {
+                        "Wash basin faucet is operable": "",
+                        "Floor trap cover is provided": "",
+                        "Floor trap below cover is clean ": "",
+                        "Shower head is functional": "",
+                        "Health Faucet is functional": "",
+                        "Brackets supporting counter is painted & free of rust": "",
+                        "Washbasin & counter edges are sealed": "",
+                        "Granite counter is free of sharp edges": "",
+                        "Toilet Paper Holder": "",
+                        "EWC is fixed with brackets/seat covers & is functional": ""
+                    },
+                    "Flooring": {
+                        "Slopes are adequate": "",
+                        "Tile drop between dry & wet areas ": "",
+                        "Transition betweeen wooden flooring & toilet at entry": "",
+                        "Tiles are laid to slope": ""
+                    },
+                    "Standard heights of fixtures": {
+                        "EWC": "",
+                        "Shower head": "",
+                        "Wash Basin": ""
+                    },
+                    "Walls & ceiling": {
+                        "False ceiling channels are consistent": "",
+                        "Tile surface is consistent": "",
+                        "EWC Ledge wall granite coping": "",
+                        "Vertical Tiles joints & ceiling support members are aligned": "",
+                        "Check for uniform line and level of the dadoing at the top": "",
+                        "Service ledge is painted & clean": "",
+                        "Ceiling tiles are free of stains/undulations/cracks etc.,": "",
+                        "Consistency of corner beading": "",
+                        "Area above false ceiling is painted  ": "",
+                        "Hollowness in wall dado": ""
+                    }
+                },
+                "Balcony": {
+                    "isVisible": false,
+
+                    "Walls & ceiling": {
+                        "Walls are free of cracks/ stains etc.,": "",
+                        "Ceilings are free of stains/undulations/cracks etc.,": "",
+                        "Drip moulds in ceiling are consistent": "",
+                        "Elevational ledge horizontal surface finish": ""
+                    },
+                    "Flooring": {
+                        "Vitrified tiles are uniform & free of cracks": "",
+                        "Floor Slopes provided are adequate": "",
+                        "Skirting finish & alignment": ""
+                    },
+                    "Floor Traps": {
+                        "Edges of floor trap is finished ": "",
+                        "Floor trap below cover is clean ": ""
+                    },
+                    "Doors & Windows": {
+                        "UPVC balcony doors are operable": "",
+                        "UPVC balcony doors are without sharp edges": "",
+                        "Gaskets/sealents are intact": "",
+                        "Aluminium channel below balcony door is cleaned ": ""
+                    },
+                    "Electrical": {
+                        "Electrical points are as per standard offering": "",
+                        "Ceiling electrical points are covered/capped properly": "",
+                        "Wall Light points are covered /capped properly": "",
+                        "Switch plates are aligned": "",
+                        "AC Core cut pipe is cleaned ": "",
+                        "AC Core cut pipe is finished ": ""
+                    },
+                    "Shafts": {
+                        "MS Duct door frames & wall junctions are sealed": "",
+                        "MS Duct doors are painted on both sides": "",
+                        "Shaft internalss to be free of debris": "",
+                        "Internal surfaces is cleaned & painted": "",
+                        "Shaft internals to be painted": ""
+                    },
+                    "Railing": {
+                        "SS pipe railing end caps are fixed without gaps": "",
+                        "Glass in railing is free of scratches": "",
+                        "SS pipe railing is finshed with smooth edges": "",
+                        "SS pipe railing height is consistent": "",
+                        "Glass railing assembly is sturdy": ""
+                    },
+                    "Miscellaneous": {
+                        "Granite coping is free of sharp edges/dents etc.,": "",
+                        "Undulations in paint due to textured paints on vertical surfaces": ""
+                    }
+                }
+            },
+            "Servant's Room": {
+                "isVisible": false,
+                "Servant's Room Area": {
+                    "Doors & Windows": {
+                        "UPVC door glass is free of scratches": "",
+                        "Door frame is consistent without dent/scratches/marks": "",
+                        "Gaskets/sealents are intact": "",
+                        "Hardware is as per standard offering": "",
+                        "Door stopper is functional": "",
+                        "UPVC doors are operable": "",
+                        "Door color is consistent": "",
+                        "UPVC hardware is standard": "",
+                        "Door frame & shutter gaps are consistent": ""
+                    },
+                    "Electrical": {
+                        "Switch plates are aligned": "",
+                        "Electrical points are as per standard offering": "",
+                        "Switches are operable": "",
+                        "Wall Light points are covered /capped properly": "",
+                        "Ceiling electrical points are covered/capped properly": ""
+                    },
+                    "Flooring": {
+                        "Transition betweeen Corridor & vitrified flooring": "",
+                        "Vitrified tile flooring is fixed & consistent": "",
+                        "Skirting finish & alignment": ""
+                    },
+                    "Walls & ceiling": {
+                        "Cornices provided are aligned": "",
+                        "Walls are free of cracks/ stains etc.,": "",
+                        "Ceilings are free of stains/undulations/stains etc.,": ""
+                    }
+                },
+                "Servant's Toilet ": {
+                    "isVisible": false,
+                    "Doors & Windows": {
+                        "UPVC ventilators are operable": "",
+                        "Door frame & shutter gaps are consistent": "",
+                        "Lock can be operated from both sides": "",
+                        "Door frame is consistent without dent/scratches/marks": "",
+                        "Door color is consistent": "",
+                        "Gaskets/sealents are intact": "",
+                        "Hardware is as per standard offering": ""
+                    },
+                    "Electrical": {
+                        "Exhaust fan connection": "",
+                        "Electrical points are as per standard offering": "",
+                        "All sockets/switches above false ceiling are functional": "",
+                        "Ceiling electrical points are covered/capped properly": "",
+                        "Switch plates are aligned": "",
+                        "Wall Light points are covered /capped properly": "",
+                        "Switches are operable": ""
+                    },
+                    "Fixtures & Fittings": {
+                        "EWC is fixed with brackets/seat covers & is functional": "",
+                        "Brackets supporting counter is painted & free of rust": "",
+                        "Shower head is functional": "",
+                        "Floor trap cover is provided": "",
+                        "Floor trap below cover is clean ": "",
+                        "Toilet Paper Holder": "",
+                        "Wash basin faucet is operable": "",
+                        "Health Faucet is functional": "",
+                        "Washbasin & counter edges are sealed": ""
+                    },
+                    "Flooring": {
+                        "Transition betweeen wooden flooring & toilet at entry": "",
+                        "Tile drop between dry & wet areas ": "",
+                        "Slopes are adequate": "",
+                        "Tiles are laid to slope": ""
+                    },
+                    "Standard heights of fixtures": {
+                        "Shower head": "",
+                        "EWC": "",
+                        "Wash Basin": ""
+                    },
+                    "Walls & ceiling": {
+                        "Consistency of corner beading": "",
+                        "Check for uniform line and level of the dadoing at the top": "",
+                        "False ceiling channels are consistent": "",
+                        "Vertical Tiles joints & ceiling support members are aligned": "",
+                        "Service ledge is painted & clean": "",
+                        "Ceiling tiles are free of stains/undulations/cracks etc.,": "",
+                        "Tile surface is consistent": "",
+                        "EWC Ledge wall granite coping": "",
+                        "Area above false ceiling is painted  ": "",
+                        "Hollowness in wall dado": ""
+                    }
+                }
+            }
+        }
+    
+}
