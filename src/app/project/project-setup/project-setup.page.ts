@@ -10,24 +10,18 @@ import { ToastController, LoadingController, Platform } from "@ionic/angular";
 import { FirebaseService } from 'src/app/services/firebase.service';
 
 
+interface StudentData {
+  Name: string;
+  Address: string;
+  Type:string;
+  Assigned:string;
+}
 
 
 
 
 
-
- export interface Option {
-        label: string;
-        placeholder: string;
-        required: boolean;
-        type: string;
-    }
-
-    export interface RootObject {
-        key: string;
-        tyype: string;
-        option: Option;
-    }
+ 
 
 @Component({
   selector: 'app-project-setup',
@@ -39,7 +33,7 @@ export class ProjectSetupPage implements OnInit {
 // data :any[]=[];
 
 projectsetup = [];
-projectsetupData: projectsetupData;
+projectsetupData: StudentData ;
 projectsetupForm : FormGroup;
 
  selectedVal:Number=103;
