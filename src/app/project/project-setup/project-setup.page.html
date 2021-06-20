@@ -7,8 +7,8 @@
         <ion-title>Project Setup</ion-title>
 </ion-toolbar>
 
-<ion-content padding>
-    <ion-card class="coworker-card" *ngIf="data">
+<ion-content padding >
+    <ion-card class="coworker-card" *ngIf="recivedData">
           <img src="/assets/imgs/project.jpg" class="header-img"/>
           <ion-card-content>
             <ion-list lines="none">
@@ -17,125 +17,151 @@
                   <img src="/assets/imgs/logo.png"/>
                 </ion-avatar>
                 <ion-label>
-                  <h1>{{data.Name}}</h1>
+                  <h1>{{recivedData.Name}}</h1>
                   <p>Project name</p>
                 </ion-label>
               </ion-item>
               <ion-item>
                 <ion-icon name="locate" slot="start"></ion-icon>
                 <ion-label>
-                  <h2>{{data.Address}}</h2>
+                  <h2>{{recivedData.Address}}</h2>
                   <p>Project address</p>
                 </ion-label>
               </ion-item>
               <ion-item>
                 <ion-icon name="star" slot="start"></ion-icon>
                 <ion-label>
-                  <h2>{{data.Type}}</h2>
+                  <h2>{{recivedData.Type}}</h2>
                   <p>Project type</p>
                 </ion-label>
               </ion-item>
               <ion-item>
                 <ion-icon name="mail" slot="start"></ion-icon>
                 <ion-label>
-                  <h2>{{data.Assigned}}</h2>
+                  <h2>{{recivedData.Assigned}}</h2>
                   <p>Project Assigned</p>
                 </ion-label>
               </ion-item>
             </ion-list>
           </ion-card-content>
 
+        
           <ion-list>
-          <ion-list-header lines="full">
-            <ion-label>projec Assets</ion-label>
-          </ion-list-header>
-          <ion-item>
-            <ion-label position="stacked">
-              Foyer
-            </ion-label>
-            <ion-select placeholder="Popover Interface" interface="popover">
-              <ion-select-option value="true">True</ion-select-option>
-              <ion-select-option value="false">False</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item>
-            <ion-label position="stacked">
-              Common Toilet
-            </ion-label>
-            <ion-select placeholder="Popover Interface" interface="popover">
-              <ion-select-option value="true">True</ion-select-option>
-              <ion-select-option value="false">False</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item lines="full">
-            <ion-label position="stacked">
-              Living Room
-            </ion-label>
-            <ion-select placeholder="Select Multiple Add-ons" multiple={true}>
-              <ion-select-option value="firstclass">Balcony</ion-select-option>             
-            </ion-select>
-          </ion-item>
-          <ion-item lines="full">
-            <ion-label position="stacked">
-              Dining 
-            </ion-label>
-            <ion-select placeholder="Select Multiple Add-ons" multiple={true}>
-              <ion-select-option value="firstclass">Balcony</ion-select-option>
-              
-            </ion-select>
-          </ion-item>
-           <ion-item lines="full">
-            <ion-label position="stacked">
-              Kitchen
-            </ion-label>
-            <ion-select placeholder="Select Multiple Add-ons" multiple={true}>
-              <ion-select-option value="firstclass">Utility</ion-select-option>
-              <ion-select-option value="bag">Store</ion-select-option>
-             </ion-select>
-          </ion-item>
-           <ion-item lines="full">
-            <ion-label position="stacked">
-              Servant's Room
-            </ion-label>
-            <ion-select placeholder="Select Multiple Add-ons" multiple={true}>
-              <ion-select-option value="firstclass">Toilet</ion-select-option>
-             
-             </ion-select>
-          </ion-item>
-          <ion-item lines="full">
-            <ion-label position="stacked">
-              Master Bed Room
-            </ion-label>
-            <ion-select placeholder="Select Multiple Add-ons" multiple={true}>
-              <ion-select-option value="firstclass">Balcony</ion-select-option>
-              <ion-select-option value="bag">Dressing</ion-select-option>
-              <ion-select-option value="headphones">Toilet</ion-select-option>
-              
-            </ion-select>
-          </ion-item>
-          <ion-item lines="full">
-            <ion-label position="stacked">
-              Bed Room 1
-            </ion-label>
-            <ion-select placeholder="Select Multiple Add-ons" multiple={true}>
-              <ion-select-option value="firstclass">Balcony</ion-select-option>
-              <ion-select-option value="bag">Dressing</ion-select-option>
-              <ion-select-option value="headphones">Toilet</ion-select-option>
-              
-            </ion-select>
-          </ion-item>
-           
-            <ion-item lines="full">
-            <ion-label position="stacked">
-              Bed Room 2
-            </ion-label>
-            <ion-select placeholder="Select Multiple Add-ons" multiple={true}>
-              <ion-select-option value="firstclass">Balcony</ion-select-option>
-              <ion-select-option value="bag">Dressing</ion-select-option>           
-              
-            </ion-select>
-          </ion-item>
-        </ion-list>
+                <ion-list-header lines="full">
+                  <ion-label>project Assets</ion-label>
+                </ion-list-header>
+                 <form [formGroup]="projectsetupForm" (ngSubmit)="AssetRecord()">  
+
+                   <ion-item>
+                  <ion-label position="stacked">
+                    Foyer
+                  </ion-label>
+                  <ion-select formControlName="Foyer" placeholder="Popover Interface" interface="popover">
+                    <ion-select-option value="true">yes</ion-select-option>
+                    <ion-select-option value="false">No</ion-select-option>
+                  </ion-select>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="stacked">
+                    Common Toilet
+                  </ion-label>
+                  <ion-select  formControlName="CommonToilet" placeholder="Popover Interface" interface="popover">
+                    <ion-select-option value="true">Yes</ion-select-option>
+                    <ion-select-option value="false">No</ion-select-option>
+                  </ion-select>
+                </ion-item>
+                <ion-item lines="full">
+                  <ion-label position="stacked">
+                    Living Room
+                  </ion-label>
+                  <ion-select formControlName="LivingRoom" placeholder="Select Multiple Add-ons" multiple={true}>
+                  <ion-select-option value="LivingRoom">Living Room</ion-select-option>   
+                    <ion-select-option value="Balcony">Balcony</ion-select-option>             
+                  </ion-select>
+                </ion-item>
+                <ion-item lines="full">
+                  <ion-label position="stacked">
+                    Dining 
+                  </ion-label>
+                  <ion-select formControlName="Dining" placeholder="Select Multiple Add-ons" multiple={true}>
+                  <ion-select-option value="Dining">Dining</ion-select-option>   
+                    <ion-select-option value="Balcony">Balcony</ion-select-option>
+                    
+                  </ion-select>
+                </ion-item>
+                <ion-item lines="full">
+                  <ion-label position="stacked">
+                    Kitchen
+                  </ion-label>
+                  <ion-select formControlName="Kitchen" placeholder="Select Multiple Add-ons" multiple={true}>
+                  <ion-select-option value="Kitchen">Kitchen</ion-select-option>   
+                    <ion-select-option value="Utility">Utility</ion-select-option>
+                    <ion-select-option value="Store">Store</ion-select-option>
+                  </ion-select>
+                </ion-item>
+                <ion-item lines="full">
+                  <ion-label position="stacked">
+                    Servant's Room
+                  </ion-label>
+                  <ion-select formControlName="ServantsRoom" placeholder="Select Multiple Add-ons" multiple={true}>
+                  <ion-select-option value="ServantsRoom"> Servant's Room</ion-select-option> 
+                    <ion-select-option value="Toilet">Toilet</ion-select-option>
+                  
+                  </ion-select>
+                </ion-item>
+                <ion-item lines="full">
+                  <ion-label position="stacked">
+                    Master Bed Room
+                  </ion-label>
+                  <ion-select formControlName="MasterBedRoom" placeholder="Select Multiple Add-ons" multiple={true}>
+                     <ion-select-option value="MasterBedRoom"> Master Bed Room</ion-select-option> 
+                    <ion-select-option value="Balcony">Balcony</ion-select-option>
+                    <ion-select-option value="Dress">Dress</ion-select-option>
+                    <ion-select-option value="Toilet">Toilet</ion-select-option>
+                    
+                  </ion-select>
+                </ion-item>
+                <ion-item lines="full">
+                  <ion-label position="stacked">
+                    Bed Room 1
+                  </ion-label>
+                  <ion-select formControlName="BedRoom1" placeholder="Select Multiple Add-ons" multiple={true}>
+                   <ion-select-option value="BedRoom1"> Bed Room 1</ion-select-option> 
+                    <ion-select-option value="Balcony">Balcony</ion-select-option>
+                    <ion-select-option value="Dress">Dress</ion-select-option>
+                    <ion-select-option value="Toilet">Toilet</ion-select-option>
+                    
+                  </ion-select>
+                </ion-item>
+                
+                <ion-item lines="full" *ngIf="viewType" >
+                  <ion-label position="stacked">
+                    Bed Room 2
+                  </ion-label>
+                  <ion-select formControlName="BedRoom2" placeholder="Select Multiple Add-ons" multiple={true}>
+                  <ion-select-option value="BedRoom2"> Bed Room 2</ion-select-option> 
+                    <ion-select-option value="Balcony">Balcony</ion-select-option>
+                    <ion-select-option value="Dress">Dress</ion-select-option> 
+                    <ion-select-option value="Toilet">Toilet</ion-select-option>          
+                    
+                  </ion-select>
+                </ion-item>
+                 <ion-item>     
+                  <ion-button (click)="AssetRecord()">
+                  <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
+                    &nbsp;Add Asset
+                  </ion-button>
+                </ion-item>
+                 <ion-fab vertical="bottom" horizontal="end" size="small" slot="fixed">
+                 <ion-fab-button (click)="confirmalert()">
+                  <ion-icon name="add"></ion-icon>
+                  </ion-fab-button>
+                  </ion-fab>
+
+                 </form>   
+
+          </ion-list>
+        
         </ion-card>
 
         

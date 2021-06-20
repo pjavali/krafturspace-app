@@ -22,8 +22,18 @@
       <ion-input formControlName="Address"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating"> Project Type :</ion-label>
-      <ion-input formControlName="Type"></ion-input>
+      <ion-label position="floating"> Project Type:</ion-label>
+      
+       <ion-select formControlName="Type" (ionChange)="ontypeChange()">
+              <ion-select-option value="2BHK">2BHK</ion-select-option>
+              <ion-select-option value="2.5BHK">2.5BHK</ion-select-option>
+              <ion-select-option value="3BHK">3BHK</ion-select-option>
+               <ion-select-option value="4BHK">4BHK</ion-select-option>
+                <ion-select-option value="3BHK Servant's Room">3BHK Servant's Room</ion-select-option>
+                <ion-select-option value="4BHK+Servant's Room">4BHK Servant's Room</ion-select-option>
+       </ion-select>
+ 
+     
     </ion-item>
     <ion-item>
       <ion-label position="floating"> Project Assigned :</ion-label>

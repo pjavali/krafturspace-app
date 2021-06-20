@@ -13,14 +13,17 @@ import 'firebase/firestore';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  
   public userProfile: UserProfile;
   public isAdmin;
   public appuser;
+  public viewType;
+  public lastrecordid;
  
   constructor(
     private authService: AuthService,
      private router: Router,
-    
+   
   ) {
 
   }
@@ -37,7 +40,7 @@ export class AppComponent {
         .then(userProfileSnapshot => {
           this.isAdmin = userProfileSnapshot.data().isAdmin;
           console.log("isAdmin",  this.isAdmin);
-         ;
+         
           this.appuser=user.email;
 
         });
