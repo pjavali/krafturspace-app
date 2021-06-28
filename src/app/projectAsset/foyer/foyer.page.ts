@@ -16,7 +16,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import { Camera,CameraOptions} from '@ionic-native/camera/ngx';
-import { File} from '@ionic-native/File/ngx'
+
 
 
 @Component({
@@ -45,7 +45,7 @@ currentId:any[];
  public fb: FormBuilder,
  private camera: Camera,
 private alertCtrl: AlertController,
-public file:File
+
 
   ) {
     this.mypicref=firebase.storage().ref('/')

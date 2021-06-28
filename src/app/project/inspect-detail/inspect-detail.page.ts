@@ -15,7 +15,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
-import { Camera } from '@ionic-native/Camera/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
 
 
 
