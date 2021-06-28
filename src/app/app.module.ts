@@ -21,7 +21,7 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Camera} from '@ionic-native/camera/ngx';
-import { File} from '@ionic-native/File/ngx'
+
 import { WebView} from '@ionic-native/ionic-webview/ngx'
 
 
@@ -46,7 +46,7 @@ import { WebView} from '@ionic-native/ionic-webview/ngx'
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },      
     AngularFireAuthGuard,
     NativeStorage,
-    Camera,File,WebView
+    Camera,WebView
    
   ],
   bootstrap: [AppComponent]
