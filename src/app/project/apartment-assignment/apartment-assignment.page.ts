@@ -72,7 +72,7 @@ export class ApartmentAssignmentPage implements OnInit {
       Assigned: ['', [Validators.compose([
 		Validators.required,
 		Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-	])]]
+	   ])]]
        
 
       
@@ -148,6 +148,7 @@ this.projectForm.value['Foyer']="";
     recordRow.isEdit = false;
     console.log("from update",recordRow.id)
   }
+  
   addasset(record){
 
      console.log("user", record)
@@ -183,7 +184,7 @@ this.projectForm.value['Foyer']="";
     
   }
 
- async RemoveRecord(rowID) {
+  async RemoveRecord(rowID) {
 
     const alert = await this.alertCtrl.create({ 
       header: 'Confirm Delete Project',
@@ -214,8 +215,8 @@ this.projectForm.value['Foyer']="";
 
 
   
-ontypeChange(): void {
-let Type = this.projectForm.get('Type').value;
+  ontypeChange(): void {      
+    let Type = this.projectForm.get('Type').value;
 
     this._cdr.detectChanges();  
     

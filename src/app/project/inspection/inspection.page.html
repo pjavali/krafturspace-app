@@ -20,6 +20,38 @@
   <ion-label ><h3>Assigned project list</h3></ion-label>
 </ion-item>
 
+<ion-card *ngFor="let item of inspectlist; let i= index"   color="primary">
+   
+    
+      <ion-card-header>
+      <ion-item>
+        <ion-label>Project Name :</ion-label>
+        <ion-card-label >{{item.Name}} </ion-card-label>         
+
+      </ion-item>
+        <ion-item>
+         <ion-label>Project Address :</ion-label>
+        <ion-card-label>{{item.Address}} </ion-card-label>
+        </ion-item>
+      <ion-item>
+        <ion-label>Project Type :</ion-label>
+        <ion-card-label>{{item.Type}} </ion-card-label>
+      </ion-item>
+      
+            
+      </ion-card-header>
+      <ion-card-content>
+
+        
+
+        <ion-button color="secondary" shape="round" size="small"(click)="inspect(item, i)">
+        <ion-icon size="small" slot="icon-only" name="search"></ion-icon>
+        &nbsp;Inspect
+      </ion-button>
+      </ion-card-content>
+   
+  </ion-card>
+
 
 </ion-content>
  

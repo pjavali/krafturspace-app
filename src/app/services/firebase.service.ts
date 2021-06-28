@@ -45,6 +45,9 @@ delete_project(record_id) {
     this.firestore.doc(this.collectionName + '/' + record_id).delete();
   }
 
+getdata(){
+  
+}
   
   
 }

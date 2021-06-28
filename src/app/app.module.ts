@@ -20,6 +20,9 @@ import { environment } from 'src/environments/environment';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Camera} from '@ionic-native/camera/ngx';
+import { File} from '@ionic-native/File/ngx'
+import { WebView} from '@ionic-native/ionic-webview/ngx'
 
 
 @NgModule({
@@ -33,20 +36,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireDatabaseModule,
-    
+    AngularFireDatabaseModule,    
     AngularFireStorageModule,
-    ReactiveFormsModule,
-    
-    
-    HttpClientModule   
+    ReactiveFormsModule,   
+    HttpClientModule,
+    FormsModule  
   ],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-      
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },      
     AngularFireAuthGuard,
     NativeStorage,
-    
+    Camera,File,WebView
+   
   ],
   bootstrap: [AppComponent]
 })

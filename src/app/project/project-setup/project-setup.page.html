@@ -84,6 +84,7 @@
                     Dining 
                   </ion-label>
                   <ion-select formControlName="Dining" placeholder="Select Multiple Add-ons" multiple={true}>
+                  
                   <ion-select-option value="Dining">Dining</ion-select-option>   
                     <ion-select-option value="Balcony">Balcony</ion-select-option>
                     
@@ -146,17 +147,41 @@
                     
                   </ion-select>
                 </ion-item>
+                  <ion-item lines="full" *ngIf="viewType" >
+                  <ion-label position="stacked">
+                    Bed Room 3
+                  </ion-label>
+                  <ion-select formControlName="BedRoom3" placeholder="Select Multiple Add-ons" multiple={true}>
+                  <ion-select-option value="BedRoom2"> Bed Room 3</ion-select-option> 
+                    <ion-select-option value="Balcony">Balcony</ion-select-option>
+                    <ion-select-option value="Dress">Dress</ion-select-option> 
+                    <ion-select-option value="Toilet">Toilet</ion-select-option>          
+                    
+                  </ion-select>
+                </ion-item>
+                <ion-item lines="full" *ngIf="viewType" >
+                  <ion-label position="stacked">
+                    Bed Room 4
+                  </ion-label>
+                  <ion-select formControlName="BedRoom4" placeholder="Select Multiple Add-ons" multiple={true}>
+                  <ion-select-option value="BedRoom2"> Bed Room 4</ion-select-option> 
+                    <ion-select-option value="Balcony">Balcony</ion-select-option>
+                    <ion-select-option value="Dress">Dress</ion-select-option> 
+                    <ion-select-option value="Toilet">Toilet</ion-select-option>          
+                    
+                  </ion-select>
+                </ion-item>
+
+
+
+
                  <ion-item>     
                   <ion-button (click)="AssetRecord()">
                   <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
                     &nbsp;Add Asset
                   </ion-button>
                 </ion-item>
-                 <ion-fab vertical="bottom" horizontal="end" size="small" slot="fixed">
-                 <ion-fab-button (click)="confirmalert()">
-                  <ion-icon name="add"></ion-icon>
-                  </ion-fab-button>
-                  </ion-fab>
+                 
 
                  </form>   
 

@@ -1,0 +1,42 @@
+{
+    "Foyer":{
+         "isVisible":false,
+         "Electrical":{
+            "Electrical wall points are covered ":"",
+            "Electrical ceiling points are covered":"",
+            "Electrical points are as per standard offering":"",
+            "Switches are operable":"",
+            "Switch plates are aligned":"",
+            "DB is fixed properly":""
+         },
+         "Exterior Surface":{
+            "External false ceiling finish over main door is correct":"",
+            "Walls around door free of stains/cracks/dampness ":""
+         },
+         "Main Door":{
+            "Gaskets/sealants are intact":"",
+            "Confirm door opens & closes properly":"",
+            "Finishing around the hardware":"",
+            "Architrave is consistent":"",
+            "Dents/marks on Main door shutter":"",
+            "Internal & external shutter alignments ":"",
+            "Dents/marks on Main door frame":"",
+            "Hardware as per standard offering":"",
+            "Lock is functional from both sides":"",
+            "Door frame & wall junctions are sealed":"",
+            "Shade variations in shutters":""
+         },
+         "Miscellaneous":{
+            "Finishing of granite coping on ledges":""
+         },
+         "Video Door Phone":{
+            "Video door phone is functional":"",
+            "Video door phone alignment":"",
+            "Video door phone is fixed":""
+         },
+         "Walls & Ceiling":{
+            "Ceiling is free of undulations":"",
+            "Walls are free of stains/undulations/cracks/dampness":""
+         }
+      }
+}

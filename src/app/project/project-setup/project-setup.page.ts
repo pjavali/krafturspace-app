@@ -15,9 +15,7 @@ interface StudentData {
   Name: string;
   Address: string;
   Type:any;
-  Assigned:string;
-   
-  
+  Assigned:string;  
   Foyer: string;
   CommonToilet: string;
   LivingRoom:string;
@@ -27,13 +25,9 @@ interface StudentData {
   MasterBedRoom:string;
   BedRoom1:string;
   BedRoom2:string;
+  BedRoom3:String;
+  BedRoom4:String
 }
-
-
-
-
-
- 
 
 @Component({
   selector: 'app-project-setup',
@@ -64,9 +58,7 @@ EServantsRoom:any;
 EMasterBedRoom:any;
 EBedRoom1:any;
 EBedRoom2:any;
-
-  sentData: any;
-
+sentData: any;
  selectedVal:Number=103;
  data2:any;
  data:any;
@@ -147,7 +139,10 @@ private alertCtrl: AlertController
          ServantsRoom: ['', [Validators.required]],
           MasterBedRoom: ['', [Validators.required]],
           BedRoom1: ['', [Validators.required]],
-          BedRoom2: ['', [Validators.required]]
+          BedRoom2: ['', [Validators.required]],
+           BedRoom3: ['', [Validators.required]],
+          BedRoom4: ['', [Validators.required]]
+
 
 
 
@@ -173,7 +168,9 @@ private alertCtrl: AlertController
          ServantsRoom:  e.payload.doc.data()['ServantsRoom'],
           MasterBedRoom: e.payload.doc.data()['MasterBedRoom'],
           BedRoom1: e.payload.doc.data()['BedRoom1'],
-          BedRoom2: e.payload.doc.data()['BedRoom2']
+          BedRoom2: e.payload.doc.data()['BedRoom2'],
+          BedRoom3: e.payload.doc.data()['BedRoom3'],
+          BedRoom4: e.payload.doc.data()['BedRoom4']
 
 
         };
@@ -212,6 +209,8 @@ this.record['Foyer'] = this.FAssetData.Foyer;
     this.record['MasterBedRoom'] = this.FAssetData.MasterBedRoom;
     this.record['BedRoom1'] = this.FAssetData.BedRoom1;
     this.record['BedRoom2'] = this.FAssetData.BedRoom2;
+    this.record['BedRoom3'] = this.FAssetData.BedRoom3;
+    this.record['BedRoom4'] = this.FAssetData.BedRoom4;
 
     //this.record=this.record.isEdit = false;
     
@@ -222,23 +221,11 @@ this.record['Foyer'] = this.FAssetData.Foyer;
 this.firebaseService.update_project( this.currentId, this.record);
 this.projectsetupForm.reset();
 
-
-
- 
-
-    
-    
-
-
-
-
-
-
     console.log("project asset -->",this.FAssetData.id);
 
     console.log ("form data ",this.projectsetupForm.value)
    console.log("jdasldjsl--",this.record)
-
+this.confirmalert();
 
 
 
@@ -287,8 +274,8 @@ this.projectsetupForm.reset();
 
  async confirmalert(){
    const alert = await this.alertCtrl.create({ 
-      header: 'ADD More Project Assets',
-      message: 'Do you want to ADD Project Assets?',
+      header: 'Project Assets',
+      message: 'Do you want to ADD anthere Project Asset?',
       buttons: [
         {
           text: 'NO',

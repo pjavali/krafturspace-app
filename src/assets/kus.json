@@ -4,8 +4,7 @@
       "Project Type":"",
       "Project Assigned ":"",
       "Project Address":"",
-      "Foyer":{
-         "isVisible":false,
+      "Foyer":{        
          "Electrical":{
             "Electrical wall points are covered ":"",
             "Electrical ceiling points are covered":"",
