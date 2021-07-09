@@ -398,6 +398,7 @@ Foyerclick(){
       };
       this.router.navigate(['foyer'],navigationExtras);
       
+      
 
 }
 CommonToiletclick(){

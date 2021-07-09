@@ -44,7 +44,7 @@
          }
       },
       "Common Toilet":{
-         "isVisible":false,
+        
          "Walls & ceiling":{
             "Area above false ceiling is painted  ":"",
             "Ceiling tiles are free of stains/undulations/cracks etc.,":"",
@@ -61,7 +61,7 @@
             "Tiles are laid to slope":"",
             "Slopes are adequate":"",
             "Tile drop between dry & wet areas ":"",
-            "Transition betweeen wooden flooring & toilet at entry":""
+            "Tile drop between dry & wet areas":""
          },
          "Doors & Windows":{
             "Door frame is consistent without dent/scratches/marks":"",
@@ -103,9 +103,9 @@
          }
       },
       "Living Room":{
-         "isVisible":false,
+         
          "Living Balcony ":{
-            "isVisible":false,
+            
             "Doors & windows":{
                "UPVC balcony doors are operable":"",
                "Aluminium channel below balcony door is cleaned ":"",
@@ -138,7 +138,7 @@
                "SS pipe railing height is consistent":"",
                "SS pipe railing end caps are fixed without gaps":"",
                "Glass in railing is free of scratches":"",
-               "Glass railing assembly is sturdy":""
+               "Glass in railing is free of scratches":""
             },
             "Shafts":{
                "Internal surfaces is cleaned & painted":"",
@@ -155,14 +155,14 @@
             }
          },
          "Living Room Marble floor":{
-            "isVisible":false,
+            
             "Doors & Windows":{
                "UPVC hardware is standard":"",
                "UPVC balcony glass is free of scratches":"",
                "UPVC balcony door bug screen mesh is operable":"",
                "Gasket/Sealants are intact":"",
                "UPVC balcony doors are without sharp edges":"",
-               "UPVC balcony doors are operable":"",
+               "UPVC balcony doors are without sharp edges":"",
                "UPVC balcony door bug screen mesh is taut":""
             },
             "Electrical":{
@@ -212,7 +212,7 @@
          }
       },
       "Kitchen":{
-         "isVisible":false,
+         
          "Kitchen Area":{
             "Core cut":{
                "Core cutting for kitchen hood towards exterior":"",
@@ -258,7 +258,7 @@
             }
          },
          "Store":{
-            "isVisible":false,
+            
             "Store Area":{
                "Doors & Windows":{
                   "Door stopper is functional":"",
@@ -291,7 +291,7 @@
             }
          },
          "Utility":{
-            "isVisible":false,
+           
             "Doors & Windows":{
                "UPVC exterior windows are free of sharp edges":"",
                "UPVC utility doors are free of sharp edges":"",
@@ -364,7 +364,7 @@
             }
          },
          "Servant's Toilet ":{
-            "isVisible":false,
+           
             "Doors & Windows":{
                "UPVC ventilators are operable":"",
                "Door frame & shutter gaps are consistent":"",
@@ -457,7 +457,7 @@
             }
          },
          "Dress":{
-            "isVisible":false,
+            
             "Doors & Windows":{
                "Gaskets/Sealants are intact":"",
                "UPVC balcony doors are without sharp edges":"",
@@ -564,7 +564,7 @@
             }
          },
          "Balcony":{
-            "isVisible":false,
+           
             "Walls & ceiling":{
                "Walls are free of cracks/ stains etc.,":"",
                "Ceilings are free of stains/undulations/cracks etc.,":"",

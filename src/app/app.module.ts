@@ -45,8 +45,9 @@ import { WebView} from '@ionic-native/ionic-webview/ngx'
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },      
     AngularFireAuthGuard,
-    NativeStorage,
+    NativeStorage,   
     Camera,WebView
+    
    
   ],
   bootstrap: [AppComponent]

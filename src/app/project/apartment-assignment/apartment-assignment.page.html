@@ -31,9 +31,7 @@
                <ion-select-option value="4BHK">4BHK</ion-select-option>
                 <ion-select-option value="3BHK Servant's Room">3BHK Servant's Room</ion-select-option>
                 <ion-select-option value="4BHK+Servant's Room">4BHK Servant's Room</ion-select-option>
-       </ion-select>
- 
-     
+       </ion-select>     
     </ion-item>
     <ion-item>
       <ion-label position="floating"> Project Assigned :</ion-label>
@@ -62,6 +60,7 @@
         </ion-item>
       <ion-item>
         <ion-label>Project Type :</ion-label>
+
         <ion-card-label>{{item.Type}} </ion-card-label>
       </ion-item>
         <ion-item>
@@ -119,8 +118,16 @@
           <ion-input type="text" [(ngModel)]="item.EditAddress"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label><strong>Project Type</strong></ion-label>
-          <ion-input type="text" [(ngModel)]="item.EditType"></ion-input>
+          <ion-label><strong>Project Type</strong></ion-label> 
+          <ion-select [(ngModel)]="item.EditType" (ionChange)="ontypeChange()">
+              <ion-select-option value="2BHK">2BHK</ion-select-option>
+              <ion-select-option value="2.5BHK">2.5BHK</ion-select-option>
+              <ion-select-option value="3BHK">3BHK</ion-select-option>
+               <ion-select-option value="4BHK">4BHK</ion-select-option>
+                <ion-select-option value="3BHK Servant's Room">3BHK Servant's Room</ion-select-option>
+                <ion-select-option value="4BHK+Servant's Room">4BHK Servant's Room</ion-select-option>
+       </ion-select>     
+        
         </ion-item>
          <ion-item>
           <ion-label><strong>Project Assigned</strong></ion-label>
