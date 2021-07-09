@@ -177,7 +177,7 @@ cameradisplay24:boolean;
 cameradisplay25:boolean;
 cameradisplay26:boolean;
 cameradisplay27:boolean;
-
+cameradisplay28:boolean;
 isSubmitted = false;
 ionicForm: FormGroup;
 
@@ -353,6 +353,7 @@ this.cameradisplay24=false;
 this.cameradisplay25=false;
 this.cameradisplay26=false;
 this.cameradisplay27=false;
+this.cameradisplay28=false;
    console.log("1st--->",this.isToggled)
 
     this.inspectionData = {} as StudentData;
