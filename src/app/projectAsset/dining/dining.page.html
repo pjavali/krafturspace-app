@@ -8,7 +8,7 @@
 </ion-toolbar>
 
 <ion-content>
- <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+ <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" >
  <ion-card >
 
 <ion-item >
@@ -412,7 +412,7 @@
 <!--section-->
     <ion-item *ngIf="isToggled3">
       <ion-label position="floating">Walls around door free of stains/cracks/dampness </ion-label>      
-       <ion-select formControlName= "Walls_around_door_free_of_stains_or_cracks_or_dampness" (ionChange)=" Walls_around_door_free_of_stains_or_cracks_or_dampness()">
+       <ion-select formControlName= "Walls_around_door_free_of_stains_or_cracks_or_dampness" (ionChange)="Walls_around_door_free_of_stains_or_cracks_or_dampness()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -477,12 +477,16 @@
     
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="primary" expand="block">Submit</ion-button>
+        <ion-button type="submit" [disabled]="ionicForm.invalid" color="primary" expand="block" >Submit</ion-button>
       </ion-col>
     </ion-row>
   </form>
 
-
+<ion-item *ngIf="issubmit" >
+      <ion-button (click)="sendmail()" expand="block" color="primary"  shape="round">
+            Send Email
+      </ion-button>
+</ion-item>
 
 
 

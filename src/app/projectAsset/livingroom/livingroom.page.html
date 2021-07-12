@@ -610,13 +610,18 @@
 </ion-card>
 
     
-    <ion-row>
+     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="primary" expand="block">Submit</ion-button>
+        <ion-button type="submit" [disabled]="ionicForm.invalid" color="primary" expand="block" >Submit</ion-button>
       </ion-col>
     </ion-row>
   </form>
 
+<ion-item *ngIf="issubmit" >
+      <ion-button (click)="sendmail()" expand="block" color="primary"  shape="round">
+            Send Email
+      </ion-button>
+</ion-item>
 
 
 

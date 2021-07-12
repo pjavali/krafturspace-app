@@ -15,7 +15,8 @@ interface StudentData {
   Name: string;
   Address: string;
   Type:any;
-  Assigned:string;  
+  Assigned:string;
+  Flat_Number:string;  
   Foyer: string;
   CommonToilet: string;
   LivingRoom:string;
@@ -130,7 +131,7 @@ private alertCtrl: AlertController
       Address: ['ITPL Main Rd, next to Hotel Zuri, Maruthi Nagar, KIADB Export Promotion Industrial Area, Whitefield, Bengaluru, 560066', [Validators.required]],
       Type: ['', [Validators.required]],
       Assigned: ['', [Validators.required]],
-       
+       Flat_Number: ['', [Validators.required]],
        Foyer: ['', [Validators.required]],
        CommonToilet: ['', [Validators.required]],
       LivingRoom: ['', [Validators.required]],
@@ -160,6 +161,7 @@ private alertCtrl: AlertController
           Address: e.payload.doc.data()['Address'],
           Type: e.payload.doc.data()['Type'], 
           Assigned: e.payload.doc.data()['Assigned'], 
+          Flat_Number:  e.payload.doc.data()['Flat_Number'],
           Foyer:  e.payload.doc.data()['Foyer'],
        CommonToilet:  e.payload.doc.data()['CommonToilet'],
       LivingRoom:  e.payload.doc.data()['LivingRoom'],
@@ -214,7 +216,7 @@ this.record['Foyer'] = this.FAssetData.Foyer;
 
     //this.record=this.record.isEdit = false;
     
-    console.log("p---->",this.FAssetData.Dining);
+    console.log("p---->",this.FAssetData.LivingRoom);
 
     //this.firebaseService.update_project();
    
@@ -275,7 +277,7 @@ this.confirmalert();
  async confirmalert(){
    const alert = await this.alertCtrl.create({ 
       header: 'Project Assets',
-      message: 'Do you want to ADD anthere Project Asset?',
+      message: 'Do you want to ADD another Project Asset?',
       buttons: [
         {
           text: 'NO',

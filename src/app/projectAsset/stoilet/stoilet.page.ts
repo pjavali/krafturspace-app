@@ -17,6 +17,16 @@ import 'firebase/auth';
 import 'firebase/firestore';
 import { Camera,CameraOptions} from '@ionic-native/camera/ngx';
 
+import { Papa } from 'ngx-papaparse';
+
+import { File } from '@ionic-native/file/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { Storage } from '@ionic/storage-angular';
+
+import { StorageService } from 'src/app/services/storage.service';
+
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
+
 
 
 interface StudentData {
@@ -201,6 +211,19 @@ interface StudentData {
   styleUrls: ['./stoilet.page.scss'],
 })
 export class SToiletPage implements OnInit {
+ //new
+completiontime:any
+flist:any;
+flatnumber:any;
+  au:any;
+dateTime:any;
+stdata:any;
+arr:any[];
+csvData:any;
+issubmit:boolean;
+idata:any;
+AssetData:any;
+DiningData:any;
 
   
 isection:string;
@@ -334,10 +357,19 @@ constructor(
  public fb: FormBuilder,
  private camera: Camera,
  private alertCtrl: AlertController,
- public formBuilder: FormBuilder
+ public formBuilder: FormBuilder,
+
+ private emailComposer: EmailComposer,
+  public storageService: StorageService,
+ private papa: Papa,
+ private file: File,
+ private socialSharing: SocialSharing,
+private storage: Storage
 
 )
  {
+
+   this.issubmit=false;
      
    this.isToggled1 = false;
     this.isToggled2 = false; 
@@ -452,7 +484,8 @@ this.cameradisplay41=false;
       if (this.router.getCurrentNavigation().extras.state) {
         this.data = this.router.getCurrentNavigation().extras.state.user;        
         this.currentId=this.data.id;
-        console.log("recived data @foyer page",this.data)     
+        console.log("recived data @foyer page",this.data)
+            
 
         this.recivedData=this.data;   
 
@@ -466,7 +499,36 @@ this.cameradisplay41=false;
    
 
   ngOnInit() {
+     firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+     
+      firebase
+        .firestore()
+        .doc(`/userProfile/${user.uid}`)
+        .get()
+        .then(userProfileSnapshot => {
+         this.au= userProfileSnapshot.data()
+         console.log("current user",this.au.email)
+
+        });
+
+        const db =firebase.firestore();   
+
+   
+    }
+  });
+    this.storage.create();
     
+    
+     const db =firebase.firestore();   
+
+    db.collection("test1")
+      .doc(this.recivedData)
+      .get()
+      .then(doc => {
+    console.log("all",doc.data().Flat_Number) 
+    this.flatnumber=doc.data().Flat_Number
+      });
     
 
     this.ionicForm = this.formBuilder.group({
@@ -474,172 +536,172 @@ this.cameradisplay41=false;
       
 
 
-      Doors_and_Windows:['', [Validators.required]],
-               UPVC_ventilators_are_operable:['', [Validators.required]],
-                UPVC_ventilators_are_operable_Photo:[this.imgURL1, [Validators.required]],
-              UPVC_ventilators_are_operable_Description:['', [Validators.required]],
+      Doors_and_Windows:[''],
+               UPVC_ventilators_are_operable:['',[Validators.required]],
+                UPVC_ventilators_are_operable_Photo:[this.imgURL1],
+              UPVC_ventilators_are_operable_Description:[''],
 
-               Door_frame_and_shutter_gaps_are_consistent:['', [Validators.required]],
-                Door_frame_and_shutter_gaps_are_consistent_Photo:[this.imgURL2, [Validators.required]],
-              Door_frame_and_shutter_gaps_are_consistent_Description:['', [Validators.required]],
+               Door_frame_and_shutter_gaps_are_consistent:[''],
+                Door_frame_and_shutter_gaps_are_consistent_Photo:[this.imgURL2],
+              Door_frame_and_shutter_gaps_are_consistent_Description:[''],
 
-               Lock_can_be_operated_from_both_sides:['', [Validators.required]],
-                Lock_can_be_operated_from_both_sides_Photo:[this.imgURL3, [Validators.required]],
-              Lock_can_be_operated_from_both_sides_Description:['', [Validators.required]],
+               Lock_can_be_operated_from_both_sides:[''],
+                Lock_can_be_operated_from_both_sides_Photo:[this.imgURL3],
+              Lock_can_be_operated_from_both_sides_Description:[''],
 
-               Door_frame_is_consistent_without_dent_or_scratches_or_marks:['', [Validators.required]],
-                Door_frame_is_consistent_without_dent_or_scratches_or_marks_Photo:[this.imgURL4, [Validators.required]],
-              Door_frame_is_consistent_without_dent_or_scratches_or_marks_Description:['', [Validators.required]],
+               Door_frame_is_consistent_without_dent_or_scratches_or_marks:[''],
+                Door_frame_is_consistent_without_dent_or_scratches_or_marks_Photo:[this.imgURL4],
+              Door_frame_is_consistent_without_dent_or_scratches_or_marks_Description:[''],
 
-               Door_color_is_consistent:['', [Validators.required]],
-                Door_color_is_consistent_Photo:[this.imgURL5, [Validators.required]],
-              Door_color_is_consistent_Description:['', [Validators.required]],
+               Door_color_is_consistent:[''],
+                Door_color_is_consistent_Photo:[this.imgURL5],
+              Door_color_is_consistent_Description:[''],
 
-               Gaskets_or_sealents_are_intact:['', [Validators.required]],
-                Gaskets_or_sealents_are_intact_Photo:[this.imgURL6, [Validators.required]],
-              Gaskets_or_sealents_are_intact_Description:['', [Validators.required]],
+               Gaskets_or_sealents_are_intact:[''],
+                Gaskets_or_sealents_are_intact_Photo:[this.imgURL6],
+              Gaskets_or_sealents_are_intact_Description:[''],
 
-               Hardware_is_as_per_standard_offering:['', [Validators.required]],
-                Hardware_is_as_per_standard_offering_Photo:[this.imgURL7, [Validators.required]],
-              Hardware_is_as_per_standard_offering_Description:['', [Validators.required]],
+               Hardware_is_as_per_standard_offering:['',[Validators.required]],
+                Hardware_is_as_per_standard_offering_Photo:[this.imgURL7],
+              Hardware_is_as_per_standard_offering_Description:[''],
            
-            Electrical:['', [Validators.required]],
+            Electrical:[''],
 
 
-               Exhaust_fan_connection:['', [Validators.required]],
-                Exhaust_fan_connection_Photo:[this.imgURL8, [Validators.required]],
-              Exhaust_fan_connection_Description:['', [Validators.required]],
+               Exhaust_fan_connection:['',[Validators.required]],
+                Exhaust_fan_connection_Photo:[this.imgURL8],
+              Exhaust_fan_connection_Description:[''],
 
-              Electrical_points_are_as_per_standard_offering:['', [Validators.required]],
-              Electrical_points_are_as_per_standard_offering_Photo:[this.imgURL9, [Validators.required]],
-              Electrical_points_are_as_per_standard_offering_Description:['', [Validators.required]],
+              Electrical_points_are_as_per_standard_offering:[''],
+              Electrical_points_are_as_per_standard_offering_Photo:[this.imgURL9],
+              Electrical_points_are_as_per_standard_offering_Description:[''],
 
-               All_sockets_or_switches_above_false_ceiling_are_functional:['', [Validators.required]],
-                All_sockets_or_switches_above_false_ceiling_are_functional_Photo:[this.imgURL10, [Validators.required]],
-              All_sockets_or_switches_above_false_ceiling_are_functional_Description:['', [Validators.required]],
+               All_sockets_or_switches_above_false_ceiling_are_functional:[''],
+                All_sockets_or_switches_above_false_ceiling_are_functional_Photo:[this.imgURL10],
+              All_sockets_or_switches_above_false_ceiling_are_functional_Description:[''],
 
-               Ceiling_electrical_points_are_covered_or_capped_properly:['', [Validators.required]],
-                Ceiling_electrical_points_are_covered_or_capped_properly_Photo:[this.imgURL11, [Validators.required]],
-              Ceiling_electrical_points_are_covered_or_capped_properly_Description:['', [Validators.required]],
+               Ceiling_electrical_points_are_covered_or_capped_properly:[''],
+                Ceiling_electrical_points_are_covered_or_capped_properly_Photo:[this.imgURL11],
+              Ceiling_electrical_points_are_covered_or_capped_properly_Description:[''],
 
-               Switch_plates_are_aligned:['', [Validators.required]],
-                Switch_plates_are_aligned_Photo:[this.imgURL12, [Validators.required]],
-              Switch_plates_are_aligned_Description:['', [Validators.required]],
+               Switch_plates_are_aligned:[''],
+                Switch_plates_are_aligned_Photo:[this.imgURL12],
+              Switch_plates_are_aligned_Description:[''],
 
-               Wall_Light_points_are_covered__or_capped_properly:['', [Validators.required]],
-                Wall_Light_points_are_covered__or_capped_properly_Photo:[this.imgURL13, [Validators.required]],
-              Wall_Light_points_are_covered__or_capped_properly_Description:['', [Validators.required]],
+               Wall_Light_points_are_covered__or_capped_properly:[''],
+                Wall_Light_points_are_covered__or_capped_properly_Photo:[this.imgURL13],
+              Wall_Light_points_are_covered__or_capped_properly_Description:[''],
 
-               Switches_are_operable:['', [Validators.required]],
-                Switches_are_operable_Photo:[this.imgURL14, [Validators.required]],
-              Switches_are_operable_Description:['', [Validators.required]],
+               Switches_are_operable:['',[Validators.required]],
+                Switches_are_operable_Photo:[this.imgURL14],
+              Switches_are_operable_Description:[''],
            
-            Fixtures_and_Fittings:['', [Validators.required]],
-               EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional:['', [Validators.required]],
-                EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional_Photo:[this.imgURL15, [Validators.required]],
-              EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional_Description:['', [Validators.required]],
+            Fixtures_and_Fittings:[''],
+               EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional:['',[Validators.required]],
+                EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional_Photo:[this.imgURL15],
+              EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional_Description:[''],
 
-               Brackets_supporting_counter_is_painted_and_free_of_rust:['', [Validators.required]],
-                Brackets_supporting_counter_is_painted_and_free_of_rust_Photo:[this.imgURL16, [Validators.required]],
-              Brackets_supporting_counter_is_painted_and_free_of_rust_Description:['', [Validators.required]],
-               Shower_head_is_functional:['', [Validators.required]],
-                Shower_head_is_functional_Photo:[this.imgURL17, [Validators.required]],
-              Shower_head_is_functional_Description:['', [Validators.required]],
+               Brackets_supporting_counter_is_painted_and_free_of_rust:[''],
+                Brackets_supporting_counter_is_painted_and_free_of_rust_Photo:[this.imgURL16],
+              Brackets_supporting_counter_is_painted_and_free_of_rust_Description:[''],
+               Shower_head_is_functional:[''],
+                Shower_head_is_functional_Photo:[this.imgURL17],
+              Shower_head_is_functional_Description:[''],
 
-              Floor_trap_cover_is_provided:['', [Validators.required]],
-              Floor_trap_cover_is_provided_Photo:[this.imgURL19, [Validators.required]],
-               Floor_trap_cover_is_provided_Description:['', [Validators.required]],
+              Floor_trap_cover_is_provided:[''],
+              Floor_trap_cover_is_provided_Photo:[this.imgURL19],
+               Floor_trap_cover_is_provided_Description:[''],
                
-               Floor_trap_below_cover_is_clean:['', [Validators.required]],
-                Floor_trap_below_cover_is_clean_Photo:[this.imgURL20, [Validators.required]],
-              Floor_trap_below_cover_is_clean_Description:['', [Validators.required]],
+               Floor_trap_below_cover_is_clean:[''],
+                Floor_trap_below_cover_is_clean_Photo:[this.imgURL20],
+              Floor_trap_below_cover_is_clean_Description:[''],
 
-               Toilet_Paper_Holder:['', [Validators.required]],
-                Toilet_Paper_Holder_Photo:[this.imgURL21, [Validators.required]],
-              Toilet_Paper_Holder_Description:['', [Validators.required]],
-              Wash_basin_faucet_is_operable:['', [Validators.required]],
-              Wash_basin_faucet_is_operable_Photo:[this.imgURL22, [Validators.required]],
-              Wash_basin_faucet_is_operable_Description:['', [Validators.required]],
+               Toilet_Paper_Holder:[''],
+                Toilet_Paper_Holder_Photo:[this.imgURL21],
+              Toilet_Paper_Holder_Description:[''],
+              Wash_basin_faucet_is_operable:[''],
+              Wash_basin_faucet_is_operable_Photo:[this.imgURL22],
+              Wash_basin_faucet_is_operable_Description:[''],
 
-               Health_Faucet_is_functional:['', [Validators.required]],
-                Health_Faucet_is_functional_Photo:[this.imgURL23, [Validators.required]],
-              Health_Faucet_is_functional_Description:['', [Validators.required]],
+               Health_Faucet_is_functional:[''],
+                Health_Faucet_is_functional_Photo:[this.imgURL23],
+              Health_Faucet_is_functional_Description:[''],
 
-               Washbasin_and_counter_edges_are_sealed:['', [Validators.required]],
-                Washbasin_and_counter_edges_are_sealed_Photo:[this.imgURL24, [Validators.required]],
-              Washbasin_and_counter_edges_are_sealed_Description:['', [Validators.required]],
+               Washbasin_and_counter_edges_are_sealed:['',[Validators.required]],
+                Washbasin_and_counter_edges_are_sealed_Photo:[this.imgURL24],
+              Washbasin_and_counter_edges_are_sealed_Description:[''],
            
-            Flooring:['', [Validators.required]],
-               Transition_betweeen_wooden_flooring_and_toilet_at_entry:['', [Validators.required]],
-                Transition_betweeen_wooden_flooring_and_toilet_at_entry_Photo:[this.imgURL25, [Validators.required]],
-              Transition_betweeen_wooden_flooring_and_toilet_at_entry_Description:['', [Validators.required]],
+            Flooring:[''],
+               Transition_betweeen_wooden_flooring_and_toilet_at_entry:['',[Validators.required]],
+                Transition_betweeen_wooden_flooring_and_toilet_at_entry_Photo:[this.imgURL25],
+              Transition_betweeen_wooden_flooring_and_toilet_at_entry_Description:[''],
 
-               Tile_drop_between_dry_and_wet_areas:['', [Validators.required]],
-                Tile_drop_between_dry_and_wet_areas_Photo:[this.imgURL28, [Validators.required]],
-              Tile_drop_between_dry_and_wet_areas_Description:['', [Validators.required]],
+               Tile_drop_between_dry_and_wet_areas:[''],
+                Tile_drop_between_dry_and_wet_areas_Photo:[this.imgURL28],
+              Tile_drop_between_dry_and_wet_areas_Description:[''],
 
-               Slopes_are_adequate:['', [Validators.required]],
-                Slopes_are_adequate_Photo:[this.imgURL29, [Validators.required]],
-              Slopes_are_adequate_Description:['', [Validators.required]],
+               Slopes_are_adequate:[''],
+                Slopes_are_adequate_Photo:[this.imgURL29],
+              Slopes_are_adequate_Description:[''],
 
-           Tiles_are_laid_to_slope:['', [Validators.required]],
-             Tiles_are_laid_to_slope_Photo:[this.imgURL30, [Validators.required]],
-              Tiles_are_laid_to_slope_Description:['', [Validators.required]],
+           Tiles_are_laid_to_slope:['',[Validators.required]],
+             Tiles_are_laid_to_slope_Photo:[this.imgURL30],
+              Tiles_are_laid_to_slope_Description:[''],
            
-            Standard_heights_of_fixtures:['', [Validators.required]],
+            Standard_heights_of_fixtures:[''],
 
-               Shower_head:['', [Validators.required]],
-                Shower_head_Photo:[this.imgURL31, [Validators.required]],
-              Shower_head_Description:['', [Validators.required]],
+               Shower_head:['',[Validators.required]],
+                Shower_head_Photo:[this.imgURL31],
+              Shower_head_Description:[''],
 
-               EWC:['', [Validators.required]],
-                EWC_Photo:[this.imgURL32, [Validators.required]],
-              EWC_Description:['', [Validators.required]],
+               EWC:[''],
+                EWC_Photo:[this.imgURL32],
+              EWC_Description:[''],
 
-               Wash_Basin:['', [Validators.required]],
-                Wash_Basin_Photo:[this.imgURL33, [Validators.required]],
-              Wash_Basin_Description:['', [Validators.required]],
+               Wash_Basin:['',[Validators.required]],
+                Wash_Basin_Photo:[this.imgURL33],
+              Wash_Basin_Description:[''],
            
-            Walls_and_ceiling:['', [Validators.required]],
-               Consistency_of_corner_beading:['', [Validators.required]],
-                Consistency_of_corner_beading_Photo:[this.imgURL34, [Validators.required]],
-              Consistency_of_corner_beading_Description:['', [Validators.required]],
+            Walls_and_ceiling:[''],
+               Consistency_of_corner_beading:['',[Validators.required]],
+                Consistency_of_corner_beading_Photo:[this.imgURL34],
+              Consistency_of_corner_beading_Description:[''],
 
-               Check_for_uniform_line_and_level_of_the_dadoing_at_the_top:['', [Validators.required]],
-                Check_for_uniform_line_and_level_of_the_dadoing_at_the_top_Photo:[this.imgURL35, [Validators.required]],
-              Check_for_uniform_line_and_level_of_the_dadoing_at_the_top_Description:['', [Validators.required]],
+               Check_for_uniform_line_and_level_of_the_dadoing_at_the_top:[''],
+                Check_for_uniform_line_and_level_of_the_dadoing_at_the_top_Photo:[this.imgURL35],
+              Check_for_uniform_line_and_level_of_the_dadoing_at_the_top_Description:[''],
 
-               False_ceiling_channels_are_consistent:['', [Validators.required]],
-                False_ceiling_channels_are_consistent_Photo:[this.imgURL36, [Validators.required]],
-              False_ceiling_channels_are_consistent_Description:['', [Validators.required]],
+               False_ceiling_channels_are_consistent:[''],
+                False_ceiling_channels_are_consistent_Photo:[this.imgURL36],
+              False_ceiling_channels_are_consistent_Description:[''],
 
-               Vertical_Tiles_joints_and_ceiling_support_members_are_aligned:['', [Validators.required]],
-                Vertical_Tiles_joints_and_ceiling_support_members_are_aligned_Photo:[this.imgURL37, [Validators.required]],
-              Vertical_Tiles_joints_and_ceiling_support_members_are_aligned_Description:['', [Validators.required]],
+               Vertical_Tiles_joints_and_ceiling_support_members_are_aligned:[''],
+                Vertical_Tiles_joints_and_ceiling_support_members_are_aligned_Photo:[this.imgURL37],
+              Vertical_Tiles_joints_and_ceiling_support_members_are_aligned_Description:[''],
 
-               Service_ledge_is_painted_and_clean:['', [Validators.required]],
-                Service_ledge_is_painted_and_clean_Photo:[this.imgURL38, [Validators.required]],
-              Service_ledge_is_painted_and_clean_Description:['', [Validators.required]],
+               Service_ledge_is_painted_and_clean:[''],
+                Service_ledge_is_painted_and_clean_Photo:[this.imgURL38],
+              Service_ledge_is_painted_and_clean_Description:[''],
 
-              Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc:['', [Validators.required]],
-              Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Photo:[this.imgURL39, [Validators.required]],
-              Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Description:['', [Validators.required]],
+              Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc:[''],
+              Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Photo:[this.imgURL39],
+              Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Description:[''],
 
-               Tile_surface_is_consistent:['', [Validators.required]],
-                Tile_surface_is_consistent_Photo:[this.imgURL40, [Validators.required]],
-              Tile_surface_is_consistent_Description:['', [Validators.required]],
+               Tile_surface_is_consistent:[''],
+                Tile_surface_is_consistent_Photo:[this.imgURL40],
+              Tile_surface_is_consistent_Description:[''],
 
-               EWC_Ledge_wall_granite_coping:['', [Validators.required]],
-                EWC_Ledge_wall_granite_coping_Photo:[this.imgURL41, [Validators.required]],
-              EWC_Ledge_wall_granite_coping_Description:['', [Validators.required]],
+               EWC_Ledge_wall_granite_coping:[''],
+                EWC_Ledge_wall_granite_coping_Photo:[this.imgURL41],
+              EWC_Ledge_wall_granite_coping_Description:[''],
 
-               Area_above_false_ceiling_is_painted  :['', [Validators.required]],
-                Area_above_false_ceiling_is_painted_Photo:[this.imgURL42, [Validators.required]],
-              Area_above_false_ceiling_is_painted_Description:['', [Validators.required]],
+               Area_above_false_ceiling_is_painted  :[''],
+                Area_above_false_ceiling_is_painted_Photo:[this.imgURL42],
+              Area_above_false_ceiling_is_painted_Description:[''],
 
-               Hollowness_in_wall_dado:['', [Validators.required]],
-                Hollowness_in_wall_dado_Photo:[this.imgURL43, [Validators.required]],
-              Hollowness_in_wall_dado_Description:['', [Validators.required]]
+               Hollowness_in_wall_dado:['',[Validators.required]],
+                Hollowness_in_wall_dado_Photo:[this.imgURL43],
+              Hollowness_in_wall_dado_Description:['']
 
 
       
@@ -1312,28 +1374,147 @@ this.cameradisplay41=false;
 
 
     //end camer
-  getDate(e) {
-    let date = new Date(e.target.value).toISOString().substring(0, 10);
-    this.ionicForm.get('dob').setValue(date, {
-      onlyself: true
-    })
+  arrayToCSV(objArray) {
+     const array = typeof objArray !== 'object' ? JSON.parse(objArray) : objArray;
+     let str = `${Object.keys(array[0]).map(value => `"${value}"`).join(",")}` + '\r\n';
+
+     return array.reduce((str, next) => {
+         str += `${Object.values(next).map(value => `"${value}"`).join(",")}` + '\r\n';
+         return str;
+        }, str);
+ }
+
+  
+      
+      
+     starttime() {
+        this.dateTime = new Date().toLocaleString(undefined, {timeZone: 'Asia/Kolkata'});
+         const db =firebase.firestore();
+         const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
+     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
+          var starttimeref = db.collection("test1").doc(this.recivedData); 
+
+        
+ starttimeref.update({
+
+  Dining:arrayUnion({
+      "start time": this.dateTime,
+      "user":  this.au.email
+      
+       
+     })
+}).then(function() {
+  console.log("starttime time is updated");
+});
+
+
+        console.log("enter time",this.dateTime)
+        //return this.dateTime
+    
+    
+     }
+
+    
+ 
+      
+  
+  sendmail(){ 
+   
+
+
+    this.storageService.getObject('Servants Toilet form csv').then(result => {
+    if (result != null) {
+    //console.log('Dining form csv: '+ result);
+    this.idata= result;
+    }
+    }).catch(e => {
+    console.log('error: ', e);
+    });
+    let email = {
+     to: 'krafturspace@gmail.com',
+      cc: 'sumathi@kraft-urspace.com',
+      
+  
+  attachments: [
+    this.idata
+
+  ],
+  subject: 'Report  ',
+  body: 'report from krafturspace app sent by'+ this.au +'for Flat number'+this.flatnumber + 'time of completion'+this.completiontime,
+  isHtml: true
+};
+
+this.emailComposer.open(email);
+
   }
 
-  get errorControl() {
-    return this.ionicForm.controls;
-  }
+   
+  
 
   submitForm() {
+    this.issubmit=true;
 
-    console.log(this.ionicForm.value)
-    /*this.isSubmitted = true;
-    if (!this.ionicForm.valid) {
-      console.log('Please provide all the required values!')
-      return false;
-    } else {
-      console.log(this.ionicForm.value)
-    }*/
+     const db =firebase.firestore();
+     const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
+     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
+      let date = new Date().toLocaleString(undefined, {timeZone: 'Asia/Kolkata'});
+      //new
+      this.completiontime=date;
+
+      
+      this.AssetData=JSON.stringify(this.ionicForm.value)   
+
+     this.DiningData= JSON.parse(this.AssetData);
+
+
+
+      this.arr=[this.DiningData]
+console.log("arr1",this.arr )
+
+this.stdata=this.arrayToCSV(this.arr) ;
+   this.storageService.setObject('Servants Toilet form csv', this.stdata);
+
+   
+
+
+    var addtimeref = db.collection("test1").doc(this.recivedData); 
+
+// Atomically add a new region to the "regions" array field.
+ addtimeref.update({
+  Dining:arrayUnion({
+      "end time": date
+      
+       
+     })
+}).then(function() {
+  console.log("end time is updated");
+});
+
+
+
+
+var washingtonRef = db.collection("test1").doc(this.recivedData); 
+
+// Atomically add a new region to the "regions" array field.
+washingtonRef.update({
+  Dining:arrayUnion({
+       "Servants Toilet": this.DiningData
+      
+       
+     })
+}).then(function() {
+  console.log("dining data is  updated");
+});
+
+
+
+
   }
+
+    
+
+
+   //new end
 
 
 

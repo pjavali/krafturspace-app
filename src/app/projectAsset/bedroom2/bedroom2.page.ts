@@ -16,6 +16,16 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import { Camera,CameraOptions} from '@ionic-native/camera/ngx';
+//new
+import { Papa } from 'ngx-papaparse';
+
+import { File } from '@ionic-native/file/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { Storage } from '@ionic/storage-angular';
+
+import { StorageService } from 'src/app/services/storage.service';
+
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
 
 
 
@@ -141,7 +151,19 @@ interface StudentData {
   styleUrls: ['./bedroom2.page.scss'],
 })
 export class Bedroom2Page implements OnInit {
-
+ //new
+ completiontime:any
+flist:any;
+flatnumber:any;
+  au:any;
+dateTime:any;
+stdata:any;
+arr:any[];
+csvData:any;
+issubmit:boolean;
+idata:any;
+AssetData:any;
+DiningData:any;
 
 isection:string;
 recivedData:any;
@@ -258,12 +280,18 @@ constructor(
  public fb: FormBuilder,
  private camera: Camera,
  private alertCtrl: AlertController,
- public formBuilder: FormBuilder
+ public formBuilder: FormBuilder,
+ private emailComposer: EmailComposer,
+  public storageService: StorageService,
+ private papa: Papa,
+ private file: File,
+ private socialSharing: SocialSharing,
+private storage: Storage
 
 )
  {
 
-    
+    this.issubmit=false;
    this.isToggled1 = false;
     this.isToggled2 = false; 
     this.isToggled3 = false;
@@ -373,117 +401,144 @@ this.cameradisplay25=false;
    
 
   ngOnInit() {
-    
+     //new
+     firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+     
+      firebase
+        .firestore()
+        .doc(`/userProfile/${user.uid}`)
+        .get()
+        .then(userProfileSnapshot => {
+         this.au= userProfileSnapshot.data()
+         console.log("current user",this.au.email)
+
+        });
+    }
+  });
+    this.storage.create();
+    const db =firebase.firestore();   
+
+    db.collection("test1")
+      .doc(this.recivedData)
+      .get()
+      .then(doc => {
+    console.log("all",doc.data().Flat_Number) 
+    this.flatnumber=doc.data().Flat_Number
+      });
+
+   //new
+
     
 
     this.ionicForm = this.formBuilder.group({
 
       
-                Doors_and_Windows:['', [Validators.required]],
-               UPVC_window_bug_screen_mesh_is_operable:['', [Validators.required]],
-                UPVC_window_bug_screen_mesh_is_operable_Photo: [this.imgURL1, [Validators.required]],
-              UPVC_window_bug_screen_mesh_is_operable_Description:['', [Validators.required]],
+                Doors_and_Windows:[''],
+               UPVC_window_bug_screen_mesh_is_operable:['',[Validators.required]],
+                UPVC_window_bug_screen_mesh_is_operable_Photo: [this.imgURL1],
+              UPVC_window_bug_screen_mesh_is_operable_Description:[''],
 
-               Door_color_is_consistent:['', [Validators.required]],
-                Door_color_is_consistent_Photo: [this.imgURL2, [Validators.required]],
-              Door_color_is_consistent_Description:['', [Validators.required]],
+               Door_color_is_consistent:[''],
+                Door_color_is_consistent_Photo: [this.imgURL2],
+              Door_color_is_consistent_Description:[''],
 
-              Gaskets_or_sealents_are_intact:['', [Validators.required]],
-              Gaskets_or_sealents_are_intact_Photo: [this.imgURL3, [Validators.required]],
-              Gaskets_or_sealents_are_ntact_Description:['', [Validators.required]],
+              Gaskets_or_sealents_are_intact:[''],
+              Gaskets_or_sealents_are_intact_Photo: [this.imgURL3],
+              Gaskets_or_sealents_are_ntact_Description:[''],
 
-               UPVC_window_screen_mesh_is_taut:['', [Validators.required]],
-                UPVC_window_screen_mesh_is_taut_Photo: [this.imgURL4, [Validators.required]],
-              UPVC_window_screen_mesh_is_taut_Description:['', [Validators.required]],
+               UPVC_window_screen_mesh_is_taut:[''],
+                UPVC_window_screen_mesh_is_taut_Photo: [this.imgURL4],
+              UPVC_window_screen_mesh_is_taut_Description:[''],
 
-               UPVC_hardware_is_standard:['', [Validators.required]],
-                UPVC_hardware_is_standard_Photo: [this.imgURL5, [Validators.required]],
-              UPVC_hardware_is_standard_Description:['', [Validators.required]],
+               UPVC_hardware_is_standard:[''],
+                UPVC_hardware_is_standard_Photo: [this.imgURL5],
+              UPVC_hardware_is_standard_Description:[''],
 
-               UPVC_window_glass_is_free_of_scratches:['', [Validators.required]],
-                UPVC_window_glass_is_free_of_scratches_Photo: [this.imgURL6, [Validators.required]],
-              UPVC_window_glass_is_free_of_scratches_Description:['', [Validators.required]],
+               UPVC_window_glass_is_free_of_scratches:[''],
+                UPVC_window_glass_is_free_of_scratches_Photo: [this.imgURL6],
+              UPVC_window_glass_is_free_of_scratches_Description:[''],
 
-               UPVC_windows_are_operable:['', [Validators.required]],
-                UPVC_windows_are_operable_Photo: [this.imgURL7, [Validators.required]],
-              UPVC_windows_are_operable_Description:['', [Validators.required]],
+               UPVC_windows_are_operable:[''],
+                UPVC_windows_are_operable_Photo: [this.imgURL7],
+              UPVC_windows_are_operable_Description:[''],
 
-               Door_stopper_doesnt_damage_wooden_flooring:['', [Validators.required]],               
-                Door_stopper_doesnt_damage_wooden_flooring_Photo: [this.imgURL8, [Validators.required]],
-              Door_stopper_doesnt_damage_wooden_flooring_Description:['', [Validators.required]],
+               Door_stopper_doesnt_damage_wooden_flooring:[''],               
+                Door_stopper_doesnt_damage_wooden_flooring_Photo: [this.imgURL8],
+              Door_stopper_doesnt_damage_wooden_flooring_Description:[''],
 
-               Door_frame_and_shutter_gaps_are_consistent:['', [Validators.required]],
-                Door_frame_and_shutter_gaps_are_consistent_Photo: [this.imgURL9, [Validators.required]],
-              Door_frame_and_shutter_gaps_are_consistent_Description:['', [Validators.required]],
+               Door_frame_and_shutter_gaps_are_consistent:[''],
+                Door_frame_and_shutter_gaps_are_consistent_Photo: [this.imgURL9],
+              Door_frame_and_shutter_gaps_are_consistent_Description:[''],
 
-               Hardware_is_as_per_standard_offering:['', [Validators.required]],
-                Hardware_is_as_per_standard_offering_Photo: [this.imgURL10, [Validators.required]],
-              Hardware_is_as_per_standard_offering_Description:['', [Validators.required]],
+               Hardware_is_as_per_standard_offering:[''],
+                Hardware_is_as_per_standard_offering_Photo: [this.imgURL10],
+              Hardware_is_as_per_standard_offering_Description:[''],
 
-               Door_frame_is_consistent_without_dent_or_scratches_or_marks:['', [Validators.required]],
-                Door_frame_is_consistent_without_dent_or_scratches_or_marks_Photo: [this.imgURL11, [Validators.required]],
-              Door_frame_is_consistent_without_dent_or_scratches_or_marks_Description:['', [Validators.required]],
+               Door_frame_is_consistent_without_dent_or_scratches_or_marks:['',[Validators.required]],
+                Door_frame_is_consistent_without_dent_or_scratches_or_marks_Photo: [this.imgURL11],
+              Door_frame_is_consistent_without_dent_or_scratches_or_marks_Description:[''],
           
-            Electrical:['', [Validators.required]],
-               Switches_are_operable:['', [Validators.required]],
-                Switches_are_operable_Photo: [this.imgURL12, [Validators.required]],
-              Switches_are_operable_Description:['', [Validators.required]],
+            Electrical:[''],
+               Switches_are_operable:['',[Validators.required]],
+                Switches_are_operable_Photo: [this.imgURL12],
+              Switches_are_operable_Description:[''],
 
-             Electrical_points_are_as_per_standard_offering:['', [Validators.required]],
-            Electrical_points_are_as_per_standard_offering_Photo: [this.imgURL13, [Validators.required]],
-              Electrical_points_are_as_per_standard_offering_Description:['', [Validators.required]],
+             Electrical_points_are_as_per_standard_offering:[''],
+            Electrical_points_are_as_per_standard_offering_Photo: [this.imgURL13],
+              Electrical_points_are_as_per_standard_offering_Description:[''],
 
-               Switch_plates_are_aligned:['', [Validators.required]],
-                Switch_plates_are_aligned_Photo: [this.imgURL14, [Validators.required]],
-              Switch_plates_are_aligned_Description:['', [Validators.required]],
+               Switch_plates_are_aligned:[''],
+                Switch_plates_are_aligned_Photo: [this.imgURL14],
+              Switch_plates_are_aligned_Description:[''],
 
-              AC_Core_cut_pipe_is_finished_flush_with_plaster:['', [Validators.required]],
-              AC_Core_cut_pipe_is_finished_flush_with_plaster_Photo: [this.imgURL15, [Validators.required]],
-              AC_Core_cut_pipe_is_finished_flush_with_plaster_Description:['', [Validators.required]],
+              AC_Core_cut_pipe_is_finished_flush_with_plaster:[''],
+              AC_Core_cut_pipe_is_finished_flush_with_plaster_Photo: [this.imgURL15],
+              AC_Core_cut_pipe_is_finished_flush_with_plaster_Description:[''],
 
-               AC_Core_cut_pipe_is_cleaned :['', [Validators.required]],
-                AC_Core_cut_pipe_is_cleaned_Photo: [this.imgURL16, [Validators.required]],
-              AC_Core_cut_pipe_is_cleaned_Description:['', [Validators.required]],
+               AC_Core_cut_pipe_is_cleaned :[''],
+                AC_Core_cut_pipe_is_cleaned_Photo: [this.imgURL16],
+              AC_Core_cut_pipe_is_cleaned_Description:[''],
 
-               Ceiling_electrical_points_are_covered_or_capped_properly:['', [Validators.required]],
-                Ceiling_electrical_points_are_covered_or_capped_properly_Photo: [this.imgURL17, [Validators.required]],
-              Ceiling_electrical_points_are_covered_or_capped_properly_Description:['', [Validators.required]],
+               Ceiling_electrical_points_are_covered_or_capped_properly:[''],
+                Ceiling_electrical_points_are_covered_or_capped_properly_Photo: [this.imgURL17],
+              Ceiling_electrical_points_are_covered_or_capped_properly_Description:[''],
 
-               Wall_Light_points_are_covered__or_capped_properly:['', [Validators.required]],
-                Wall_Light_points_are_covered__or_capped_properly_Photo: [this.imgURL18, [Validators.required]],
-              Wall_Light_points_are_covered__or_capped_properly_Description:['', [Validators.required]],
+               Wall_Light_points_are_covered__or_capped_properly:['',[Validators.required]],
+                Wall_Light_points_are_covered__or_capped_properly_Photo: [this.imgURL18],
+              Wall_Light_points_are_covered__or_capped_properly_Description:[''],
             
-            Flooring:['', [Validators.required]],
+            Flooring:[''],
 
-               Wooden_flooring_is_fixed_and_consistent:['', [Validators.required]],
-                Wooden_flooring_is_fixed_and_consistent_Photo: [this.imgURL19, [Validators.required]],
-              Wooden_flooring_is_fixed_and_consistent_Description:['', [Validators.required]],
+               Wooden_flooring_is_fixed_and_consistent:['',[Validators.required]],
+                Wooden_flooring_is_fixed_and_consistent_Photo: [this.imgURL19],
+              Wooden_flooring_is_fixed_and_consistent_Description:[''],
 
-              Skirting_finish_and_alignment:['', [Validators.required]],
-              Skirting_finish_and_alignment_Photo: [this.imgURL20, [Validators.required]],
-              Skirting_finish_and_alignment_Description:['', [Validators.required]],
+              Skirting_finish_and_alignment:[''],
+              Skirting_finish_and_alignment_Photo: [this.imgURL20],
+              Skirting_finish_and_alignment_Description:[''],
 
-              Transition_betweeen_wooden_flooring_and_toilet:['', [Validators.required]],
-              Transition_betweeen_wooden_flooring_and_toilet_Photo: [this.imgURL21, [Validators.required]], 
-              Transition_betweeen_wooden_flooring_and_toilet_Description:['', [Validators.required]],
+              Transition_betweeen_wooden_flooring_and_toilet:[''],
+              Transition_betweeen_wooden_flooring_and_toilet_Photo: [this.imgURL21], 
+              Transition_betweeen_wooden_flooring_and_toilet_Description:[''],
 
-               Transition_betweeen_Corridor_marble_and_wooden_flooring:['', [Validators.required]],
-                Transition_betweeen_Corridor_marble_and_wooden_flooring_Photo: [this.imgURL22, [Validators.required]],
-              Transition_betweeen_Corridor_marble_and_wooden_flooring_Description:['', [Validators.required]],
+               Transition_betweeen_Corridor_marble_and_wooden_flooring:['',[Validators.required]],
+                Transition_betweeen_Corridor_marble_and_wooden_flooring_Photo: [this.imgURL22],
+              Transition_betweeen_Corridor_marble_and_wooden_flooring_Description:[''],
             
-            Walls_and_ceiling:['', [Validators.required]],
+            Walls_and_ceiling:[''],
 
-               Cornices_provided_are_aligned:['', [Validators.required]],
-                Cornices_provided_are_aligned_Photo: [this.imgURL23, [Validators.required]],
-              Cornices_provided_are_aligned_Description:['', [Validators.required]],
+               Cornices_provided_are_aligned:['',[Validators.required]],
+                Cornices_provided_are_aligned_Photo: [this.imgURL23],
+              Cornices_provided_are_aligned_Description:[''],
 
-               Ceilings_are_free_of_stainss_or_undulations_or_stains_etc:['', [Validators.required]],
-                Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Photo: [this.imgURL24, [Validators.required]],
-                Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description:['', [Validators.required]],
+               Ceilings_are_free_of_stainss_or_undulations_or_stains_etc:[''],
+                Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Photo: [this.imgURL24],
+                Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description:[''],
 
-               Walls_are_free_of_cracks_or_stains_etc:['', [Validators.required]],
-                Walls_are_free_of_cracks_or_stains_etc_Photo: [this.imgURL25, [Validators.required]],
-              Walls_are_free_of_cracks_or_stains_etc_Description:['', [Validators.required]]
+               Walls_are_free_of_cracks_or_stains_etc:['',[Validators.required]],
+                Walls_are_free_of_cracks_or_stains_etc_Photo: [this.imgURL25],
+              Walls_are_free_of_cracks_or_stains_etc_Description:['']
       
 
 
@@ -1157,28 +1212,143 @@ this.cameradisplay25=false;
 
 
     //end camer
-  getDate(e) {
-    let date = new Date(e.target.value).toISOString().substring(0, 10);
-    this.ionicForm.get('dob').setValue(date, {
-      onlyself: true
-    })
+  arrayToCSV(objArray) {
+     const array = typeof objArray !== 'object' ? JSON.parse(objArray) : objArray;
+     let str = `${Object.keys(array[0]).map(value => `"${value}"`).join(",")}` + '\r\n';
+
+     return array.reduce((str, next) => {
+         str += `${Object.values(next).map(value => `"${value}"`).join(",")}` + '\r\n';
+         return str;
+        }, str);
+ }
+
+  
+      
+      
+     starttime() {
+        this.dateTime = new Date().toLocaleString(undefined, {timeZone: 'Asia/Kolkata'});
+         const db =firebase.firestore();
+         const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
+     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
+          var starttimeref = db.collection("test1").doc(this.recivedData); 
+
+        
+ starttimeref.update({
+
+  Dining:arrayUnion({
+      "start time": this.dateTime,
+      "user":  this.au.email
+      
+       
+     })
+}).then(function() {
+  console.log("starttime time is updated");
+});
+
+
+        console.log("enter time",this.dateTime)
+        //return this.dateTime
+    
+    
+     }
+
+         
+  
+  sendmail(){ 
+
+
+    this.storageService.getObject('bedroom2 form csv').then(result => {
+    if (result != null) {
+    console.log('bedroom2 form csv: '+ result);
+    this.idata= result;
+    }
+    }).catch(e => {
+    console.log('error: ', e);
+    });
+    let email = {
+     to: 'krafturspace@gmail.com',
+      cc: 'sumathi@kraft-urspace.com',
+     
+  
+  attachments: [
+    this.idata
+
+  ],
+  subject: 'Report',
+ body: 'report from krafturspace app sent by'+ this.au +'for Flat number'+this.flatnumber + 'time of completion'+this.completiontime,
+  isHtml: true
+};
+
+this.emailComposer.open(email);
+
   }
 
-  get errorControl() {
-    return this.ionicForm.controls;
-  }
+   
+  
 
   submitForm() {
+    this.issubmit=true;
 
-    console.log(this.ionicForm.value)
-    /*this.isSubmitted = true;
-    if (!this.ionicForm.valid) {
-      console.log('Please provide all the required values!')
-      return false;
-    } else {
-      console.log(this.ionicForm.value)
-    }*/
+     const db =firebase.firestore();
+     const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
+     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
+      let date = new Date().toLocaleString(undefined, {timeZone: 'Asia/Kolkata'});
+
+      this.completiontime=date;
+
+      this.AssetData=JSON.stringify(this.ionicForm.value)   
+
+     this.DiningData= JSON.parse(this.AssetData);
+
+
+
+      this.arr=[this.DiningData]
+console.log("arr1",this.arr )
+
+this.stdata=this.arrayToCSV(this.arr) ;
+   this.storageService.setObject('bedroom2 form csv', this.stdata);
+
+    
+
+
+    var addtimeref = db.collection("test1").doc(this.recivedData); 
+
+// Atomically add a new region to the "regions" array field.
+ addtimeref.update({
+  Dining:arrayUnion({
+      "end time": date
+      
+       
+     })
+}).then(function() {
+  console.log("end time is updated");
+});
+
+
+
+
+var washingtonRef = db.collection("test1").doc(this.recivedData); 
+
+// Atomically add a new region to the "regions" array field.
+washingtonRef.update({
+  Dining:arrayUnion({
+       "bedroom2u": this.DiningData
+      
+       
+     })
+}).then(function() {
+  console.log("bedroom2 data is  updated");
+});
+
+
+
+
   }
+
+    
+
+
+   //new end
 
 
 

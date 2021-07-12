@@ -16,7 +16,16 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import { Camera,CameraOptions} from '@ionic-native/camera/ngx';
+//new
+import { Papa } from 'ngx-papaparse';
 
+import { File } from '@ionic-native/file/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { Storage } from '@ionic/storage-angular';
+
+import { StorageService } from 'src/app/services/storage.service';
+
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
 
 
 interface StudentData {
@@ -88,12 +97,15 @@ interface StudentData {
                Floor_trap_or_ottle_trap_outlets_are_provided:string;
                 Floor_trap_or_ottle_trap_outlets_are_provided_Photo: any;
               Floor_trap_or_ottle_trap_outlets_are_provided_Description:string;
+
                Sink_inlet_is_provided:string;
                 Sink_inlet_is_provided_Photo: any;
               Sink_inlet_is_provided_Description:string;
+
                Floor_trap_cover_is_provided:string;
                 Floor_trap_cover_is_provided_Photo: any;
               Floor_trap_cover_is_provided_Description:string;
+
                Floor_trap_is_free_of_dust_or_debris:string;
                 Floor_trap_is_free_of_dust_or_debris_Photo: any;
               Floor_trap_is_free_of_dust_or_debris_Description:string;
@@ -102,6 +114,7 @@ interface StudentData {
                Reticulated_gas_pipes_are_clean:string;
                 Reticulated_gas_pipes_are_clean_Photo: any;
               Reticulated_gas_pipes_are_clean_Description:string;
+
                Reticulated_gas_pipes_are_clamped_properly:string;
                 Reticulated_gas_pipes_are_clamped_properly_Photo: any;
               Reticulated_gas_pipes_are_clamped_properly_Description:string;
@@ -110,21 +123,27 @@ interface StudentData {
                Cornices_installed_are_consistent:string;
                 Cornices_installed_are_consistent_Photo: any;
               Cornices_installed_are_consistent_Description:string;
+
                Junction_between_door_frame__and_wall_is_finished:string;
                 Junction_between_door_frame__and_wall_is_finished_Photo: any;
              Junction_between_door_frame__and_wall_is_finished_Description:string;
+
                Ceilings_are_free_of_stains_or_ndulations_or_racks_etc:string;
                 Ceilings_are_free_of_stains_or_ndulations_or_racks_etc_Photo: any;
               Ceilings_are_free_of_stains_or_ndulations_or_racks_etc_Description:string;
+
                Aluminium_member_betweeen_vitrified_flooring__and_marble_is_consistently_finished:string;
                 Aluminium_member_betweeen_vitrified_flooring__and_marble_is_consistently_finished_Photo: any;
               Aluminium_member_betweeen_vitrified_flooring__and_marble_is_consistently_finished_Description:string;
+
                Walls_are_free_of_cracks_or_stains_etc:string;
                 Walls_are_free_of_cracks_or_stains_etc_Photo: any;
               Walls_are_free_of_cracks_or_stains_etc_Description:string;
+
                Granite_Ledge_finish_is_without_sharp_edges:string;
                 Granite_Ledge_finish_is_without_sharp_edges_Photo: any;
               Granite_Ledge_finish_is_without_sharp_edges_Description:string;
+              
                Wall_behind_gas_pipe_assembly_are_finished:string;
                 Wall_behind_gas_pipe_assembly_are_finished_Photo: any;
               Wall_behind_gas_pipe_assembly_are_finished_Description:string;
@@ -143,7 +162,20 @@ interface StudentData {
   styleUrls: ['./kitchen.page.scss'],
 })
 export class KitchenPage implements OnInit {
-
+ //new
+ 
+completiontime:any
+flist:any;
+flatnumber:any;
+  au:any;
+dateTime:any;
+stdata:any;
+arr:any[];
+csvData:any;
+issubmit:boolean;
+idata:any;
+AssetData:any;
+DiningData:any;
   
 isection:string;
 recivedData:any;
@@ -262,11 +294,18 @@ constructor(
  public fb: FormBuilder,
  private camera: Camera,
  private alertCtrl: AlertController,
- public formBuilder: FormBuilder
+ public formBuilder: FormBuilder,
+ 
+private emailComposer: EmailComposer,
+  public storageService: StorageService,
+ private papa: Papa,
+ private file: File,
+ private socialSharing: SocialSharing,
+private storage: Storage
 
 )
  {
-    
+     this.issubmit=false;
    this.isToggled1 = false;
     this.isToggled2 = false; 
     this.isToggled3 = false;
@@ -379,127 +418,154 @@ this.cameradisplay28=false;
 
   ngOnInit() {
     
+     //new
+     firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+     
+      firebase
+        .firestore()
+        .doc(`/userProfile/${user.uid}`)
+        .get()
+        .then(userProfileSnapshot => {
+         this.au= userProfileSnapshot.data()
+         console.log("current user",this.au.email)
+
+        });
+    }
+  });
+    this.storage.create();
     
+const db =firebase.firestore();   
+
+    db.collection("test1")
+      .doc(this.recivedData)
+      .get()
+      .then(doc => {
+    console.log("all",doc.data().Flat_Number) 
+    this.flatnumber=doc.data().Flat_Number
+      });
+    
+   //new
 
     this.ionicForm = this.formBuilder.group({
 
       
 
 
-       Core_cut:['', [Validators.required]],
-               Core_cutting_for_kitchen_hood_towards_exterior:['', [Validators.required]],
-               Core_cutting_for_kitchen_hood_towards_exterior_Photo: [this.imgURL1, [Validators.required]],
-              Core_cutting_for_kitchen_hood_towards_exterior_Description:['', [Validators.required]],
+       Core_cut:[''],
+               Core_cutting_for_kitchen_hood_towards_exterior:['',[Validators.required]],
+               Core_cutting_for_kitchen_hood_towards_exterior_Photo: [this.imgURL1],
+              Core_cutting_for_kitchen_hood_towards_exterior_Description:[''],
 
-               Core_cut_area_pipe_is_cleaned:['', [Validators.required]],
-               Core_cut_area_pipe_is_cleaned_Photo: [this.imgURL2, [Validators.required]],
-              Core_cut_area_pipe_is_cleaned_Description:['', [Validators.required]],
+               Core_cut_area_pipe_is_cleaned:[''],
+               Core_cut_area_pipe_is_cleaned_Photo: [this.imgURL2],
+              Core_cut_area_pipe_is_cleaned_Description:[''],
 
-              Core_cut_pipe_is_finished_on_both_sides:['', [Validators.required]],
-              Core_cut_pipe_is_finished_on_both_sides_Photo: [this.imgURL3, [Validators.required]],
-              Core_cut_pipe_is_finished_on_both_sides_Description:['', [Validators.required]],
+              Core_cut_pipe_is_finished_on_both_sides:[''],
+              Core_cut_pipe_is_finished_on_both_sides_Photo: [this.imgURL3],
+              Core_cut_pipe_is_finished_on_both_sides_Description:[''],
            
-            Doors_and_Windows:['', [Validators.required]],
-               UPVC_kitchen_windows_bug_screen_is_operable:['', [Validators.required]],
-                UPVC_kitchen_windows_bug_screen_is_operable_Photo: [this.imgURL4, [Validators.required]],
-              UPVC_kitchen_windows_bug_screen_is_operable_Description:['', [Validators.required]],
+            Doors_and_Windows:[''],
+               UPVC_kitchen_windows_bug_screen_is_operable:[''],
+                UPVC_kitchen_windows_bug_screen_is_operable_Photo: [this.imgURL4],
+              UPVC_kitchen_windows_bug_screen_is_operable_Description:[''],
 
-               Hardware_is_consistent:['', [Validators.required]],
-                Hardware_is_consistent_Photo: [this.imgURL5, [Validators.required]],
-              Hardware_is_consistent_Description:['', [Validators.required]],
+               Hardware_is_consistent:[''],
+                Hardware_is_consistent_Photo: [this.imgURL5],
+              Hardware_is_consistent_Description:[''],
 
-              UPVC_kitchen_windows_are_operable:['', [Validators.required]],
-              UPVC_kitchen_windows_are_operable_Photo: [this.imgURL6, [Validators.required]],
-              UPVC_kitchen_windows_are_operable_Description:['', [Validators.required]],
+              UPVC_kitchen_windows_are_operable:[''],
+              UPVC_kitchen_windows_are_operable_Photo: [this.imgURL6],
+              UPVC_kitchen_windows_are_operable_Description:[''],
 
-               Gaskets_or_Sealants_are_intact:['', [Validators.required]],
-                 Gaskets_or_Sealants_are_intact_Photo: [this.imgURL7, [Validators.required]],
-               Gaskets_or_Sealants_are_intact_Description:['', [Validators.required]],
+               Gaskets_or_Sealants_are_intact:[''],
+                 Gaskets_or_Sealants_are_intact_Photo: [this.imgURL7],
+               Gaskets_or_Sealants_are_intact_Description:[''],
 
-               UPVC_kitchen_windows_are_free_of_sharp_edges:['', [Validators.required]],
-                UPVC_kitchen_windows_are_free_of_sharp_edges_Photo: [this.imgURL8, [Validators.required]],
-              UPVC_kitchen_windows_are_free_of_sharp_edges_Description:['', [Validators.required]],
+               UPVC_kitchen_windows_are_free_of_sharp_edges:[''],
+                UPVC_kitchen_windows_are_free_of_sharp_edges_Photo: [this.imgURL8],
+              UPVC_kitchen_windows_are_free_of_sharp_edges_Description:[''],
 
-               UPVC_kitchen_bug_screen_mesh_is_taut:['', [Validators.required]],
-               UPVC_kitchen_bug_screen_mesh_is_taut_Photo: [this.imgURL9, [Validators.required]],
-              UPVC_kitchen_bug_screen_mesh_is_taut_Description:['', [Validators.required]],
+               UPVC_kitchen_bug_screen_mesh_is_taut:['',[Validators.required]],
+               UPVC_kitchen_bug_screen_mesh_is_taut_Photo: [this.imgURL9],
+              UPVC_kitchen_bug_screen_mesh_is_taut_Description:[''],
            
-            Electrical:['', [Validators.required]],
-               Switch_plates_are_aligned:['', [Validators.required]],
-                Switch_plates_are_aligned_Photo: [this.imgURL10, [Validators.required]],
-              Switch_plates_are_aligned_Description:['', [Validators.required]],
+            Electrical:[''],
+               Switch_plates_are_aligned:['',[Validators.required]],
+                Switch_plates_are_aligned_Photo: [this.imgURL10],
+              Switch_plates_are_aligned_Description:[''],
 
-              Ceiling_electrical_points_are_covered_or_capped_properly:['', [Validators.required]],
-              Ceiling_electrical_points_are_covered_or_capped_properly_Photo: [this.imgURL11, [Validators.required]],
-              Ceiling_electrical_points_are_covered_or_capped_properly_Description:['', [Validators.required]],
+              Ceiling_electrical_points_are_covered_or_capped_properly:[''],
+              Ceiling_electrical_points_are_covered_or_capped_properly_Photo: [this.imgURL11],
+              Ceiling_electrical_points_are_covered_or_capped_properly_Description:[''],
 
-               Electrical_points_are_as_per_standard_offering:['', [Validators.required]],
-                Electrical_points_are_as_per_standard_offering_Photo: [this.imgURL12, [Validators.required]],
-              Electrical_points_are_as_per_standard_offering_Description:['', [Validators.required]],
+               Electrical_points_are_as_per_standard_offering:[''],
+                Electrical_points_are_as_per_standard_offering_Photo: [this.imgURL12],
+              Electrical_points_are_as_per_standard_offering_Description:[''],
 
-               Wall_Light_points_are_covered__or_apped_properly:['', [Validators.required]],
-                Wall_Light_points_are_covered__or_apped_properly_Photo: [this.imgURL13, [Validators.required]],
-              Wall_Light_points_are_covered__or_apped_properly_Description:['', [Validators.required]],
+               Wall_Light_points_are_covered__or_apped_properly:['',[Validators.required]],
+                Wall_Light_points_are_covered__or_apped_properly_Photo: [this.imgURL13],
+              Wall_Light_points_are_covered__or_apped_properly_Description:[''],
            
-            Flooring:['', [Validators.required]],
-               Vitrified_tiles_are_uniform__and_free_of_cracks:['', [Validators.required]],
-                Vitrified_tiles_are_uniform__and_free_of_cracks_Photo: [this.imgURL14, [Validators.required]],
-              Vitrified_tiles_are_uniform__and_free_of_cracks_Description:['', [Validators.required]],
+            Flooring:[''],
+               Vitrified_tiles_are_uniform__and_free_of_cracks:['',[Validators.required]],
+                Vitrified_tiles_are_uniform__and_free_of_cracks_Photo: [this.imgURL14],
+              Vitrified_tiles_are_uniform__and_free_of_cracks_Description:[''],
 
-               Skirting_finish_and_alignment:['', [Validators.required]],
-                Skirting_finish_and_alignment_Photo: [this.imgURL15, [Validators.required]],
-              Skirting_finish_and_alignment_Description:['', [Validators.required]],
+               Skirting_finish_and_alignment:[''],
+                Skirting_finish_and_alignment_Photo: [this.imgURL15],
+              Skirting_finish_and_alignment_Description:[''],
            
-            PHE:['', [Validators.required]],
-               Floor_trap_or_ottle_trap_outlets_are_provided:['', [Validators.required]],
-                Floor_trap_or_ottle_trap_outlets_are_provided_Photo: [this.imgURL16, [Validators.required]],
-              Floor_trap_or_ottle_trap_outlets_are_provided_Description:['', [Validators.required]],
+            PHE:[''],
+               Floor_trap_or_ottle_trap_outlets_are_provided:['',[Validators.required]],
+                Floor_trap_or_ottle_trap_outlets_are_provided_Photo: [this.imgURL16],
+              Floor_trap_or_ottle_trap_outlets_are_provided_Description:[''],
 
-               Sink_inlet_is_provided:['', [Validators.required]],
-                Sink_inlet_is_provided_Photo: [this.imgURL17, [Validators.required]],
-              Sink_inlet_is_provided_Description:['', [Validators.required]],
+               Sink_inlet_is_provided:[''],
+                Sink_inlet_is_provided_Photo: [this.imgURL17],
+              Sink_inlet_is_provided_Description:[''],
 
-               Floor_trap_cover_is_provided:['', [Validators.required]],
-                Floor_trap_cover_is_provided_Photo: [this.imgURL18, [Validators.required]],
-              Floor_trap_cover_is_provided_Description:['', [Validators.required]],
+               Floor_trap_cover_is_provided:[''],
+                Floor_trap_cover_is_provided_Photo: [this.imgURL18],
+              Floor_trap_cover_is_provided_Description:[''],
               
-            Reticulated_Gas:['', [Validators.required]],
-               Reticulated_gas_pipes_are_clean:['', [Validators.required]],
-                Reticulated_gas_pipes_are_clean_Photo: [this.imgURL19, [Validators.required]],
-              Reticulated_gas_pipes_are_clean_Description:['', [Validators.required]],
+            Reticulated_Gas:[''],
+               Reticulated_gas_pipes_are_clean:[''],
+                Reticulated_gas_pipes_are_clean_Photo: [this.imgURL19],
+              Reticulated_gas_pipes_are_clean_Description:[''],
 
-               Reticulated_gas_pipes_are_clamped_properly:['', [Validators.required]],
-                Reticulated_gas_pipes_are_clamped_properly_Photo: [this.imgURL20, [Validators.required]],
-              Reticulated_gas_pipes_are_clamped_properly_Description:['', [Validators.required]],
+               Reticulated_gas_pipes_are_clamped_properly:['',[Validators.required]],
+                Reticulated_gas_pipes_are_clamped_properly_Photo: [this.imgURL20],
+              Reticulated_gas_pipes_are_clamped_properly_Description:[''],
            
-            Walls_and_ceiling:['', [Validators.required]],
-               Cornices_installed_are_consistent:['', [Validators.required]],
-                Cornices_installed_are_consistent_Photo: [this.imgURL21, [Validators.required]],
-              Cornices_installed_are_consistent_Description:['', [Validators.required]],
+            Walls_and_ceiling:[''],
+               Cornices_installed_are_consistent:['',[Validators.required]],
+                Cornices_installed_are_consistent_Photo: [this.imgURL21],
+              Cornices_installed_are_consistent_Description:[''],
 
-               Junction_between_door_frame__and_wall_is_finished:['', [Validators.required]],
-                Junction_between_door_frame__and_wall_is_finished_Photo: [this.imgURL22, [Validators.required]],
-             Junction_between_door_frame__and_wall_is_finished_Description:['', [Validators.required]],
+               Junction_between_door_frame__and_wall_is_finished:[''],
+                Junction_between_door_frame__and_wall_is_finished_Photo: [this.imgURL22],
+             Junction_between_door_frame__and_wall_is_finished_Description:[''],
 
-               Ceilings_are_free_of_stains_or_ndulations_or_racks_etc:['', [Validators.required]],
-                Ceilings_are_free_of_stains_or_ndulations_or_racks_etc_Photo: [this.imgURL23, [Validators.required]],
-              Ceilings_are_free_of_stains_or_ndulations_or_racks_etc_Description:['', [Validators.required]],
+               Ceilings_are_free_of_stains_or_ndulations_or_racks_etc:[''],
+                Ceilings_are_free_of_stains_or_ndulations_or_racks_etc_Photo: [this.imgURL23],
+              Ceilings_are_free_of_stains_or_ndulations_or_racks_etc_Description:[''],
 
-               Aluminium_member_betweeen_vitrified_flooring__and_marble_is_consistently_finished:['', [Validators.required]],
-                Aluminium_member_betweeen_vitrified_flooring__and_marble_is_consistently_finished_Photo: [this.imgURL24, [Validators.required]],
-              Aluminium_member_betweeen_vitrified_flooring__and_marble_is_consistently_finished_Description:['', [Validators.required]],
+               Aluminium_member_betweeen_vitrified_flooring__and_marble_is_consistently_finished:[''],
+                Aluminium_member_betweeen_vitrified_flooring__and_marble_is_consistently_finished_Photo: [this.imgURL24],
+              Aluminium_member_betweeen_vitrified_flooring__and_marble_is_consistently_finished_Description:[''],
 
-               Walls_are_free_of_cracks_or_stains_etc:['', [Validators.required]],
-                Walls_are_free_of_cracks_or_stains_etc_Photo: [this.imgURL25, [Validators.required]],
-              Walls_are_free_of_cracks_or_stains_etc_Description:['', [Validators.required]],
+               Walls_are_free_of_cracks_or_stains_etc:[''],
+                Walls_are_free_of_cracks_or_stains_etc_Photo: [this.imgURL25],
+              Walls_are_free_of_cracks_or_stains_etc_Description:[''],
 
-               Granite_Ledge_finish_is_without_sharp_edges:['', [Validators.required]],
-                Granite_Ledge_finish_is_without_sharp_edges_Photo: [this.imgURL26, [Validators.required]],
-              Granite_Ledge_finish_is_without_sharp_edges_Description:['', [Validators.required]],
+               Granite_Ledge_finish_is_without_sharp_edges:[''],
+                Granite_Ledge_finish_is_without_sharp_edges_Photo: [this.imgURL26],
+              Granite_Ledge_finish_is_without_sharp_edges_Description:[''],
 
-               Wall_behind_gas_pipe_assembly_are_finished:['', [Validators.required]],
-                Wall_behind_gas_pipe_assembly_are_finished_Photo: [this.imgURL27, [Validators.required]],
-              Wall_behind_gas_pipe_assembly_are_finished_Description:['', [Validators.required]]
+               Wall_behind_gas_pipe_assembly_are_finished:['',[Validators.required]],
+                Wall_behind_gas_pipe_assembly_are_finished_Photo: [this.imgURL27],
+              Wall_behind_gas_pipe_assembly_are_finished_Description:['']
 
 
       
@@ -1172,28 +1238,142 @@ this.cameradisplay28=false;
 
 
     //end camer
-  getDate(e) {
-    let date = new Date(e.target.value).toISOString().substring(0, 10);
-    this.ionicForm.get('dob').setValue(date, {
-      onlyself: true
-    })
+  arrayToCSV(objArray) {
+     const array = typeof objArray !== 'object' ? JSON.parse(objArray) : objArray;
+     let str = `${Object.keys(array[0]).map(value => `"${value}"`).join(",")}` + '\r\n';
+
+     return array.reduce((str, next) => {
+         str += `${Object.values(next).map(value => `"${value}"`).join(",")}` + '\r\n';
+         return str;
+        }, str);
+ }
+
+  
+      
+      
+     starttime() {
+        this.dateTime = new Date().toLocaleString(undefined, {timeZone: 'Asia/Kolkata'});
+         const db =firebase.firestore();
+         const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
+     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
+          var starttimeref = db.collection("test1").doc(this.recivedData); 
+
+        
+ starttimeref.update({
+
+  Dining:arrayUnion({
+      "start time": this.dateTime,
+      "user":  this.au.email
+      
+       
+     })
+}).then(function() {
+  console.log("starttime time is updated");
+});
+
+
+        console.log("enter time",this.dateTime)
+        //return this.dateTime
+    
+    
+     }
+
+         
+  
+  sendmail(){ 
+
+
+    this.storageService.getObject('kitchen form csv').then(result => {
+    if (result != null) {
+    console.log('kitchen form csv: '+ result);
+    this.idata= result;
+    }
+    }).catch(e => {
+    console.log('error: ', e);
+    });
+    let email = {
+     to: 'krafturspace@gmail.com',
+      cc: 'sumathi@kraft-urspace.com',
+      bcc: ['j.prajal@gmail,com'],
+  
+  attachments: [
+    this.idata
+
+  ],
+  subject: 'Report',
+ body: 'report from krafturspace app sent by'+ this.au +'for Flat number'+this.flatnumber + 'time of completion'+this.completiontime,
+  isHtml: true
+};
+
+this.emailComposer.open(email);
+
   }
 
-  get errorControl() {
-    return this.ionicForm.controls;
-  }
+   
+  
 
   submitForm() {
+    this.issubmit=true;
 
-    console.log(this.ionicForm.value)
-    /*this.isSubmitted = true;
-    if (!this.ionicForm.valid) {
-      console.log('Please provide all the required values!')
-      return false;
-    } else {
-      console.log(this.ionicForm.value)
-    }*/
+     const db =firebase.firestore();
+     const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
+     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
+      let date = new Date().toLocaleString(undefined, {timeZone: 'Asia/Kolkata'});
+this.completiontime=date;
+      
+      this.AssetData=JSON.stringify(this.ionicForm.value)   
+
+     this.DiningData= JSON.parse(this.AssetData);
+
+
+
+      this.arr=[this.DiningData]
+console.log("arr1",this.arr )
+
+this.stdata=this.arrayToCSV(this.arr) ;
+   this.storageService.setObject('kitchen form csv', this.stdata);
+
+    
+
+
+    var addtimeref = db.collection("test1").doc(this.recivedData); 
+
+// Atomically add a new region to the "regions" array field.
+ addtimeref.update({
+  Dining:arrayUnion({
+      "end time": date
+      
+       
+     })
+}).then(function() {
+  console.log("end time is updated");
+});
+
+
+
+
+var washingtonRef = db.collection("test1").doc(this.recivedData); 
+
+// Atomically add a new region to the "regions" array field.
+washingtonRef.update({
+  Dining:arrayUnion({
+       "kitchenu": this.DiningData
+      
+       
+     })
+}).then(function() {
+  console.log("kitchen data is  updated");
+});
+
+
+
+
   }
+
+    
+
+
+   //new end
 
 
 

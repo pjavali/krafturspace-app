@@ -16,7 +16,8 @@ interface StudentData {
   Name: string;
   Address: string;
   Type:any;
-  Assigned:string;  
+  Assigned:string; 
+   Flat_Number:string;  
   Foyer: string;
   CommonToilet: string;
   LivingRoom:string;
@@ -77,7 +78,9 @@ export class InspectionPage implements OnInit {
           Name: ['', [Validators.required]],
           Address: ['', [Validators.required]],
           Type: ['', [Validators.required]],
-          Assigned: ['', [Validators.required]]
+          Assigned: ['', [Validators.required]],
+          Flat_Number: ['', [Validators.required]]
+
       
       })
 
@@ -96,6 +99,7 @@ export class InspectionPage implements OnInit {
 
              this.inspectlist=[];
              this.inspectuser=[];
+             
              db.collection('test1').where('Assigned','==', ustr1).get().then((snapshot)=>{
              //console.log("snapshot----->",snapshot.docs);
              snapshot.docs.forEach(doc => {     
@@ -126,12 +130,12 @@ export class InspectionPage implements OnInit {
   inspect(item,index){  
 
     console.log( "current in-->",index)
-    
-  
+   
     let senddata:any[]=this.inspectuser[index];
       let navigationExtras: NavigationExtras = {
             state: {
-              user: senddata,
+              user: senddata
+             
                   
             }  
       };

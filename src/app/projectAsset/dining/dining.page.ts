@@ -17,6 +17,16 @@ import 'firebase/auth';
 import 'firebase/firestore';
 import { Camera,CameraOptions} from '@ionic-native/camera/ngx';
 
+//new
+import { Papa } from 'ngx-papaparse';
+
+import { File } from '@ionic-native/file/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { Storage } from '@ionic/storage-angular';
+
+import { StorageService } from 'src/app/services/storage.service';
+
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
 
 
 interface StudentData {
@@ -97,13 +107,26 @@ Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Photo: any;
   styleUrls: ['./dining.page.scss'],
 })
 export class DiningPage implements OnInit {
+  //new
+  completiontime:any
+flist:any;
+flatnumber:any;
+  au:any;
+dateTime:any;
+stdata:any;
+arr:any[];
+csvData:any;
+issubmit:boolean;
+idata:any;
+AssetData:any;
+DiningData:any;
 
-  
 isection:string;
 recivedData:any;
 data:any;
 mypicref:any;
 currentId:any[];
+
 cameradisplay1:boolean;
 cameradisplay2:boolean;
 cameradisplay3:boolean;
@@ -189,8 +212,12 @@ isToggled8:boolean;
 isToggled9:boolean;
 isToggled10:boolean;
 
+record ={};
+
+
 
 constructor(
+
  private Platform:Platform,
  private _cdr: ChangeDetectorRef,
  public http:HttpClient,
@@ -204,10 +231,18 @@ constructor(
  public fb: FormBuilder,
  private camera: Camera,
  private alertCtrl: AlertController,
- public formBuilder: FormBuilder
+ public formBuilder: FormBuilder,
 
+private emailComposer: EmailComposer,
+  public storageService: StorageService,
+ private papa: Papa,
+ private file: File,
+ private socialSharing: SocialSharing,
+private storage: Storage
 )
  {
+
+   this.issubmit=false;
        
    this.isToggled1 = false;
     this.isToggled2 = false; 
@@ -285,6 +320,8 @@ this.cameradisplay13=false;
 this.cameradisplay14=false;
 this.cameradisplay15=false;
 this.cameradisplay16=false;  
+
+
    console.log("1st--->",this.isToggled)
 
     this.inspectionData = {} as StudentData;
@@ -302,6 +339,7 @@ this.cameradisplay16=false;
 
       }
     });
+   
   
 
    }
@@ -309,94 +347,112 @@ this.cameradisplay16=false;
    
 
   ngOnInit() {
+    //new
+     firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+     
+      firebase
+        .firestore()
+        .doc(`/userProfile/${user.uid}`)
+        .get()
+        .then(userProfileSnapshot => {
+         this.au= userProfileSnapshot.data()
+         console.log("current user",this.au.email)
+
+        });
+    }
+  });
+    this.storage.create();
+    const db =firebase.firestore();   
+
+    db.collection("test1")
+      .doc(this.recivedData)
+      .get()
+      .then(doc => {
+    console.log("all",doc.data().Flat_Number) 
+    this.flatnumber=doc.data().Flat_Number
+      });
     
-    
+
+   //new
 
     this.ionicForm = this.formBuilder.group({
 
    
 
       
-      Doors_and_Windows:['',[Validators.required]],
+               Doors_and_Windows:['Header'],
 
-               UPVC_utility_Bug_screen_windows_are_operable:['', [Validators.required]],
-               UPVC_utility_Bug_screen_windows_are_operable_Photo: [this.imgURL1, [Validators.required]],
-              UPVC_utility_Bug_screen_windows_are_operable_Description:['', [Validators.required]],
+               UPVC_utility_Bug_screen_windows_are_operable:['',[Validators.required]],
+               UPVC_utility_Bug_screen_windows_are_operable_Photo: [this.imgURL1],
+              UPVC_utility_Bug_screen_windows_are_operable_Description:[''],
 
-               Hardware_is_consistent:['', [Validators.required]],
-               Hardware_is_consistent_Photo: [this.imgURL2, [Validators.required]],
-              Hardware_is_consistent_Description:['', [Validators.required]],
+               Hardware_is_consistent:[''],
+               Hardware_is_consistent_Photo: [this.imgURL2],
+              Hardware_is_consistent_Description:[''],
 
-              UPVC_utility_door_is_operable:['', [Validators.required]],
-              UPVC_utility_door_is_operable_Photo: [this.imgURL3, [Validators.required]],
-              UPVC_utility_door_is_operable_Description:['', [Validators.required]],
+              UPVC_utility_door_is_operable:[''],
+              UPVC_utility_door_is_operable_Photo: [this.imgURL3],
+              UPVC_utility_door_is_operable_Description:[''],
 
-               Gaskets_and_Sealants_are_intact:['', [Validators.required]],
-               Gaskets_and_Sealants_are_intact_Photo: [this.imgURL4, [Validators.required]],
-              Gaskets_and_Sealants_are_intact_Description:['', [Validators.required]],
+               Gaskets_and_Sealants_are_intact:[''],
+               Gaskets_and_Sealants_are_intact_Photo: [this.imgURL4],
+              Gaskets_and_Sealants_are_intact_Description:[''],
               
-             UPVC_utility_bug_screen_mesh_is_taut:['', [Validators.required]],
-              UPVC_utility_bug_screen_mesh_is_taut_Photo: [this.imgURL5, [Validators.required]],
-              UPVC_utility_bug_screen_mesh_is_taut_Description:['', [Validators.required]],
+             UPVC_utility_bug_screen_mesh_is_taut:[''],
+              UPVC_utility_bug_screen_mesh_is_taut_Photo: [this.imgURL5],
+              UPVC_utility_bug_screen_mesh_is_taut_Description:[''],
 
-               UPVC_utility_door_is_free_of_sharp_edges:['', [Validators.required]],
-               UPVC_utility_door_is_free_of_sharp_edges_Photo: [this.imgURL6, [Validators.required]],
-              UPVC_utility_door_is_free_of_sharp_edges_Description:['', [Validators.required]],
+               UPVC_utility_door_is_free_of_sharp_edges:['',[Validators.required]],
+               UPVC_utility_door_is_free_of_sharp_edges_Photo: [this.imgURL6],
+              UPVC_utility_door_is_free_of_sharp_edges_Description:['' ],
            
-            Electrical:['', [Validators.required]],
-               Switches_are_operable:['', [Validators.required]],
-               Switches_are_operable_Photo: [this.imgURL7, [Validators.required]],
-              Switches_are_operable_Description:['', [Validators.required]],
+            Electrical:['Header'],
+               Switches_are_operable:['',[Validators.required]],
+               Switches_are_operable_Photo: [this.imgURL7],
+              Switches_are_operable_Description:[''],
 
-               Switch_plates_are_aligned:['', [Validators.required]],
-               Switch_plates_are_aligned_Photo: [this.imgURL8, [Validators.required]],
-              Switch_plates_are_aligned_Description:['', [Validators.required]],
+               Switch_plates_are_aligned:[''],
+               Switch_plates_are_aligned_Photo: [this.imgURL8],
+              Switch_plates_are_aligned_Description:[''],
 
-               Electrical_ceiling_points_are_covered:['', [Validators.required]],
-               Electrical_ceiling_points_are_covered_Photo: [this.imgURL9, [Validators.required]],
-              Electrical_ceiling_points_are_covered_Description:['', [Validators.required]],
+               Electrical_ceiling_points_are_covered:[''],
+               Electrical_ceiling_points_are_covered_Photo: [this.imgURL9],
+              Electrical_ceiling_points_are_covered_Description:[''],
 
-               Electrical_points_are_as_per_standard_offering:['', [Validators.required]],
-               Electrical_points_are_as_per_standard_offering_Photo: [this.imgURL9, [Validators.required]],
-              Electrical_points_are_as_per_standard_offering_Description:['', [Validators.required]],
+               Electrical_points_are_as_per_standard_offering:[''],
+               Electrical_points_are_as_per_standard_offering_Photo: [this.imgURL9],
+              Electrical_points_are_as_per_standard_offering_Description:[''],
               
-               Electrical_wall_points_are_covered:['', [Validators.required]],
-               Electrical_wall_points_are_covered_Photo: [this.imgURL10, [Validators.required]],
-              Electrical_wall_points_are_covered_Description:['', [Validators.required]],
+               Electrical_wall_points_are_covered:['',[Validators.required]],
+               Electrical_wall_points_are_covered_Photo: [this.imgURL10],
+              Electrical_wall_points_are_covered_Description:[''],
            
-            Walls_and_Ceiling:['', [Validators.required]],
-               Finishing_of_granite_coping_on_ledges:['', [Validators.required]],
-               Finishing_of_granite_coping_on_ledges_Photo: [this.imgURL11, [Validators.required]],
-              Finishing_of_granite_coping_on_ledges_Description:['',[Validators.required]],
+            Walls_and_Ceiling:['Header'],
+               Finishing_of_granite_coping_on_ledges:['',[Validators.required]],
+               Finishing_of_granite_coping_on_ledges_Photo: [this.imgURL11],
+              Finishing_of_granite_coping_on_ledges_Description:[''],
 
-              Ceilings_are_free_of_stains_or_undulations_or_cracks_etc:['',[Validators.required]],
-              Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Photo: [this.imgURL12, [Validators.required]],
-              Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Description:['', [Validators.required]],
+              Ceilings_are_free_of_stains_or_undulations_or_cracks_etc:[''],
+              Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Photo: [this.imgURL12],
+              Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Description:[''],
 
-              Walls_around_door_free_of_stains_or_cracks_or_dampness:['', [Validators.required]],
-              Walls_around_door_free_of_stains_or_cracks_or_dampness_Photo: [this.imgURL13, [Validators.required]],
-              Walls_around_door_free_of_stains_or_cracks_or_dampness_Description:['', [Validators.required]],
+              Walls_around_door_free_of_stains_or_cracks_or_dampness:[''],
+              Walls_around_door_free_of_stains_or_cracks_or_dampness_Photo: [this.imgURL13],
+              Walls_around_door_free_of_stains_or_cracks_or_dampness_Description:[''],
 
-               Cornices_provided_are_aligned:['', [Validators.required]],
-               Cornices_provided_are_aligned_Photo: [this.imgURL14, [Validators.required]],
-              Cornices_provided_are_aligned_Description:['',[Validators.required]]
-  
-
-
-     
+               Cornices_provided_are_aligned:['',[Validators.required]],
+               Cornices_provided_are_aligned_Photo: [this.imgURL14],
+              Cornices_provided_are_aligned_Description:['']     
       
     })
 
      
   }
   
-
-
      //camer section
   
 
-
-     
 
 
 
@@ -1045,42 +1101,165 @@ this.cameradisplay16=false;
           console.log(e)
         })     
       }
-      
-      
-      
+
+
+ // new code      
+
+
 
 
 
     //end camer
-  getDate(e) {
-    let date = new Date(e.target.value).toISOString().substring(0, 10);
-    this.ionicForm.get('dob').setValue(date, {
-      onlyself: true
-    })
+
+arrayToCSV(objArray) {
+     const array = typeof objArray !== 'object' ? JSON.parse(objArray) : objArray;
+     let str = `${Object.keys(array[0]).map(value => `"${value}"`).join(",")}` + '\r\n';
+
+     return array.reduce((str, next) => {
+         str += `${Object.values(next).map(value => `"${value}"`).join(",")}` + '\r\n';
+         return str;
+        }, str);
+ }
+
+  
+      
+      
+     starttime() {
+        this.dateTime = new Date().toLocaleString(undefined, {timeZone: 'Asia/Kolkata'});
+         const db =firebase.firestore();
+         const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
+     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
+          var starttimeref = db.collection("test1").doc(this.recivedData); 
+
+        
+ starttimeref.update({
+
+  Dining:arrayUnion({
+      "start time": this.dateTime,
+      "user":  this.au.email
+      
+       
+     })
+}).then(function() {
+  console.log("starttime time is updated");
+});
+
+
+        console.log("enter time",this.dateTime)
+        //return this.dateTime
+    
+    
+     }
+
+         
+  
+  sendmail(){ 
+
+
+    this.storageService.getObject('Dining form csv').then(result => {
+    if (result != null) {
+    console.log('Dining form csv: '+ result);
+    this.idata= result;
+    }
+    }).catch(e => {
+    console.log('error: ', e);
+    });
+    let email = {
+     to: 'krafturspace@gmail.com',
+      cc: 'sumathi@kraft-urspace.com',
+      bcc: ['j.prajal@gmail,com'],
+  
+  attachments: [
+    this.idata
+
+  ],
+  subject: 'Report',
+  body: 'report from krafturspace app sent by'+ this.au +'for Flat number'+this.flatnumber + 'time of completion'+this.completiontime,
+  isHtml: true
+};
+
+this.emailComposer.open(email);
+
   }
 
-  get errorControl() {
-    return this.ionicForm.controls;
-  }
+   
+  
 
   submitForm() {
+    this.issubmit=true;
 
-    console.log(this.ionicForm.value)
-    /*this.isSubmitted = true;
-    if (!this.ionicForm.valid) {
-      console.log('Please provide all the required values!')
-      return false;
-    } else {
-      console.log(this.ionicForm.value)
-    }*/
+     const db =firebase.firestore();
+     const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
+     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
+      let date = new Date().toLocaleString(undefined, {timeZone: 'Asia/Kolkata'});
+
+      this.completiontime=date;
+      this.AssetData=JSON.stringify(this.ionicForm.value)   
+
+     this.DiningData= JSON.parse(this.AssetData);
+
+
+
+      this.arr=[this.DiningData]
+console.log("arr1",this.arr )
+
+this.stdata=this.arrayToCSV(this.arr) ;
+   this.storageService.setObject('Dining form csv', this.stdata);
+
+    this.storageService.getObject('Dining form csv').then(result => {
+    if (result != null) {
+    console.log('Dining form csv: '+ result);
+    }
+    }).catch(e => {
+    console.log('error: ', e);
+    });
+
+
+    var addtimeref = db.collection("test1").doc(this.recivedData); 
+
+// Atomically add a new region to the "regions" array field.
+ addtimeref.update({
+  Dining:arrayUnion({
+      "end time": date
+      
+       
+     })
+}).then(function() {
+  console.log("end time is updated");
+});
+
+
+
+
+var washingtonRef = db.collection("test1").doc(this.recivedData); 
+
+// Atomically add a new region to the "regions" array field.
+washingtonRef.update({
+  Dining:arrayUnion({
+       "Diningu": this.DiningData
+      
+       
+     })
+}).then(function() {
+  console.log("dining data is  updated");
+});
+
+
+
+
   }
 
+    
+
+
+   //new end
 
    
 
 
                UPVC_utility_Bug_screen_windows_are_operable(): void {      
     let Qvalue = this.ionicForm.get('UPVC_utility_Bug_screen_windows_are_operable').value;
+    this.starttime();
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1318,7 +1497,7 @@ this.cameradisplay16=false;
     
   }
                
-  
+   
 
  notify1() {
   console.log("Toggled: "+ this.isToggled); 

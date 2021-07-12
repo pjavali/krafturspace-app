@@ -34,7 +34,7 @@ mypicref:any;
 information: any[];
 automaticClose = false;
 rdata:any=[];
-
+Fnum:any;
 Foyer:any[];
 CommonToilet:any[];
 LivingRoom:any[];
@@ -118,7 +118,8 @@ private alertCtrl: AlertController
       if (this.router.getCurrentNavigation().extras.state) {
         this.data = this.router.getCurrentNavigation().extras.state.user;        
         this.currentId=this.data.id;
-        console.log("recived data",this.data)     
+        console.log("recived data",this.data)    
+       
 
         this.recivedData=this.data;   
 
@@ -185,8 +186,8 @@ this.B4Toilet=false;
       .then(doc => {
     console.log("all",doc.data()) 
 this.rdata=JSON.stringify(doc.data())
-console.log("after---json",doc.data().Kitchen.length)
-
+console.log("after---json",doc.data().Flat_Number)
+this.Fnum=doc.data().Flat_Number;
 this.Foyer=doc.data().Foyer;
 this.CommonToilet=doc.data().CommonToilet;
 this.LivingRoom=doc.data().LivingRoom;
@@ -203,7 +204,7 @@ this.LivingRoom,this.Dining,this.Kitchen,
 this.ServantsRoom,this.MasterBedRoom,
 this.BedRoom1,this.BedRoom2,
 this.BedRoom3,this.BedRoom4);
-
+console.log("arraylength",doc.data().Dining.length)
 
 if(this.Foyer){
 this.FFoyer= true;
@@ -498,9 +499,11 @@ SServantsRoomclick(){
 }
 SToiletclick(){
    let senddata:any[]=this.recivedData;
+  let fn:any[]=this.Fnum
       let navigationExtras: NavigationExtras = {
             state: {
-              user: senddata,
+              user: senddata
+            
                   
             }  
       };

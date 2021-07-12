@@ -21,9 +21,11 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Camera} from '@ionic-native/camera/ngx';
-
-import { WebView} from '@ionic-native/ionic-webview/ngx'
-
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { WebView} from '@ionic-native/ionic-webview/ngx';
+import { PapaParseModule } from 'ngx-papaparse';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { File } from '@ionic-native/file/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -40,14 +42,17 @@ import { WebView} from '@ionic-native/ionic-webview/ngx'
     AngularFireStorageModule,
     ReactiveFormsModule,   
     HttpClientModule,
+    PapaParseModule,
     FormsModule  
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },      
     AngularFireAuthGuard,
-    NativeStorage,   
+    NativeStorage, 
+    EmailComposer, 
+    File,
+    SocialSharing, 
     Camera,WebView
-    
    
   ],
   bootstrap: [AppComponent]

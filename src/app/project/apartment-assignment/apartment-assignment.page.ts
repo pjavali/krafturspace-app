@@ -14,6 +14,7 @@ interface StudentData {
   Address: string;
   Type:any;
   Assigned:string;
+  Flat_Number:string;
    
 }
 
@@ -72,7 +73,8 @@ export class ApartmentAssignmentPage implements OnInit {
       Assigned: ['', [Validators.compose([
 		Validators.required,
 		Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-	   ])]]
+	   ])]],
+     Flat_Number:['', [Validators.required]],
        
 
       
@@ -88,7 +90,8 @@ export class ApartmentAssignmentPage implements OnInit {
           Name: e.payload.doc.data()['Name'],          
           Address: e.payload.doc.data()['Address'],
           Type: e.payload.doc.data()['Type'], 
-          Assigned: e.payload.doc.data()['Assigned'], 
+          Assigned: e.payload.doc.data()['Assigned'],
+          Flat_Number:  e.payload.doc.data()['Flat_Number'],
 
         };
       })
@@ -133,6 +136,7 @@ this.projectForm.value['Foyer']="";
     record.EditAddress = record.Address;  
     record.EditType = record.Type;
     record.EditAssigned = record.Assigned;
+    record.EditFlat_Number = record.Flat_Number;
 
   }
 
@@ -144,6 +148,9 @@ this.projectForm.value['Foyer']="";
     record['Address'] = recordRow.EditAddress;
     record['Type'] = recordRow.EditType;
     record['Assigned'] = recordRow.EditAssigned;
+    record['Flat_Number'] = recordRow.EditFlat_Number;
+
+
     this.firebaseService.update_project(recordRow.id, record);
     recordRow.isEdit = false;
     console.log("from update",recordRow.id)

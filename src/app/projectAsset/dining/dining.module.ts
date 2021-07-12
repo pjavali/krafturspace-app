@@ -20,6 +20,7 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
+    
     RouterModule.forChild(routes)
   ],
   declarations: [DiningPage]
