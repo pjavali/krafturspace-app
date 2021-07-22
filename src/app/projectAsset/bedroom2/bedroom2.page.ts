@@ -33,13 +33,13 @@ interface StudentData {
   
           
             Doors_and_Windows:string;
-               UPVC_window_bug_screen_mesh_is_operable:string;
-                UPVC_window_bug_screen_mesh_is_operable_Photo: any;
-              UPVC_window_bug_screen_mesh_is_operable_Description:string;
+               UPVC_window_bug_screen_mesh_is_operable_and_taut:string;
+               UPVC_window_bug_screen_mesh_is_operable_and_taut_Photo: any;
+              UPVC_window_bug_screen_mesh_is_operable_and_taut_Description:string;
 
-               Door_color_is_consistent:string;
-                Door_color_is_consistent_Photo: any;
-              Door_color_is_consistent_Description:string;
+               Door_frame_and_shutter_shades_are_consistent:string;
+                Door_frame_and_shutter_shades_are_consistent_Photo: any;
+              Door_frame_and_shutter_shades_are_consistent_Description:string;
 
              Gaskets_or_sealents_are_intact:string;
               Gaskets_or_sealents_are_intact_Photo: any;
@@ -61,21 +61,21 @@ interface StudentData {
                 UPVC_windows_are_operable_Photo: any;
               UPVC_windows_are_operable_Description:string;
 
-               Door_stopper_doesnt_damage_wooden_flooring:string;               
-                Door_stopper_doesnt_damage_wooden_flooring_Photo: any;
-              Door_stopper_doesnt_damage_wooden_flooring_Description:string;
+               Door_stopper_is_operable :string;               
+                Door_stopper_is_operable_Photo: any;
+              Door_stopper_is_operable_Description:string;
 
-               Door_frame_and_shutter_gaps_are_consistent:string;
-                Door_frame_and_shutter_gaps_are_consistent_Photo: any;
-              Door_frame_and_shutter_gaps_are_consistent_Description:string;
+               Door_frame_and_hutter_gaps_are_consistent_on_both_sides:string;
+                Door_frame_and_hutter_gaps_are_consistent_on_both_sides_Photo: any;
+              Door_frame_and_hutter_gaps_are_consistent_on_both_sides_Description:string;
 
                Hardware_is_as_per_standard_offering:string;
                 Hardware_is_as_per_standard_offering_Photo: any;
               Hardware_is_as_per_standard_offering_Description:string;
 
-               Door_frame_is_consistent_without_dent_or_scratches_or_marks:string;
-                Door_frame_is_consistent_without_dent_or_scratches_or_marks_Photo: any;
-              Door_frame_is_consistent_without_dent_or_scratches_or_marks_Description:string;
+               Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks:string;
+                Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Photo: any;
+              Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Description:string;
         
             Electrical:string;
                Switches_are_operable:string;
@@ -94,13 +94,13 @@ interface StudentData {
               AC_Core_cut_pipe_is_finished_flush_with_plaster_Photo: any;
               AC_Core_cut_pipe_is_finished_flush_with_plaster_Description:string;
 
-               AC_Core_cut_pipe_is_cleaned :string;
-                AC_Core_cut_pipe_is_cleaned_Photo: any;
-              AC_Core_cut_pipe_is_cleaned_Description:string;
+               AC_Core_cut_pipe_is_cleaned_and_finished_flush_with_plaster_on_both_sides :string;
+                AC_Core_cut_pipe_is_cleaned_and_finished_flush_with_plaster_on_both_sides_Photo: any;
+              AC_Core_cut_pipe_is_cleaned_and_finished_flush_with_plaster_on_both_sides_Description:string;
 
-               Ceiling_electrical_points_are_covered_or_capped_properly:string;
-                Ceiling_electrical_points_are_covered_or_capped_properly_Photo: any;
-              Ceiling_electrical_points_are_covered_or_capped_properly_Description:string;
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly:string;
+                Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Photo: any;
+              Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Description:string;
 
                Wall_Light_points_are_covered__or_capped_properly:string;
                 Wall_Light_points_are_covered__or_capped_properly_Photo: any;
@@ -108,21 +108,22 @@ interface StudentData {
             
             Flooring:string;
 
-               Wooden_flooring_is_fixed_and_consistent:string;
-                Wooden_flooring_is_fixed_and_consistent_Photo: any;
-              Wooden_flooring_is_fixed_and_consistent_Description:string;
+               
+Wooden_flooring_is_fixed_and_consistent_without_gaps:string;                
+Wooden_flooring_is_fixed_and_consistent_without_gaps_Photo: any;              
+Wooden_flooring_is_fixed_and_consistent_without_gaps_Description:string;
               
-             Skirting_finish_and_alignment:string;
-              Skirting_finish_and_alignment_Photo: any;
-              Skirting_finish_and_alignment_Description:string;
+             Skirting_is_finished_and_aligned_without_gaps:string;
+              Skirting_is_finished_and_aligned_without_gaps_Photo: any;
+              Skirting_is_finished_and_aligned_without_gaps_Description:string;
 
-             Transition_betweeen_wooden_flooring_and_toilet:string;
-              Transition_betweeen_wooden_flooring_and_toilet_Photo: any; 
-              Transition_betweeen_wooden_flooring_and_toilet_Description:string;
+             Transition_member_betweeen_wooden_flooring_and_toilet_is_provided_and_fixed_right:string;
+              Transition_member_betweeen_wooden_flooring_and_toilet_is_provided_and_fixed_right_Photo: any; 
+              Transition_member_betweeen_wooden_flooring_and_toilet_is_provided_and_fixed_right_Description:string;
 
-               Transition_betweeen_Corridor_marble_and_wooden_flooring:string;
-                Transition_betweeen_Corridor_marble_and_wooden_flooring_Photo: any;
-              Transition_betweeen_Corridor_marble_and_wooden_flooring_Description:string;
+               Transition_member_betweeen_Corridor_marble_and_wooden_flooring_is_provided_and_fixed_right:string;
+                Transition_member_betweeen_Corridor_marble_and_wooden_flooring_is_provided_and_fixed_right_Photo: any;
+              Transition_member_betweeen_Corridor_marble_and_wooden_flooring_is_provided_and_fixed_right_Description:string;
             
             Walls_and_ceiling:string;
 
@@ -144,14 +145,13 @@ interface StudentData {
   
    
 }
-
 @Component({
   selector: 'app-bedroom2',
   templateUrl: './bedroom2.page.html',
   styleUrls: ['./bedroom2.page.scss'],
 })
 export class Bedroom2Page implements OnInit {
- //new
+//new
  completiontime:any
 flist:any;
 flatnumber:any;
@@ -164,6 +164,7 @@ issubmit:boolean;
 idata:any;
 AssetData:any;
 DiningData:any;
+
 
 isection:string;
 recivedData:any;
@@ -291,7 +292,7 @@ private storage: Storage
 )
  {
 
-    this.issubmit=false;
+     this.issubmit=false;
    this.isToggled1 = false;
     this.isToggled2 = false; 
     this.isToggled3 = false;
@@ -401,7 +402,8 @@ this.cameradisplay25=false;
    
 
   ngOnInit() {
-     //new
+    
+    //new
      firebase.auth().onAuthStateChanged(user => {
     if (user) {
      
@@ -417,7 +419,8 @@ this.cameradisplay25=false;
     }
   });
     this.storage.create();
-    const db =firebase.firestore();   
+    
+const db =firebase.firestore();   
 
     db.collection("test1")
       .doc(this.recivedData)
@@ -426,22 +429,19 @@ this.cameradisplay25=false;
     console.log("all",doc.data().Flat_Number) 
     this.flatnumber=doc.data().Flat_Number
       });
-
    //new
-
-    
 
     this.ionicForm = this.formBuilder.group({
 
       
-                Doors_and_Windows:[''],
-               UPVC_window_bug_screen_mesh_is_operable:['',[Validators.required]],
-                UPVC_window_bug_screen_mesh_is_operable_Photo: [this.imgURL1],
-              UPVC_window_bug_screen_mesh_is_operable_Description:[''],
+               Doors_and_Windows:[''],
+               UPVC_window_bug_screen_mesh_is_operable_and_taut:['',[Validators.required]],
+                UPVC_window_bug_screen_mesh_is_operable_and_taut_Photo: [this.imgURL1],
+              UPVC_window_bug_screen_mesh_is_operable_and_taut_Description:[''],
 
-               Door_color_is_consistent:[''],
-                Door_color_is_consistent_Photo: [this.imgURL2],
-              Door_color_is_consistent_Description:[''],
+               Door_frame_and_shutter_shades_are_consistent:[''],
+                Door_frame_and_shutter_shades_are_consistent_Photo: [this.imgURL2],
+              Door_frame_and_shutter_shades_are_consistent_Description:[''],
 
               Gaskets_or_sealents_are_intact:[''],
               Gaskets_or_sealents_are_intact_Photo: [this.imgURL3],
@@ -463,21 +463,21 @@ this.cameradisplay25=false;
                 UPVC_windows_are_operable_Photo: [this.imgURL7],
               UPVC_windows_are_operable_Description:[''],
 
-               Door_stopper_doesnt_damage_wooden_flooring:[''],               
-                Door_stopper_doesnt_damage_wooden_flooring_Photo: [this.imgURL8],
-              Door_stopper_doesnt_damage_wooden_flooring_Description:[''],
+               Door_stopper_is_operable :[''],               
+                Door_stopper_is_operable_Photo: [this.imgURL8],
+              Door_stopper_is_operable_Description:[''],
 
-               Door_frame_and_shutter_gaps_are_consistent:[''],
-                Door_frame_and_shutter_gaps_are_consistent_Photo: [this.imgURL9],
-              Door_frame_and_shutter_gaps_are_consistent_Description:[''],
+               Door_frame_and_hutter_gaps_are_consistent_on_both_sides:[''],
+                Door_frame_and_hutter_gaps_are_consistent_on_both_sides_Photo: [this.imgURL9],
+              Door_frame_and_hutter_gaps_are_consistent_on_both_sides_Description:[''],
 
                Hardware_is_as_per_standard_offering:[''],
                 Hardware_is_as_per_standard_offering_Photo: [this.imgURL10],
               Hardware_is_as_per_standard_offering_Description:[''],
 
-               Door_frame_is_consistent_without_dent_or_scratches_or_marks:['',[Validators.required]],
-                Door_frame_is_consistent_without_dent_or_scratches_or_marks_Photo: [this.imgURL11],
-              Door_frame_is_consistent_without_dent_or_scratches_or_marks_Description:[''],
+               Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks:['',[Validators.required]],
+                Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Photo: [this.imgURL11],
+              Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Description:[''],
           
             Electrical:[''],
                Switches_are_operable:['',[Validators.required]],
@@ -496,13 +496,13 @@ this.cameradisplay25=false;
               AC_Core_cut_pipe_is_finished_flush_with_plaster_Photo: [this.imgURL15],
               AC_Core_cut_pipe_is_finished_flush_with_plaster_Description:[''],
 
-               AC_Core_cut_pipe_is_cleaned :[''],
-                AC_Core_cut_pipe_is_cleaned_Photo: [this.imgURL16],
-              AC_Core_cut_pipe_is_cleaned_Description:[''],
+               AC_Core_cut_pipe_is_cleaned_and_finished_flush_with_plaster_on_both_sides :[''],
+                AC_Core_cut_pipe_is_cleaned_and_finished_flush_with_plaster_on_both_sides_Photo: [this.imgURL16],
+              AC_Core_cut_pipe_is_cleaned_and_finished_flush_with_plaster_on_both_sides_Description:[''],
 
-               Ceiling_electrical_points_are_covered_or_capped_properly:[''],
-                Ceiling_electrical_points_are_covered_or_capped_properly_Photo: [this.imgURL17],
-              Ceiling_electrical_points_are_covered_or_capped_properly_Description:[''],
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly:[''],
+                Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Photo: [this.imgURL17],
+              Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Description:[''],
 
                Wall_Light_points_are_covered__or_capped_properly:['',[Validators.required]],
                 Wall_Light_points_are_covered__or_capped_properly_Photo: [this.imgURL18],
@@ -510,21 +510,24 @@ this.cameradisplay25=false;
             
             Flooring:[''],
 
-               Wooden_flooring_is_fixed_and_consistent:['',[Validators.required]],
-                Wooden_flooring_is_fixed_and_consistent_Photo: [this.imgURL19],
-              Wooden_flooring_is_fixed_and_consistent_Description:[''],
+               
+Wooden_flooring_is_fixed_and_consistent_without_gaps:['',[Validators.required]],
+                
+Wooden_flooring_is_fixed_and_consistent_without_gaps_Photo: [this.imgURL19],
+              
+Wooden_flooring_is_fixed_and_consistent_without_gaps_Description:[''],
 
-              Skirting_finish_and_alignment:[''],
-              Skirting_finish_and_alignment_Photo: [this.imgURL20],
-              Skirting_finish_and_alignment_Description:[''],
+              Skirting_is_finished_and_aligned_without_gaps:[''],
+              Skirting_is_finished_and_aligned_without_gaps_Photo: [this.imgURL20],
+              Skirting_is_finished_and_aligned_without_gaps_Description:[''],
 
-              Transition_betweeen_wooden_flooring_and_toilet:[''],
-              Transition_betweeen_wooden_flooring_and_toilet_Photo: [this.imgURL21], 
-              Transition_betweeen_wooden_flooring_and_toilet_Description:[''],
+              Transition_member_betweeen_wooden_flooring_and_toilet_is_provided_and_fixed_right:[''],
+              Transition_member_betweeen_wooden_flooring_and_toilet_is_provided_and_fixed_right_Photo: [this.imgURL21], 
+              Transition_member_betweeen_wooden_flooring_and_toilet_is_provided_and_fixed_right_Description:[''],
 
-               Transition_betweeen_Corridor_marble_and_wooden_flooring:['',[Validators.required]],
-                Transition_betweeen_Corridor_marble_and_wooden_flooring_Photo: [this.imgURL22],
-              Transition_betweeen_Corridor_marble_and_wooden_flooring_Description:[''],
+               Transition_member_betweeen_Corridor_marble_and_wooden_flooring_is_provided_and_fixed_right:['',[Validators.required]],
+                Transition_member_betweeen_Corridor_marble_and_wooden_flooring_is_provided_and_fixed_right_Photo: [this.imgURL22],
+              Transition_member_betweeen_Corridor_marble_and_wooden_flooring_is_provided_and_fixed_right_Description:[''],
             
             Walls_and_ceiling:[''],
 
@@ -532,7 +535,7 @@ this.cameradisplay25=false;
                 Cornices_provided_are_aligned_Photo: [this.imgURL23],
               Cornices_provided_are_aligned_Description:[''],
 
-               Ceilings_are_free_of_stainss_or_undulations_or_stains_etc:[''],
+               Ceilings_are_free_of_stainss_or_undulations_or_stains_etc:['',[Validators.required]],
                 Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Photo: [this.imgURL24],
                 Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description:[''],
 
@@ -1257,9 +1260,9 @@ this.cameradisplay25=false;
   sendmail(){ 
 
 
-    this.storageService.getObject('bedroom2 form csv').then(result => {
+    this.storageService.getObject('masterbedroom form csv').then(result => {
     if (result != null) {
-    console.log('bedroom2 form csv: '+ result);
+    console.log('masterbedroom form csv '+ result);
     this.idata= result;
     }
     }).catch(e => {
@@ -1275,7 +1278,7 @@ this.cameradisplay25=false;
 
   ],
   subject: 'Report',
- body: 'report from krafturspace app sent by'+ this.au +'for Flat number'+this.flatnumber + 'time of completion'+this.completiontime,
+  body: 'report from krafturspace app sent by'+ this.au +'for Flat number'+this.flatnumber + 'time of completion'+this.completiontime,
   isHtml: true
 };
 
@@ -1293,9 +1296,8 @@ this.emailComposer.open(email);
      const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
      const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
       let date = new Date().toLocaleString(undefined, {timeZone: 'Asia/Kolkata'});
-
-      this.completiontime=date;
-
+this.completiontime=date;
+      
       this.AssetData=JSON.stringify(this.ionicForm.value)   
 
      this.DiningData= JSON.parse(this.AssetData);
@@ -1306,7 +1308,7 @@ this.emailComposer.open(email);
 console.log("arr1",this.arr )
 
 this.stdata=this.arrayToCSV(this.arr) ;
-   this.storageService.setObject('bedroom2 form csv', this.stdata);
+   this.storageService.setObject('masterbedroom form csv', this.stdata);
 
     
 
@@ -1332,12 +1334,12 @@ var washingtonRef = db.collection("test1").doc(this.recivedData);
 // Atomically add a new region to the "regions" array field.
 washingtonRef.update({
   Dining:arrayUnion({
-       "bedroom2u": this.DiningData
+       "masterbedroom": this.DiningData
       
        
      })
 }).then(function() {
-  console.log("bedroom2 data is  updated");
+  console.log("dining data is  updated");
 });
 
 
@@ -1351,10 +1353,9 @@ washingtonRef.update({
    //new end
 
 
-
    
-               UPVC_window_bug_screen_mesh_is_operable():void {      
-    let Qvalue = this.ionicForm.get('UPVC_window_bug_screen_mesh_is_operable').value;
+               UPVC_window_bug_screen_mesh_is_operable_and_taut():void {      
+    let Qvalue = this.ionicForm.get('UPVC_window_bug_screen_mesh_is_operable_and_taut').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1369,8 +1370,8 @@ washingtonRef.update({
   }
               
 
-               Door_color_is_consistent():void {      
-    let Qvalue = this.ionicForm.get('DB_is_fixed_properly').value;
+               Door_frame_and_shutter_shades_are_consistent():void {      
+    let Qvalue = this.ionicForm.get('Door_frame_and_shutter_shades_are_consistent').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1459,8 +1460,8 @@ washingtonRef.update({
   }
                
 
-               Door_stopper_doesnt_damage_wooden_flooring():void {      
-    let Qvalue = this.ionicForm.get('Door_stopper_doesnt_damage_wooden_flooring').value;
+               Door_stopper_is_operable():void {      
+    let Qvalue = this.ionicForm.get('Door_stopper_is_operable').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1474,8 +1475,8 @@ washingtonRef.update({
     
   }               
               
-               Door_frame_and_shutter_gaps_are_consistent():void {      
-    let Qvalue = this.ionicForm.get('Door_frame_and_shutter_gaps_are_consistent').value;
+               Door_frame_and_hutter_gaps_are_consistent_on_both_sides():void {      
+    let Qvalue = this.ionicForm.get('Door_frame_and_hutter_gaps_are_consistent_on_both_sides').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1505,8 +1506,8 @@ washingtonRef.update({
     
   }
 
-               Door_frame_is_consistent_without_dent_or_scratches_or_marks():void {      
-    let Qvalue = this.ionicForm.get('Door_frame_is_consistent_without_dent_or_scratches_or_marks').value;
+               Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks():void {      
+    let Qvalue = this.ionicForm.get('Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1582,8 +1583,8 @@ washingtonRef.update({
     
   }
               
-               AC_Core_cut_pipe_is_cleaned ():void {      
-    let Qvalue = this.ionicForm.get('AC_Core_cut_pipe_is_cleaned').value;
+               AC_Core_cut_pipe_is_cleaned_and_finished_flush_with_plaster_on_both_sides ():void {      
+    let Qvalue = this.ionicForm.get('AC_Core_cut_pipe_is_cleaned_and_finished_flush_with_plaster_on_both_sides').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1598,8 +1599,8 @@ washingtonRef.update({
   }
                
 
-               Ceiling_electrical_points_are_covered_or_capped_properly():void {      
-    let Qvalue = this.ionicForm.get('Ceiling_electrical_points_are_covered_or_capped_properly').value;
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly():void {      
+    let Qvalue = this.ionicForm.get('Ceiling_and_wall_electrical_points_are_covered_or_capped_properly').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1631,8 +1632,9 @@ washingtonRef.update({
               
            
 
-               Wooden_flooring_is_fixed_and_consistent():void {      
-    let Qvalue = this.ionicForm.get('Wooden_flooring_is_fixed_and_consistent').value;
+               
+Wooden_flooring_is_fixed_and_consistent_without_gaps():void {      
+    let Qvalue = this.ionicForm.get('Wooden_flooring_is_fixed_and_consistent_without_gaps').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1662,8 +1664,8 @@ washingtonRef.update({
   }
              
 
-              Transition_betweeen_wooden_flooring_and_toilet():void {      
-    let Qvalue = this.ionicForm.get('Transition_betweeen_wooden_flooring_and_toilet').value;
+              Transition_member_betweeen_wooden_flooring_and_toilet_is_provided_and_fixed_right():void {      
+    let Qvalue = this.ionicForm.get('Transition_member_betweeen_wooden_flooring_and_toilet_is_provided_and_fixed_right').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1677,8 +1679,8 @@ washingtonRef.update({
     
   }
               
-               Transition_betweeen_Corridor_marble_and_wooden_flooring():void {      
-    let Qvalue = this.ionicForm.get('Transition_betweeen_Corridor_marble_and_wooden_flooring').value;
+               Transition_member_betweeen_Corridor_marble_and_wooden_flooring_is_provided_and_fixed_right():void {      
+    let Qvalue = this.ionicForm.get('Transition_member_betweeen_Corridor_marble_and_wooden_flooring_is_provided_and_fixed_right').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1742,6 +1744,22 @@ washingtonRef.update({
   }
                
   
+notify() {
+  console.log("Toggled: "+ this.isToggled); 
+  
+  if(this.isToggled){
+    console.log("true")
+    this.isToggled=false;
+
+  }else{
+    console.log("flase")
+     this.isToggled=true;
+
+  }
+   this._cdr.detectChanges();
+   
+
+}
 notify1() {
   console.log("Toggled: "+ this.isToggled); 
   
@@ -1809,5 +1827,4 @@ notify4() {
    
 
 }
-
 }

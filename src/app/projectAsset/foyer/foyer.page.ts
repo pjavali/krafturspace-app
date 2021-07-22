@@ -32,9 +32,9 @@ import { EmailComposer } from '@ionic-native/email-composer/ngx';
 interface StudentData {
   Electrical:string;
 
-  Electrical_wall_points_are_covered:string;  
-  Electrical_wall_points_are_covered_Photo: any;
-  Electrical_wall_points_are_covered_Description:string;
+  Electrical_wall_and_ceiling_points_are_covered :string;  
+  Electrical_wall_and_ceiling_points_are_covered_Photo: any;
+  Electrical_wall_and_ceiling_points_are_covered_Description:string;
 
   Electrical_ceiling_points_are_covered : string;
   Electrical_ceiling_points_are_covered_Photo: any;
@@ -52,9 +52,9 @@ interface StudentData {
   Switch_plates_are_aligned_Photo: any;
   Switch_plates_are_aligned_Description:string;
 
-  DB_is_fixed_properly : string;
-  DB_is_fixed_properly_Photo: any;
-  DB_is_fixed_properly_Description:string;
+  DB_and_Communication_boxes_are_fixed_properly : string;
+  DB_and_Communication_boxes_are_fixed_properly_Photo: any;
+  DB_and_Communication_boxes_are_fixed_properly_Description:string;
 
   Exterior_Surface:string;
   External_false_ceiling_finish_over_main_door_is_correct:string;
@@ -70,9 +70,9 @@ interface StudentData {
             Gaskets_sealants_are_intact_Photo:any;
             Gaskets_ealants_are_intact_Description:string;
 
-            Confirm_door_opens_And_closes_properly:string;
-            Confirm_door_opens_And_closes_properly_Photo:any;
-            Confirm_door_opens_And_closes_properly_Photo_Description:string;
+            door_opens_And_closes_properly:string;
+            door_opens_And_closes_properly_Photo:any;
+            door_opens_And_closes_properly_Photo_Description:string;
 
             Finishing_around_the_hardware:string;
             Finishing_around_the_hardware_Photo:any;
@@ -82,21 +82,21 @@ interface StudentData {
             Architrave_is_consistent_Photo:any;
             Architrave_is_consistent_Description:string;
 
-            Dents_marks_on_Main_door_shutter:string;
+            Door_frame_and_shutter_shades_are_consistent:string;
             Dents_marks_on_Main_door_shutter_Photo:any;
             Dents_marks_on_Main_door_shutter_Description:string;
 
-            Internal_and_external_shutter_alignments:string; 
+            Shutter_is_aligned_when_shut_from_both_sides:string; 
             Internal_and_external_shutter_alignments_Photo:any;
             Internal_and_external_shutter_alignments_Description:string;
 
-            Dents_marks_on_Main_door_frame:string;
-            Dents_marks_on_Main_door_frame_Photo: any;
-            Dents_marks_on_Main_door_frame_Description:string;
+            Door_frame_and_shutter_does_not_have_dent_or_scratches_or_marks:string;
+            Door_frame_and_shutter_does_not_have_dent_or_scratches_or_marks_Photo: any;
+            Door_frame_and_shutter_does_not_have_dent_or_scratches_or_marks_Description:string;
 
-            Hardware_as_per_standard_offering:string;
-            Hardware_as_per_standard_offering_Photo:any;
-            Hardware_as_per_standard_offering_Description:string;
+            Hardware_is_as_per_standard_offering:string;
+            Hardware_is_as_per_standard_offering_Photo:any;
+            Hardware_is_as_per_standard_offering_Description:string;
 
             Lock_is_functional_from_both_sides:string;
             Lock_is_functional_from_both_sides_Photo:any;
@@ -111,17 +111,17 @@ interface StudentData {
             Shade_variations_in_shutters_Description:string;
 
 Miscellaneous:string;
-           Finishing_of_granite_coping_on_ledges:string;
-           Finishing_of_granite_coping_on_ledges_Photo:any;
-            Finishing_of_granite_coping_on_ledges_Description:string;
+           Granite_ledge_provided_is_free_of_cracks_and_sharp_edges:string;
+           Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Photo:any;
+            Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Description:string;
 
 Video_Door_Phone:string;
             Video_door_phone_is_functional:string;
             Video_door_phone_is_functional_Photo:any;
             Video_door_phone_is_functional_Description:string;
 
-            Video_door_phone_alignment:string;
-            Video_door_phone_alignment_Photo:any;
+            Video_door_phone_alignment_is_right:string;            
+            Video_door_phone_alignment_is_right_Photo:any;
             Video_door_phone_alignment_Description:string;
 
             Video_door_phone_is_fixed:string;
@@ -456,9 +456,9 @@ const db =firebase.firestore();
 
         Electrical:[''],
 
-        Electrical_wall_points_are_covered: ['',[Validators.required]],
-        Electrical_wall_points_are_covered_Photo: [this.imgURL1],
-        Electrical_wall_points_are_covered_Description: [''],
+        Electrical_wall_and_ceiling_points_are_covered : ['',[Validators.required]],
+        Electrical_wall_and_ceiling_points_are_covered_Photo: [this.imgURL1],
+        Electrical_wall_and_ceiling_points_are_covered_Description: [''],
 
         Electrical_ceiling_points_are_covered :[''],
         Electrical_ceiling_points_are_covered_Photo: [this.imgURL2],
@@ -478,9 +478,9 @@ const db =firebase.firestore();
         Switch_plates_are_aligned_Description:[''],
 
 
-        DB_is_fixed_properly : ['',[Validators.required]],
-        DB_is_fixed_properly_Photo: [this.imgURL6],
-        DB_is_fixed_properly_Description:[''],
+        DB_and_Communication_boxes_are_fixed_properly : ['',[Validators.required]],
+        DB_and_Communication_boxes_are_fixed_properly_Photo: [this.imgURL6],
+        DB_and_Communication_boxes_are_fixed_properly_Description:[''],
 
 
         Exterior_Surface:[''],
@@ -497,9 +497,9 @@ const db =firebase.firestore();
             Gaskets_sealants_are_intact_Photo:[this.imgURL9],
             Gaskets_ealants_are_intact_Description: [''],
 
-            Confirm_door_opens_And_closes_properly: [''],
-            Confirm_door_opens_And_closes_properly_Photo:[this.imgURL10],
-            Confirm_door_opens_And_closes_properly_Photo_Description: [''],
+           door_opens_And_closes_properly: [''],
+            door_opens_And_closes_properly_Photo:[this.imgURL10],
+            door_opens_And_closes_properly_Photo_Description: [''],
 
             Finishing_around_the_hardware: [''],
             Finishing_around_the_hardware_Photo:[this.imgURL11],
@@ -509,21 +509,21 @@ const db =firebase.firestore();
             Architrave_is_consistent_Photo:[this.imgURL12],
             Architrave_is_consistent_Description: [''],
 
-            Dents_marks_on_Main_door_shutter: [''],
+            Door_frame_and_shutter_shades_are_consistent: [''],
             Dents_marks_on_Main_door_shutter_Photo:[this.imgURL13],
             Dents_marks_on_Main_door_shutter_Description: [''],
 
-            Internal_and_external_shutter_alignments: [''],
+            Shutter_is_aligned_when_shut_from_both_sides: [''],
             Internal_and_external_shutter_alignments_Photo:[this.imgURL14],
             Internal_and_external_shutter_alignments_Description: [''],
 
-            Dents_marks_on_Main_door_frame: [''],
-            Dents_marks_on_Main_door_frame_Photo: [this.imgURL14],
-            Dents_marks_on_Main_door_frame_Description: [''],
+            Door_frame_and_shutter_does_not_have_dent_or_scratches_or_marks: [''],
+            Door_frame_and_shutter_does_not_have_dent_or_scratches_or_marks_Photo: [this.imgURL14],
+            Door_frame_and_shutter_does_not_have_dent_or_scratches_or_marks_Description: [''],
 
-            Hardware_as_per_standard_offering: [''],
-            Hardware_as_per_standard_offering_Photo:[this.imgURL15],
-            Hardware_as_per_standard_offering_Description: [''],
+            Hardware_is_as_per_standard_offering: [''],
+            Hardware_is_as_per_standard_offering_Photo:[this.imgURL15],
+            Hardware_is_as_per_standard_offering_Description: [''],
 
             Lock_is_functional_from_both_sides: [''],
             Lock_is_functional_from_both_sides_Photo:[this.imgURL16],
@@ -537,18 +537,19 @@ const db =firebase.firestore();
             Shade_variations_in_shutters_Photo:[this.imgURL18],
             Shade_variations_in_shutters_Description: [''],
 Miscellaneous:[''],
-           Finishing_of_granite_coping_on_ledges: ['',[Validators.required]],
-           Finishing_of_granite_coping_on_ledges_Photo:[this.imgURL19],
-            Finishing_of_granite_coping_on_ledges_Description: [''],
+           Granite_ledge_provided_is_free_of_cracks_and_sharp_edges: ['',[Validators.required]],
+           Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Photo:[this.imgURL19],
+            Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Description: [''],
 
 Video_Door_Phone:[''],
             Video_door_phone_is_functional: ['',[Validators.required]],
             Video_door_phone_is_functional_Photo:[this.imgURL20],
             Video_door_phone_is_functional_Description: [''],
 
-            Video_door_phone_alignment: [''],
-            Video_door_phone_alignment_Photo:[this.imgURL21],
-            Video_door_phone_alignment_Description: [''],
+            
+            Video_door_phone_alignment_is_right: [''],
+            Video_door_phone_alignment_is_right_Photo:[this.imgURL21],
+            Video_door_phone_alignment_is_right_Description: [''],
 
             Video_door_phone_is_fixed: [''],
            Video_door_phone_is_fixed_Photo:[this.imgURL22],
@@ -1374,8 +1375,8 @@ washingtonRef.update({
 
 
       
-  Electrical_wall_points_are_covered(): void {      
-        let Qvalue = this.ionicForm.get('Electrical_wall_points_are_covered').value;
+  Electrical_wall_and_ceiling_points_are_covered (): void {      
+        let Qvalue = this.ionicForm.get('Electrical_wall_and_ceiling_points_are_covered ').value;
         console.log("Q---->",Qvalue)
         if(Qvalue === "No"){
 
@@ -1458,8 +1459,8 @@ washingtonRef.update({
 
       
  
-  DB_is_fixed_properly (): void {      
-        let Qvalue = this.ionicForm.get('DB_is_fixed_properly').value;
+  DB_and_Communication_boxes_are_fixed_properly (): void {      
+        let Qvalue = this.ionicForm.get('DB_and_Communication_boxes_are_fixed_properly').value;
         console.log("Q---->",Qvalue)
         if(Qvalue === "No"){
 
@@ -1521,8 +1522,8 @@ washingtonRef.update({
         
       }
           
-            Confirm_door_opens_And_closes_properly(): void {      
-        let Qvalue = this.ionicForm.get('Confirm_door_opens_And_closes_properly').value;
+            door_opens_And_closes_properly(): void {      
+        let Qvalue = this.ionicForm.get('door_opens_And_closes_properly').value;
         console.log("Q---->",Qvalue)
         if(Qvalue === "No"){
 
@@ -1568,8 +1569,8 @@ washingtonRef.update({
         
       }
             
-            Dents_marks_on_Main_door_shutter(): void {      
-        let Qvalue = this.ionicForm.get('Dents_marks_on_Main_door_shutter').value;
+            Door_frame_and_shutter_shades_are_consistent(): void {      
+        let Qvalue = this.ionicForm.get('Door_frame_and_shutter_shades_are_consistent').value;
         console.log("Q---->",Qvalue)
         if(Qvalue === "No"){
 
@@ -1583,8 +1584,8 @@ washingtonRef.update({
         
       }
            
-            Internal_and_external_shutter_alignments(): void {      
-        let Qvalue = this.ionicForm.get('Internal_and_external_shutter_alignments').value;
+            Shutter_is_aligned_when_shut_from_both_sides(): void {      
+        let Qvalue = this.ionicForm.get('Shutter_is_aligned_when_shut_from_both_sides').value;
         console.log("Q---->",Qvalue)
         if(Qvalue === "No"){
 
@@ -1599,8 +1600,8 @@ washingtonRef.update({
       } 
             
 
-            Dents_marks_on_Main_door_frame(): void {      
-        let Qvalue = this.ionicForm.get('Dents_marks_on_Main_door_frame').value;
+            Door_frame_and_shutter_does_not_have_dent_or_scratches_or_marks(): void {      
+        let Qvalue = this.ionicForm.get('Door_frame_and_shutter_does_not_have_dent_or_scratches_or_marks').value;
         console.log("Q---->",Qvalue)
         if(Qvalue === "No"){
 
@@ -1614,8 +1615,8 @@ washingtonRef.update({
         
       }
             
-            Hardware_as_per_standard_offering(): void {      
-        let Qvalue = this.ionicForm.get('Hardware_as_per_standard_offering').value;
+            Hardware_is_as_per_standard_offering(): void {      
+        let Qvalue = this.ionicForm.get('Hardware_is_as_per_standard_offering').value;
         console.log("Q---->",Qvalue)
         if(Qvalue === "No"){
 
@@ -1678,8 +1679,8 @@ washingtonRef.update({
             
 
 
-           Finishing_of_granite_coping_on_ledges(): void {      
-        let Qvalue = this.ionicForm.get('Finishing_of_granite_coping_on_ledges').value;
+           Granite_ledge_provided_is_free_of_cracks_and_sharp_edges(): void {      
+        let Qvalue = this.ionicForm.get('Granite_ledge_provided_is_free_of_cracks_and_sharp_edges').value;
         console.log("Q---->",Qvalue)
         if(Qvalue === "No"){
 
@@ -1711,8 +1712,9 @@ washingtonRef.update({
       }
            
 
-            Video_door_phone_alignment(): void {      
-        let Qvalue = this.ionicForm.get('Video_door_phone_alignment').value;
+            
+Video_door_phone_alignment_is_right(): void {      
+        let Qvalue = this.ionicForm.get('Video_door_phone_alignment_is_right').value;
         console.log("Q---->",Qvalue)
         if(Qvalue === "No"){
 

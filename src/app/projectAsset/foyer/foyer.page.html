@@ -25,8 +25,8 @@
 </ion-item>
 <!--section-->
 <ion-item *ngIf="isToggled">
-      <ion-label position="floating"> Electrical wall points are covered</ion-label>      
-       <ion-select formControlName= "Electrical_wall_points_are_covered" (ionChange)="Electrical_wall_points_are_covered()">
+      <ion-label position="floating">Electrical wall & ceiling points are covered </ion-label>      
+       <ion-select formControlName= "Electrical_wall_and_ceiling_points_are_covered" (ionChange)="Electrical_wall_and_ceiling_points_are_covered()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -49,11 +49,11 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Electrical_wall_points_are_covered_Description"></ion-input>
+          <ion-input formControlName="Electrical_wall_and_ceiling_points_are_covered_Description"></ion-input>
          </ion-item>  
       </ion-card>
 
-<!--section-->
+<!--deleted
     <ion-item *ngIf="isToggled">
       <ion-label position="floating"> Electrical ceiling points are covered</ion-label>      
        <ion-select formControlName= "Electrical_ceiling_points_are_covered" (ionChange)="Electrical_ceiling_points_are_covered()">
@@ -82,6 +82,8 @@
           <ion-input formControlName="Electrical_ceiling_points_are_covered_Description"></ion-input>
          </ion-item>  
       </ion-card>
+
+-->
 <!--section-->
     <ion-item *ngIf="isToggled">
       <ion-label position="floating">Electrical points are as per standard offering</ion-label>      
@@ -170,8 +172,8 @@
 </ion-card>
       <!--section-->
 <ion-item *ngIf="isToggled">
-      <ion-label position="floating"> DB is fixed properly</ion-label>      
-       <ion-select formControlName= "DB_is_fixed_properly" (ionChange)="DB_is_fixed_properly()">
+      <ion-label position="floating">DB & Communication boxes are fixed properly</ion-label>      
+       <ion-select formControlName= "DB_and_Communication_boxes_are_fixed_properly" (ionChange)="DB_and_Communication_boxes_are_fixed_properly()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -194,7 +196,7 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="DB_is_fixed_properly_Description"></ion-input>
+          <ion-input formControlName="DB_and_Communication_boxes_are_fixed_properly_Description"></ion-input>
          </ion-item>  
 </ion-card>
 <!--endsection-->
@@ -289,8 +291,8 @@
 
 <!--section-->
     <ion-item *ngIf="isToggled2">
-      <ion-label position="floating"> Confirm door opens & closes properly</ion-label>      
-       <ion-select formControlName= "Confirm_door_opens_And_closes_properly" (ionChange)="Confirm_door_opens_And_closes_properly()">
+      <ion-label position="floating">door opens & closes properly</ion-label>      
+       <ion-select formControlName= "door_opens_And_closes_properly" (ionChange)="door_opens_And_closes_properly()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -377,13 +379,13 @@
       </ion-card>
 
 
-<!--section-->
+<!--delete-->
 <ion-item *ngIf="isToggled2">
-      <ion-label position="floating"> Dents/marks on Main door shutter</ion-label>      
-       <ion-select formControlName= "Dents_marks_on_Main_door_shutter" (ionChange)="Dents_marks_on_Main_door_shutter()">
+      <ion-label position="floating">Door frame & shutter shades are consistent</ion-label>      
+       <ion-select formControlName= "Door_frame_and_shutter_shades_are_consistent" (ionChange)="Door_frame_and_shutter_shades_are_consistent()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
+       </ion-select>  Granite ledge provided is free of cracks & sharp edges
          
       </ion-item> 
 <ion-card *ngIf="cameradisplay13" >        
@@ -400,13 +402,14 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Dents_marks_on_Main_door_shutter_Description"></ion-input>
+          <ion-input formControlName="Door_frame_and_shutter_shades_are_consistent_Description"></ion-input>
          </ion-item>  
 </ion-card>
+
 <!--section-->
 <ion-item *ngIf="isToggled2">
       <ion-label position="floating"> Internal & external shutter alignments</ion-label>      
-       <ion-select formControlName= "Internal_and_external_shutter_alignments" (ionChange)="Internal_and_external_shutter_alignments()">
+       <ion-select formControlName= "Shutter_is_aligned_when_shut_from_both_sides" (ionChange)="Shutter_is_aligned_when_shut_from_both_sides()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -426,13 +429,13 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Internal_and_external_shutter_alignments_Description"></ion-input>
+          <ion-input formControlName="Shutter_is_aligned_when_shut_from_both_sides_Description"></ion-input>
          </ion-item>  
 </ion-card>
 <!--section-->
 <ion-item *ngIf="isToggled2">
-      <ion-label position="floating"> Dents/marks on Main door frame</ion-label>      
-       <ion-select formControlName= "Dents_marks_on_Main_door_frame" (ionChange)="Dents_marks_on_Main_door_framed()">
+      <ion-label position="floating">Door frame & shutter doesn't have dent/scratches/marks</ion-label>      
+       <ion-select formControlName= "Door_frame_and_shutter_does_not_have_dent_or_scratches_or_marks" (ionChange)="Door_frame_and_shutter_does_not_have_dent_or_scratches_or_marks()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -455,14 +458,14 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Dents_marks_on_Main_door_frame_Description"></ion-input>
+          <ion-input formControlName="Door_frame_and_shutter_does_not_have_dent_or_scratches_or_marks_Description"></ion-input>
          </ion-item>  
       </ion-card>
 
 <!--section-->
     <ion-item *ngIf="isToggled2">
-      <ion-label position="floating"> Hardware as per standard offering</ion-label>      
-       <ion-select formControlName= "Hardware_as_per_standard_offering" (ionChange)="Hardware_as_per_standard_offering()">
+      <ion-label position="floating">Hardware is as per standard offering</ion-label>      
+       <ion-select formControlName= "Hardware_is_as_per_standard_offering" (ionChange)="Hardware_is_as_per_standard_offering()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -485,7 +488,7 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Hardware_as_per_standard_offering_Description"></ion-input>
+          <ion-input formControlName="Hardware_is_as_per_standard_offering_Description"></ion-input>
          </ion-item>  
       </ion-card>
 <!--section-->
@@ -582,8 +585,8 @@
 </ion-item> 
   <!--section-->
 <ion-item *ngIf="isToggled3">
-      <ion-label position="floating"> Finishing of granite coping on ledges</ion-label>      
-       <ion-select formControlName= "Finishing_of_granite_coping_on_ledges" (ionChange)="Finishing_of_granite_coping_on_ledges()">
+      <ion-label position="floating">Granite ledge provided is free of cracks & sharp edges</ion-label>      
+       <ion-select formControlName= "Granite_ledge_provided_is_free_of_cracks_and_sharp_edges" (ionChange)="Granite_ledge_provided_is_free_of_cracks_and_sharp_edges()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>           
@@ -602,7 +605,7 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Finishing_of_granite_coping_on_ledges_Description"></ion-input>
+          <ion-input formControlName="Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Description"></ion-input>
          </ion-item>  
   </ion-card>
 <!--endsection-->
@@ -639,7 +642,7 @@
 <!--endsection-->
   <ion-item *ngIf="isToggled4">
       <ion-label position="floating"> Video door phone alignment</ion-label>      
-       <ion-select formControlName= "Video_door_phone_alignment" (ionChange)="Video_door_phone_alignment()">
+       <ion-select formControlName= "Video_door_phone_alignment_is_right" (ionChange)="Video_door_phone_alignment_is_right()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  

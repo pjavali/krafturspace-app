@@ -42,22 +42,23 @@ interface StudentData {
                 Drip_moulds_in_ceiling_are_consistent_Photo: any;
               Drip_moulds_in_ceiling_are_consistent_Description:string;
 
-               Elevational_ledge_horizontal_surface_finish:string;
-                Elevational_ledge_horizontal_surface_finish_Photo: any;
-              Elevational_ledge_horizontal_surface_finish_Description:string;
+               
+Elevational_ledge_horizontal_surface_is_finished_or_painted:string;
+                Elevational_ledge_horizontal_surface_is_finished_or_painted_Photo: any;
+              Elevational_ledge_horizontal_surface_is_finished_or_painted_Description:string;
             
             Flooring:string;
-               Vitrified_tiles_are_uniform_and_free_of_cracks:string;
-                Vitrified_tiles_are_uniform_and_free_of_cracks_Photo: any;
-              Vitrified_tiles_are_uniform_and_free_of_cracks_Description:string;
+               Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness:string;
+                Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness_Photo: any;
+              Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness_Description:string;
 
                Floor_Slopes_provided_are_adequate:string;
                 Floor_Slopes_provided_are_adequate_Photo: any;
               Floor_Slopes_provided_are_adequate_Description:string;
 
-               Skirting_finish_and_alignment:string;
-                Skirting_finish_and_alignment_Photo: any;
-              Skirting_finish_and_alignment_Description:string;
+               Skirting_finish_and_alignment_is_correct:string;
+                Skirting_finish_and_alignment_is_correct_Photo: any;
+              Skirting_finish_and_alignment_is_correct_Description:string;
            
             Floor_Traps:string;
                Edges_of_floor_trap_is_finished:string;
@@ -90,9 +91,9 @@ interface StudentData {
                Electrical_points_are_as_per_standard_offering_Photo: any;
               Electrical_points_are_as_per_standard_offering_Description:string;
 
-               Ceiling_electrical_points_are_covered_or_capped_properly:string;
-               Ceiling_electrical_points_are_covered_or_capped_properly_Photo: any;
-              Ceiling_electrical_points_are_covered_or_capped_properly_Description:string;
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly:string;
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Photo: any;
+              Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Description:string;
 
                Wall_Light_points_are_covered__or_capped_properly:string;
                Wall_Light_points_are_covered__or_capped_properly_Photo: any;
@@ -102,9 +103,12 @@ interface StudentData {
                Switch_plates_are_aligned_Photo: any;
               Switch_plates_are_aligned_Description:string;
 
-              AC_Core_cut_pipe_is_cleaned :string;
-              AC_Core_cut_pipe_is_cleaned_Photo: any;
-              AC_Core_cut_pipe_is_cleaned_Description:string;
+              
+AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster :string;
+              
+AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster_Photo: any;
+              
+AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster_Description:string;
 
                AC_Core_cut_pipe_is_finished :string;
                AC_Core_cut_pipe_is_finished_Photo: any;
@@ -123,9 +127,12 @@ interface StudentData {
                Shaft_internalss_to_be_free_of_debris_Photo: any;
               Shaft_internalss_to_be_free_of_debris_Description:string;
 
-               Internal_surfaces_is_cleaned_and_painted:string;
-               Internal_surfaces_is_cleaned_and_painted_Photo: any;
-              Internal_surfaces_is_cleaned_and_painted_Description:string;
+               
+Internal_shaft_surfaces_are_cleaned_and_painted:string;
+               
+Internal_shaft_surfaces_are_cleaned_and_painted_Photo: any;
+              
+Internal_shaft_surfaces_are_cleaned_and_painted_Description:string;
 
               Shaft_internals_to_be_painted:string;
               Shaft_internals_to_be_painted_Photo: any;
@@ -154,13 +161,13 @@ interface StudentData {
             
             Miscellaneous:string;
 
-               Granite_coping_is_free_of_sharp_edges_or_dents_etc:string;
-               Granite_coping_is_free_of_sharp_edges_or_dents_etc_Photo: any;
-              Granite_coping_is_free_of_sharp_edges_or_dents_etc_Description:string;
+               Granite_ledge_provided_is_free_of_cracks_and_sharp_edges:string;
+               Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Photo: any;
+              Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Description:string;
 
-               Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces:string;
-               Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces_Photo: any;
-              Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces_Description:string;
+               Vertical_texture_painted_surfaces_are_free_of_undulations:string;
+               Vertical_texture_painted_surfaces_are_free_of_undulations_Photo: any;
+              Vertical_texture_painted_surfaces_are_free_of_undulations_Description:string;
 
   
 
@@ -494,18 +501,18 @@ const db =firebase.firestore();
               Drip_moulds_in_ceiling_are_consistent_Description:[''],
 
 
-               Elevational_ledge_horizontal_surface_finish:['',[Validators.required]],
+               Elevational_ledge_horizontal_surface_is_finished_or_painted:['',[Validators.required]],
 
-                Elevational_ledge_horizontal_surface_finish_Photo:[this.imgURL4],
-              Elevational_ledge_horizontal_surface_finish_Description:[''],
+                Elevational_ledge_horizontal_surface_is_finished_or_painted_Photo:[this.imgURL4],
+              Elevational_ledge_horizontal_surface_is_finished_or_painted_Description:[''],
 
             
             Flooring:[''],
 
-               Vitrified_tiles_are_uniform_and_free_of_cracks:['',[Validators.required]],
+               Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness:['',[Validators.required]],
 
-                Vitrified_tiles_are_uniform_and_free_of_cracks_Photo:[this.imgURL5],
-              Vitrified_tiles_are_uniform_and_free_of_cracks_Description:[''],
+                Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness_Photo:[this.imgURL5],
+              Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness_Description:[''],
 
 
                Floor_Slopes_provided_are_adequate:[''],
@@ -514,10 +521,10 @@ const db =firebase.firestore();
               Floor_Slopes_provided_are_adequate_Description:[''],
 
 
-               Skirting_finish_and_alignment:['',[Validators.required]],
+               Skirting_finish_and_alignment_is_correct:['',[Validators.required]],
 
-                Skirting_finish_and_alignment_Photo:[this.imgURL7],
-              Skirting_finish_and_alignment_Description:[''],
+                Skirting_finish_and_alignment_is_correct_Photo:[this.imgURL7],
+              Skirting_finish_and_alignment_is_correct_Description:[''],
 
            
             Floor_Traps:[''],
@@ -568,10 +575,10 @@ const db =firebase.firestore();
               Electrical_points_are_as_per_standard_offering_Description:[''],
 
 
-               Ceiling_electrical_points_are_covered_or_capped_properly:[''],
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly:[''],
 
-               Ceiling_electrical_points_are_covered_or_capped_properly_Photo:[this.imgURL15],
-              Ceiling_electrical_points_are_covered_or_capped_properly_Description:[''],
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Photo:[this.imgURL15],
+              Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Description:[''],
 
 
                Wall_Light_points_are_covered__or_capped_properly:[''],
@@ -586,10 +593,13 @@ const db =firebase.firestore();
               Switch_plates_are_aligned_Description:[''],
 
 
-              AC_Core_cut_pipe_is_cleaned :[''],
+              
+AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster :[''],
 
-              AC_Core_cut_pipe_is_cleaned_Photo:[this.imgURL18],
-              AC_Core_cut_pipe_is_cleaned_Description:[''],
+              
+AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster_Photo:[this.imgURL18],
+              
+AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster_Description:[''],
 
 
                AC_Core_cut_pipe_is_finished :['',[Validators.required]],
@@ -618,10 +628,13 @@ const db =firebase.firestore();
               Shaft_internalss_to_be_free_of_debris_Description:[''],
 
 
-               Internal_surfaces_is_cleaned_and_painted:[''],
+               
+Internal_shaft_surfaces_are_cleaned_and_painted:[''],
 
-               Internal_surfaces_is_cleaned_and_painted_Photo:[this.imgURL23],
-              Internal_surfaces_is_cleaned_and_painted_Description:[''],
+               
+Internal_shaft_surfaces_are_cleaned_and_painted_Photo:[this.imgURL23],
+              
+Internal_shaft_surfaces_are_cleaned_and_painted_Description:[''],
 
 
               Shaft_internals_to_be_painted:['',[Validators.required]],
@@ -665,16 +678,16 @@ const db =firebase.firestore();
             Miscellaneous:[''],
 
 
-               Granite_coping_is_free_of_sharp_edges_or_dents_etc:[''],
+               Granite_ledge_provided_is_free_of_cracks_and_sharp_edges:[''],
 
-               Granite_coping_is_free_of_sharp_edges_or_dents_etc_Photo:[this.imgURL30],
-              Granite_coping_is_free_of_sharp_edges_or_dents_etc_Description:[''],
+               Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Photo:[this.imgURL30],
+              Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Description:[''],
 
 
-               Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces:['',[Validators.required]],
+              Vertical_texture_painted_surfaces_are_free_of_undulations:['',[Validators.required]],
 
-               Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces_Photo:[this.imgURL31],
-              Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces_Description:[''],
+               Vertical_texture_painted_surfaces_are_free_of_undulations_Photo:[this.imgURL31],
+              Vertical_texture_painted_surfaces_are_free_of_undulations_Description:[''],
 
   
 
@@ -1540,8 +1553,8 @@ washingtonRef.update({
 
              
 
-               Elevational_ledge_horizontal_surface_finish(): void {      
-    let Qvalue = this.ionicForm.get('Elevational_ledge_horizontal_surface_finish').value;
+               Elevational_ledge_horizontal_surface_is_finished_or_painted(): void {      
+    let Qvalue = this.ionicForm.get('Elevational_ledge_horizontal_surface_is_finished_or_painted').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1560,8 +1573,8 @@ washingtonRef.update({
             
             
 
-               Vitrified_tiles_are_uniform_and_free_of_cracks(): void {      
-    let Qvalue = this.ionicForm.get('Vitrified_tiles_are_uniform_and_free_of_cracks').value;
+               Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness(): void {      
+    let Qvalue = this.ionicForm.get('Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1593,8 +1606,8 @@ washingtonRef.update({
 
               
 
-               Skirting_finish_and_alignment(): void {      
-    let Qvalue = this.ionicForm.get('Skirting_finish_and_alignment').value;
+               Skirting_finish_and_alignment_is_correct(): void {      
+    let Qvalue = this.ionicForm.get('Skirting_finish_and_alignment_is_correct').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1731,8 +1744,8 @@ washingtonRef.update({
   }
 
 
-               Ceiling_electrical_points_are_covered_or_capped_properly(): void {      
-    let Qvalue = this.ionicForm.get('Ceiling_electrical_points_are_covered_or_capped_properly').value;
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly(): void {      
+    let Qvalue = this.ionicForm.get('Ceiling_and_wall_electrical_points_are_covered_or_capped_properly').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1779,8 +1792,9 @@ washingtonRef.update({
   }
 
             
-              AC_Core_cut_pipe_is_cleaned (): void {      
-    let Qvalue = this.ionicForm.get('AC_Core_cut_pipe_is_cleaned').value;
+              
+AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster(): void {      
+    let Qvalue = this.ionicForm.get('AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1862,8 +1876,9 @@ washingtonRef.update({
 
                
 
-               Internal_surfaces_is_cleaned_and_painted(): void {      
-    let Qvalue = this.ionicForm.get('Internal_surfaces_is_cleaned_and_painted').value;
+               
+Internal_shaft_surfaces_are_cleaned_and_painted(): void {      
+    let Qvalue = this.ionicForm.get('Internal_shaft_surfaces_are_cleaned_and_painted').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1985,8 +2000,8 @@ washingtonRef.update({
             
            
 
-               Granite_coping_is_free_of_sharp_edges_or_dents_etc(): void {      
-    let Qvalue = this.ionicForm.get('Granite_coping_is_free_of_sharp_edges_or_dents_etc').value;
+               Granite_ledge_provided_is_free_of_cracks_and_sharp_edges(): void {      
+    let Qvalue = this.ionicForm.get('Granite_ledge_provided_is_free_of_cracks_and_sharp_edges').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -2002,8 +2017,8 @@ washingtonRef.update({
 
              
 
-               Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces(): void {      
-    let Qvalue = this.ionicForm.get('Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces').value;
+               Vertical_texture_painted_surfaces_are_free_of_undulations(): void {      
+    let Qvalue = this.ionicForm.get('Vertical_texture_painted_surfaces_are_free_of_undulations').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 

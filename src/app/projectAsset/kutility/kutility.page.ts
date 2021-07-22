@@ -31,9 +31,9 @@ import { EmailComposer } from '@ionic-native/email-composer/ngx';
 interface StudentData {
                Doors_and_Windows:string;
 
-               UPVC_exterior_windows_are_free_of_sharp_edges:string;
-                UPVC_exterior_windows_are_free_of_sharp_edges_Photo:any;
-              UPVC_exterior_windows_are_free_of_sharp_edges_Description:string;
+               UPVC_door_glass_and_infill_panels_are_free_of_scratches:string;
+                UPVC_door_glass_and_infill_panels_are_free_of_scratches_Photo:any;
+              UPVC_door_glass_and_infill_panels_are_free_of_scratches_Description:string;
 
                UPVC_utility_doors_are_free_of_sharp_edges:string;
                 UPVC_utility_doors_are_free_of_sharp_edges_Photo: any;
@@ -55,33 +55,34 @@ interface StudentData {
               UPVC_exterior_window_bug_screen_mesh_is_taut_Photo: any;
               UPVC_exterior_window_bug_screen_mesh_is_taut_Description:string;
 
-               UPVC_exterior_window_bug_screen_is_operable:string;
-                UPVC_exterior_window_bug_screen_is_operable_Photo: any;
-              UPVC_exterior_window_bug_screen_is_operable_Description:string;
+               UPVC_exterior_window_bug_screen_is_operable_and_taut:string;
+                UPVC_exterior_window_bug_screen_is_operable_and_taut_Photo: any;
+              UPVC_exterior_window_bug_screen_is_operable_and_taut_Description:string;
            
             Flooring:string;
                Floor_slope_is_adequate:string;
                 Floor_slope_is_adequate_Photo: any;
               Floor_slope_is_adequate_Description:string;
 
-             Skirting_finish__and_alignment:string;
-              Skirting_finish__and_alignment_Photo: any;
-              Skirting_finish__and_alignment_Description:string;
+             Skirting_finish__and_aligned:string;
+              Skirting_finish__and_aligned_Photo: any;
+              Skirting_finish__and_aligned_Description:string;
 
-              Vitrified_flooring_tiles_are_uniform_and_free_of_cracks:string;
-              Vitrified_flooring_tiles_are_uniform_and_free_of_cracks_Photo: any;
-              Vitrified_flooring_tiles_are_uniform_and_free_of_cracks_Description:string;
+              
+Vitrified_flooring_tiles_are_uniform_free_of_cracks_and_hollowness:string;              
+Vitrified_flooring_tiles_are_uniform_free_of_cracks_and_hollowness_Photo: any;              
+Vitrified_flooring_tiles_are_uniform_free_of_cracks_and_hollowness_Description:string;
            
             PHE:string;
-               Floor_trap_cover_is_provided:string;
-                Floor_trap_cover_is_provided_Photo: any;
-              Floor_trap_cover_is_provided_Description:string;
+               Floor_trap_cover_is_provided_free_of_debris_and_rust:string;
+                Floor_trap_cover_is_provided_free_of_debris_and_rust_Photo: any;
+              Floor_trap_cover_is_provided_free_of_debris_and_rust_Description:string;
 
               Brackets_supporting_counter_is_painted__and_free_of_rust:string;
               Brackets_supporting_counter_is_painted__and_free_of_rust_Photo: any;
               Brackets_supporting_counter_is_painted__and_free_of_rust_Description:string;
 
-               Granite_counter_is_free_of_sharp_edges:string;
+               Granite_cill_ledge_provided_is_free_of_cracks_and_sharp_edges:string;
                 Granite_counter_is_free_of_sharp_edges_Photo: any;
               Granite_counter_is_free_of_sharp_edges_Description:string;
 
@@ -89,9 +90,9 @@ interface StudentData {
                 Sink_faucet_is_operable_Photo: any;
               Sink_faucet_is_operable_Description:string;
 
-              Sink_and_counter_edges_are_sealed:string;
-              Sink_and_counter_edges_are_sealed_Photo: any;
-              Sink_and_counter_edges_are_sealed_Description:string;
+              Junction_between_Sink_and_counter_edges_are_sealed:string;
+              Junction_between_Sink_and_counter_edges_are_sealed_Photo: any;
+              Junction_between_Sink_and_counter_edges_are_sealed_Description:string;
 
                Floor_trap_below_cover_is_clean :string;
                 Floor_trap_below_cover_is_clean_Photo: any;
@@ -114,9 +115,9 @@ interface StudentData {
               MS_Duct_door_frames__and_wall_junctions_are_sealed_Photo: any;
               MS_Duct_door_frames__and_wall_junctions_are_sealed_Description:string;
 
-               Shaft_internals_to_be_free_of_debris:string;
-                Shaft_internals_to_be_free_of_debris_Photo: any;
-              Shaft_internals_to_be_free_of_debris_Description:string;
+               Shaft_surfaces_are_cleaned_painted_and_free_of_debris:string;
+                Shaft_surfaces_are_cleaned_painted_and_free_of_debris_Photo: any;
+              Shaft_surfaces_are_cleaned_painted_and_free_of_debris_Description:string;
            
             Walls_and_ceiling:string;
                Junctions_betweeen_door_frame__and_wall_is_finished:string;
@@ -135,9 +136,9 @@ interface StudentData {
               Junction_between_dado_and_wall_plaster_is_uniformly_finished_Photo: any;
               Junction_between_dado_and_wall_plaster_is_uniformly_finished_Description:string;
 
-               Wall_dado_is_free_of_hollowness :string;
-                Wall_dado_is_free_of_hollowness_Photo: any;
-              Wall_dado_is_free_of_hollowness_Description:string;
+               Wall_dado_is_free_of_hollowness_and_is_consistent :string;
+                Wall_dado_is_free_of_hollowness_and_is_consistent_Photo: any;
+              Wall_dado_is_free_of_hollowness_and_is_consistent_Description:string;
               
                Walls_are_free_of_cracks_or_stains_etc:string;
                 Walls_are_free_of_cracks_or_stains_etc_Photo: any;
@@ -445,9 +446,9 @@ const db =firebase.firestore();
       
       Doors_and_Windows:[''], 
 
-               UPVC_exterior_windows_are_free_of_sharp_edges:['',[Validators.required]], 
-                UPVC_exterior_windows_are_free_of_sharp_edges_Photo: [this.imgURL1],
-              UPVC_exterior_windows_are_free_of_sharp_edges_Description:[''], 
+               UPVC_door_glass_and_infill_panels_are_free_of_scratches:['',[Validators.required]], 
+                UPVC_door_glass_and_infill_panels_are_free_of_scratches_Photo: [this.imgURL1],
+              UPVC_door_glass_and_infill_panels_are_free_of_scratches_Description:[''], 
 
                UPVC_utility_doors_are_free_of_sharp_edges:[''], 
                 UPVC_utility_doors_are_free_of_sharp_edges_Photo: [this.imgURL2],
@@ -469,9 +470,9 @@ const db =firebase.firestore();
               UPVC_exterior_window_bug_screen_mesh_is_taut_Photo: [this.imgURL6],
               UPVC_exterior_window_bug_screen_mesh_is_taut_Description:[''], 
 
-               UPVC_exterior_window_bug_screen_is_operable:['',[Validators.required]], 
-                UPVC_exterior_window_bug_screen_is_operable_Photo: [this.imgURL7],
-              UPVC_exterior_window_bug_screen_is_operable_Description:[''], 
+               UPVC_exterior_window_bug_screen_is_operable_and_taut:['',[Validators.required]], 
+                UPVC_exterior_window_bug_screen_is_operable_and_taut_Photo: [this.imgURL7],
+              UPVC_exterior_window_bug_screen_is_operable_and_taut_Description:[''], 
            
             Flooring:[''], 
             
@@ -479,34 +480,34 @@ const db =firebase.firestore();
                 Floor_slope_is_adequate_Photo: [this.imgURL8],
               Floor_slope_is_adequate_Description:[''], 
 
-             Skirting_finish__and_alignment:[''], 
-              Skirting_finish__and_alignment_Photo: [this.imgURL9],
-              Skirting_finish__and_alignment_Description:[''], 
+             Skirting_finish__and_aligned:[''], 
+              Skirting_finish__and_aligned_Photo: [this.imgURL9],
+              Skirting_finish__and_aligned_Description:[''], 
 
-              Vitrified_flooring_tiles_are_uniform_and_free_of_cracks:['',[Validators.required]], 
-              Vitrified_flooring_tiles_are_uniform_and_free_of_cracks_Photo: [this.imgURL10],
-              Vitrified_flooring_tiles_are_uniform_and_free_of_cracks_Description:[''], 
+              Vitrified_flooring_tiles_are_uniform_free_of_cracks_and_hollowness:['',[Validators.required]], 
+              Vitrified_flooring_tiles_are_uniform_free_of_cracks_and_hollowness_Photo: [this.imgURL10],
+              Vitrified_flooring_tiles_are_uniform_free_of_cracks_and_hollowness_Description:[''], 
            
             PHE:[''], 
-               Floor_trap_cover_is_provided:['',[Validators.required]], 
-                Floor_trap_cover_is_provided_Photo: [this.imgURL11],
-              Floor_trap_cover_is_provided_Description:[''], 
+               Floor_trap_cover_is_provided_free_of_debris_and_rust:['',[Validators.required]], 
+                Floor_trap_cover_is_provided_free_of_debris_and_rust_Photo: [this.imgURL11],
+              Floor_trap_cover_is_provided_free_of_debris_and_rust_Description:[''], 
 
               Brackets_supporting_counter_is_painted__and_free_of_rust:[''], 
               Brackets_supporting_counter_is_painted__and_free_of_rust_Photo: [this.imgURL12],
               Brackets_supporting_counter_is_painted__and_free_of_rust_Description:[''], 
 
-               Granite_counter_is_free_of_sharp_edges:[''], 
-                Granite_counter_is_free_of_sharp_edges_Photo: [this.imgURL13],
-              Granite_counter_is_free_of_sharp_edges_Description:[''], 
+               Granite_cill_ledge_provided_is_free_of_cracks_and_sharp_edges:[''], 
+                Granite_cill_ledge_provided_is_free_of_cracks_and_sharp_edges_Photo: [this.imgURL13],
+              Granite_cill_ledge_provided_is_free_of_cracks_and_sharp_edges_Description:[''], 
 
                Sink_faucet_is_operable:[''], 
                 Sink_faucet_is_operable_Photo: [this.imgURL14],
               Sink_faucet_is_operable_Description:[''], 
 
-              Sink_and_counter_edges_are_sealed:[''], 
-              Sink_and_counter_edges_are_sealed_Photo: [this.imgURL15],
-              Sink_and_counter_edges_are_sealed_Description:[''], 
+              Junction_between_Sink_and_counter_edges_are_sealed:[''], 
+              Junction_between_Sink_and_counter_edges_are_sealed_Photo: [this.imgURL15],
+              Junction_between_Sink_and_counter_edges_are_sealed_Description:[''], 
 
                Floor_trap_below_cover_is_clean :['',[Validators.required]], 
                 Floor_trap_below_cover_is_clean_Photo: [this.imgURL16],
@@ -529,9 +530,9 @@ const db =firebase.firestore();
               MS_Duct_door_frames__and_wall_junctions_are_sealed_Photo: [this.imgURL20],
               MS_Duct_door_frames__and_wall_junctions_are_sealed_Description:[''], 
 
-               Shaft_internals_to_be_free_of_debris:['',[Validators.required]], 
-                Shaft_internals_to_be_free_of_debris_Photo: [this.imgURL21],
-              Shaft_internals_to_be_free_of_debris_Description:[''], 
+               Shaft_surfaces_are_cleaned_painted_and_free_of_debris:['',[Validators.required]], 
+                Shaft_surfaces_are_cleaned_painted_and_free_of_debris_Photo: [this.imgURL21],
+              Shaft_surfaces_are_cleaned_painted_and_free_of_debris_Description:[''], 
            
             Walls_and_ceiling:[''], 
                Junctions_betweeen_door_frame__and_wall_is_finished:['',[Validators.required]], 
@@ -550,9 +551,9 @@ const db =firebase.firestore();
               Junction_between_dado_and_wall_plaster_is_uniformly_finished_Photo: [this.imgURL25],
               Junction_between_dado_and_wall_plaster_is_uniformly_finished_Description:[''], 
 
-               Wall_dado_is_free_of_hollowness :[''], 
-                Wall_dado_is_free_of_hollowness_Photo: [this.imgURL26],
-              Wall_dado_is_free_of_hollowness_Description:[''], 
+               Wall_dado_is_free_of_hollowness_and_is_consistent :[''], 
+                Wall_dado_is_free_of_hollowness_and_is_consistent_Photo: [this.imgURL26],
+              Wall_dado_is_free_of_hollowness_and_is_consistent_Description:[''], 
               
                Walls_are_free_of_cracks_or_stains_etc:['',[Validators.required]], 
                 Walls_are_free_of_cracks_or_stains_etc_Photo: [this.imgURL27],
@@ -1368,8 +1369,8 @@ washingtonRef.update({
 
 
 
-               UPVC_exterior_windows_are_free_of_sharp_edges(): void {      
-    let Qvalue = this.ionicForm.get('UPVC_exterior_windows_are_free_of_sharp_edges').value;
+               UPVC_door_glass_and_infill_panels_are_free_of_scratches(): void {      
+    let Qvalue = this.ionicForm.get('UPVC_door_glass_and_infill_panels_are_free_of_scratches').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1462,8 +1463,8 @@ washingtonRef.update({
     
   } 
              
-               UPVC_exterior_window_bug_screen_is_operable(): void {      
-    let Qvalue = this.ionicForm.get('UPVC_exterior_window_bug_screen_is_operable').value;
+               UPVC_exterior_window_bug_screen_is_operable_and_taut(): void {      
+    let Qvalue = this.ionicForm.get('UPVC_exterior_window_bug_screen_is_operable_and_taut').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1492,9 +1493,8 @@ washingtonRef.update({
     this._cdr.detectChanges();  
     
   } 
-               
-             Skirting_finish__and_alignment(): void {      
-    let Qvalue = this.ionicForm.get('Skirting_finish__and_alignment').value;
+             Skirting_finish__and_aligned(): void {      
+    let Qvalue = this.ionicForm.get('Skirting_finish__and_aligned').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1508,8 +1508,8 @@ washingtonRef.update({
     
   } 
              
-              Vitrified_flooring_tiles_are_uniform_and_free_of_cracks(): void {      
-    let Qvalue = this.ionicForm.get('Vitrified_flooring_tiles_are_uniform_and_free_of_cracks').value;
+              Vitrified_flooring_tiles_are_uniform_free_of_cracks_and_hollowness(): void {      
+    let Qvalue = this.ionicForm.get('Vitrified_flooring_tiles_are_uniform_free_of_cracks_and_hollowness').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1524,8 +1524,8 @@ washingtonRef.update({
   } 
              
             
-               Floor_trap_cover_is_provided(): void {      
-    let Qvalue = this.ionicForm.get('Floor_trap_cover_is_provided').value;
+               Floor_trap_cover_is_provided_free_of_debris_and_rust(): void {      
+    let Qvalue = this.ionicForm.get('Floor_trap_cover_is_provided_free_of_debris_and_rust').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1555,8 +1555,8 @@ washingtonRef.update({
     
   } 
             
-               Granite_counter_is_free_of_sharp_edges(): void {      
-    let Qvalue = this.ionicForm.get('Granite_counter_is_free_of_sharp_edges').value;
+               Granite_cill_ledge_provided_is_free_of_cracks_and_sharp_edges(): void {      
+    let Qvalue = this.ionicForm.get('Granite_cill_ledge_provided_is_free_of_cracks_and_sharp_edges').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1585,8 +1585,8 @@ washingtonRef.update({
     
   } 
               
-              Sink_and_counter_edges_are_sealed(): void {      
-    let Qvalue = this.ionicForm.get('Sink_and_counter_edges_are_sealed').value;
+              Junction_between_Sink_and_counter_edges_are_sealed(): void {      
+    let Qvalue = this.ionicForm.get('Junction_between_Sink_and_counter_edges_are_sealed').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1678,8 +1678,8 @@ washingtonRef.update({
     
   } 
              
-               Shaft_internals_to_be_free_of_debris(): void {      
-    let Qvalue = this.ionicForm.get('Shaft_internals_to_be_free_of_debris').value;
+               Shaft_surfaces_are_cleaned_painted_and_free_of_debris(): void {      
+    let Qvalue = this.ionicForm.get('Shaft_surfaces_are_cleaned_painted_and_free_of_debris').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1756,8 +1756,8 @@ washingtonRef.update({
     
   } 
             
-               Wall_dado_is_free_of_hollowness (): void {      
-    let Qvalue = this.ionicForm.get('Wall_dado_is_free_of_hollowness').value;
+               Wall_dado_is_free_of_hollowness_and_is_consistent (): void {      
+    let Qvalue = this.ionicForm.get('Wall_dado_is_free_of_hollowness_and_is_consistent').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 

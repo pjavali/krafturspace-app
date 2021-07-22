@@ -43,13 +43,16 @@ interface StudentData {
                 Lock_can_be_operated_from_both_sides_Photo: any;
               Lock_can_be_operated_from_both_sides_Description:string;
 
-               Door_frame_is_consistent_without_dent_or_scratches_or_marks:string,
-                Door_frame_is_consistent_without_dent_or_scratches_or_marks_Photo: any;
-              Door_frame_is_consistent_without_dent_or_scratches_or_marks_Description:string;
+               Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks:string,
+                Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Photo: any;
+              Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Description:string;
 
-               Door_color_is_consistent:string,
-                Door_color_is_consistent_Photo: any;
-              Door_color_is_consistent_Description:string;
+               
+Door_frame_and_shutter_shades_are_consistent:string,
+                
+Door_frame_and_shutter_shades_are_consistent_Photo: any;
+              
+Door_frame_and_shutter_shades_are_consistentt_Description:string;
 
                Gaskets_or_sealents_are_intact:string,
                 Gaskets_or_sealents_are_intact_Photo: any;
@@ -97,9 +100,9 @@ interface StudentData {
                 Brackets_supporting_counter_is_painted_and_free_of_rust_Photo: any;
               Brackets_supporting_counter_is_painted_and_free_of_rust_Description:string;
 
-               Shower_head_is_functional:string,
-                Shower_head_is_functional_Photo: any;
-              Shower_head_is_functional_Description:string;
+               Shower_head_and_divertor_are_functional:string,
+                Shower_head_and_divertor_are_functional_Photo: any;
+              Shower_head_and_divertor_are_functional_Description:string;
 
               Floor_trap_cover_is_provided:string,
               Floor_trap_cover_is_provided_Photo: any;
@@ -130,17 +133,17 @@ interface StudentData {
                 Transition_betweeen_wooden_flooring_and_toilet_at_entry_Photo: any;
               Transition_betweeen_wooden_flooring_and_toilet_at_entry_Description:string;
 
-               Tile_drop_between_dry_and_wet_areas:string,
-                Tile_drop_between_dry_and_wet_areas_Photo: any;
-              Tile_drop_between_dry_and_wet_areas_Description:string;
+               Tile_drop_between_dry_and_wet_areas_exists:string,
+                Tile_drop_between_dry_and_wet_areas_exists_Photo: any;
+              Tile_drop_between_dry_and_wet_areas_exists_Description:string;
 
-               Slopes_are_adequate:string,
-                Slopes_are_adequate_Photo: any;
-              Slopes_are_adequate_Description:string;
+               Slopes_provided_are_adequate:string,
+                Slopes_provided_are_adequate_Photo: any;
+              Slopes_provided_are_adequate_Description:string;
 
-           Tiles_are_laid_to_slope:string,
-             Tiles_are_laid_to_slope_Photo: any;
-              Tiles_are_laid_to_slope_Description:string;
+           Tiles_are_laid_to_slopewithout_hollowness:string,
+             Tiles_are_laid_to_slopewithout_hollowness_Photo: any;
+              Tiles_are_laid_to_slopewithout_hollowness_Description:string;
            
             Standard_heights_of_fixtures:string,
 
@@ -161,9 +164,9 @@ interface StudentData {
                 Consistency_of_corner_beading_Photo: any;
               Consistency_of_corner_beading_Description:string;
 
-               Check_for_uniform_line_and_level_of_the_dadoing_at_the_top:string,
-                Check_for_uniform_line_and_level_of_the_dadoing_at_the_top_Photo: any;
-              Check_for_uniform_line_and_level_of_the_dadoing_at_the_top_Description:string;
+               Dado_top_line_is_uniform_and_consistent:string,
+                Dado_top_line_is_uniform_and_consistent_Photo: any;
+              Dado_top_line_is_uniform_and_consistent_Description:string;
 
                False_ceiling_channels_are_consistent:string,
                 False_ceiling_channels_are_consistent_Photo: any;
@@ -181,13 +184,13 @@ interface StudentData {
               Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Photo: any;
               Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Description:string;
 
-               Tile_surface_is_consistent:string,
-                Tile_surface_is_consistent_Photo: any;
-              Tile_surface_is_consistent_Description:string;
+               Tile_Dado_surface_is_consistent_and_without_hollowness:string,
+                Tile_Dado_surface_is_consistent_and_without_hollowness_Photo: any;
+              Tile_Dado_surface_is_consistent_and_without_hollowness_Description:string;
 
-               EWC_Ledge_wall_granite_coping:string,
-                EWC_Ledge_wall_granite_coping_Photo: any;
-              EWC_Ledge_wall_granite_coping_Description:string;
+               EWC_Ledge_wall_granite_coping_is_free_of_sharp_edges:string,
+                EWC_Ledge_wall_granite_coping_is_free_of_sharp_edges_Photo: any;
+              EWC_Ledge_wall_granite_coping_is_free_of_sharp_edges_Description:string;
 
                Area_above_false_ceiling_is_painted  :string,
                 Area_above_false_ceiling_is_painted_Photo: any;
@@ -549,13 +552,16 @@ this.cameradisplay41=false;
                 Lock_can_be_operated_from_both_sides_Photo:[this.imgURL3],
               Lock_can_be_operated_from_both_sides_Description:[''],
 
-               Door_frame_is_consistent_without_dent_or_scratches_or_marks:[''],
-                Door_frame_is_consistent_without_dent_or_scratches_or_marks_Photo:[this.imgURL4],
-              Door_frame_is_consistent_without_dent_or_scratches_or_marks_Description:[''],
+               Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks:[''],
+               Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Photo:[this.imgURL4],
+              Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Description:[''],
 
-               Door_color_is_consistent:[''],
-                Door_color_is_consistent_Photo:[this.imgURL5],
-              Door_color_is_consistent_Description:[''],
+               
+Door_frame_and_shutter_shades_are_consistent:[''],
+                
+Door_frame_and_shutter_shades_are_consistent_Photo:[this.imgURL5],
+             
+Door_frame_and_shutter_shades_are_consistent_Description:[''],
 
                Gaskets_or_sealents_are_intact:[''],
                 Gaskets_or_sealents_are_intact_Photo:[this.imgURL6],
@@ -604,17 +610,17 @@ this.cameradisplay41=false;
                Brackets_supporting_counter_is_painted_and_free_of_rust:[''],
                 Brackets_supporting_counter_is_painted_and_free_of_rust_Photo:[this.imgURL16],
               Brackets_supporting_counter_is_painted_and_free_of_rust_Description:[''],
-               Shower_head_is_functional:[''],
-                Shower_head_is_functional_Photo:[this.imgURL17],
-              Shower_head_is_functional_Description:[''],
+               Shower_head_and_divertor_are_functional:[''],
+                Shower_head_and_divertor_are_functional_Photo:[this.imgURL17],
+              Shower_head_and_divertor_are_functional_Description:[''],
 
               Floor_trap_cover_is_provided:[''],
               Floor_trap_cover_is_provided_Photo:[this.imgURL19],
                Floor_trap_cover_is_provided_Description:[''],
                
-               Floor_trap_below_cover_is_clean:[''],
-                Floor_trap_below_cover_is_clean_Photo:[this.imgURL20],
-              Floor_trap_below_cover_is_clean_Description:[''],
+               Floor_trap_cover_is_provided_and_is_free_of_debris_and_rust:[''],
+                Floor_trap_cover_is_provided_and_is_free_of_debris_and_rust_Photo:[this.imgURL20],
+              Floor_trap_cover_is_provided_and_is_free_of_debris_and_rust_Description:[''],
 
                Toilet_Paper_Holder:[''],
                 Toilet_Paper_Holder_Photo:[this.imgURL21],
@@ -636,17 +642,17 @@ this.cameradisplay41=false;
                 Transition_betweeen_wooden_flooring_and_toilet_at_entry_Photo:[this.imgURL25],
               Transition_betweeen_wooden_flooring_and_toilet_at_entry_Description:[''],
 
-               Tile_drop_between_dry_and_wet_areas:[''],
-                Tile_drop_between_dry_and_wet_areas_Photo:[this.imgURL28],
-              Tile_drop_between_dry_and_wet_areas_Description:[''],
+               Tile_drop_between_dry_and_wet_areas_exists:[''],
+                Tile_drop_between_dry_and_wet_areas_exists_Photo:[this.imgURL28],
+              Tile_drop_between_dry_and_wet_areas_exists_Description:[''],
 
-               Slopes_are_adequate:[''],
-                Slopes_are_adequate_Photo:[this.imgURL29],
-              Slopes_are_adequate_Description:[''],
+               Slopes_provided_are_adequate:[''],
+                Slopes_provided_are_adequate_Photo:[this.imgURL29],
+              Slopes_provided_are_adequate_Description:[''],
 
-           Tiles_are_laid_to_slope:['',[Validators.required]],
-             Tiles_are_laid_to_slope_Photo:[this.imgURL30],
-              Tiles_are_laid_to_slope_Description:[''],
+           Tiles_are_laid_to_slopewithout_hollowness:['',[Validators.required]],
+             Tiles_are_laid_to_slopewithout_hollowness_Photo:[this.imgURL30],
+              Tiles_are_laid_to_slopewithout_hollowness_Description:[''],
            
             Standard_heights_of_fixtures:[''],
 
@@ -667,9 +673,9 @@ this.cameradisplay41=false;
                 Consistency_of_corner_beading_Photo:[this.imgURL34],
               Consistency_of_corner_beading_Description:[''],
 
-               Check_for_uniform_line_and_level_of_the_dadoing_at_the_top:[''],
-                Check_for_uniform_line_and_level_of_the_dadoing_at_the_top_Photo:[this.imgURL35],
-              Check_for_uniform_line_and_level_of_the_dadoing_at_the_top_Description:[''],
+               Dado_top_line_is_uniform_and_consistent:[''],
+                Dado_top_line_is_uniform_and_consistent_Photo:[this.imgURL35],
+              Dado_top_line_is_uniform_and_consistent_Description:[''],
 
                False_ceiling_channels_are_consistent:[''],
                 False_ceiling_channels_are_consistent_Photo:[this.imgURL36],
@@ -687,13 +693,13 @@ this.cameradisplay41=false;
               Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Photo:[this.imgURL39],
               Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Description:[''],
 
-               Tile_surface_is_consistent:[''],
-                Tile_surface_is_consistent_Photo:[this.imgURL40],
-              Tile_surface_is_consistent_Description:[''],
+               Tile_Dado_surface_is_consistent_and_without_hollowness:[''],
+                Tile_Dado_surface_is_consistent_and_without_hollowness_Photo:[this.imgURL40],
+             Tile_Dado_surface_is_consistent_and_without_hollowness_Description:[''],
 
-               EWC_Ledge_wall_granite_coping:[''],
-                EWC_Ledge_wall_granite_coping_Photo:[this.imgURL41],
-              EWC_Ledge_wall_granite_coping_Description:[''],
+               EWC_Ledge_wall_granite_coping_is_free_of_sharp_edges:[''],
+                EWC_Ledge_wall_granite_coping_is_free_of_sharp_edges_Photo:[this.imgURL41],
+              EWC_Ledge_wall_granite_coping_is_free_of_sharp_edges_Description:[''],
 
                Area_above_false_ceiling_is_painted  :[''],
                 Area_above_false_ceiling_is_painted_Photo:[this.imgURL42],
@@ -1566,8 +1572,8 @@ washingtonRef.update({
   }
                 
 
-               Door_frame_is_consistent_without_dent_or_scratches_or_marks(): void {      
-    let Qvalue = this.ionicForm.get('Door_frame_is_consistent_without_dent_or_scratches_or_marks').value;
+               Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks(): void {      
+    let Qvalue = this.ionicForm.get('Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1582,8 +1588,9 @@ washingtonRef.update({
   }
                
 
-               Door_color_is_consistent(): void {      
-    let Qvalue = this.ionicForm.get('Door_color_is_consistent').value;
+               
+Door_frame_and_shutter_shades_are_consistent(): void {      
+    let Qvalue = this.ionicForm.get('Door_frame_and_shutter_shades_are_consistent').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1773,8 +1780,8 @@ washingtonRef.update({
     
   }
                 
-               Shower_head_is_functional(): void {      
-    let Qvalue = this.ionicForm.get('Shower_head_is_functional').value;
+               Shower_head_and_divertor_are_functional(): void {      
+    let Qvalue = this.ionicForm.get('Shower_head_and_divertor_are_functional').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1804,8 +1811,8 @@ washingtonRef.update({
     
   }
               
-               Floor_trap_below_cover_is_clean(): void {      
-    let Qvalue = this.ionicForm.get('Floor_trap_below_cover_is_clean').value;
+               Floor_trap_cover_is_provided_and_is_free_of_debris_and_rust(): void {      
+    let Qvalue = this.ionicForm.get('Floor_trap_cover_is_provided_and_is_free_of_debris_and_rust').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1900,8 +1907,8 @@ washingtonRef.update({
   }
               
 
-     Tile_drop_between_dry_and_wet_areas():void {      
-    let Qvalue = this.ionicForm.get('Tile_drop_between_dry_and_wet_areas').value;
+     Tile_drop_between_dry_and_wet_areas_exists():void {      
+    let Qvalue = this.ionicForm.get('Tile_drop_between_dry_and_wet_areas_exists').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1915,8 +1922,8 @@ washingtonRef.update({
     
   }
             
-               Slopes_are_adequate(): void {      
-    let Qvalue = this.ionicForm.get('Slopes_are_adequate').value;
+               Slopes_provided_are_adequate(): void {      
+    let Qvalue = this.ionicForm.get('Slopes_provided_are_adequate').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1930,8 +1937,8 @@ washingtonRef.update({
     
   }
                
-           Tiles_are_laid_to_slope(): void {      
-    let Qvalue = this.ionicForm.get('Tiles_are_laid_to_slope').value;
+           Tiles_are_laid_to_slopewithout_hollowness(): void {      
+    let Qvalue = this.ionicForm.get('Tiles_are_laid_to_slopewithout_hollowness').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -2010,8 +2017,8 @@ washingtonRef.update({
   }
                
 
-               Check_for_uniform_line_and_level_of_the_dadoing_at_the_top(): void {      
-    let Qvalue = this.ionicForm.get('Check_for_uniform_line_and_level_of_the_dadoing_at_the_top').value;
+               Dado_top_line_is_uniform_and_consistent(): void {      
+    let Qvalue = this.ionicForm.get('Dado_top_line_is_uniform_and_consistent').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -2088,8 +2095,8 @@ washingtonRef.update({
   }
             
 
-               Tile_surface_is_consistent(): void {      
-    let Qvalue = this.ionicForm.get('Tile_surface_is_consistent').value;
+               Tile_Dado_surface_is_consistent_and_without_hollowness(): void {      
+    let Qvalue = this.ionicForm.get('Tile_Dado_surface_is_consistent_and_without_hollowness').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -2104,8 +2111,8 @@ washingtonRef.update({
   }
            
 
-               EWC_Ledge_wall_granite_coping(): void {      
-    let Qvalue = this.ionicForm.get('EWC_Ledge_wall_granite_coping').value;
+               EWC_Ledge_wall_granite_coping_is_free_of_sharp_edges(): void {      
+    let Qvalue = this.ionicForm.get('EWC_Ledge_wall_granite_coping_is_free_of_sharp_edges').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 

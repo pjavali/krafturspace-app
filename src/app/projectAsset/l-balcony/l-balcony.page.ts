@@ -55,9 +55,9 @@ interface StudentData {
                AC_Core_cut_pipe_is_finished_Photo: any;
               AC_Core_cut_pipe_is_finished_Description:string;
 
-               Ceiling_electrical_points_are_covered_or_capped_properly:string;
-               Ceiling_electrical_points_are_covered_or_capped_properly_Photo: any;
-              Ceiling_electrical_points_are_covered_or_capped_properly_Description:string;
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly:string;
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Photo: any;
+              Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Description:string;
 
                Electrical_points_are_as_per_standard_offering:string;
                Electrical_points_are_as_per_standard_offering_Photo: any;
@@ -85,22 +85,22 @@ interface StudentData {
                Floor_Slopes_provided_are_adequate_Photo: any;
               Floor_Slopes_provided_are_adequate_Description:string;
 
-               Vitrified_tiles_are_uniform_and_free_of_cracks:string;
-               Vitrified_tiles_are_uniform_and_free_of_cracks_Photo: any;
-              Vitrified_tiles_are_uniform_and_free_of_cracks_Description:string;
+               Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness:string;
+               Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness_Photo: any;
+             Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness_Description:string;
 
-               Skirting_finish_and_alignment:string;
-               Skirting_finish_and_alignment_Photo: any;
-              Skirting_finish_and_alignment_Description:string;
+               Skirting_finish_and_alignment_is_correct:string;
+              Skirting_finish_and_alignment_is_correct_Photo: any;
+              Skirting_finish_and_alignment_is_correct_Description:string;
            
             Miscellaneous:string;
-               Granite_coping_is_free_of_sharp_edges_or_dents_etc:string;
-               Granite_coping_is_free_of_sharp_edges_or_dents_etc_Photo: any;
-              Granite_coping_is_free_of_sharp_edges_or_dents_etc_Description:string;
+               Granite_edge_provided_is_free_of_cracks_and_sharp_edges:string;
+               Granite_edge_provided_is_free_of_cracks_and_sharp_edges_Photo: any;
+              Granite_edge_provided_is_free_of_cracks_and_sharp_edges_Description:string;
 
-              Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces:string;
-              Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces_Photo: any;
-              Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces_Description:string;
+              Vertical_texture_painted_surfaces_are_free_of_undulations:string;
+              Vertical_texture_painted_surfaces_are_free_of_undulations_Photo: any;
+              Vertical_texture_painted_surfaces_are_free_of_undulations_Description:string;
            
             Railing:string;
                SS_pipe_railing_is_finshed_with_smooth_edges:string;
@@ -499,9 +499,9 @@ const db =firebase.firestore();
                AC_Core_cut_pipe_is_finished_Photo:  [this.imgURL6],
               AC_Core_cut_pipe_is_finished_Description:[''],
 
-               Ceiling_electrical_points_are_covered_or_capped_properly:[''],
-               Ceiling_electrical_points_are_covered_or_capped_properly_Photo:  [this.imgURL7],
-              Ceiling_electrical_points_are_covered_or_capped_properly_Description:[''],
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly:[''],
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Photo:  [this.imgURL7],
+              Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Description:[''],
 
                Electrical_points_are_as_per_standard_offering:[''],
                Electrical_points_are_as_per_standard_offering_Photo:  [this.imgURL8],
@@ -529,22 +529,22 @@ const db =firebase.firestore();
                Floor_Slopes_provided_are_adequate_Photo:  [this.imgURL13],
               Floor_Slopes_provided_are_adequate_Description:[''],
 
-               Vitrified_tiles_are_uniform_and_free_of_cracks:[''],
-               Vitrified_tiles_are_uniform_and_free_of_cracks_Photo:  [this.imgURL14],
-              Vitrified_tiles_are_uniform_and_free_of_cracks_Description:[''],
+               Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness:[''],
+               Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness_Photo:  [this.imgURL14],
+              Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness_Description:[''],
 
-               Skirting_finish_and_alignment:['',[Validators.required]],
-               Skirting_finish_and_alignment_Photo:  [this.imgURL15],
-              Skirting_finish_and_alignment_Description:[''],
+               Skirting_finish_and_alignment_is_correct:['',[Validators.required]],
+               Skirting_finish_and_alignment_is_correct_Photo:  [this.imgURL15],
+              Skirting_finish_and_alignment_is_correct_Description:[''],
            
             Miscellaneous:[''],
-               Granite_coping_is_free_of_sharp_edges_or_dents_etc:['',[Validators.required]],
-               Granite_coping_is_free_of_sharp_edges_or_dents_etc_Photo:  [this.imgURL16],
-              Granite_coping_is_free_of_sharp_edges_or_dents_etc_Description:[''],
+               Granite_edge_provided_is_free_of_cracks_and_sharp_edges:['',[Validators.required]],
+               Granite_edge_provided_is_free_of_cracks_and_sharp_edges_Photo:  [this.imgURL16],
+              Granite_edge_provided_is_free_of_cracks_and_sharp_edges_Description:[''],
 
-              Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces:[''],
-              Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces_Photo:  [this.imgURL17],
-              Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces_Description:[''],
+              Vertical_texture_painted_surfaces_are_free_of_undulations:[''],
+              Vertical_texture_painted_surfaces_are_free_of_undulations_Photo:  [this.imgURL17],
+              Vertical_texture_painted_surfaces_are_free_of_undulations_Description:[''],
            
             Railing:[''],
                SS_pipe_railing_is_finshed_with_smooth_edges:['',[Validators.required]],
@@ -1513,8 +1513,8 @@ washingtonRef.update({
     
   }
              
-               Ceiling_electrical_points_are_covered_or_capped_properly(): void {      
-    let Qvalue = this.ionicForm.get('Ceiling_electrical_points_are_covered_or_capped_properly').value;
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly(): void {      
+    let Qvalue = this.ionicForm.get('Ceiling_and_wall_electrical_points_are_covered_or_capped_properly').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1624,8 +1624,8 @@ washingtonRef.update({
     
   }
                
-               Vitrified_tiles_are_uniform_and_free_of_cracks(): void {      
-    let Qvalue = this.ionicForm.get('Vitrified_tiles_are_uniform_and_free_of_cracks').value;
+               Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness(): void {      
+    let Qvalue = this.ionicForm.get('Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1639,8 +1639,8 @@ washingtonRef.update({
     
   }
             
-               Skirting_finish_and_alignment(): void {      
-    let Qvalue = this.ionicForm.get('Skirting_finish_and_alignment').value;
+               Skirting_finish_and_alignment_is_correct(): void {      
+    let Qvalue = this.ionicForm.get('Skirting_finish_and_alignment_is_correct').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1655,8 +1655,8 @@ washingtonRef.update({
   }
              
             
-               Granite_coping_is_free_of_sharp_edges_or_dents_etc(): void {      
-    let Qvalue = this.ionicForm.get('Granite_coping_is_free_of_sharp_edges_or_dents_etc').value;
+               Granite_edge_provided_is_free_of_cracks_and_sharp_edges(): void {      
+    let Qvalue = this.ionicForm.get('Granite_edge_provided_is_free_of_cracks_and_sharp_edges').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1670,8 +1670,8 @@ washingtonRef.update({
     
   }
               
-              Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces(): void {      
-    let Qvalue = this.ionicForm.get(' Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces').value;
+              Vertical_texture_painted_surfaces_are_free_of_undulations(): void {      
+    let Qvalue = this.ionicForm.get(' Vertical_texture_painted_surfaces_are_free_of_undulations').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 

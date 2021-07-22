@@ -76,8 +76,8 @@
       </ion-card>
 <!--section-->
 <ion-item *ngIf="isToggled1">
-      <ion-label position="floating">UPVC balcony door bug screen mesh is operable</ion-label>      
-       <ion-select formControlName= "UPVC_balcony_door_bug_screen_mesh_is_operable" (ionChange)="UPVC_balcony_door_bug_screen_mesh_is_operable()">
+      <ion-label position="floating">UPVC balcony door bug screen mesh is operable & taut </ion-label>      
+       <ion-select formControlName= "UPVC_balcony_door_bug_screen_mesh_is_operable_and_taut" (ionChange)="UPVC_balcony_door_bug_screen_mesh_is_operable_and_taut()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -187,7 +187,7 @@
           <ion-input formControlName="UPVC_balcony_doors_are_operable_Description"></ion-input>
          </ion-item>  
 </ion-card>
-<!--section-->
+<!--section
 <ion-item *ngIf="isToggled1">
       <ion-label position="floating">UPVC balcony door bug screen mesh is taut</ion-label>      
        <ion-select formControlName= "UPVC_balcony_door_bug_screen_mesh_is_taut" (ionChange)="UPVC_balcony_door_bug_screen_mesh_is_taut()">
@@ -227,6 +227,8 @@
   <ion-toggle slot="end" name="Electrical" (ionChange)="notify2()" formControlName="Electrical"  ></ion-toggle>
    
 </ion-item>
+
+-->
 <!--section-->
 <ion-item *ngIf="isToggled2">
       <ion-label position="floating">Switch plates are aligned</ion-label>      
@@ -257,7 +259,7 @@
          </ion-item>  
       </ion-card>
 
-<!--section-->
+<!--section
     <ion-item *ngIf="isToggled2">
       <ion-label position="floating">AC Core cut pipe is finished flush with plaster</ion-label>      
        <ion-select formControlName= "AC_Core_cut_pipe_is_finished_flush_with_plaster" (ionChange)="AC_Core_cut_pipe_is_finished_flush_with_plaster()">
@@ -286,7 +288,8 @@
           <ion-input formControlName="AC_Core_cut_pipe_is_finished_flush_with_plaster_Description"></ion-input>
          </ion-item>  
       </ion-card>
-<!--section-->
+      -->
+<!--section
     <ion-item *ngIf="isToggled2">
       <ion-label position="floating">Wall Light points are covered /capped properly</ion-label>      
        <ion-select formControlName= "Wall_Light_points_are_covered_or_capped_properly" (ionChange)="Wall_Light_points_are_covered_or_capped_properly()">
@@ -315,11 +318,11 @@
           <ion-input formControlName="Wall_Light_points_are_covered_or_capped_properly_Description"></ion-input>
          </ion-item>  
       </ion-card>
-
+-->
 <!--section-->
     <ion-item *ngIf="isToggled2">
-      <ion-label position="floating">AC Core cut pipe is cleaned </ion-label>      
-       <ion-select formControlName= "AC_Core_cut_pipe_is_cleaned" (ionChange)="AC_Core_cut_pipe_is_cleaned()">
+      <ion-label position="floating">AC Core cut pipe is cleaned,finished flush with plaster</ion-label>      
+       <ion-select formControlName= "AC_Core_cut_pipe_is_cleaned_finished_flush_with_plaster" (ionChange)="AC_Core_cut_pipe_is_cleaned_finished_flush_with_plaster()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -342,13 +345,13 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="AC_Core_cut_pipe_is_cleaned_Description"></ion-input>
+          <ion-input formControlName="AC_Core_cut_pipe_is_cleaned_finished_flush_with_plaster_Description"></ion-input>
          </ion-item>  
       </ion-card>
 <!--section-->
 <ion-item *ngIf="isToggled2">
-      <ion-label position="floating">Ceiling electrical points are covered/capped properly</ion-label>      
-       <ion-select formControlName= "Ceiling_electrical_points_are_covered_or_capped_properly" (ionChange)="Ceiling_electrical_points_are_covered_or_capped_properly()">
+      <ion-label position="floating">Ceiling & wall electrical points are covered/capped properly</ion-label>      
+       <ion-select formControlName= "Ceiling_and_wall_electrical_points_are_covered_or_capped_properly" (ionChange)="Ceiling_and_wall_electrical_points_are_covered_or_capped_properly()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -371,7 +374,7 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Ceiling_electrical_points_are_covered_or_capped_properly_Description"></ion-input>
+          <ion-input formControlName="Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Description"></ion-input>
          </ion-item>  
       </ion-card>
 <!--section-->
@@ -439,8 +442,8 @@
 </ion-item>
 <!--section-->
 <ion-item *ngIf="isToggled3">
-      <ion-label position="floating">Skirting finish & alignment</ion-label>      
-       <ion-select formControlName= "Skirting_finish_and_alignment" (ionChange)="Skirting_finish_and_alignment()">
+      <ion-label position="floating">Skirting finish & alignment is right</ion-label>      
+       <ion-select formControlName= "Skirting_finish_and_alignment_is_right" (ionChange)="Skirting_finish_and_alignment_is_right()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -463,14 +466,14 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Skirting_finish_and_alignment_Description"></ion-input>
+          <ion-input formControlName="Skirting_finish_and_alignment_is_right_Description"></ion-input>
          </ion-item>  
       </ion-card>
 
 <!--section-->
     <ion-item *ngIf="isToggled3">
-      <ion-label position="floating">Marble floor polishing</ion-label>      
-       <ion-select formControlName= "Marble_floor_polishing" (ionChange)="Marble_floor_polishing()">
+      <ion-label position="floating">Skirting finish & alignment is right</ion-label>      
+       <ion-select formControlName= "Marble_floor_polishing_is_uniform" (ionChange)="Marble_floor_polishing_is_uniform()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -493,7 +496,7 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Marble_floor_polishing_Description"></ion-input>
+          <ion-input formControlName="Marble_floor_polishing_is_uniform_Description"></ion-input>
          </ion-item>  
       </ion-card>
 <!--Walls &Ceiling -->

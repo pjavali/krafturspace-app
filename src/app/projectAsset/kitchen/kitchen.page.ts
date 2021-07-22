@@ -31,9 +31,9 @@ import { EmailComposer } from '@ionic-native/email-composer/ngx';
 interface StudentData {
   
             Core_cut:string;
-               Core_cutting_for_kitchen_hood_towards_exterior:string;
-               Core_cutting_for_kitchen_hood_towards_exterior_Photo: any;
-              Core_cutting_for_kitchen_hood_towards_exterior_Description:string;
+               Core_cutting_for_kitchen_hood_is_connected_towards_exterior:string;
+               Core_cutting_for_kitchen_hood_is_connected_towards_exterior_Photo: any;
+              Core_cutting_for_kitchen_hood_is_connected_towards_exterior_Description:string;
 
                Core_cut_area_pipe_is_cleaned:string;
                Core_cut_area_pipe_is_cleaned_Photo: any;
@@ -44,9 +44,9 @@ interface StudentData {
               Core_cut_pipe_is_finished_on_both_sides_Description:string;
            
             Doors_and_Windows:string;
-               UPVC_kitchen_windows_bug_screen_is_operable:string;
-                UPVC_kitchen_windows_bug_screen_is_operable_Photo: any;
-              UPVC_kitchen_windows_bug_screen_is_operable_Description:string;
+               UPVC_kitchen_windows_bug_screen_is_operable_and_taut:string;
+                UPVC_kitchen_windows_bug_screen_is_operable_and_taut_Photo: any;
+              UPVC_kitchen_windows_bug_screen_is_operable_and_taut_Description:string;
 
                Hardware_is_consistent:string;
                 Hardware_is_consistent_Photo: any;
@@ -73,9 +73,9 @@ interface StudentData {
                 Switch_plates_are_aligned_Photo: any;
               Switch_plates_are_aligned_Description:string;
 
-              Ceiling_electrical_points_are_covered_or_capped_properly:string;
-              Ceiling_electrical_points_are_covered_or_capped_properly_Photo: any;
-              Ceiling_electrical_points_are_covered_or_capped_properly_Description:string;
+              Ceiling_and_wall_electrical_points_are_covered_or_capped_properly:string;
+              Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Photo: any;
+              Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Description:string;
 
                Electrical_points_are_as_per_standard_offering:string;
                 Electrical_points_are_as_per_standard_offering_Photo: any;
@@ -86,12 +86,15 @@ interface StudentData {
               Wall_Light_points_are_covered__or_apped_properly_Description:string;
            
             Flooring:string;
-               Vitrified_tiles_are_uniform__and_free_of_cracks:string;
-                Vitrified_tiles_are_uniform__and_free_of_cracks_Photo: any;
-              Vitrified_tiles_are_uniform__and_free_of_cracks_Description:string;
-               Skirting_finish_and_alignment:string;
-                Skirting_finish_and_alignment_Photo: any;
-              Skirting_finish_and_alignment_Description:string;
+               
+Vitrified_tiles_are_uniform__and_free_of_cracks_and_hollowness:string;
+                
+Vitrified_tiles_are_uniform__and_free_of_cracks_and_hollowness_Photo: any;
+              Vitrified_tiles_are_uniform__and_free_of_cracks_and_hollowness_Description:string;
+
+               Skirting_finish_and_aligned:string;
+                Skirting_finish_and_aligned_Photo: any;
+              Skirting_finish_and_aligned_Description:string;
            
             PHE:string;
                Floor_trap_or_ottle_trap_outlets_are_provided:string;
@@ -102,9 +105,9 @@ interface StudentData {
                 Sink_inlet_is_provided_Photo: any;
               Sink_inlet_is_provided_Description:string;
 
-               Floor_trap_cover_is_provided:string;
-                Floor_trap_cover_is_provided_Photo: any;
-              Floor_trap_cover_is_provided_Description:string;
+               Floor_trap_cover_is_provided_and_is_free_of_debris_or_rust:string;
+                Floor_trap_cover_is_provided_and_is_free_of_debris_or_rust_Photo: any;
+              Floor_trap_cover_is_provided_and_is_free_of_debris_or_rust_Description:string;
 
                Floor_trap_is_free_of_dust_or_debris:string;
                 Floor_trap_is_free_of_dust_or_debris_Photo: any;
@@ -115,9 +118,9 @@ interface StudentData {
                 Reticulated_gas_pipes_are_clean_Photo: any;
               Reticulated_gas_pipes_are_clean_Description:string;
 
-               Reticulated_gas_pipes_are_clamped_properly:string;
-                Reticulated_gas_pipes_are_clamped_properly_Photo: any;
-              Reticulated_gas_pipes_are_clamped_properly_Description:string;
+               Reticulated_gas_pipes_are_clamped_properly_and_is_clean_of_stains:string;
+                Reticulated_gas_pipes_are_clamped_properly_and_is_clean_of_stains_Photo: any;
+              Reticulated_gas_pipes_are_clamped_properly_and_is_clean_of_stains_Description:string;
            
             Walls_and_ceiling:string;
                Cornices_installed_are_consistent:string;
@@ -132,17 +135,17 @@ interface StudentData {
                 Ceilings_are_free_of_stains_or_ndulations_or_racks_etc_Photo: any;
               Ceilings_are_free_of_stains_or_ndulations_or_racks_etc_Description:string;
 
-               Aluminium_member_betweeen_vitrified_flooring__and_marble_is_consistently_finished:string;
-                Aluminium_member_betweeen_vitrified_flooring__and_marble_is_consistently_finished_Photo: any;
-              Aluminium_member_betweeen_vitrified_flooring__and_marble_is_consistently_finished_Description:string;
+               Aluminium_transition_member_betweeen_vitrified_flooring_and_marble_is_consistently_finished:string;
+                Aluminium_transition_member_betweeen_vitrified_flooring_and_marble_is_consistently_finished_Photo: any;
+              Aluminium_transition_member_betweeen_vitrified_flooring_and_marble_is_consistently_finished_Description:string;
 
                Walls_are_free_of_cracks_or_stains_etc:string;
                 Walls_are_free_of_cracks_or_stains_etc_Photo: any;
               Walls_are_free_of_cracks_or_stains_etc_Description:string;
 
-               Granite_Ledge_finish_is_without_sharp_edges:string;
-                Granite_Ledge_finish_is_without_sharp_edges_Photo: any;
-              Granite_Ledge_finish_is_without_sharp_edges_Description:string;
+               Granite_ledge_provided_is_free_of_cracks_and_sharp_edges:string;
+                Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Photo: any;
+              Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Description:string;
               
                Wall_behind_gas_pipe_assembly_are_finished:string;
                 Wall_behind_gas_pipe_assembly_are_finished_Photo: any;
@@ -453,22 +456,22 @@ const db =firebase.firestore();
 
 
        Core_cut:[''],
-               Core_cutting_for_kitchen_hood_towards_exterior:['',[Validators.required]],
-               Core_cutting_for_kitchen_hood_towards_exterior_Photo: [this.imgURL1],
-              Core_cutting_for_kitchen_hood_towards_exterior_Description:[''],
+               Core_cutting_for_kitchen_hood_is_connected_towards_exterior:['',[Validators.required]],
+               Core_cutting_for_kitchen_hood_is_connected_towards_exterior_Photo: [this.imgURL1],
+              Core_cutting_for_kitchen_hood_is_connected_towards_exterior_Description:[''],
 
-               Core_cut_area_pipe_is_cleaned:[''],
-               Core_cut_area_pipe_is_cleaned_Photo: [this.imgURL2],
-              Core_cut_area_pipe_is_cleaned_Description:[''],
+               Core_cut_pipe_is_cleaned_and_finished_with_plaster_on_both_sides:[''],
+               Core_cut_pipe_is_cleaned_and_finished_with_plaster_on_both_sides_Photo: [this.imgURL2],
+              Core_cut_pipe_is_cleaned_and_finished_with_plaster_on_both_sides_Description:[''],
 
               Core_cut_pipe_is_finished_on_both_sides:[''],
               Core_cut_pipe_is_finished_on_both_sides_Photo: [this.imgURL3],
               Core_cut_pipe_is_finished_on_both_sides_Description:[''],
            
             Doors_and_Windows:[''],
-               UPVC_kitchen_windows_bug_screen_is_operable:[''],
-                UPVC_kitchen_windows_bug_screen_is_operable_Photo: [this.imgURL4],
-              UPVC_kitchen_windows_bug_screen_is_operable_Description:[''],
+               UPVC_kitchen_windows_bug_screen_is_operable_and_taut:[''],
+                UPVC_kitchen_windows_bug_screen_is_operable_and_taut_Photo: [this.imgURL4],
+              UPVC_kitchen_windows_bug_screen_is_operable_and_taut_Description:[''],
 
                Hardware_is_consistent:[''],
                 Hardware_is_consistent_Photo: [this.imgURL5],
@@ -495,9 +498,9 @@ const db =firebase.firestore();
                 Switch_plates_are_aligned_Photo: [this.imgURL10],
               Switch_plates_are_aligned_Description:[''],
 
-              Ceiling_electrical_points_are_covered_or_capped_properly:[''],
-              Ceiling_electrical_points_are_covered_or_capped_properly_Photo: [this.imgURL11],
-              Ceiling_electrical_points_are_covered_or_capped_properly_Description:[''],
+              Ceiling_and_wall_electrical_points_are_covered_or_capped_properly:[''],
+              Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Photo: [this.imgURL11],
+              Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Description:[''],
 
                Electrical_points_are_as_per_standard_offering:[''],
                 Electrical_points_are_as_per_standard_offering_Photo: [this.imgURL12],
@@ -508,13 +511,13 @@ const db =firebase.firestore();
               Wall_Light_points_are_covered__or_apped_properly_Description:[''],
            
             Flooring:[''],
-               Vitrified_tiles_are_uniform__and_free_of_cracks:['',[Validators.required]],
-                Vitrified_tiles_are_uniform__and_free_of_cracks_Photo: [this.imgURL14],
-              Vitrified_tiles_are_uniform__and_free_of_cracks_Description:[''],
+               Vitrified_tiles_are_uniform__and_free_of_cracks_and_hollowness:['',[Validators.required]],
+                Vitrified_tiles_are_uniform__and_free_of_cracks_and_hollowness_Photo: [this.imgURL14],
+              Vitrified_tiles_are_uniform__and_free_of_cracks_and_hollowness_Description:[''],
 
-               Skirting_finish_and_alignment:[''],
-                Skirting_finish_and_alignment_Photo: [this.imgURL15],
-              Skirting_finish_and_alignment_Description:[''],
+               Skirting_finish_and_aligned:[''],
+                Skirting_finish_and_aligned_Photo: [this.imgURL15],
+             Skirting_finish_and_aligned_Description:[''],
            
             PHE:[''],
                Floor_trap_or_ottle_trap_outlets_are_provided:['',[Validators.required]],
@@ -525,18 +528,18 @@ const db =firebase.firestore();
                 Sink_inlet_is_provided_Photo: [this.imgURL17],
               Sink_inlet_is_provided_Description:[''],
 
-               Floor_trap_cover_is_provided:[''],
-                Floor_trap_cover_is_provided_Photo: [this.imgURL18],
-              Floor_trap_cover_is_provided_Description:[''],
+               Floor_trap_cover_is_provided_and_is_free_of_debris_or_rust:[''],
+                Floor_trap_cover_is_provided_and_is_free_of_debris_or_rust_Photo: [this.imgURL18],
+              Floor_trap_cover_is_provided_and_is_free_of_debris_or_rust_Description:[''],
               
             Reticulated_Gas:[''],
                Reticulated_gas_pipes_are_clean:[''],
                 Reticulated_gas_pipes_are_clean_Photo: [this.imgURL19],
               Reticulated_gas_pipes_are_clean_Description:[''],
 
-               Reticulated_gas_pipes_are_clamped_properly:['',[Validators.required]],
-                Reticulated_gas_pipes_are_clamped_properly_Photo: [this.imgURL20],
-              Reticulated_gas_pipes_are_clamped_properly_Description:[''],
+               Reticulated_gas_pipes_are_clamped_properly_and_is_clean_of_stains:['',[Validators.required]],
+                Reticulated_gas_pipes_are_clamped_properly_and_is_clean_of_stains_Photo: [this.imgURL20],
+              Reticulated_gas_pipes_are_clamped_properly_and_is_clean_of_stains_Description:[''],
            
             Walls_and_ceiling:[''],
                Cornices_installed_are_consistent:['',[Validators.required]],
@@ -551,17 +554,17 @@ const db =firebase.firestore();
                 Ceilings_are_free_of_stains_or_ndulations_or_racks_etc_Photo: [this.imgURL23],
               Ceilings_are_free_of_stains_or_ndulations_or_racks_etc_Description:[''],
 
-               Aluminium_member_betweeen_vitrified_flooring__and_marble_is_consistently_finished:[''],
-                Aluminium_member_betweeen_vitrified_flooring__and_marble_is_consistently_finished_Photo: [this.imgURL24],
-              Aluminium_member_betweeen_vitrified_flooring__and_marble_is_consistently_finished_Description:[''],
+               Aluminium_transition_member_betweeen_vitrified_flooring_and_marble_is_consistently_finished:[''],
+                Aluminium_transition_member_betweeen_vitrified_flooring_and_marble_is_consistently_finished_Photo: [this.imgURL24],
+              Aluminium_transition_member_betweeen_vitrified_flooring_and_marble_is_consistently_finished_Description:[''],
 
                Walls_are_free_of_cracks_or_stains_etc:[''],
                 Walls_are_free_of_cracks_or_stains_etc_Photo: [this.imgURL25],
               Walls_are_free_of_cracks_or_stains_etc_Description:[''],
 
-               Granite_Ledge_finish_is_without_sharp_edges:[''],
-                Granite_Ledge_finish_is_without_sharp_edges_Photo: [this.imgURL26],
-              Granite_Ledge_finish_is_without_sharp_edges_Description:[''],
+               Granite_ledge_provided_is_free_of_cracks_and_sharp_edges:[''],
+                Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Photo: [this.imgURL26],
+              Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Description:[''],
 
                Wall_behind_gas_pipe_assembly_are_finished:['',[Validators.required]],
                 Wall_behind_gas_pipe_assembly_are_finished_Photo: [this.imgURL27],
@@ -1379,8 +1382,8 @@ washingtonRef.update({
 
 
  
-               Core_cutting_for_kitchen_hood_towards_exterior(): void {      
-    let Qvalue = this.ionicForm.get(' Core_cutting_for_kitchen_hood_towards_exterior').value;
+               Core_cutting_for_kitchen_hood_is_connected_towards_exterior(): void {      
+    let Qvalue = this.ionicForm.get('Core_cutting_for_kitchen_hood_is_connected_towards_exterior').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1394,8 +1397,8 @@ washingtonRef.update({
     
   }
               
-               Core_cut_area_pipe_is_cleaned(): void {      
-    let Qvalue = this.ionicForm.get('Core_cut_area_pipe_is_cleaned').value;
+               Core_cut_pipe_is_cleaned_and_finished_with_plaster_on_both_sides(): void {      
+    let Qvalue = this.ionicForm.get('Core_cut_pipe_is_cleaned_and_finished_with_plaster_on_both_sides').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1427,8 +1430,8 @@ washingtonRef.update({
               
            
            
-               UPVC_kitchen_windows_bug_screen_is_operable(): void {      
-    let Qvalue = this.ionicForm.get('UPVC_kitchen_windows_bug_screen_is_operable').value;
+               UPVC_kitchen_windows_bug_screen_is_operable_and_taut(): void {      
+    let Qvalue = this.ionicForm.get('UPVC_kitchen_windows_bug_screen_is_operable_and_taut').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1538,8 +1541,8 @@ washingtonRef.update({
   }
                 
 
-              Ceiling_electrical_points_are_covered_or_capped_properly(): void {      
-    let Qvalue = this.ionicForm.get('Ceiling_electrical_points_are_covered_or_capped_properly').value;
+              Ceiling_and_wall_electrical_points_are_covered_or_capped_properly(): void {      
+    let Qvalue = this.ionicForm.get('Ceiling_and_wall_electrical_points_are_covered_or_capped_properly').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1586,8 +1589,8 @@ washingtonRef.update({
                
            
            
-               Vitrified_tiles_are_uniform__and_free_of_cracks(): void {      
-    let Qvalue = this.ionicForm.get('Vitrified_tiles_are_uniform__and_free_of_cracks').value;
+               Vitrified_tiles_are_uniform__and_free_of_cracks_and_hollowness(): void {      
+    let Qvalue = this.ionicForm.get('Vitrified_tiles_are_uniform__and_free_of_cracks_and_hollowness').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1602,8 +1605,8 @@ washingtonRef.update({
   }
               
 
-               Skirting_finish_and_alignment(): void {      
-    let Qvalue = this.ionicForm.get('Skirting_finish_and_alignment').value;
+               Skirting_finish_and_aligned(): void {      
+    let Qvalue = this.ionicForm.get('Skirting_finish_and_aligned').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1649,8 +1652,8 @@ washingtonRef.update({
     
   }
                
-               Floor_trap_cover_is_provided(): void {      
-    let Qvalue = this.ionicForm.get('Floor_trap_cover_is_provided').value;
+               Floor_trap_cover_is_provided_and_is_free_of_debris_or_rust(): void {      
+    let Qvalue = this.ionicForm.get('Floor_trap_cover_is_provided_and_is_free_of_debris_or_rust').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1696,8 +1699,8 @@ washingtonRef.update({
     
   }
                 
-               Reticulated_gas_pipes_are_clamped_properly(): void {      
-    let Qvalue = this.ionicForm.get(' Reticulated_gas_pipes_are_clamped_properly').value;
+               Reticulated_gas_pipes_are_clamped_properly_and_is_clean_of_stains(): void {      
+    let Qvalue = this.ionicForm.get('Reticulated_gas_pipes_are_clamped_properly_and_is_clean_of_stains').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1764,8 +1767,8 @@ washingtonRef.update({
               
               
 
-               Aluminium_member_betweeen_vitrified_flooring_and_marble_is_consistently_finished(): void {      
-    let Qvalue = this.ionicForm.get('Aluminium_member_betweeen_vitrified_flooring_and_marble_is_consistently_finished').value;
+               Aluminium_transition_member_betweeen_vitrified_flooring_and_marble_is_consistently_finished(): void {      
+    let Qvalue = this.ionicForm.get('Aluminium_transition_member_betweeen_vitrified_flooring_and_marble_is_consistently_finished').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1798,8 +1801,8 @@ washingtonRef.update({
                
                
 
-               Granite_Ledge_finish_is_without_sharp_edges(): void {      
-    let Qvalue = this.ionicForm.get(' Granite_Ledge_finish_is_without_sharp_edges').value;
+               Granite_ledge_provided_is_free_of_cracks_and_sharp_edges(): void {      
+    let Qvalue = this.ionicForm.get(' Granite_ledge_provided_is_free_of_cracks_and_sharp_edges').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 

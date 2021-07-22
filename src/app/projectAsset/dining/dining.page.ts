@@ -33,9 +33,9 @@ interface StudentData {
   
 
             Doors_and_Windows:string;
-               UPVC_utility_Bug_screen_windows_are_operable:string;
-               UPVC_utility_Bug_screen_windows_are_operable_Photo: any;
-              UPVC_utility_Bug_screen_windows_are_operable_Description:string;
+               UPVC_utility_Bug_screen_windows_are_operable_and_taut:string;
+               UPVC_utility_Bug_screen_windows_are_operable_and_taut_Photo: any;
+              UPVC_utility_Bug_screen_windows_are_operable_and_taut_Description:string;
 
                Hardware_is_consistent:string;
                Hardware_is_consistent_Photo: any;
@@ -74,14 +74,14 @@ interface StudentData {
                Electrical_points_are_as_per_standard_offering_Photo: any;
               Electrical_points_are_as_per_standard_offering_Description:string;
               
-               Electrical_wall_points_are_covered:string;
-               Electrical_wall_points_are_covered_Photo: any;
-              Electrical_wall_points_are_covered_Description:string;
+               Electrical_wall_and_ceiling_points_are_covered:string;
+               Electrical_wall_and_ceiling_points_are_covered_Photo: any;
+              Electrical_wall_and_ceiling_points_are_covered_Description:string;
            
             Walls_and_Ceiling:string;
-               Finishing_of_granite_coping_on_ledges:string;
-               Finishing_of_granite_coping_on_ledges_Photo: any;
-              Finishing_of_granite_coping_on_ledges_Description:string;
+               Granite_ledge_provided_is_free_of_cracks_and_sharp_edges:string;
+               Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Photo: any;
+              Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Description:string;
 
               Ceilings_are_free_of_stains_or_undulations_or_cracks_etc:string;
 Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Photo: any;
@@ -383,9 +383,9 @@ this.cameradisplay16=false;
       
                Doors_and_Windows:['Header'],
 
-               UPVC_utility_Bug_screen_windows_are_operable:['',[Validators.required]],
-               UPVC_utility_Bug_screen_windows_are_operable_Photo: [this.imgURL1],
-              UPVC_utility_Bug_screen_windows_are_operable_Description:[''],
+               UPVC_utility_Bug_screen_windows_are_operable_and_taut:['',[Validators.required]],
+               UPVC_utility_Bug_screen_windows_are_operable_and_taut_Photo: [this.imgURL1],
+            UPVC_utility_Bug_screen_windows_are_operable_and_taut_Description:[''],
 
                Hardware_is_consistent:[''],
                Hardware_is_consistent_Photo: [this.imgURL2],
@@ -424,14 +424,14 @@ this.cameradisplay16=false;
                Electrical_points_are_as_per_standard_offering_Photo: [this.imgURL9],
               Electrical_points_are_as_per_standard_offering_Description:[''],
               
-               Electrical_wall_points_are_covered:['',[Validators.required]],
-               Electrical_wall_points_are_covered_Photo: [this.imgURL10],
-              Electrical_wall_points_are_covered_Description:[''],
+               Electrical_wall_and_ceiling_points_are_covered:['',[Validators.required]],
+               Electrical_wall_and_ceiling_points_are_covered_Photo: [this.imgURL10],
+              Electrical_wall_and_ceiling_points_are_covered_Description:[''],
            
             Walls_and_Ceiling:['Header'],
-               Finishing_of_granite_coping_on_ledges:['',[Validators.required]],
-               Finishing_of_granite_coping_on_ledges_Photo: [this.imgURL11],
-              Finishing_of_granite_coping_on_ledges_Description:[''],
+               Granite_ledge_provided_is_free_of_cracks_and_sharp_edges:['',[Validators.required]],
+               Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Photo: [this.imgURL11],
+              Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Description:[''],
 
               Ceilings_are_free_of_stains_or_undulations_or_cracks_etc:[''],
               Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Photo: [this.imgURL12],
@@ -1257,8 +1257,8 @@ washingtonRef.update({
    
 
 
-               UPVC_utility_Bug_screen_windows_are_operable(): void {      
-    let Qvalue = this.ionicForm.get('UPVC_utility_Bug_screen_windows_are_operable').value;
+               UPVC_utility_Bug_screen_windows_are_operable_and_taut(): void {      
+    let Qvalue = this.ionicForm.get('UPVC_utility_Bug_screen_windows_are_operable_and_taut').value;
     this.starttime();
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
@@ -1417,8 +1417,8 @@ washingtonRef.update({
   }
                
               
-               Electrical_wall_points_are_covered(): void {      
-    let Qvalue = this.ionicForm.get('Electrical_wall_points_are_covered').value;
+              Electrical_wall_and_ceiling_points_are_covered(): void {      
+    let Qvalue = this.ionicForm.get('Electrical_wall_and_ceiling_points_are_covered').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1434,8 +1434,8 @@ washingtonRef.update({
             
            
            
-               Finishing_of_granite_coping_on_ledges(): void {      
-    let Qvalue = this.ionicForm.get('Finishing_of_granite_coping_on_ledges').value;
+               Granite_ledge_provided_is_free_of_cracks_and_sharp_edges(): void {      
+    let Qvalue = this.ionicForm.get('Granite_ledge_provided_is_free_of_cracks_and_sharp_edges').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 

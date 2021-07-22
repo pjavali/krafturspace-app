@@ -107,8 +107,8 @@
 
 <!--section-->
     <ion-item *ngIf="isToggled">
-      <ion-label position="floating">Door frame is consistent without dent/scratches/marks</ion-label>      
-       <ion-select formControlName= "Door_frame_is_consistent_without_dent_or_scratches_or_marks" (ionChange)="Door_frame_is_consistent_without_dent_or_scratches_or_marks()">
+      <ion-label position="floating">Door frame & shutter doesn't have dent/scratches/marks</ion-label>      
+       <ion-select formControlName= "Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks" (ionChange)="Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -131,13 +131,13 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Door_frame_is_consistent_without_dent_or_scratches_or_marks_Description"></ion-input>
+          <ion-input formControlName="Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Description"></ion-input>
          </ion-item>  
       </ion-card>
   <!--section-->
     <ion-item *ngIf="isToggled">
-      <ion-label position="floating">Door color is consistent</ion-label>      
-       <ion-select formControlName= "Door_color_is_consistent" (ionChange)="Door_color_is_consistent()">
+      <ion-label position="floating">Door frame & shutter shades are consistent</ion-label>      
+       <ion-select formControlName= "Door_frame_and_shutter_shades_are_consistent" (ionChange)="Door_frame_and_shutter_shades_are_consistent()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -160,7 +160,7 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Door_color_is_consistent_Description"></ion-input>
+          <ion-input formControlName="Door_frame_and_shutter_shades_are_consistent_Description"></ion-input>
          </ion-item>  
       </ion-card>
       <!--section-->
@@ -499,8 +499,8 @@
       </ion-card>
 <!--section-->
     <ion-item *ngIf="isToggled2">
-      <ion-label position="floating">Shower head is functional</ion-label>      
-       <ion-select formControlName= "Shower_head_is_functional" (ionChange)="Shower_head_is_functional()">
+      <ion-label position="floating">Shower head & divertor are functional</ion-label>      
+       <ion-select formControlName= "Shower_head_and_divertor_are_functional" (ionChange)="Shower_head_and_divertor_are_functional()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -522,7 +522,7 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Shower_head_is_functional_Description"></ion-input>
+          <ion-input formControlName="Shower_head_and_divertor_are_functional_Description"></ion-input>
          </ion-item>  
       </ion-card>
 
@@ -559,8 +559,8 @@
 
   <!--section-->
 <ion-item *ngIf="isToggled2">
-      <ion-label position="floating">Floor trap below cover is clean </ion-label>      
-       <ion-select formControlName= "Floor_trap_below_cover_is_clean" (ionChange)="Floor_trap_below_cover_is_clean()">
+      <ion-label position="floating">Floor trap cover is provided & is free of debris & rust</ion-label>      
+       <ion-select formControlName= "Floor_trap_cover_is_provided_and_is_free_of_debris_and_rust" (ionChange)="Floor_trap_cover_is_provided_and_is_free_of_debris_and_rust()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -580,10 +580,10 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Floor_trap_below_cover_is_clean_Description"></ion-input>
+          <ion-input formControlName="Floor_trap_cover_is_provided_and_is_free_of_debris_and_rust_Description"></ion-input>
          </ion-item>  
 </ion-card>
-      <!--section-->
+      <!--section
 <ion-item *ngIf="isToggled2">
       <ion-label position="floating">Toilet Paper Holder</ion-label>      
        <ion-select formControlName= "Toilet_Paper_Holder" (ionChange)="Toilet_Paper_Holder()">
@@ -612,8 +612,9 @@
           <ion-input formControlName="Toilet_Paper_Holder_Description"></ion-input>
          </ion-item>  
 </ion-card>
+-->
 <!--endsection-->
-<!--section-->
+<!--section
 <ion-item *ngIf="isToggled2">
       <ion-label position="floating">Wash basin faucet is operable</ion-label>      
        <ion-select formControlName= "Wash_basin_faucet_is_operable" (ionChange)="Wash_basin_faucet_is_operable()">
@@ -642,6 +643,8 @@
           <ion-input formControlName="Wash_basin_faucet_is_operable_Description"></ion-input>
          </ion-item>  
 </ion-card>
+
+-->
 <!--endsection-->
 <!--section-->
 <ion-item *ngIf="isToggled2">
@@ -739,8 +742,8 @@
 
 <!--section-->
     <ion-item *ngIf="isToggled3">
-      <ion-label position="floating">Tile drop between dry & wet areas</ion-label>      
-       <ion-select formControlName= "Tile_drop_between_dry_and_wet_areas" (ionChange)="Tile_drop_between_dry_and_wet_areas()">
+      <ion-label position="floating">Tile drop between dry & wet areas exists</ion-label>      
+       <ion-select formControlName= "Tile_drop_between_dry_and_wet_areas_exists" (ionChange)="Tile_drop_between_dry_and_wet_areas_exists()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -763,13 +766,13 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Tile_drop_between_dry_and_wet_areas_Description"></ion-input>
+          <ion-input formControlName="Tile_drop_between_dry_and_wet_areas_exists_Description"></ion-input>
          </ion-item>  
       </ion-card>
 <!--section-->
     <ion-item *ngIf="isToggled3">
-      <ion-label position="floating">Slopes are adequate</ion-label>      
-       <ion-select formControlName= "Slopes_are_adequate" (ionChange)="Slopes_are_adequate()">
+      <ion-label position="floating">Slopes provided are adequate</ion-label>      
+       <ion-select formControlName= "Slopes_provided_are_adequate" (ionChange)="Slopes_provided_are_adequate()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -793,14 +796,14 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Slopes_are_adequate_Description"></ion-input>
+          <ion-input formControlName="Slopes_provided_are_adequate_Description"></ion-input>
          </ion-item>  
       </ion-card>
 
 <!--section-->
     <ion-item *ngIf="isToggled3">
-      <ion-label position="floating">Tiles are laid to slope</ion-label>      
-       <ion-select formControlName= "Tiles_are_laid_to_slope" (ionChange)="Tiles_are_laid_to_slope()">
+      <ion-label position="floating">Tiles are laid to slopewithout hollowness</ion-label>      
+       <ion-select formControlName= "Tiles_are_laid_to_slopewithout_hollowness" (ionChange)="Tiles_are_laid_to_slopewithout_hollowness()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -823,7 +826,7 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Tiles_are_laid_to_slope"></ion-input>
+          <ion-input formControlName="Tiles_are_laid_to_slopewithout_hollowness_Description"></ion-input>
          </ion-item>  
       </ion-card>
 
@@ -891,7 +894,7 @@
           <ion-input formControlName="EWC_Description"></ion-input>
          </ion-item>  
       </ion-card>
-<!--section-->
+<!--section
     <ion-item *ngIf="isToggled4">
       <ion-label position="floating">Wash Basin</ion-label>      
        <ion-select formControlName= "Wash_Basin" (ionChange)="Wash_Basin()">
@@ -920,7 +923,7 @@
           <ion-input formControlName="Wash_Basin_Description"></ion-input>
          </ion-item>  
       </ion-card>
-
+-->
 <!--Walls & ceiling-->
 <ion-item >
   <ion-label>Walls & ceiling</ion-label>
@@ -958,8 +961,8 @@
 
 <!--section-->
     <ion-item *ngIf="isToggled5">
-      <ion-label position="floating">Check for uniform line and level of the dadoing at the top</ion-label>      
-       <ion-select formControlName= "Check_for_uniform_line_and_level_of_the_dadoing_at_the_top" (ionChange)="Check_for_uniform_line_and_level_of_the_dadoing_at_the_top()">
+      <ion-label position="floating">Dado top line is uniform & consistent</ion-label>      
+       <ion-select formControlName= "Dado_top_line_is_uniform_and_consistent" (ionChange)="Dado_top_line_is_uniform_and_consistent()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -982,7 +985,7 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Check_for_uniform_line_and_level_of_the_dadoing_at_the_top_Description"></ion-input>
+          <ion-input formControlName="Dado_top_line_is_uniform_and_consistent_Description"></ion-input>
          </ion-item>  
       </ion-card>
 <!--section-->
@@ -1103,8 +1106,8 @@
 <!--endsection-->
  <!--section-->
 <ion-item *ngIf="isToggled5">
-      <ion-label position="floating">Tile surface is consistent</ion-label>      
-       <ion-select formControlName= "Tile_surface_is_consistent" (ionChange)="Tile_surface_is_consistent()">
+      <ion-label position="floating">Tile Dado surface is consistent & without hollowness</ion-label>      
+       <ion-select formControlName= "Tile_Dado_surface_is_consistent_and_without_hollowness" (ionChange)="Tile_Dado_surface_is_consistent_and_without_hollowness()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -1127,14 +1130,14 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Tile_surface_is_consistent_Description"></ion-input>
+          <ion-input formControlName="Tile_Dado_surface_is_consistent_and_without_hollowness_Description"></ion-input>
          </ion-item>  
 </ion-card>
 <!--endsection-->
  <!--section-->
 <ion-item *ngIf="isToggled5">
-      <ion-label position="floating">EWC Ledge wall granite coping</ion-label>      
-       <ion-select formControlName= "EWC_Ledge_wall_granite_coping" (ionChange)="EWC_Ledge_wall_granite_coping()">
+      <ion-label position="floating">EWC Ledge wall granite coping is free of sharp edges</ion-label>      
+       <ion-select formControlName= "EWC_Ledge_wall_granite_coping_is_free_of_sharp_edges" (ionChange)="EWC_Ledge_wall_granite_coping_is_free_of_sharp_edges()">
               <ion-select-option value="YES">Yes</ion-select-option>
               <ion-select-option value="No">No</ion-select-option>              
        </ion-select>  
@@ -1157,7 +1160,7 @@
         </ion-card-content>
          <ion-item >
          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="EWC_Ledge_wall_granite_coping_Description"></ion-input>
+          <ion-input formControlName="EWC_Ledge_wall_granite_coping_is_free_of_sharp_edges_Description"></ion-input>
          </ion-item>  
 </ion-card>
 <!--endsection-->
@@ -1191,7 +1194,7 @@
          </ion-item>  
 </ion-card>
 <!--endsection-->
- <!--section-->
+ <!--section
 <ion-item *ngIf="isToggled5">
       <ion-label position="floating">Hollowness in wall dado</ion-label>      
        <ion-select formControlName= "Hollowness_in_wall_dado" (ionChange)="Hollowness_in_wall_dado()">
@@ -1220,6 +1223,8 @@
           <ion-input formControlName="Hollowness_in_wall_dado_Description"></ion-input>
          </ion-item>  
 </ion-card>
+
+-->
 <!--endsection-->
 <!--end of all-->    
 </ion-card>

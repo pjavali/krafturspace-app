@@ -40,9 +40,9 @@ interface StudentData {
                UPVC_balcony_glass_is_free_of_scratches_Photo: any;
               UPVC_balcony_glass_is_free_of_scratches_Description:string;
 
-               UPVC_balcony_door_bug_screen_mesh_is_operable:string;
-               UPVC_balcony_door_bug_screen_mesh_is_operable_Photo: any;
-              UPVC_balcony_door_bug_screen_mesh_is_operable_Description:string;
+               UPVC_balcony_door_bug_screen_mesh_is_operable_and_taut:string;
+               UPVC_balcony_door_bug_screen_mesh_is_operable_and_taut_Photo: any;
+              UPVC_balcony_door_bug_screen_mesh_is_operable_and_taut_Description:string;
 
                Gasket_or_Sealants_are_intact:string;
                Gasket_or_Sealants_are_intact_Photo: any;
@@ -73,13 +73,13 @@ interface StudentData {
                Wall_Light_points_are_covered_or_capped_properly_Photo: any;
               Wall_Light_points_are_covered_or_capped_properly_Description:string;
 
-               AC_Core_cut_pipe_is_cleaned:string;
-               AC_Core_cut_pipe_is_cleaned_Photo: any;
-              AC_Core_cut_pipe_is_cleaned_Description:string;
+               AC_Core_cut_pipe_is_cleaned_finished_flush_with_plaster:string;
+               AC_Core_cut_pipe_is_cleaned_finished_flush_with_plaster_Photo: any;
+              AC_Core_cut_pipe_is_cleaned_finished_flush_with_plaster_Description:string;
 
-               Ceiling_electrical_points_are_covered_or_capped_properly:string;
-               Ceiling_electrical_points_are_covered_or_capped_properly_Photo: any;
-              Ceiling_electrical_points_are_covered_or_capped_properly_Description:string;
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly:string;
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Photo: any;
+             Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Description:string;
 
                Switches_are_operable:string;
                Switches_are_operable_Photo: any;
@@ -90,13 +90,13 @@ interface StudentData {
               Electrical_points_are_as_per_standard_offering_Description:string;
           
             Flooring:string;
-               Skirting_finish_and_alignment:string;
-               Skirting_finish_and_alignment_Photo: any;
-              Skirting_finish_and_alignment_Description:string;
+               Skirting_finish_and_alignment_is_right:string;
+               Skirting_finish_and_alignment_is_right_Photo: any;
+              Skirting_finish_and_alignment_is_right_Description:string;
 
-               Marble_floor_polishing:string;
-                Marble_floor_polishing_Photo: any;
-               Marble_floor_polishing_Description:string;
+               Marble_floor_polishing_is_uniform:string;
+                Marble_floor_polishing_is_uniform_Photo: any;
+               Marble_floor_polishing_is_uniform_Description:string;
            
             Walls_and_ceiling:string;
                Cornices_provided_are_aligned:string;
@@ -406,9 +406,9 @@ const db =firebase.firestore();
                UPVC_balcony_glass_is_free_of_scratches_Photo: [this.imgURL2],
               UPVC_balcony_glass_is_free_of_scratches_Description:[''],
 
-               UPVC_balcony_door_bug_screen_mesh_is_operable:[''],
-               UPVC_balcony_door_bug_screen_mesh_is_operable_Photo: [this.imgURL3],
-              UPVC_balcony_door_bug_screen_mesh_is_operable_Description:[''],
+               UPVC_balcony_door_bug_screen_mesh_is_operable_and_taut:[''],
+               UPVC_balcony_door_bug_screen_mesh_is_operable_and_taut_Photo: [this.imgURL3],
+              UPVC_balcony_door_bug_screen_mesh_is_operable_and_taut_Description:[''],
 
                Gasket_or_Sealants_are_intact:[''],
                Gasket_or_Sealants_are_intact_Photo: [this.imgURL4],
@@ -439,13 +439,13 @@ const db =firebase.firestore();
                Wall_Light_points_are_covered_or_capped_properly_Photo: [this.imgURL10],
               Wall_Light_points_are_covered_or_capped_properly_Description:[''],
 
-               AC_Core_cut_pipe_is_cleaned :[''],
-               AC_Core_cut_pipe_is_cleaned_Photo: [this.imgURL11],
-              AC_Core_cut_pipe_is_cleaned_Description:[''],
+               AC_Core_cut_pipe_is_cleaned_finished_flush_with_plaster :[''],
+               AC_Core_cut_pipe_is_cleaned_finished_flush_with_plaster_Photo: [this.imgURL11],
+              AC_Core_cut_pipe_is_cleaned_finished_flush_with_plaster_Description:[''],
 
-               Ceiling_electrical_points_are_covered_or_capped_properly:[''],
-               Ceiling_electrical_points_are_covered_or_capped_properly_Photo: [this.imgURL12],
-              Ceiling_electrical_points_are_covered_or_capped_properly_Description:[''],
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly:[''],
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Photo: [this.imgURL12],
+              Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Description:[''],
 
                Switches_are_operable:[''],
                Switches_are_operable_Photo: [this.imgURL13],
@@ -456,13 +456,13 @@ const db =firebase.firestore();
               Electrical_points_are_as_per_standard_offering_Description:[''],
           
             Flooring:[''],
-               Skirting_finish_and_alignment:['',[Validators.required]],
-               Skirting_finish_and_alignment_Photo: [this.imgURL15],
-              Skirting_finish_and_alignment_Description:[''],
+              Skirting_finish_and_alignment_is_right:['',[Validators.required]],
+               Skirting_finish_and_alignment_is_right_Photo: [this.imgURL15],
+              Skirting_finish_and_alignment_is_right_Description:[''],
 
-               Marble_floor_polishing:[''],
-                Marble_floor_polishing_Photo: [this.imgURL16],
-               Marble_floor_polishing_Description:[''],
+               Marble_floor_polishing_is_uniform:[''],
+                Marble_floor_polishing_is_uniform_Photo: [this.imgURL16],
+               Marble_floor_polishing_is_uniform_Description:[''],
            
             Walls_and_ceiling:[''],
                Cornices_provided_are_aligned:['',[Validators.required]],
@@ -1321,8 +1321,8 @@ washingtonRef.update({
   }
                
 
-               UPVC_balcony_door_bug_screen_mesh_is_operable(): void {      
-    let Qvalue = this.ionicForm.get('UPVC_balcony_door_bug_screen_mesh_is_operable').value;
+               UPVC_balcony_door_bug_screen_mesh_is_operable_and_taut(): void {      
+    let Qvalue = this.ionicForm.get('UPVC_balcony_door_bug_screen_mesh_is_operable_and_taut').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1449,8 +1449,8 @@ washingtonRef.update({
   }
               
 
-               AC_Core_cut_pipe_is_cleaned(): void {      
-    let Qvalue = this.ionicForm.get('AC_Core_cut_pipe_is_cleaned').value;
+               AC_Core_cut_pipe_is_cleaned_finished_flush_with_plaster(): void {      
+    let Qvalue = this.ionicForm.get('AC_Core_cut_pipe_is_cleaned_finished_flush_with_plaster').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1464,8 +1464,8 @@ washingtonRef.update({
     
   }
               
-               Ceiling_electrical_points_are_covered_or_capped_properly(): void {      
-    let Qvalue = this.ionicForm.get('Ceiling_electrical_points_are_covered_or_capped_properly').value;
+               Ceiling_and_wall_electrical_points_are_covered_or_capped_properly(): void {      
+    let Qvalue = this.ionicForm.get('Ceiling_and_wall_electrical_points_are_covered_or_capped_properly').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1512,8 +1512,8 @@ washingtonRef.update({
              
           
            
-               Skirting_finish_and_alignment(): void {      
-    let Qvalue = this.ionicForm.get('Skirting_finish_and_alignment').value;
+               Skirting_finish_and_alignment_is_right(): void {      
+    let Qvalue = this.ionicForm.get('Skirting_finish_and_alignment_is_right').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1528,8 +1528,8 @@ washingtonRef.update({
   }
               
 
-               Marble_floor_polishing(): void {      
-    let Qvalue = this.ionicForm.get('Marble_floor_polishing').value;
+               Marble_floor_polishing_is_uniform(): void {      
+    let Qvalue = this.ionicForm.get('Marble_floor_polishing_is_uniform').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 

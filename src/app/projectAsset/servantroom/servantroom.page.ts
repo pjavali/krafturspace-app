@@ -37,9 +37,9 @@ interface StudentData {
                 UPVC_door_glass_is_free_of_scratches_Photo:any;
               UPVC_door_glass_is_free_of_scratches_Description:string;
 
-               Door_frame_is_consistent_without_dent_or_scratches_or_marks:string,
-                Door_frame_is_consistent_without_dent_or_scratches_or_marks_Photo: any;
-              Door_frame_is_consistent_without_dent_or_scratches_or_marks_Description:string;
+               Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks:string,
+                Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Photo: any;
+              Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Description:string;
 
                Gaskets_or_sealents_are_intact:string,
                 Gaskets_or_sealents_are_intact_Photo: any;
@@ -49,17 +49,17 @@ interface StudentData {
                 Hardware_is_as_per_standard_offering_Photo: any;
               Hardware_is_as_per_standard_offering_Description:string;
 
-               Door_stopper_is_functional:string,
-                Door_stopper_is_functional_Photo: any;
-              Door_stopper_is_functional_Description:string;
+               Door_stopper_is_operable:string,
+                Door_stopper_is_operable_Photo: any;
+              Door_stopper_is_operable_Description:string;
 
                UPVC_doors_are_operable:string,
                 UPVC_doors_are_operable_Photo: any;
               UPVC_doors_are_operable_Description:string;
 
-               Door_color_is_consistent:string,
-                Door_color_is_consistent_Photo: any;
-              Door_color_is_consistent_Description:string;
+               Door_frame_and_shutter_shades_are_consistent:string,
+                Door_frame_and_shutter_shades_are_consistent_Photo: any;
+              Door_frame_and_shutter_shades_are_consistent_Description:string;
 
                UPVC_hardware_is_standard:string,
                 UPVC_hardware_is_standard_Photo: any;
@@ -74,9 +74,9 @@ interface StudentData {
                 Switch_plates_are_aligned_Photo: any;
               Switch_plates_are_aligned_Description:string;
 
-               Electrical_points_are_as_per_standard_offering:string,
-                Electrical_points_are_as_per_standard_offering_Photo: any;
-              Electrical_points_are_as_per_standard_offering_Description:string;
+               Lock_can_be_operated_from_both_sides:string,
+                Lock_can_be_operated_from_both_sides_Photo: any;
+              Lock_can_be_operated_from_both_sides_Description:string;
 
                Switches_are_operable:string,
                 Switches_are_operable_Photo: any;
@@ -86,22 +86,22 @@ interface StudentData {
              Wall_Light_points_are_covered__or_capped_properly_Photo: any;
               Wall_Light_points_are_covered__or_capped_properly_Description:string;
 
-               Ceiling_electrical_points_are_covered_or_capped_properly:string,
-                Ceiling_electrical_points_are_covered_or_capped_properly_Photo: any;
-              Ceiling_electrical_points_are_covered_or_capped_properly_Description:string;
+               Ceiling_wall_electrical_points_are_covered_or_capped_properly:string,
+                Ceiling_wall_electrical_points_are_covered_or_capped_properly_Photo: any;
+              Ceiling_wall_electrical_points_are_covered_or_capped_properly_Description:string;
            
             Flooring:string,
                Transition_betweeen_Corridor_and_vitrified_flooring:string,
                 Transition_betweeen_Corridor_and_vitrified_flooring_Photo: any;
               Transition_betweeen_Corridor_and_vitrified_flooring_Description:string;
 
-               Vitrified_tile_flooring_is_fixed_and_consistent:string,
-                Vitrified_tile_flooring_is_fixed_and_consistent_Photo: any;
-              Vitrified_tile_flooring_is_fixed_and_consistent_Description:string;
+              Vitrified_tile_flooring_is_consistent_and_free_of_hollowness:string,
+                Vitrified_tile_flooring_is_consistent_and_free_of_hollowness_Photo: any;
+              Vitrified_tile_flooring_is_consistent_and_free_of_hollowness_Description:string;
 
-               Skirting_finish_and_alignment:string,
-                Skirting_finish_and_alignment_Photo: any;
-              Skirting_finish_and_alignment_Description:string;
+               Skirting_finished_and_aligned:string,
+                Skirting_finished_and_aligned_Photo: any;
+              Skirting_finished_and_aligned_Description:string;
 
             Walls_and_ceiling:string,
                Cornices_provided_are_aligned:string,
@@ -412,9 +412,9 @@ this.cameradisplay20=false;
                 UPVC_door_glass_is_free_of_scratches_Photo:[this.imgURL1, [Validators.required]],
               UPVC_door_glass_is_free_of_scratches_Description:['', [Validators.required]],
 
-               Door_frame_is_consistent_without_dent_or_scratches_or_marks:['', [Validators.required]],
-                Door_frame_is_consistent_without_dent_or_scratches_or_marks_Photo:[this.imgURL2, [Validators.required]],
-              Door_frame_is_consistent_without_dent_or_scratches_or_marks_Description:['', [Validators.required]],
+               Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks:['', [Validators.required]],
+                Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Photo:[this.imgURL2, [Validators.required]],
+              Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Description:['', [Validators.required]],
 
                Gaskets_or_sealents_are_intact:['', [Validators.required]],
                 Gaskets_or_sealents_are_intact_Photo:[this.imgURL3, [Validators.required]],
@@ -424,17 +424,17 @@ this.cameradisplay20=false;
                 Hardware_is_as_per_standard_offering_Photo:[this.imgURL4, [Validators.required]],
               Hardware_is_as_per_standard_offering_Description:['', [Validators.required]],
 
-               Door_stopper_is_functional:['', [Validators.required]],
-                Door_stopper_is_functional_Photo:[this.imgURL5, [Validators.required]],
-              Door_stopper_is_functional_Description:['', [Validators.required]],
+               Door_stopper_is_operable:['', [Validators.required]],
+                Door_stopper_is_operable_Photo:[this.imgURL5, [Validators.required]],
+              Door_stopper_is_operable_Description:['', [Validators.required]],
 
                UPVC_doors_are_operable:['', [Validators.required]],
                 UPVC_doors_are_operable_Photo:[this.imgURL6, [Validators.required]],
               UPVC_doors_are_operable_Description:['', [Validators.required]],
 
-               Door_color_is_consistent:['', [Validators.required]],
-                Door_color_is_consistent_Photo:[this.imgURL7, [Validators.required]],
-              Door_color_is_consistent_Description:['', [Validators.required]],
+               Door_frame_and_shutter_shades_are_consistent:['', [Validators.required]],
+                Door_frame_and_shutter_shades_are_consistent_Photo:[this.imgURL7, [Validators.required]],
+              Door_frame_and_shutter_shades_are_consistent_Description:['', [Validators.required]],
 
                UPVC_hardware_is_standard:['', [Validators.required]],
                 UPVC_hardware_is_standard_Photo:[this.imgURL8, [Validators.required]],
@@ -449,9 +449,9 @@ this.cameradisplay20=false;
                 Switch_plates_are_aligned_Photo:[this.imgURL10, [Validators.required]],
               Switch_plates_are_aligned_Description:['', [Validators.required]],
 
-               Electrical_points_are_as_per_standard_offering:['', [Validators.required]],
-                Electrical_points_are_as_per_standard_offering_Photo:[this.imgURL11, [Validators.required]],
-              Electrical_points_are_as_per_standard_offering_Description:['', [Validators.required]],
+               Lock_can_be_operated_from_both_sides:['', [Validators.required]],
+                Lock_can_be_operated_from_both_sides_Photo:[this.imgURL11, [Validators.required]],
+              Lock_can_be_operated_from_both_sides_Description:['', [Validators.required]],
 
                Switches_are_operable:['', [Validators.required]],
                 Switches_are_operable_Photo:[this.imgURL12, [Validators.required]],
@@ -461,22 +461,22 @@ this.cameradisplay20=false;
              Wall_Light_points_are_covered__or_capped_properly_Photo:[this.imgURL13, [Validators.required]],
               Wall_Light_points_are_covered__or_capped_properly_Description:['', [Validators.required]],
 
-               Ceiling_electrical_points_are_covered_or_capped_properly:['', [Validators.required]],
-                Ceiling_electrical_points_are_covered_or_capped_properly_Photo:[this.imgURL14, [Validators.required]],
-              Ceiling_electrical_points_are_covered_or_capped_properly_Description:['', [Validators.required]],
+               Ceiling_wall_electrical_points_are_covered_or_capped_properly:['', [Validators.required]],
+                Ceiling_wall_electrical_points_are_covered_or_capped_properly_Photo:[this.imgURL14, [Validators.required]],
+              Ceiling_wall_electrical_points_are_covered_or_capped_properly_Description:['', [Validators.required]],
            
             Flooring:['', [Validators.required]],
                Transition_betweeen_Corridor_and_vitrified_flooring:['', [Validators.required]],
                 Transition_betweeen_Corridor_and_vitrified_flooring_Photo:[this.imgURL15, [Validators.required]],
               Transition_betweeen_Corridor_and_vitrified_flooring_Description:['', [Validators.required]],
 
-               Vitrified_tile_flooring_is_fixed_and_consistent:['', [Validators.required]],
-                Vitrified_tile_flooring_is_fixed_and_consistent_Photo:[this.imgURL16, [Validators.required]],
-              Vitrified_tile_flooring_is_fixed_and_consistent_Description:['', [Validators.required]],
+              Vitrified_tile_flooring_is_consistent_and_free_of_hollowness:['', [Validators.required]],
+                Vitrified_tile_flooring_is_consistent_and_free_of_hollowness_Photo:[this.imgURL16, [Validators.required]],
+              Vitrified_tile_flooring_is_consistent_and_free_of_hollowness_Description:['', [Validators.required]],
 
-               Skirting_finish_and_alignment:['', [Validators.required]],
-                Skirting_finish_and_alignment_Photo:[this.imgURL17, [Validators.required]],
-              Skirting_finish_and_alignment_Description:['', [Validators.required]],
+               Skirting_finished_and_aligned:['', [Validators.required]],
+                Skirting_finished_and_aligned_Photo:[this.imgURL17, [Validators.required]],
+              Skirting_finished_and_aligned_Description:['', [Validators.required]],
 
             Walls_and_ceiling:['', [Validators.required]],
 
@@ -1321,8 +1321,8 @@ washingtonRef.update({
     
   }
                 
-               Door_frame_is_consistent_without_dent_or_scratches_or_marks(): void {      
-    let Qvalue = this.ionicForm.get('Door_frame_is_consistent_without_dent_or_scratches_or_marks').value;
+               Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks(): void {      
+    let Qvalue = this.ionicForm.get('Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1363,8 +1363,8 @@ washingtonRef.update({
     this._cdr.detectChanges();  
     
   }
-               Door_stopper_is_functional(): void {      
-    let Qvalue = this.ionicForm.get('Door_stopper_is_functional').value;
+               Door_stopper_is_operable(): void {      
+    let Qvalue = this.ionicForm.get('Door_stopper_is_operable').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1393,8 +1393,8 @@ washingtonRef.update({
     
   }
 
-               Door_color_is_consistent(): void {      
-    let Qvalue = this.ionicForm.get('Door_color_is_consistent').value;
+               Door_frame_and_shutter_shades_are_consistent(): void {      
+    let Qvalue = this.ionicForm.get('Door_frame_and_shutter_shades_are_consistent').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1453,8 +1453,8 @@ washingtonRef.update({
     
   }
 
-               Electrical_points_are_as_per_standard_offering(): void {      
-    let Qvalue = this.ionicForm.get('Electrical_points_are_as_per_standard_offering').value;
+               Lock_can_be_operated_from_both_sides(): void {      
+    let Qvalue = this.ionicForm.get('Lock_can_be_operated_from_both_sides').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1500,8 +1500,8 @@ washingtonRef.update({
   }
              
 
-               Ceiling_electrical_points_are_covered_or_capped_properly(): void {      
-    let Qvalue = this.ionicForm.get('Ceiling_electrical_points_are_covered_or_capped_properly').value;
+               Ceiling_wall_electrical_points_are_covered_or_capped_properly(): void {      
+    let Qvalue = this.ionicForm.get('Ceiling_wall_electrical_points_are_covered_or_capped_properly').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1530,8 +1530,8 @@ washingtonRef.update({
     this._cdr.detectChanges();  
     
   }
-               Vitrified_tile_flooring_is_fixed_and_consistent(): void {      
-    let Qvalue = this.ionicForm.get('Vitrified_tile_flooring_is_fixed_and_consistent').value;
+              Vitrified_tile_flooring_is_consistent_and_free_of_hollowness(): void {      
+    let Qvalue = this.ionicForm.get('Vitrified_tile_flooring_is_consistent_and_free_of_hollowness').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
@@ -1545,8 +1545,8 @@ washingtonRef.update({
     
   }
              
-               Skirting_finish_and_alignment(): void {      
-    let Qvalue = this.ionicForm.get('Skirting_finish_and_alignment').value;
+               Skirting_finished_and_aligned(): void {      
+    let Qvalue = this.ionicForm.get('Skirting_finished_and_aligned').value;
     console.log("Q---->",Qvalue)
     if(Qvalue === "No"){
 
