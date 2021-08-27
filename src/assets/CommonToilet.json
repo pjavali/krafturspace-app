@@ -1,61 +1,61 @@
 {
-    "Common Toilet":{
-         "isVisible":false,
-         "Walls & ceiling":{
-            "Area above false ceiling is painted  ":"",
-            "Ceiling tiles are free of stains/undulations/cracks etc.,":"",
-            "False ceiling channels are consistent":"",
-            "Hollowness in wall dado":"",
-            "Tile surface is consistent":"",
-            "Vertical Tiles joints & ceiling support members are aligned":"",
-            "EWC Ledge wall granite coping":"",
-            "Check for uniform line and level of the dadoing at the top":"",
-            "Consistency of corner beading":"",
-            "Service ledge is painted & clean":""
-         },
-         "Flooring":{
-            "Tiles are laid to slope":"",
-            "Slopes are adequate":"",
-            "Tile drop between dry & wet areas ":"",
-            "Transition betweeen wooden flooring & toilet at entry":""
-         },
-         "Doors & Windows":{
-            "Door frame is consistent without dent/scratches/marks":"",
-            "Door frame & shutter gaps are consistent":"",
-            "Hardware is as per standard offering":"",
-            "Door color is consistent":"",
-            "Lock can be operated from both sides":"",
-            "UPVC hardware is standard":"",
-            "UPVC ventilators are operable":"",
-            "Gaskets/sealents are intact":""
-         },
-         "Electrical":{
-            "Electrical points are as per standard offering":"",
-            "Ceiling electrical points are covered/capped properly ":"",
-            "Wall Light points are covered /capped properly":"",
-            "Switch plates are aligned":"",
-            "Switches are operable":"",
-            "Exhaust fan connection":"",
-            "All sockets/switches above false ceiling are functional":""
-         },
-         "Fixtures & Fittings":{
-            "Granite counter is free of sharp edges":"",
-            "Brackets supporting counter is painted & free of rust":"",
-            "Washbasin & counter edges are sealed":"",
-            "Wash basin faucet is operable":"",
-            "Floor trap below cover is clean ":"",
-            "Floor trap cover is provided":"",
-            "EWC is fixed with brackets/seat covers & is functional":"",
-            "Toilet Paper Holder":"",
-            "Health Faucet is functional":"",
-            "Wash Basin":"",
-            "Wash basin faucet is functional":"",
-            "Shower head is functional":""
-         },
-         "Standard heights of fixtures":{
-            "Shower head":"",
-            "EWC":"",
-            "Wash Basin":""
-         }
-      }
+  "Common Toilet": {
+    "isVisible": false,
+    "Walls & ceiling": {
+      "Area above false ceiling is painted  ": "",
+      "Ceiling tiles are free of stains/undulations/cracks etc.,": "",
+      "False ceiling channels are consistent": "",
+      "Hollowness in wall dado": "",
+      "Tile surface is consistent": "",
+      "Vertical Tiles joints & ceiling support members are aligned": "",
+      "EWC Ledge wall granite coping": "",
+      "Check for uniform line and level of the dadoing at the top": "",
+      "Consistency of corner beading": "",
+      "Service ledge is painted & clean": ""
+    },
+    "Flooring": {
+      "Tiles are laid to slope": "",
+      "Slopes are adequate": "",
+      "Tile drop between dry & wet areas ": "",
+      "Transition betweeen wooden flooring & toilet at entry": ""
+    },
+    "Doors & Windows": {
+      "Door frame is consistent without dent/scratches/marks": "",
+      "Door frame & shutter gaps are consistent": "",
+      "Hardware is as per standard offering": "",
+      "Door color is consistent": "",
+      "Lock can be operated from both sides": "",
+      "UPVC hardware is standard": "",
+      "UPVC ventilators are operable": "",
+      "Gaskets/sealents are intact": ""
+    },
+    "Electrical": {
+      "Electrical points are as per standard offering": "",
+      "Ceiling electrical points are covered/capped properly ": "",
+      "Wall Light points are covered /capped properly": "",
+      "Switch plates are aligned": "",
+      "Switches are operable": "",
+      "Exhaust fan connection": "",
+      "All sockets/switches above false ceiling are functional": ""
+    },
+    "Fixtures & Fittings": {
+      "Granite counter is free of sharp edges": "",
+      "Brackets supporting counter is painted & free of rust": "",
+      "Washbasin & counter edges are sealed": "",
+      "Wash basin faucet is operable": "",
+      "Floor trap below cover is clean ": "",
+      "Floor trap cover is provided": "",
+      "EWC is fixed with brackets/seat covers & is functional": "",
+      "Toilet Paper Holder": "",
+      "Health Faucet is functional": "",
+      "Wash Basin": "",
+      "Wash basin faucet is functional": "",
+      "Shower head is functional": ""
+    },
+    "Standard heights of fixtures": {
+      "Shower head": "",
+      "EWC": "",
+      "Wash Basin": ""
+    }
+  }
 }

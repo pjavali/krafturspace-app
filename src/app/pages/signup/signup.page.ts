@@ -13,16 +13,13 @@ import firebase from 'firebase/app';
 export class SignupPage implements OnInit {
   @ViewChild(AuthFormComponent)
   signupForm: AuthFormComponent;
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   async signupUser(credentials: UserCredential): Promise<void> {
     try {
-      const userCredential: firebase.auth.UserCredential = await this.authService.signup(
-        credentials.email,
-        credentials.password        
-      );
+      const userCredential: firebase.auth.UserCredential = await this.authService.signup(credentials.email, credentials.password);
       this.authService.userId = userCredential.user.uid;
       await this.signupForm.hideLoading();
       this.router.navigateByUrl('home');

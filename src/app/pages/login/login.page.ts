@@ -12,16 +12,13 @@ import firebase from 'firebase/app';
 })
 export class LoginPage implements OnInit {
   @ViewChild(AuthFormComponent) loginForm: AuthFormComponent;
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   async loginUser(credentials: UserCredential): Promise<void> {
     try {
-      const userCredential: firebase.auth.UserCredential = await this.authService.login(
-        credentials.email,
-        credentials.password
-      );
+      const userCredential: firebase.auth.UserCredential = await this.authService.login(credentials.email, credentials.password);
       this.authService.userId = userCredential.user.uid;
       await this.loginForm.hideLoading();
       this.router.navigateByUrl('home');

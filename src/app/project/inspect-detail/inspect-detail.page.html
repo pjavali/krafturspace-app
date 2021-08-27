@@ -1,22 +1,15 @@
 <ion-header>
-<ion-toolbar color="primary">
-        <ion-buttons slot="start">
-          <ion-button>
-             <ion-menu-button auto-hide="true"></ion-menu-button>
-             <ion-back-button></ion-back-button>
-           </ion-button>        
-    
-        </ion-buttons>
-       
-        <ion-title>Inspect</ion-title>
-     
-        
-</ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-menu-button auto-hide="true"></ion-menu-button>
+        <ion-back-button></ion-back-button>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Inspect</ion-title>
+  </ion-toolbar>
 </ion-header>
-
-
-
- 
 
 <!-- photo keeep inside content tag
 <ion-button (click)="takepic()" expand="block" fill="clear" shape="round">
@@ -26,216 +19,190 @@
 -->
 
 <ion-content>
+  <ion-card *ngIf="FFoyer">
+    <ion-item>
+      <ion-label>Foyer</ion-label>
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-button (click)="Foyerclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+  </ion-card>
 
+  <ion-card *ngIf="CCommonToilet">
+    <ion-item>
+      <ion-label>Common Toilet</ion-label>
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-button (click)="CommonToiletclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+  </ion-card>
 
+  <ion-card *ngIf="LLivingRoom">
+    <ion-item>
+      <ion-label>Living Room</ion-label>
+      <ion-button (click)="LivingRoomclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+    <ion-item *ngIf="LBalcony">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Balcony</ion-label>
+      <ion-button (click)="LBalconyclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+  </ion-card>
 
-<ion-card *ngIf="FFoyer">
-<ion-item>
-  <ion-label>Foyer</ion-label>
-   <ion-icon name="search" slot="start"></ion-icon>
-  <ion-button (click)="Foyerclick()" fill="outline" slot="end">Go</ion-button>
-</ion-item>
-</ion-card>
+  <ion-card *ngIf="DDining">
+    <ion-item>
+      <ion-label>Dining</ion-label>
+      <ion-button (click)="DDiningclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+    <ion-item *ngIf="DBalcony">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Balcony</ion-label>
+      <ion-button (click)="DBalconyclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+  </ion-card>
 
-<ion-card *ngIf="CCommonToilet">
-<ion-item>
-  <ion-label>Common Toilet</ion-label>
-   <ion-icon name="search" slot="start"></ion-icon>
-  <ion-button (click)="CommonToiletclick()" fill="outline" slot="end">Go</ion-button>
-</ion-item>
-  
-</ion-card>
+  <ion-card *ngIf="KKitchen">
+    <ion-item>
+      <ion-label>Kitchen</ion-label>
+      <ion-button (click)="KKitchenclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+    <ion-item *ngIf="KUtility">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Utility</ion-label>
+      <ion-button (click)="KUtilityclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
 
-<ion-card *ngIf="LLivingRoom" >
-<ion-item>
-  <ion-label>Living Room</ion-label>
-   <ion-button (click)="LivingRoomclick()" fill="outline" slot="end">Go</ion-button>
-</ion-item>
-<ion-item *ngIf="LBalcony">
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Balcony</ion-label>
-   <ion-button (click)="LBalconyclick()" fill="outline" slot="end">Go</ion-button>
+    <ion-item *ngIf="KStore">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Store</ion-label>
+      <ion-button (click)="KStoreclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+  </ion-card>
 
-  </ion-item>
-</ion-card>
+  <ion-card *ngIf="SServantsRoom">
+    <ion-item>
+      <ion-label>Servant's Room</ion-label>
+      <ion-button (click)="SServantsRoomclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+    <ion-item *ngIf="SToilet">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Toilet</ion-label>
+      <ion-button (click)="SToiletclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+  </ion-card>
 
-<ion-card *ngIf="DDining">
-<ion-item>
-  <ion-label>Dining</ion-label>
-   <ion-button (click)="DDiningclick()" fill="outline" slot="end">Go</ion-button>
-</ion-item>
-<ion-item *ngIf="DBalcony">
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Balcony</ion-label>
-   <ion-button (click)="DBalconyclick()" fill="outline" slot="end">Go</ion-button>
+  <ion-card *ngIf="MMasterBedRoom">
+    <ion-item>
+      <ion-label>Master BedRoom</ion-label>
+      <ion-button (click)="MMasterBedRoomclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+    <ion-item *ngIf="MBalcony">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Balcony</ion-label>
+      <ion-button (click)="MBalconyclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
 
-  </ion-item>
+    <ion-item *ngIf="MDress">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Dress</ion-label>
+      <ion-button (click)="MDressclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
 
-  
+    <ion-item *ngIf="MToilet">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Toilet</ion-label>
+      <ion-button (click)="MToiletclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+  </ion-card>
+  <ion-card *ngIf="B1BedRoom">
+    <ion-item>
+      <ion-label>BedRoom 1</ion-label>
+      <ion-button (click)="B1BedRoomclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+    <ion-item *ngIf="B1Balcony">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Balcony</ion-label>
+      <ion-button (click)="B1Balconyclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
 
-</ion-card>
-  
-<ion-card *ngIf="KKitchen">
-<ion-item>
-  <ion-label>Kitchen</ion-label>
-   <ion-button (click)="KKitchenclick()" fill="outline" slot="end">Go</ion-button>
-</ion-item>
-<ion-item  *ngIf="KUtility">
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Utility</ion-label>
-   <ion-button (click)="KUtilityclick()" fill="outline" slot="end">Go</ion-button>
+    <ion-item *ngIf="B1Dress">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Dress</ion-label>
+      <ion-button (click)="B1Dressclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
 
-  </ion-item>
+    <ion-item *ngIf="B1Toilet">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Toilet</ion-label>
+      <ion-button (click)="B1Toiletclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+  </ion-card>
+  <ion-card *ngIf="B2BedRoom">
+    <ion-item>
+      <ion-label>BedRoom 2</ion-label>
+      <ion-button (click)="B2BedRoomclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+    <ion-item *ngIf="B2Balcony">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Balcony</ion-label>
+      <ion-button (click)="B2Balconyclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
 
-  <ion-item  *ngIf="KStore" >
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Store</ion-label>
-    <ion-button (click)="KStoreclick()" fill="outline" slot="end">Go</ion-button>
-  </ion-item>
+    <ion-item *ngIf="B2Dress">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Dress</ion-label>
+      <ion-button (click)="B2Dressclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
 
-  
-</ion-card>
+    <ion-item *ngIf="B2Toilet">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Toilet</ion-label>
+      <ion-button (click)="B2Toiletclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+  </ion-card>
 
-<ion-card  *ngIf="SServantsRoom"  >
-<ion-item>
-  <ion-label>Servant's Room</ion-label>
-   <ion-button (click)="SServantsRoomclick()" fill="outline" slot="end">Go</ion-button>
-</ion-item>
-<ion-item  *ngIf="SToilet" >
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Toilet</ion-label>
-   <ion-button (click)="SToiletclick()" fill="outline" slot="end">Go</ion-button>
+  <ion-card *ngIf="B3BedRoom">
+    <ion-item>
+      <ion-label>BedRoom 3</ion-label>
+      <ion-button (click)="B3BedRoomclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+    <ion-item *ngIf="B3Balcony">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Balcony</ion-label>
+      <ion-button (click)="B3Balconyclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
 
-  </ion-item> 
+    <ion-item *ngIf="B3Dress">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Dress</ion-label>
+      <ion-button (click)="B3Dressclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
 
-</ion-card>
+    <ion-item *ngIf="B3Toilet">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Toilet</ion-label>
+      <ion-button (click)="B3Toiletclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+  </ion-card>
+  <ion-card *ngIf="B4BedRoom">
+    <ion-item>
+      <ion-label>BedRoom 4</ion-label>
+      <ion-button (click)="B4BedRoomclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+    <ion-item *ngIf="B4Balcony">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Balcony</ion-label>
+      <ion-button (click)="B4Balconyclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
 
-<ion-card  *ngIf="MMasterBedRoom" >
-<ion-item >
-  <ion-label>Master BedRoom</ion-label>
-   <ion-button (click)="MMasterBedRoomclick()" fill="outline" slot="end">Go</ion-button>
-</ion-item>
-<ion-item  *ngIf="MBalcony" >
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Balcony</ion-label>
-   <ion-button (click)="MBalconyclick()" fill="outline" slot="end">Go</ion-button>
+    <ion-item *ngIf="B4Dress">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Dress</ion-label>
+      <ion-button (click)="B4Dressclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
 
-  </ion-item>
-
-  <ion-item  *ngIf="MDress"  >
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Dress</ion-label>
-    <ion-button (click)="MDressclick()" fill="outline" slot="end">Go</ion-button>
-  </ion-item>
-
-  <ion-item  *ngIf="MToilet"  >
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Toilet</ion-label>
-    <ion-button (click)="MToiletclick()" fill="outline" slot="end">Go</ion-button>
-  </ion-item>
-
-</ion-card>
-<ion-card  *ngIf="B1BedRoom" >
-<ion-item>
-  <ion-label>BedRoom 1</ion-label>
-   <ion-button (click)="B1BedRoomclick()" fill="outline" slot="end">Go</ion-button>
-</ion-item>
-<ion-item  *ngIf="B1Balcony" >
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Balcony</ion-label>
-   <ion-button (click)="B1Balconyclick()" fill="outline" slot="end">Go</ion-button>
-
-  </ion-item>
-
-  <ion-item  *ngIf="B1Dress"  >
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Dress</ion-label>
-    <ion-button (click)="B1Dressclick()" fill="outline" slot="end">Go</ion-button>
-  </ion-item>
-
-  <ion-item  *ngIf="B1Toilet">
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Toilet</ion-label>
-    <ion-button (click)="B1Toiletclick()" fill="outline" slot="end">Go</ion-button>
-  </ion-item>
-
-</ion-card>
-<ion-card *ngIf="B2BedRoom">
-<ion-item>
-  <ion-label>BedRoom 2</ion-label>
-   <ion-button (click)="B2BedRoomclick()" fill="outline" slot="end">Go</ion-button>
-</ion-item>
-<ion-item *ngIf="B2Balcony">
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Balcony</ion-label>
-   <ion-button (click)="B2Balconyclick()" fill="outline" slot="end">Go</ion-button>
-
-  </ion-item>
-
-  <ion-item *ngIf="B2Dress" >
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Dress</ion-label>
-    <ion-button (click)="B2Dressclick()" fill="outline" slot="end">Go</ion-button>
-  </ion-item>
-
-  <ion-item *ngIf="B2Toilet" >
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Toilet</ion-label>
-    <ion-button (click)="B2Toiletclick()" fill="outline" slot="end">Go</ion-button>
-  </ion-item>
-
-</ion-card>
-
-<ion-card *ngIf="B3BedRoom">
-<ion-item>
-  <ion-label>BedRoom 3</ion-label>
-   <ion-button (click)="B3BedRoomclick()" fill="outline" slot="end">Go</ion-button>
-</ion-item>
-<ion-item *ngIf="B3Balcony">
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Balcony</ion-label>
-   <ion-button (click)="B3Balconyclick()" fill="outline" slot="end">Go</ion-button>
-
-  </ion-item>
-
-  <ion-item *ngIf="B3Dress" >
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Dress</ion-label>
-    <ion-button (click)="B3Dressclick()" fill="outline" slot="end">Go</ion-button>
-  </ion-item>
-
-  <ion-item *ngIf="B3Toilet" >
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Toilet</ion-label>
-    <ion-button (click)="B3Toiletclick()" fill="outline" slot="end">Go</ion-button>
-  </ion-item>
-
-</ion-card>
-<ion-card  *ngIf="B4BedRoom">
-<ion-item>
-  <ion-label>BedRoom 4</ion-label>
-   <ion-button (click)="B4BedRoomclick()" fill="outline" slot="end">Go</ion-button>
-</ion-item>
-<ion-item *ngIf="B4Balcony">
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Balcony</ion-label>
-   <ion-button (click)="B4Balconyclick()" fill="outline" slot="end">Go</ion-button>
-
-  </ion-item>
-
-  <ion-item *ngIf="B4Dress" >
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Dress</ion-label>
-    <ion-button (click)="B4Dressclick()" fill="outline" slot="end">Go</ion-button>
-  </ion-item>
-
-  <ion-item *ngIf="B4Toilet" >
-    <ion-icon name="search" slot="start"></ion-icon>
-    <ion-label>Toilet</ion-label>
-    <ion-button (click)="B4Toiletclick()" fill="outline" slot="end">Go</ion-button>
-  </ion-item>
-
-</ion-card>
-
+    <ion-item *ngIf="B4Toilet">
+      <ion-icon name="search" slot="start"></ion-icon>
+      <ion-label>Toilet</ion-label>
+      <ion-button (click)="B4Toiletclick()" fill="outline" slot="end">Go</ion-button>
+    </ion-item>
+  </ion-card>
 </ion-content>
-

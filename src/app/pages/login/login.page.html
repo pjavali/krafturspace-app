@@ -1,28 +1,22 @@
 <ion-content padding class="animated fadeIn login auth-page">
-<div class="login-content">
+  <div class="login-content">
     <div padding-horizontal text-center class="animated fadeInDown">
-        
-        <ion-grid>
-         <ion-row class="aptop">
-           <ion-col size="6" offset="3">
-             <ion-img src="assets/imgs/logo.png" alt="logo-image"></ion-img>
-            </ion-col>
-          </ion-row>
-        </ion-grid>     
-        <ion-text color="primary" class="ion-text-center">        
-          <h1>Kraft ur space</h1>
-        </ion-text>
-      
+      <ion-grid>
+        <ion-row class="aptop">
+          <ion-col size="6" offset="3">
+            <ion-img src="assets/imgs/logo.png" alt="logo-image"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-text color="primary" class="ion-text-center">
+        <h1>Kraft ur space</h1>
+      </ion-text>
     </div>
 
-  <app-auth-form #loginForm (formSubmitted)="loginUser($event)" [actionButtonText]="'Login'"></app-auth-form>
+    <app-auth-form #loginForm (formSubmitted)="loginUser($event)" [actionButtonText]="'Login'"></app-auth-form>
 
-  <ion-button expand="block" fill="clear" routerLink="/signup">
-    Don't have account? signup
-  </ion-button>
+    <ion-button expand="block" fill="clear" routerLink="/signup"> Don't have account? signup </ion-button>
 
-  <ion-button expand="block" fill="clear" routerLink="/reset-password">
-    Forgot Password?
-  </ion-button>
+    <ion-button expand="block" fill="clear" routerLink="/reset-password"> Forgot Password? </ion-button>
   </div>
 </ion-content>

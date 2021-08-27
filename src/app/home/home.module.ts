@@ -9,8 +9,8 @@ import { HomePage } from './home.page';
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,   
-     RouterModule.forChild([
+    IonicModule,
+    RouterModule.forChild([
       {
         path: '',
         component: HomePage

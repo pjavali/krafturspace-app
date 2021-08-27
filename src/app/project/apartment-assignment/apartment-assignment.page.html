@@ -1,18 +1,14 @@
 <ion-toolbar color="primary">
-        <ion-buttons slot="start">
-          <ion-button>
-             <ion-menu-button auto-hide="true"></ion-menu-button>
-          </ion-button>
-        </ion-buttons>
-        <ion-title>Apartment Assignment</ion-title>
+  <ion-buttons slot="start">
+    <ion-button>
+      <ion-menu-button auto-hide="true"></ion-menu-button>
+    </ion-button>
+  </ion-buttons>
+  <ion-title>Apartment Assignment</ion-title>
 </ion-toolbar>
 
-
 <ion-content [fullscreen]="true" class="ion-padding">
-
- 
- <form [formGroup]="projectForm" (ngSubmit)="CreateRecord()">
-
+  <form [formGroup]="projectForm" (ngSubmit)="CreateRecord()">
     <ion-item>
       <ion-label position="floating">Project Name :</ion-label>
       <ion-input formControlName="Name"></ion-input>
@@ -24,24 +20,25 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating"> Project Type:</ion-label>      
-       <ion-select formControlName="Type" (ionChange)="ontypeChange()">
-              <ion-select-option value="2BHK">2BHK</ion-select-option>
-              <ion-select-option value="2.5BHK">2.5BHK</ion-select-option>
-              <ion-select-option value="3BHK">3BHK</ion-select-option>
-               <ion-select-option value="4BHK">4BHK</ion-select-option>
-                <ion-select-option value="3BHK Servant's Room">3BHK Servant's Room</ion-select-option>
-                <ion-select-option value="4BHK+Servant's Room">4BHK Servant's Room</ion-select-option>
-       </ion-select>     
+      <ion-label position="floating"> Project Type:</ion-label>
+      <ion-select formControlName="Type" (ionChange)="ontypeChange()">
+        <ion-select-option value="2BHK">2BHK</ion-select-option>
+        <ion-select-option value="2.5BHK">2.5BHK</ion-select-option>
+        <ion-select-option value="3BHK">3BHK</ion-select-option>
+        <ion-select-option value="4BHK">4BHK</ion-select-option>
+        <ion-select-option value="3BHK Servant's Room">3BHK Servant's Room</ion-select-option>
+        <ion-select-option value="4BHK+Servant's Room">4BHK Servant's Room</ion-select-option>
+      </ion-select>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating"> Project Assigned :</ion-label>
-      <ion-input formControlName="Assigned"></ion-input>
+      <ion-select formControlName="Assigned" (ionChange)="ontypeChange()">
+        <ion-select-option *ngFor="let item of userlist"> {{item.email}} </ion-select-option>
+      </ion-select>
     </ion-item>
 
-   
-       <ion-item>
+    <ion-item>
       <ion-label position="floating">Flat Number :</ion-label>
       <ion-input formControlName="Flat_Number"></ion-input>
     </ion-item>
@@ -52,80 +49,64 @@
         &nbsp;Create Record
       </ion-button>
     </ion-item>
-
   </form>
 
   <ion-card *ngFor="let item of projectList" color="primary">
     <span *ngIf="!item.isEdit; else elseBlock">
-    
       <ion-card-header>
-
-      <ion-item>
-        <ion-label>Project Name :</ion-label>
-        <ion-card-label >{{item.Name}} </ion-card-label>
-      </ion-item>
-
         <ion-item>
-         <ion-label>Project Address :</ion-label>
-        <ion-card-label>{{item.Address}} </ion-card-label>
+          <ion-label>Project Name :</ion-label>
+          <ion-card-label>{{item.Name}} </ion-card-label>
         </ion-item>
 
-      <ion-item>
-        <ion-label>Project Type :</ion-label>
-        <ion-card-label>{{item.Type}} </ion-card-label>
-      </ion-item>
+        <ion-item>
+          <ion-label>Project Address :</ion-label>
+          <ion-card-label>{{item.Address}} </ion-card-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Project Type :</ion-label>
+          <ion-card-label>{{item.Type}} </ion-card-label>
+        </ion-item>
 
         <ion-item>
           <ion-label>Project Assigned :</ion-label>
-        <ion-card-label>{{item.Assigned}} </ion-card-label>    
+          <ion-card-label>{{item.Assigned}} </ion-card-label>
         </ion-item>
 
-         <ion-item>
+        <ion-item>
           <ion-label>Flat Number :</ion-label>
-        <ion-card-label>{{item.Flat_Number}} </ion-card-label>    
+          <ion-card-label>{{item.Flat_Number}} </ion-card-label>
         </ion-item>
-            
       </ion-card-header>
 
-     <ion-card-content>
-
+      <ion-card-content>
         <ion-button shape="round" color="secondary" size="small" (click)="EditRecord(item)">
           <ion-icon size="small" slot="icon-only" name="create"></ion-icon>
-
         </ion-button>
         <ion-button shape="round" color="danger" size="small" (click)="RemoveRecord(item.id)">
           <ion-icon size="small" slot="icon-only" name="trash"></ion-icon>
         </ion-button>
 
-        <ion-button color="secondary" shape="round" size="small"(click)="addasset(item)">
-        <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
-        &nbsp;Add Asset
-      </ion-button>
-
+        <ion-button color="secondary" shape="round" size="small" (click)="addasset(item)">
+          <ion-icon size="small" slot="icon-only" name="add"></ion-icon>
+          &nbsp;Add Asset
+        </ion-button>
       </ion-card-content>
-
     </span>
 
     <ng-template #elseBlock>
-
       <ion-card-header>
         <ion-card-title>
           <ion-grid>
             <ion-row>
+              <ion-col> Edit </ion-col>
               <ion-col>
-                Edit
+                <ion-button fill="solid" color="medium" size="small" (click)="item.isEdit = false"> Cancel </ion-button>
               </ion-col>
               <ion-col>
-                <ion-button fill="solid" color="medium" size="small" (click)="item.isEdit = false">
-                  Cancel
-                </ion-button>
+                <ion-button fill="solid" color="success" size="small" (click)="UpdateRecord(item)"> Update </ion-button>
               </ion-col>
-              <ion-col>
-                <ion-button fill="solid" color="success" size="small" (click)="UpdateRecord(item)">
-                  Update
-                </ion-button>
-              </ion-col>
-             
             </ion-row>
           </ion-grid>
         </ion-card-title>
@@ -143,31 +124,29 @@
         </ion-item>
 
         <ion-item>
-          <ion-label><strong>Project Type</strong></ion-label> 
+          <ion-label><strong>Project Type</strong></ion-label>
           <ion-select [(ngModel)]="item.EditType" (ionChange)="ontypeChange()">
-              <ion-select-option value="2BHK">2BHK</ion-select-option>
-              <ion-select-option value="2.5BHK">2.5BHK</ion-select-option>
-              <ion-select-option value="3BHK">3BHK</ion-select-option>
-               <ion-select-option value="4BHK">4BHK</ion-select-option>
-                <ion-select-option value="3BHK Servant's Room">3BHK Servant's Room</ion-select-option>
-                <ion-select-option value="4BHK+Servant's Room">4BHK Servant's Room</ion-select-option>
-       </ion-select>        
+            <ion-select-option value="2BHK">2BHK</ion-select-option>
+            <ion-select-option value="2.5BHK">2.5BHK</ion-select-option>
+            <ion-select-option value="3BHK">3BHK</ion-select-option>
+            <ion-select-option value="4BHK">4BHK</ion-select-option>
+            <ion-select-option value="3BHK Servant's Room">3BHK Servant's Room</ion-select-option>
+            <ion-select-option value="4BHK+Servant's Room">4BHK Servant's Room</ion-select-option>
+          </ion-select>
         </ion-item>
 
-         <ion-item>
+        <ion-item>
           <ion-label><strong>Project Assigned</strong></ion-label>
-          <ion-input type="text" [(ngModel)]="item.EditAssigned"></ion-input>
+          <ion-select [(ngModel)]="item.EditAssigned" (ionChange)="ontypeChange()">
+            <ion-select-option *ngFor="let item of userlist"> {{item.email}} </ion-select-option>
+          </ion-select>
         </ion-item>
-        
-         <ion-item>
+
+        <ion-item>
           <ion-label><strong>Flat Number</strong></ion-label>
           <ion-input type="text" [(ngModel)]="item.EditFlat_Number"></ion-input>
         </ion-item>
-
       </ion-card-content>
-
     </ng-template>
-
   </ion-card>
-
 </ion-content>

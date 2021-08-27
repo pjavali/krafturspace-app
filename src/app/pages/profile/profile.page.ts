@@ -12,12 +12,7 @@ import { UserProfile } from 'src/app/models/user';
 })
 export class ProfilePage implements OnInit {
   public userProfile: UserProfile;
-  constructor(
-    private authService: AuthService,
-    private router: Router,
-    private profileService: ProfileService,
-    private alertCtrl: AlertController
-  ) {}
+  constructor(private authService: AuthService, private router: Router, private profileService: ProfileService, private alertCtrl: AlertController) {}
 
   ngOnInit() {
     this.profileService.getUserProfile().then(profile$ => {
@@ -46,7 +41,7 @@ export class ProfilePage implements OnInit {
       buttons: [
         { text: 'Cancel' },
         {
-          text: 'Save',
+          text: 'save',
           handler: data => {
             this.profileService.updateName(data.fullName);
           }
@@ -65,7 +60,7 @@ export class ProfilePage implements OnInit {
       buttons: [
         { text: 'Cancel' },
         {
-          text: 'Save',
+          text: 'save',
           handler: data => {
             this.profileService
               .updateEmail(data.newEmail, data.password)
@@ -91,12 +86,9 @@ export class ProfilePage implements OnInit {
       buttons: [
         { text: 'Cancel' },
         {
-          text: 'Save',
+          text: 'save',
           handler: data => {
-            this.profileService.updatePassword(
-              data.newPassword,
-              data.oldPassword
-            );
+            this.profileService.updatePassword(data.newPassword, data.oldPassword);
           }
         }
       ]

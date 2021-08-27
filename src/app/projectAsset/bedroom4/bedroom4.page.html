@@ -1,793 +1,824 @@
 <ion-toolbar color="primary">
-        <ion-buttons slot="start">
-          <ion-button>
-             <ion-menu-button auto-hide="true"></ion-menu-button>
-          </ion-button>
-        </ion-buttons>
-        <ion-title>BedRoom4</ion-title>
+  <ion-buttons slot="start">
+    <ion-button>
+      <ion-menu-button auto-hide="true"></ion-menu-button>
+    </ion-button>
+  </ion-buttons>
+  <ion-title>BedRoom 4</ion-title>
 </ion-toolbar>
-
 <ion-content>
- <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
- <ion-card >
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+    <ion-card>
+      <ion-item>
+        <ion-label>Doors & Windows</ion-label>
+        <ion-toggle slot="end" name="Doors_and_Windows" (ionChange)="notify1()" formControlName="Doors_and_Windows"></ion-toggle>
+      </ion-item>
+      <!--section-->
+      <ion-item *ngIf="isToggled1">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon11"></ion-icon>
+        <ion-label position="floating">UPVC window bug screen mesh is operable & taut</ion-label>
+        <ion-select formControlName="UPVC_window_bug_screen_mesh_is_operable_and_taut" (ionChange)="UPVC_window_bug_screen_mesh_is_operable_and_taut()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay1">
+        <img src="{{imgURL1}}" *ngIf="imgURL1" style="width: 200px; height: 150px" />
 
-<ion-item >
-  <ion-label>Doors & Windows</ion-label>
-  <ion-toggle slot="end" name="Doors_and_Windows" (ionChange)="notify1()" formControlName="Doors_and_Windows"  ></ion-toggle>
-   
-</ion-item>
-<!--section-->
-<ion-item *ngIf="isToggled1">
-      <ion-label position="floating">UPVC window bug screen mesh is operable</ion-label>      
-       <ion-select formControlName= "UPVC_window_bug_screen_mesh_is_operable" (ionChange)="UPVC_window_bug_screen_mesh_is_operable()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay1" >
-        
-        <img src={{imgURL1}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
+        <ion-card-header>
           <ion-card-title>Photo</ion-card-title>
-
         </ion-card-header>
+
         <ion-card-content>
-         
-  <ion-button (click)="getGallery1()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
+          <ion-button (click)="getGallery1()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save1()" [disabled]="showicon1" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage1()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
         </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="UPVC_window_bug_screen_mesh_is_operable_Description"></ion-input>
-         </ion-item>  
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="UPVC_window_bug_screen_mesh_is_operable_and_taut_Description"></ion-input>
+        </ion-item>
       </ion-card>
 
-<!--section-->
-    <ion-item *ngIf="isToggled1">
-      <ion-label position="floating">Door color is consistent</ion-label>      
-       <ion-select formControlName= "Door_color_is_consistent" (ionChange)="Door_color_is_consistent()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay2" >
-        
-        <img src={{imgURL2}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
+      <!--section-->
+      <ion-item *ngIf="isToggled1">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon2"></ion-icon>
+        <ion-label position="floating">Door frame & shutter shades are consistent</ion-label>
+        <ion-select formControlName="Door_frame_and_shutter_shades_are_consistent" (ionChange)="Door_frame_and_shutter_shades_are_consistent()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay2">
+        <img src="{{imgURL2}}" *ngIf="imgURL2" style="width: 200px; height: 150px" />
 
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-         
-  <ion-button (click)="getGallery2()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
-        </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Door_color_is_consistent"></ion-input>
-         </ion-item>  
-      </ion-card>
-<!--section-->
-    <ion-item *ngIf="isToggled1">
-      <ion-label position="floating">Gaskets/sealents are intact</ion-label>      
-       <ion-select formControlName= "Gaskets_or_sealents_are_intact" (ionChange)="Gaskets_or_sealents_are_intact()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay3" >
-        
-        <img src={{imgURL3}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
+          <ion-button (click)="getGallery2()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save2()" [disabled]="showicon2" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
 
-        </ion-card-header>
-        <ion-card-content>
-         
-  <ion-button (click)="getGallery3()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
+          <ion-button (click)="sendMessage2()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
         </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Gaskets_or_sealents_are_intact"></ion-input>
-         </ion-item>  
-      </ion-card>
-
-<!--section-->
-    <ion-item *ngIf="isToggled1">
-      <ion-label position="floating">UPVC window screen mesh is taut</ion-label>      
-       <ion-select formControlName= "UPVC_window_screen_mesh_is_taut" (ionChange)="UPVC_window_screen_mesh_is_taut()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay4" >
-        
-        <img src={{imgURL4}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
-
-        </ion-card-header>
-        <ion-card-content>
-         
-  <ion-button (click)="getGallery4()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
-        </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="UPVC_window_screen_mesh_is_taut"></ion-input>
-         </ion-item>  
-      </ion-card>
-      
-<!--section-->
-    <ion-item *ngIf="isToggled1">
-      <ion-label position="floating">UPVC hardware is standard</ion-label>      
-       <ion-select formControlName= "UPVC_hardware_is_standard" (ionChange)="UPVC_hardware_is_standard()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay5" >
-        
-        <img src={{imgURL5}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
-
-        </ion-card-header>
-        <ion-card-content>
-         
-  <ion-button (click)="getGallery5()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
-        </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="UPVC_hardware_is_standard"></ion-input>
-         </ion-item>  
-      </ion-card>
-  <!--section-->
-  <ion-item *ngIf="isToggled1">
-      <ion-label position="floating">UPVC window glass is free of scratches</ion-label>      
-       <ion-select formControlName= "UPVC_window_glass_is_free_of_scratches" (ionChange)="UPVC_window_glass_is_free_of_scratches()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay6" >
-        
-        <img src={{imgURL6}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
-
-        </ion-card-header>
-        <ion-card-content>
-         
-  <ion-button (click)="getGallery6()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
-        </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="UPVC_window_glass_is_free_of_scratches"></ion-input>
-         </ion-item>  
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="Door_frame_and_shutter_shades_are_consistent_Description"></ion-input>
+        </ion-item>
       </ion-card>
       <!--section-->
-    <ion-item *ngIf="isToggled1">
-      <ion-label position="floating">UPVC windows are operable</ion-label>      
-       <ion-select formControlName= "UPVC_windows_are_operable" (ionChange)="UPVC_windows_are_operable()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay7" >
-        
-        <img src={{imgURL7}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
+      <ion-item *ngIf="isToggled1">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon3"></ion-icon>
+        <ion-label position="floating">Gaskets/sealents are intact</ion-label>
+        <ion-select formControlName="Gaskets_or_sealents_are_intact" (ionChange)="Gaskets_or_sealents_are_intact()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay3">
+        <img src="{{imgURL3}}" *ngIf="imgURL3" style="width: 200px; height: 150px" />
 
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-         
-  <ion-button (click)="getGallery7()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
-        </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="UPVC_windows_are_operable"></ion-input>
-         </ion-item>  
-      </ion-card>
-       <!--section-->
-    <ion-item *ngIf="isToggled1">
-      <ion-label position="floating">Door stopper doesn't damage wooden flooring</ion-label>      
-       <ion-select formControlName= "Door_stopper_doesnt_damage_wooden_flooring" (ionChange)="Door_stopper_doesnt_damage_wooden_flooring()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay8" >
-        
-        <img src={{imgURL8}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
+          <ion-button (click)="getGallery3()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save3()" [disabled]="showicon3" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
 
-        </ion-card-header>
-        <ion-card-content>
-         
-  <ion-button (click)="getGallery8()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
+          <ion-button (click)="sendMessage3()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
         </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Door_stopper_doesnt_damage_wooden_flooring"></ion-input>
-         </ion-item>  
-      </ion-card>
-       <!--section-->
-    <ion-item *ngIf="isToggled1">
-      <ion-label position="floating">Door frame & shutter gaps are consistent</ion-label>      
-       <ion-select formControlName= "Door_frame_and_shutter_gaps_are_consistent" (ionChange)="Door_frame_and_shutter_gaps_are_consistent()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay9" >
-        
-        <img src={{imgURL9}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
-
-        </ion-card-header>
-        <ion-card-content>
-         
-  <ion-button (click)="getGallery9()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
-        </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Door_frame_and_shutter_gaps_are_consistent"></ion-input>
-         </ion-item>  
-      </ion-card>
-       <!--section-->
-    <ion-item *ngIf="isToggled1">
-      <ion-label position="floating">Hardware is as per standard offering</ion-label>      
-       <ion-select formControlName= "Hardware_is_as_per_standard_offering" (ionChange)="Hardware_is_as_per_standard_offering()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay10" >
-        
-        <img src={{imgURL10}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
-
-        </ion-card-header>
-        <ion-card-content>
-         
-  <ion-button (click)="getGallery10()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
-        </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Hardware_is_as_per_standard_offering"></ion-input>
-         </ion-item>  
-      </ion-card>
-       <!--section-->
-    <ion-item *ngIf="isToggled1">
-      <ion-label position="floating">Door frame is consistent without dent/scratches/marks</ion-label>      
-       <ion-select formControlName= "Door_frame_is_consistent_without_dent_or_scratches_or_marks" (ionChange)="Door_frame_is_consistent_without_dent_or_scratches_or_marks()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay11" >
-        
-        <img src={{imgURL11}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
-
-        </ion-card-header>
-        <ion-card-content>
-         
-  <ion-button (click)="getGallery11()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
-        </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Door_frame_is_consistent_without_dent_or_scratches_or_marks"></ion-input>
-         </ion-item>  
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="Gaskets_or_sealents_are_intact_Description"></ion-input>
+        </ion-item>
       </ion-card>
 
+      <!--section-->
+      <ion-item *ngIf="isToggled1">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon5"></ion-icon>
+        <ion-label position="floating">UPVC hardware is standard</ion-label>
+        <ion-select formControlName="UPVC_hardware_is_standard" (ionChange)="UPVC_hardware_is_standard()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay5">
+        <img src="{{imgURL5}}" *ngIf="imgURL5" style="width: 200px; height: 150px" />
 
-
-
-
-
-      <ion-item >
-  <ion-label>Electrical</ion-label>
-  <ion-toggle slot="end" name="Electrical" (ionChange)="notify2()" formControlName="Electrical"  ></ion-toggle>  
-</ion-item>
-<!--section-->
-<ion-item *ngIf="isToggled2">
-      <ion-label position="floating">Switches are operable</ion-label>      
-       <ion-select formControlName= "Switches_are_operable" (ionChange)="Switches_are_operable()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay12" >
-        
-        <img src={{imgURL12}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
+        <ion-card-header>
           <ion-card-title>Photo</ion-card-title>
-
         </ion-card-header>
         <ion-card-content>
-         
-  <ion-button (click)="getGallery12()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
+          <ion-button (click)="getGallery5()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save5()" [disabled]="showicon5" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage5()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
         </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Switches_are_operable"></ion-input>
-         </ion-item>  
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="UPVC_hardware_is_standard_Description"></ion-input>
+        </ion-item>
+      </ion-card>
+      <!--section-->
+      <ion-item *ngIf="isToggled1">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon6"></ion-icon>
+        <ion-label position="floating">UPVC window glass is free of scratches</ion-label>
+        <ion-select formControlName="UPVC_window_glass_is_free_of_scratches" (ionChange)="UPVC_window_glass_is_free_of_scratches()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay6">
+        <img src="{{imgURL6}}" *ngIf="imgURL6" style="width: 200px; height: 150px" />
+
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button (click)="getGallery6()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save6()" [disabled]="showicon6" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage6()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
+        </ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="UPVC_window_glass_is_free_of_scratches_Description"></ion-input>
+        </ion-item>
+      </ion-card>
+      <!--section-->
+      <ion-item *ngIf="isToggled1">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon7"></ion-icon>
+        <ion-label position="floating">UPVC windows are operable</ion-label>
+        <ion-select formControlName="UPVC_windows_are_operable" (ionChange)="UPVC_windows_are_operable()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay7">
+        <img src="{{imgURL7}}" *ngIf="imgURL7" style="width: 200px; height: 150px" />
+
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button (click)="getGallery7()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save7()" [disabled]="showicon7" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage7()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
+        </ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="UPVC_windows_are_operable_Description"></ion-input>
+        </ion-item>
+      </ion-card>
+      <!--section-->
+      <ion-item *ngIf="isToggled1">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon8"></ion-icon>
+        <ion-label position="floating">Door stopper is operable</ion-label>
+        <ion-select formControlName="Door_stopper_is_operable " (ionChange)="Door_stopper_is_operable ()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay8">
+        <img src="{{imgURL8}}" *ngIf="imgURL8" style="width: 200px; height: 150px" />
+
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button (click)="getGallery8()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save8()" [disabled]="showicon8" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage8()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
+        </ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="Door_stopper_is_operable _Description"></ion-input>
+        </ion-item>
+      </ion-card>
+      <!--section-->
+      <ion-item *ngIf="isToggled1">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon9"></ion-icon>
+        <ion-label position="floating">Door frame & shutter gaps are consistent on both sides</ion-label>
+        <ion-select formControlName="Door_frame_and_hutter_gaps_are_consistent_on_both_sides" (ionChange)="Door_frame_and_hutter_gaps_are_consistent_on_both_sides()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay9">
+        <img src="{{imgURL9}}" *ngIf="imgURL9" style="width: 200px; height: 150px" />
+
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button (click)="getGallery9()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save9()" [disabled]="showicon9" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage9()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
+        </ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="Door_frame_and_hutter_gaps_are_consistent_on_both_sides_Description"></ion-input>
+        </ion-item>
+      </ion-card>
+      <!--section-->
+      <ion-item *ngIf="isToggled1">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon10"></ion-icon>
+        <ion-label position="floating">Hardware is as per standard offering</ion-label>
+        <ion-select formControlName="Hardware_is_as_per_standard_offering" (ionChange)="Hardware_is_as_per_standard_offering()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay10">
+        <img src="{{imgURL10}}" *ngIf="imgURL10" style="width: 200px; height: 150px" />
+
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button (click)="getGallery10()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save10()" [disabled]="showicon10" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage10()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
+        </ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="Hardware_is_as_per_standard_offering_Description"></ion-input>
+        </ion-item>
+      </ion-card>
+      <!--section-->
+      <ion-item *ngIf="isToggled1">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon11"></ion-icon>
+        <ion-label position="floating">Door frame & shutter is consistent without dent/scratches/marks/stains</ion-label>
+        <ion-select formControlName="Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks" (ionChange)="Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay11">
+        <img src="{{imgURL11}}" *ngIf="imgURL11" style="width: 200px; height: 150px" />
+
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button (click)="getGallery11()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save11()" [disabled]="showicon11" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage11()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
+        </ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Description"></ion-input>
+        </ion-item>
       </ion-card>
 
-<!--section-->
-    <ion-item *ngIf="isToggled2">
-      <ion-label position="floating">Electrical points are as per standard offering</ion-label>      
-       <ion-select formControlName= "Electrical_points_are_as_per_standard_offering" (ionChange)="Electrical_points_are_as_per_standard_offering()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay13" >
-        
-        <img src={{imgURL13}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
+      <ion-item>
+        <ion-label>Electrical</ion-label>
+        <ion-toggle slot="end" name="Electrical" (ionChange)="notify2()" formControlName="Electrical"></ion-toggle>
+      </ion-item>
+      <!--section-->
+      <ion-item *ngIf="isToggled2">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon12"></ion-icon>
+        <ion-label position="floating">Switches are operable</ion-label>
+        <ion-select formControlName="Switches_are_operable" (ionChange)="Switches_are_operable()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay12">
+        <img src="{{imgURL12}}" *ngIf="imgURL12" style="width: 200px; height: 150px" />
 
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-         
-  <ion-button (click)="getGallery13()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
+          <ion-button (click)="getGallery12()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save12()" [disabled]="showicon12" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage12()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
         </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Electrical_points_are_as_per_standard_offering"></ion-input>
-         </ion-item>  
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="Switches_are_operable_Description"></ion-input>
+        </ion-item>
       </ion-card>
-<!--section-->
-    <ion-item *ngIf="isToggled2">
-      <ion-label position="floating">Switch plates are aligned</ion-label>      
-       <ion-select formControlName= "Switch_plates_are_aligned" (ionChange)="Switch_plates_are_aligned()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay14" >
-        
-        <img src={{imgURL14}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
 
+      <!--section-->
+      <ion-item *ngIf="isToggled2">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon13"></ion-icon>
+        <ion-label position="floating">Electrical points are as per standard offering</ion-label>
+        <ion-select formControlName="Electrical_points_are_as_per_standard_offering" (ionChange)="Electrical_points_are_as_per_standard_offering()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay13">
+        <img src="{{imgURL13}}" *ngIf="imgURL13" style="width: 200px; height: 150px" />
+
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-         
-  <ion-button (click)="getGallery14()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
+          <ion-button (click)="getGallery13()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save13()" [disabled]="showicon13" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage13()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
         </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="Electrical_points_are_as_per_standard_offering_Description"></ion-input>
+        </ion-item>
+      </ion-card>
+      <!--section-->
+      <ion-item *ngIf="isToggled2">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon14"></ion-icon>
+        <ion-label position="floating">Switch plates are aligned</ion-label>
+        <ion-select formControlName="Switch_plates_are_aligned" (ionChange)="Switch_plates_are_aligned()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay14">
+        <img src="{{imgURL14}}" *ngIf="imgURL14" style="width: 200px; height: 150px" />
+
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button (click)="getGallery14()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save14()" [disabled]="showicon14" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage14()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
+        </ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
           <ion-input formControlName="Switch_plates_are_aligned"></ion-input>
-         </ion-item>  
+        </ion-item>
       </ion-card>
 
-<!--section-->
-    <ion-item *ngIf="isToggled2">
-      <ion-label position="floating">AC Core cut pipe is finished flush with plaster</ion-label>      
-       <ion-select formControlName= "AC_Core_cut_pipe_is_finished_flush_with_plaster" (ionChange)="AC_Core_cut_pipe_is_finished_flush_with_plaster()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay15" >
-        
-        <img src={{imgURL15}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
+      <!--section-->
+      <ion-item *ngIf="isToggled2">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon16"></ion-icon>
+        <ion-label position="floating">AC Core cut pipe is cleaned & finished flush with plaster on both sides </ion-label>
+        <ion-select formControlName="AC_Core_cut_pipe_is_cleaned_and_finished_flush_with_plaster_on_both_sides" (ionChange)="AC_Core_cut_pipe_is_cleaned_and_finished_flush_with_plaster_on_both_sides()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay16">
+        <img src="{{imgURL16}}" *ngIf="imgURL16" style="width: 200px; height: 150px" />
+        <ion-card-header>
           <ion-card-title>Photo</ion-card-title>
-
         </ion-card-header>
         <ion-card-content>
-         
-  <ion-button (click)="getGallery15()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
+          <ion-button (click)="getGallery16()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save16()" [disabled]="showicon16" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage16()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
         </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="AC_Core_cut_pipe_is_finished_flush_with_plaster"></ion-input>
-         </ion-item>  
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="AC_Core_cut_pipe_is_cleaned_and_finished_flush_with_plaster_on_both_sides_Description"></ion-input>
+        </ion-item>
+      </ion-card>
+      <!--section-->
+      <ion-item *ngIf="isToggled2">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon17"></ion-icon>
+        <ion-label position="floating">Ceiling & wall electrical points are covered/capped properly</ion-label>
+        <ion-select formControlName="Ceiling_and_wall_electrical_points_are_covered_or_capped_properly" (ionChange)="Ceiling_and_wall_electrical_points_are_covered_or_capped_properly()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-card *ngIf="cameradisplay17">
+        <img src="{{imgURL17}}" *ngIf="imgURL17" style="width: 200px; height: 150px" />
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button (click)="getGallery17()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save17()" [disabled]="showicon17" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage17()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
+        </ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Description"></ion-input>
+        </ion-item>
       </ion-card>
 
-<!--section-->
-<ion-item *ngIf="isToggled2">
-      <ion-label position="floating">AC Core cut pipe is cleaned </ion-label>      
-       <ion-select formControlName= "AC_Core_cut_pipe_is_cleaned" (ionChange)="AC_Core_cut_pipe_is_cleaned()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-      </ion-item> 
-<ion-card *ngIf="cameradisplay16" >        
-        <img src={{imgURL16}} style="width:200px ; height:150px ;" />        
-        <ion-card-header >
+      <!--Flooring-->
+      <ion-item>
+        <ion-label>Flooring</ion-label>
+        <ion-toggle slot="end" name="Flooring" (ionChange)="notify3()" formControlName="Flooring"></ion-toggle>
+      </ion-item>
+      <!--section-->
+      <ion-item *ngIf="isToggled3">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon19"></ion-icon>
+        <ion-label position="floating">Wooden flooring is fixed & consistent without gaps</ion-label>
+        <ion-select formControlName="Wooden_flooring_is_fixed_and_consistent_without_gaps" (ionChange)="Wooden_flooring_is_fixed_and_consistent_without_gaps()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay19">
+        <img src="{{imgURL19}}" *ngIf="imgURL19" style="width: 200px; height: 150px" />
+
+        <ion-card-header>
           <ion-card-title>Photo</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-       
-       <ion-button (click)="getGallery16()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-        </ion-button>
+          <ion-button (click)="getGallery19()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save19()" [disabled]="showicon19" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage19()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
         </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="AC_Core_cut_pipe_is_cleaned"></ion-input>
-         </ion-item>  
-</ion-card>
-<!--section-->
-<ion-item *ngIf="isToggled2">
-      <ion-label position="floating">Ceiling electrical points are covered/capped properly</ion-label>      
-       <ion-select formControlName= "Ceiling_electrical_points_are_covered_or_capped_properly" (ionChange)="Ceiling_electrical_points_are_covered_or_capped_properly()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-     </ion-item>
-
-
-
-<ion-card *ngIf="cameradisplay17" >
-        <img src={{imgURL17}} style="width:200px ; height:150px ;" />
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-        
-        <ion-button (click)="getGallery17()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-        </ion-button>
-        </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Ceiling_electrical_points_are_covered_or_capped_properly"></ion-input>
-         </ion-item>  
-</ion-card>
-<!--section-->
-<ion-item *ngIf="isToggled2">
-      <ion-label position="floating">Wall Light points are covered /capped properly</ion-label>      
-       <ion-select formControlName= "Wall_Light_points_are_covered__or_capped_properly" (ionChange)="Wall_Light_points_are_covered__or_capped_properly()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-     </ion-item>
-
-
-
-<ion-card *ngIf="cameradisplay18" >
-        <img src={{imgURL18}} style="width:200px ; height:150px ;" />
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-        
-        <ion-button (click)="getGallery18()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-        </ion-button>
-        </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Wall_Light_points_are_covered__or_capped_properly"></ion-input>
-         </ion-item>  
-</ion-card>
-<!--Flooring-->
-<ion-item >
-  <ion-label>Flooring</ion-label>
-  <ion-toggle slot="end" name="Flooring" (ionChange)="notify3()" formControlName="Flooring"  ></ion-toggle>  
-</ion-item>
-<!--section-->
-<ion-item *ngIf="isToggled3">
-      <ion-label position="floating">Wooden flooring is fixed & consistent</ion-label>      
-       <ion-select formControlName= "Wooden_flooring_is_fixed_and_consistent" (ionChange)="Wooden_flooring_is_fixed_and_consistent()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay19" >
-        
-        <img src={{imgURL19}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
-
-        </ion-card-header>
-        <ion-card-content>
-         
-  <ion-button (click)="getGallery19()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
-        </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Wooden_flooring_is_fixed_and_consistent"></ion-input>
-         </ion-item>  
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="Wooden_flooring_is_fixed_and_consistent_without_gaps_Description"></ion-input>
+        </ion-item>
       </ion-card>
 
-<!--section-->
-    <ion-item *ngIf="isToggled3">
-      <ion-label position="floating">Skirting finish & alignment</ion-label>      
-       <ion-select formControlName= "Skirting_finish_and_alignment" (ionChange)="Skirting_finish_and_alignment()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay20" >
-        
-        <img src={{imgURL20}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
+      <!--section-->
+      <ion-item *ngIf="isToggled3">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon20"></ion-icon>
+        <ion-label position="floating">Skirting is finished & aligned without gaps</ion-label>
+        <ion-select formControlName="Skirting_is_finished_and_aligned_without_gaps" (ionChange)="Skirting_is_finished_and_aligned_without_gaps()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay20">
+        <img src="{{imgURL20}}" *ngIf="imgURL20" style="width: 200px; height: 150px" />
 
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-         
-  <ion-button (click)="getGallery20()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
+          <ion-button (click)="getGallery20()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save20()" [disabled]="showicon20" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage20()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
         </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Skirting_finish_and_alignment"></ion-input>
-         </ion-item>  
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="Skirting_is_finished_and_aligned_without_gaps_Description"></ion-input>
+        </ion-item>
       </ion-card>
-<!--section-->
-    <ion-item *ngIf="isToggled">
-      <ion-label position="floating">Transition betweeen wooden flooring & toilet </ion-label>      
-       <ion-select formControlName= "Transition_betweeen_wooden_flooring_and_toilet" (ionChange)="Transition_betweeen_wooden_flooring_and_toilet()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay21" >
-        
-        <img src={{imgURL21}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
+      <!--section-->
+      <ion-item *ngIf="isToggled">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon21"></ion-icon>
+        <ion-label position="floating">Transition member betweeen wooden flooring & toilet is provided & fixed right</ion-label>
+        <ion-select formControlName="Transition_member_betweeen_wooden_flooring_and_toilet_is_provided_and_fixed_right" (ionChange)="Transition_member_betweeen_wooden_flooring_and_toilet_is_provided_and_fixed_right()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay21">
+        <img src="{{imgURL21}}" *ngIf="imgURL21" style="width: 200px; height: 150px" />
 
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-         
-  <ion-button (click)="getGallery21()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
-        </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Transition_betweeen_wooden_flooring_and_toilet"></ion-input>
-         </ion-item>  
-      </ion-card>
+          <ion-button (click)="getGallery21()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save21()" [disabled]="showicon21" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
 
-<!--section-->
-    <ion-item *ngIf="isToggled3">
-      <ion-label position="floating">Transition betweeen Corridor marble & wooden flooring</ion-label>      
-       <ion-select formControlName= "Transition_betweeen_Corridor_marble_and_wooden_flooring" (ionChange)="Transition_betweeen_Corridor_marble_and_wooden_flooring()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay22" >
-        
-        <img src={{imgURL22}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
-
-        </ion-card-header>
-        <ion-card-content>
-         
-  <ion-button (click)="getGallery22()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
+          <ion-button (click)="sendMessage21()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
         </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Transition_betweeen_Corridor_marble_and_wooden_flooring"></ion-input>
-         </ion-item>  
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="Transition_member_betweeen_wooden_flooring_and_toilet_is_provided_and_fixed_right"></ion-input>
+        </ion-item>
       </ion-card>
 
-<!--Walls & ceiling-->
-<ion-item >
-  <ion-label>Walls & ceiling</ion-label>
-  <ion-toggle slot="end" name="Walls_and_ceiling" (ionChange)="notify4()" formControlName="Walls_and_ceiling"  ></ion-toggle>  
-</ion-item>
-<!--section-->
-<ion-item *ngIf="isToggled4">
-      <ion-label position="floating">Cornices provided are aligned</ion-label>      
-       <ion-select formControlName= "Cornices_provided_are_aligned" (ionChange)="Cornices_provided_are_aligned()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay23" >
-        
-        <img src={{imgURL23}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
+      <!--section-->
+      <ion-item *ngIf="isToggled3">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon22"></ion-icon>
+        <ion-label position="floating">Transition member betweeen Corridor marble & wooden flooring is provided & fixed right</ion-label>
+        <ion-select formControlName="Transition_member_betweeen_Corridor_marble_and_wooden_flooring_is_provided_and_fixed_right" (ionChange)="Transition_member_betweeen_Corridor_marble_and_wooden_flooring_is_provided_and_fixed_right()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay22">
+        <img src="{{imgURL22}}" *ngIf="imgURL22" style="width: 200px; height: 150px" />
 
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-         
-  <ion-button (click)="getGallery23()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
+          <ion-button (click)="getGallery22()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save22()" [disabled]="showicon22" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage22()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
         </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="Transition_member_betweeen_Corridor_marble_and_wooden_flooring_is_provided_and_fixed_rightTransition betweeen wooden flooring & toilet _Description"></ion-input>
+        </ion-item>
+      </ion-card>
+
+      <!--Walls & ceiling-->
+      <ion-item>
+        <ion-label>Walls & ceiling</ion-label>
+        <ion-toggle slot="end" name="Walls_and_ceiling" (ionChange)="notify4()" formControlName="Walls_and_ceiling"></ion-toggle>
+      </ion-item>
+      <!--section-->
+      <ion-item *ngIf="isToggled4">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon23"></ion-icon>
+        <ion-label position="floating">Cornices provided are aligned</ion-label>
+        <ion-select formControlName="Cornices_provided_are_aligned" (ionChange)="Cornices_provided_are_aligned()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay23">
+        <img src="{{imgURL23}}" *ngIf="imgURL23" style="width: 200px; height: 150px" />
+
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button (click)="getGallery23()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save23()" [disabled]="showicon23" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage23()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
+        </ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
           <ion-input formControlName="Cornices_provided_are_aligned"></ion-input>
-         </ion-item>  
+        </ion-item>
       </ion-card>
 
-<!--section-->
-    <ion-item *ngIf="isToggled4">
-      <ion-label position="floating">Ceilings are free of stainss/undulations/stains etc.,</ion-label>      
-       <ion-select formControlName= "Ceilings_are_free_of_stainss_or_undulations_or_stains_etc" (ionChange)="Ceilings_are_free_of_stainss_or_undulations_or_stains_etc()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay24" >
-        
-        <img src={{imgURL24}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
+      <!--section-->
+      <ion-item *ngIf="isToggled4">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon24"></ion-icon>
+        <ion-label position="floating">Ceilings are free of stainss/undulations/stains etc.,</ion-label>
+        <ion-select formControlName="Ceilings_are_free_of_stainss_or_undulations_or_stains_etc" (ionChange)="Ceilings_are_free_of_stainss_or_undulations_or_stains_etc()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay24">
+        <img src="{{imgURL24}}" *ngIf="imgURL24" style="width: 200px; height: 150px" />
 
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-         
-  <ion-button (click)="getGallery24()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
-        </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Ceilings_are_free_of_stainss_or_undulations_or_stains_etc"></ion-input>
-         </ion-item>  
-      </ion-card>
-<!--section-->
-    <ion-item *ngIf="isToggled4">
-      <ion-label position="floating">Walls are free of cracks/ stains etc.,</ion-label>      
-       <ion-select formControlName= "Walls_are_free_of_cracks_or_stains_etc" (ionChange)="Walls_are_free_of_cracks_or_stains_etc()">
-              <ion-select-option value="YES">Yes</ion-select-option>
-              <ion-select-option value="No">No</ion-select-option>              
-       </ion-select>  
-         
-</ion-item>
- <ion-card *ngIf="cameradisplay25" >
-        
-        <img src={{imgURL25}} style="width:200px ; height:150px ;" />
-        
-        <ion-card-header >
-          <ion-card-title>Photo</ion-card-title>
+          <ion-button (click)="getGallery24()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save24()" [disabled]="showicon24" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
 
+          <ion-button (click)="sendMessage24()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
+        </ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description"></ion-input>
+        </ion-item>
+      </ion-card>
+      <!--section-->
+      <ion-item *ngIf="isToggled4">
+        <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon25"></ion-icon>
+        <ion-label position="floating">Walls are free of cracks/ stains etc.,</ion-label>
+        <ion-select formControlName="Walls_are_free_of_cracks_or_stains_etc" (ionChange)="Walls_are_free_of_cracks_or_stains_etc()">
+          <ion-select-option value="YES">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-card *ngIf="cameradisplay25">
+        <img src="{{imgURL25}}" *ngIf="imgURL25" style="width: 200px; height: 150px" />
+
+        <ion-card-header>
+          <ion-card-title>Photo</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-         
-  <ion-button (click)="getGallery25()" color="primary" shape="round" size="small">
-        <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
-        &nbsp;Camera
-  </ion-button>
+          <ion-button (click)="getGallery25()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
+            &nbsp;Camera
+          </ion-button>
+          <ion-button (click)="save25()" [disabled]="showicon25" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
+            &nbsp;save
+          </ion-button>
+
+          <ion-button (click)="sendMessage25()" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="send"></ion-icon>
+            &nbsp;Send
+          </ion-button>
         </ion-card-content>
-         <ion-item >
-         <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Walls_are_free_of_cracks_or_stains_etc"></ion-input>
-         </ion-item>  
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="Walls_are_free_of_cracks_or_stains_etc_Description"></ion-input>
+        </ion-item>
       </ion-card>
 
-<!--section-->
-     
-</ion-card>
+      <!--section-->
+    </ion-card>
 
-    
-     <ion-row>
+    <ion-row *ngIf="isenabled">
       <ion-col>
-        <ion-button type="submit" [disabled]="ionicForm.invalid" color="primary" expand="block" >Submit</ion-button>
+        <ion-button type="submit" [disabled]="ionicForm.invalid" color="primary" expand="block">Submit</ion-button>
       </ion-col>
     </ion-row>
   </form>
 
-<ion-item *ngIf="issubmit" >
-      <ion-button (click)="sendmail()" expand="block" color="primary"  shape="round">
-            Send Email
-      </ion-button>
-</ion-item>
-
-
-
-
+  <ion-item *ngIf="issubmit">
+    <ion-button slot="start" (click)="exportCSV()" expand="block" color="primary" shape="round">Share</ion-button>
+  </ion-item>
 </ion-content>
