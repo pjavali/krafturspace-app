@@ -48,9 +48,9 @@ interface StudentData {
   UPVC_window_screen_mesh_is_taut_Photo: any;
   UPVC_window_screen_mesh_is_taut_Description: string;
 
-  UPVC_hardware_is_standard: string;
-  UPVC_hardware_is_standard_Photo: any;
-  UPVC_hardware_is_standard_Description: string;
+  UPVC_hardware_is_as_per_standard: string;
+  UPVC_hardware_is_as_per_standard_Photo: any;
+  UPVC_hardware_is_as_per_standard_Description: string;
 
   UPVC_window_glass_is_free_of_scratches: string;
   UPVC_window_glass_is_free_of_scratches_Photo: any;
@@ -129,9 +129,9 @@ interface StudentData {
   Cornices_provided_are_aligned_Photo: any;
   Cornices_provided_are_aligned_Description: string;
 
-  Ceilings_are_free_of_stainss_or_undulations_or_stains_etc: string;
-  Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Photo: any;
-  Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description: string;
+  Ceilings_are_free_of_stains_or_undulations_or_cracks_etc: string;
+  Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Photo: any;
+  Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Description: string;
 
   Walls_are_free_of_cracks_or_stains_etc: string;
   Walls_are_free_of_cracks_or_stains_etc_Photo: any;
@@ -157,7 +157,7 @@ export class Bedroom2Page implements OnInit {
   AssetData: any;
   DiningData: any;
 
-  isenabled:boolean=true;
+  isenabled: boolean = true;
   isection: string;
   recivedData: any;
   data: any;
@@ -312,7 +312,7 @@ export class Bedroom2Page implements OnInit {
   subject: string;
   body: string;
 
-  issave = false;
+  isSave = false;
 
   eForm: FormGroup;
 
@@ -567,7 +567,7 @@ export class Bedroom2Page implements OnInit {
 
     const db = firebase.firestore();
 
-    db.collection('test1')
+    db.collection('Krafturspace1')
       .doc(this.recivedData)
       .get()
       .then(doc => {
@@ -594,9 +594,9 @@ export class Bedroom2Page implements OnInit {
       UPVC_window_screen_mesh_is_taut_Photo: [''],
       UPVC_window_screen_mesh_is_taut_Description: [''],
 
-      UPVC_hardware_is_standard: [''],
-      UPVC_hardware_is_standard_Photo: [''],
-      UPVC_hardware_is_standard_Description: [''],
+      UPVC_hardware_is_as_per_standard: [''],
+      UPVC_hardware_is_as_per_standard_Photo: [''],
+      UPVC_hardware_is_as_per_standard_Description: [''],
 
       UPVC_window_glass_is_free_of_scratches: [''],
       UPVC_window_glass_is_free_of_scratches_Photo: [''],
@@ -618,12 +618,12 @@ export class Bedroom2Page implements OnInit {
       Hardware_is_as_per_standard_offering_Photo: [''],
       Hardware_is_as_per_standard_offering_Description: [''],
 
-      Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks: ['', [Validators.required]],
+      Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks: [''],
       Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Photo: [''],
       Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Description: [''],
 
       Electrical: [''],
-      Switches_are_operable: ['', [Validators.required]],
+      Switches_are_operable: [''],
       Switches_are_operable_Photo: [''],
       Switches_are_operable_Description: [''],
 
@@ -647,19 +647,19 @@ export class Bedroom2Page implements OnInit {
       Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Photo: [''],
       Ceiling_and_wall_electrical_points_are_covered_or_capped_properly_Description: [''],
 
-      Wall_Light_points_are_covered__or_capped_properly: ['', [Validators.required]],
+      Wall_Light_points_are_covered__or_capped_properly: [''],
       Wall_Light_points_are_covered__or_capped_properly_Photo: [''],
       Wall_Light_points_are_covered__or_capped_properly_Description: [''],
 
       Flooring: [''],
 
-      Wooden_flooring_is_fixed_and_consistent_without_gaps: ['', [Validators.required]],
+      Wooden_flooring_is_fixed_and_consistent_without_gaps: [''],
 
       Wooden_flooring_is_fixed_and_consistent_without_gaps_Photo: [''],
 
       Wooden_flooring_is_fixed_and_consistent_without_gaps_Description: [''],
 
-      Skirting_is_finished_and_aligned_without_gaps: [''],
+      Skirting_is_finished_and_aligned_without_gaps: ['', [Validators.required]],
       Skirting_is_finished_and_aligned_without_gaps_Photo: [''],
       Skirting_is_finished_and_aligned_without_gaps_Description: [''],
 
@@ -667,19 +667,19 @@ export class Bedroom2Page implements OnInit {
       Transition_member_betweeen_wooden_flooring_and_toilet_is_provided_and_fixed_right_Photo: [''],
       Transition_member_betweeen_wooden_flooring_and_toilet_is_provided_and_fixed_right_Description: [''],
 
-      Transition_member_betweeen_Corridor_marble_and_wooden_flooring_is_provided_and_fixed_right: ['', [Validators.required]],
+      Transition_member_betweeen_Corridor_marble_and_wooden_flooring_is_provided_and_fixed_right: [''],
       Transition_member_betweeen_Corridor_marble_and_wooden_flooring_is_provided_and_fixed_right_Photo: [''],
       Transition_member_betweeen_Corridor_marble_and_wooden_flooring_is_provided_and_fixed_right_Description: [''],
 
       Walls_and_ceiling: [''],
 
-      Cornices_provided_are_aligned: ['', [Validators.required]],
+      Cornices_provided_are_aligned: [''],
       Cornices_provided_are_aligned_Photo: [''],
       Cornices_provided_are_aligned_Description: [''],
 
-      Ceilings_are_free_of_stainss_or_undulations_or_stains_etc: ['', [Validators.required]],
-      Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Photo: [''],
-      Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description: [''],
+      Ceilings_are_free_of_stains_or_undulations_or_cracks_etc: [''],
+      Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Photo: [''],
+      Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Description: [''],
 
       Walls_are_free_of_cracks_or_stains_etc: ['', [Validators.required]],
       Walls_are_free_of_cracks_or_stains_etc_Photo: [''],
@@ -714,9 +714,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save1(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save1(): void {
+    console.log('Save clicked');
     this.showicon1 = true;
 
     this.bedroom2data.push({
@@ -788,9 +787,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save2(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save2(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.bedroom2data.push({
@@ -865,9 +863,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save3(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save3(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.bedroom2data.push({
@@ -930,9 +927,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save4(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save4(): void {
+    console.log('Save clicked');
     this.showicon4 = true;
 
     this.bedroom2data.push({
@@ -982,7 +978,7 @@ export class Bedroom2Page implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL5 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('UPVC_hardware_is_standard_Photo').setValue(this.imgURL5);
+      this.ionicForm.get('UPVC_hardware_is_as_per_standard()_Photo').setValue(this.imgURL5);
       this.upload5();
     });
   }
@@ -994,17 +990,16 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save5(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save5(): void {
+    console.log('Save clicked');
     this.showicon5 = true;
 
     this.bedroom2data.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'UPVC_hardware_is_standard',
+      inpect_title: 'UPVC_hardware_is_as_per_standard()',
       photourl: this.imgURL5,
-      Description: this.ionicForm.get('UPVC_hardware_is_standard_Description').value,
+      Description: this.ionicForm.get('UPVC_hardware_is_as_per_standard()_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -1012,9 +1007,9 @@ export class Bedroom2Page implements OnInit {
   }
   sendMessage5(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'UPVC_hardware_is_standard';
+    this.newItem.inpect_title = 'UPVC_hardware_is_as_per_standard()';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('UPVC_hardware_is_standard_Description').value;
+    this.newItem.Description = this.ionicForm.get('UPVC_hardware_is_as_per_standard()_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -1026,7 +1021,7 @@ export class Bedroom2Page implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'UPVC_hardware_is_standard',
+      subject: 'UPVC_hardware_is_as_per_standard()',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -1058,9 +1053,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save6(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save6(): void {
+    console.log('Save clicked');
     this.showicon6 = true;
 
     this.bedroom2data.push({
@@ -1122,9 +1116,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save7(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save7(): void {
+    console.log('Save clicked');
     this.showicon7 = true;
 
     this.bedroom2data.push({
@@ -1186,9 +1179,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save8(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save8(): void {
+    console.log('Save clicked');
     this.showicon8 = true;
 
     this.bedroom2data.push({
@@ -1250,9 +1242,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save9(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save9(): void {
+    console.log('Save clicked');
     this.showicon9 = true;
     9;
     this.bedroom2data.push({
@@ -1315,9 +1306,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save10(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save10(): void {
+    console.log('Save clicked');
     this.showicon10 = true;
 
     this.bedroom2data.push({
@@ -1379,9 +1369,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save11() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save11() {
+    console.log('Save clicked');
     this.showicon11 = true;
 
     this.bedroom2data.push({
@@ -1444,9 +1433,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save12() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save12() {
+    console.log('Save clicked');
     this.showicon12 = true;
 
     this.bedroom2data.push({
@@ -1508,9 +1496,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save13(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save13(): void {
+    console.log('Save clicked');
     this.showicon13 = true;
 
     this.bedroom2data.push({
@@ -1572,9 +1559,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save14(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save14(): void {
+    console.log('Save clicked');
     this.showicon14 = true;
 
     this.bedroom2data.push({
@@ -1636,9 +1622,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save15(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save15(): void {
+    console.log('Save clicked');
     this.showicon15 = true;
 
     this.bedroom2data.push({
@@ -1700,9 +1685,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save16(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save16(): void {
+    console.log('Save clicked');
     this.showicon16 = true;
 
     this.bedroom2data.push({
@@ -1764,9 +1748,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save17(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save17(): void {
+    console.log('Save clicked');
     this.showicon17 = true;
 
     this.bedroom2data.push({
@@ -1828,9 +1811,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save18(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save18(): void {
+    console.log('Save clicked');
     this.showicon18 = true;
 
     this.bedroom2data.push({
@@ -1892,9 +1874,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save19(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save19(): void {
+    console.log('Save clicked');
     this.showicon19 = true;
 
     this.bedroom2data.push({
@@ -1956,9 +1937,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save20(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save20(): void {
+    console.log('Save clicked');
     this.showicon20 = true;
 
     this.bedroom2data.push({
@@ -2020,9 +2000,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save21(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save21(): void {
+    console.log('Save clicked');
     this.showicon21 = true;
 
     this.bedroom2data.push({
@@ -2084,9 +2063,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save22(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save22(): void {
+    console.log('Save clicked');
     this.showicon22 = true;
 
     this.bedroom2data.push({
@@ -2148,9 +2126,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save23(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save23(): void {
+    console.log('Save clicked');
     this.showicon23 = true;
 
     this.bedroom2data.push({
@@ -2200,7 +2177,7 @@ export class Bedroom2Page implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL24 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Photo').setValue(this.imgURL24);
+      this.ionicForm.get('Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Photo').setValue(this.imgURL24);
       this.upload24();
     });
   }
@@ -2212,17 +2189,16 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save24(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save24(): void {
+    console.log('Save clicked');
     this.showicon24 = true;
 
     this.bedroom2data.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Ceilings_are_free_of_stainss_or_undulations_or_stains_etc',
+      inpect_title: 'Ceilings_are_free_of_stains_or_undulations_or_cracks_etc',
       photourl: this.imgURL24,
-      Description: this.ionicForm.get('Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description').value,
+      Description: this.ionicForm.get('Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2230,9 +2206,9 @@ export class Bedroom2Page implements OnInit {
   }
   sendMessage24(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Ceilings_are_free_of_stainss_or_undulations_or_stains_etc';
+    this.newItem.inpect_title = 'Ceilings_are_free_of_stains_or_undulations_or_cracks_etc';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description').value;
+    this.newItem.Description = this.ionicForm.get('Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2244,7 +2220,7 @@ export class Bedroom2Page implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Ceilings_are_free_of_stainss_or_undulations_or_stains_etc',
+      subject: 'Ceilings_are_free_of_stains_or_undulations_or_cracks_etc',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2276,9 +2252,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save25(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save25(): void {
+    console.log('Save clicked');
     this.showicon25 = true;
 
     this.bedroom2data.push({
@@ -2340,9 +2315,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save26(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save26(): void {
+    console.log('Save clicked');
     this.showicon26 = true;
 
     this.bedroom2data.push({
@@ -2404,9 +2378,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save27(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save27(): void {
+    console.log('Save clicked');
     this.showicon27 = true;
 
     this.bedroom2data.push({
@@ -2468,9 +2441,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save28(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save28(): void {
+    console.log('Save clicked');
     this.showicon28 = true;
 
     this.bedroom2data.push({
@@ -2532,9 +2504,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save29(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save29(): void {
+    console.log('Save clicked');
     this.showicon29 = true;
 
     this.bedroom2data.push({
@@ -2584,7 +2555,7 @@ export class Bedroom2Page implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL30 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Photo').setValue(this.imgURL30);
+      this.ionicForm.get('Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Photo').setValue(this.imgURL30);
       this.upload30();
     });
   }
@@ -2596,17 +2567,16 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save30(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save30(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.bedroom2data.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Ceilings_are_free_of_stainss_or_undulations_or_stains_etc',
+      inpect_title: 'Ceilings_are_free_of_stains_or_undulations_or_cracks_etc',
       photourl: this.imgURL30,
-      Description: this.ionicForm.get('Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description').value,
+      Description: this.ionicForm.get('Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2614,9 +2584,9 @@ export class Bedroom2Page implements OnInit {
   }
   sendMessage30(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Ceilings_are_free_of_stainss_or_undulations_or_stains_etc';
+    this.newItem.inpect_title = 'Ceilings_are_free_of_stains_or_undulations_or_cracks_etc';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description').value;
+    this.newItem.Description = this.ionicForm.get('Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2628,7 +2598,7 @@ export class Bedroom2Page implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Ceilings_are_free_of_stainss_or_undulations_or_stains_etc',
+      subject: 'Ceilings_are_free_of_stains_or_undulations_or_cracks_etc',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2661,9 +2631,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save31(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.bedroom2data.push({
@@ -2725,9 +2694,9 @@ export class Bedroom2Page implements OnInit {
      });
    }
  
-   save31(): void {
-     this.storage.clear();
-     console.log('save clicked');
+   Save31(): void {
+     
+     console.log('Save clicked');
      this.showicon31 = true;
  
      this.bedroom2data.push({
@@ -2789,9 +2758,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save32(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save32(): void {
+    console.log('Save clicked');
     this.showicon32 = true;
 
     this.bedroom2data.push({
@@ -2853,9 +2821,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save33(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save33(): void {
+    console.log('Save clicked');
     this.showicon33 = true;
 
     this.bedroom2data.push({
@@ -2917,9 +2884,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save34(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save34(): void {
+    console.log('Save clicked');
     this.showicon34 = true;
 
     this.bedroom2data.push({
@@ -2981,9 +2947,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save35(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save35(): void {
+    console.log('Save clicked');
     this.showicon35 = true;
 
     this.bedroom2data.push({
@@ -3045,9 +3010,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save36(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save36(): void {
+    console.log('Save clicked');
     this.showicon36 = true;
 
     this.bedroom2data.push({
@@ -3109,9 +3073,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save37(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save37(): void {
+    console.log('Save clicked');
     this.showicon37 = true;
 
     this.bedroom2data.push({
@@ -3174,9 +3137,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save38(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save38(): void {
+    console.log('Save clicked');
     this.showicon38 = true;
 
     this.bedroom2data.push({
@@ -3238,9 +3200,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save39(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save39(): void {
+    console.log('Save clicked');
     this.showicon39 = true;
 
     this.bedroom2data.push({
@@ -3302,9 +3263,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save40(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save40(): void {
+    console.log('Save clicked');
     this.showicon40 = true;
 
     this.bedroom2data.push({
@@ -3366,9 +3326,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save41(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save41(): void {
+    console.log('Save clicked');
     this.showicon41 = true;
 
     this.bedroom2data.push({
@@ -3431,9 +3390,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save43(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save43(): void {
+    console.log('Save clicked');
     this.showicon43 = true;
 
     this.bedroom2data.push({
@@ -3495,9 +3453,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save44(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save44(): void {
+    console.log('Save clicked');
     this.showicon44 = true;
 
     this.bedroom2data.push({
@@ -3559,9 +3516,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save45(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save45(): void {
+    console.log('Save clicked');
     this.showicon45 = true;
 
     this.bedroom2data.push({
@@ -3623,9 +3579,8 @@ export class Bedroom2Page implements OnInit {
     });
   }
 
-  save46(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save46(): void {
+    console.log('Save clicked');
     this.showicon46 = true;
 
     this.bedroom2data.push({
@@ -3678,7 +3633,7 @@ export class Bedroom2Page implements OnInit {
     this.issubmit = true;
 
     const db = firebase.firestore();
-    var washingtonRef = db.collection('test1').doc(this.recivedData);
+    var washingtonRef = db.collection('Krafturspace1').doc(this.recivedData);
     const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
 
@@ -3694,7 +3649,7 @@ export class Bedroom2Page implements OnInit {
       })
       .then(function () {
         console.log('foyer data is  updated');
-        this.isenabled=false;
+        this.isenabled = false;
       });
   }
   exportCSV() {
@@ -3779,8 +3734,8 @@ export class Bedroom2Page implements OnInit {
     this._cdr.detectChanges();
   }
 
-  UPVC_hardware_is_standard(): void {
-    let Qvalue = this.ionicForm.get('UPVC_hardware_is_standard').value;
+  UPVC_hardware_is_as_per_standard(): void {
+    let Qvalue = this.ionicForm.get('UPVC_hardware_is_as_per_standard()').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay5 = true;
@@ -4005,8 +3960,8 @@ export class Bedroom2Page implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Ceilings_are_free_of_stainss_or_undulations_or_stains_etc(): void {
-    let Qvalue = this.ionicForm.get('Ceilings_are_free_of_stainss_or_undulations_or_stains_etc').value;
+  Ceilings_are_free_of_stains_or_undulations_or_cracks_etc(): void {
+    let Qvalue = this.ionicForm.get('Ceilings_are_free_of_stains_or_undulations_or_cracks_etc').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay24 = true;

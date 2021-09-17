@@ -93,9 +93,9 @@ interface StudentData {
   Vitrified_tiles_are_uniform__and_free_of_cracks_and_hollowness_Photo: any;
   Vitrified_tiles_are_uniform__and_free_of_cracks_and_hollowness_Description: string;
 
-  Skirting_finish_and_aligned: string;
-  Skirting_finish_and_aligned_Photo: any;
-  Skirting_finish_and_aligned_Description: string;
+  Skirting_finish_is_right_and_aligned_with_wall_finish: string;
+  Skirting_finish_is_right_and_aligned_with_wall_finish_Photo: any;
+  Skirting_finish_is_right_and_aligned_with_wall_finish_Description: string;
 
   PHE: string;
   Floor_trap_or_ottle_trap_outlets_are_provided: string;
@@ -331,7 +331,7 @@ export class KitchenPage implements OnInit {
   subject: string;
   body: string;
 
-  issave = false;
+  isSave = false;
 
   eForm: FormGroup;
   showicon1: boolean;
@@ -385,7 +385,7 @@ export class KitchenPage implements OnInit {
   showicon49: boolean;
   showicon50: boolean;
 
-  isenabled:boolean=true;
+  isenabled: boolean = true;
   static newItem: any;
 
   constructor(
@@ -587,7 +587,7 @@ export class KitchenPage implements OnInit {
 
     const db = firebase.firestore();
 
-    db.collection('test1')
+    db.collection('Krafturspace1')
       .doc(this.recivedData)
       .get()
       .then(doc => {
@@ -632,12 +632,12 @@ export class KitchenPage implements OnInit {
       UPVC_kitchen_windows_are_free_of_sharp_edges_Photo: [''],
       UPVC_kitchen_windows_are_free_of_sharp_edges_Description: [''],
 
-      UPVC_kitchen_bug_screen_mesh_is_taut: ['', [Validators.required]],
+      UPVC_kitchen_bug_screen_mesh_is_taut: [''],
       UPVC_kitchen_bug_screen_mesh_is_taut_Photo: [''],
       UPVC_kitchen_bug_screen_mesh_is_taut_Description: [''],
 
       Electrical: [''],
-      Switch_plates_are_aligned: ['', [Validators.required]],
+      Switch_plates_are_aligned: [''],
       Switch_plates_are_aligned_Photo: [''],
       Switch_plates_are_aligned_Description: [''],
 
@@ -649,21 +649,21 @@ export class KitchenPage implements OnInit {
       Electrical_points_are_as_per_standard_offering_Photo: [''],
       Electrical_points_are_as_per_standard_offering_Description: [''],
 
-      Wall_Light_points_are_covered__or_apped_properly: ['', [Validators.required]],
+      Wall_Light_points_are_covered__or_apped_properly: [''],
       Wall_Light_points_are_covered__or_apped_properly_Photo: [''],
       Wall_Light_points_are_covered__or_apped_properly_Description: [''],
 
       Flooring: [''],
-      Vitrified_tiles_are_uniform__and_free_of_cracks_and_hollowness: ['', [Validators.required]],
+      Vitrified_tiles_are_uniform__and_free_of_cracks_and_hollowness: [''],
       Vitrified_tiles_are_uniform__and_free_of_cracks_and_hollowness_Photo: [''],
       Vitrified_tiles_are_uniform__and_free_of_cracks_and_hollowness_Description: [''],
 
-      Skirting_finish_and_aligned: [''],
-      Skirting_finish_and_aligned_Photo: [''],
-      Skirting_finish_and_aligned_Description: [''],
+      Skirting_finish_is_right_and_aligned_with_wall_finish: [''],
+      Skirting_finish_is_right_and_aligned_with_wall_finish_Photo: [''],
+      Skirting_finish_is_right_and_aligned_with_wall_finish_Description: [''],
 
       PHE: [''],
-      Floor_trap_or_ottle_trap_outlets_are_provided: ['', [Validators.required]],
+      Floor_trap_or_ottle_trap_outlets_are_provided: [''],
       Floor_trap_or_ottle_trap_outlets_are_provided_Photo: [''],
       Floor_trap_or_ottle_trap_outlets_are_provided_Description: [''],
 
@@ -680,7 +680,7 @@ export class KitchenPage implements OnInit {
       Reticulated_gas_pipes_are_clean_Photo: [''],
       Reticulated_gas_pipes_are_clean_Description: [''],
 
-      Reticulated_gas_pipes_are_clamped_properly_and_is_clean_of_stains: ['', [Validators.required]],
+      Reticulated_gas_pipes_are_clamped_properly_and_is_clean_of_stains: [''],
       Reticulated_gas_pipes_are_clamped_properly_and_is_clean_of_stains_Photo: [''],
       Reticulated_gas_pipes_are_clamped_properly_and_is_clean_of_stains_Description: [''],
 
@@ -742,9 +742,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save1(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save1(): void {
+    console.log('Save clicked');
     this.showicon1 = true;
 
     this.kitchendata.push({
@@ -816,9 +815,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save2(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save2(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.kitchendata.push({
@@ -893,9 +891,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save3(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save3(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.kitchendata.push({
@@ -958,9 +955,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save4(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save4(): void {
+    console.log('Save clicked');
     this.showicon4 = true;
 
     this.kitchendata.push({
@@ -1022,9 +1018,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save5(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save5(): void {
+    console.log('Save clicked');
     this.showicon5 = true;
 
     this.kitchendata.push({
@@ -1086,9 +1081,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save6(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save6(): void {
+    console.log('Save clicked');
     this.showicon6 = true;
 
     this.kitchendata.push({
@@ -1150,9 +1144,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save7(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save7(): void {
+    console.log('Save clicked');
     this.showicon7 = true;
 
     this.kitchendata.push({
@@ -1214,9 +1207,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save8(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save8(): void {
+    console.log('Save clicked');
     this.showicon8 = true;
 
     this.kitchendata.push({
@@ -1278,9 +1270,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save9(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save9(): void {
+    console.log('Save clicked');
     this.showicon9 = true;
     9;
     this.kitchendata.push({
@@ -1343,9 +1334,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save10(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save10(): void {
+    console.log('Save clicked');
     this.showicon10 = true;
 
     this.kitchendata.push({
@@ -1407,9 +1397,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save11() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save11() {
+    console.log('Save clicked');
     this.showicon11 = true;
 
     this.kitchendata.push({
@@ -1472,9 +1461,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save12() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save12() {
+    console.log('Save clicked');
     this.showicon12 = true;
 
     this.kitchendata.push({
@@ -1536,9 +1524,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save13(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save13(): void {
+    console.log('Save clicked');
     this.showicon13 = true;
 
     this.kitchendata.push({
@@ -1600,9 +1587,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save14(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save14(): void {
+    console.log('Save clicked');
     this.showicon14 = true;
 
     this.kitchendata.push({
@@ -1652,7 +1638,7 @@ export class KitchenPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL15 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Skirting_finish_and_aligned_Photo').setValue(this.imgURL15);
+      this.ionicForm.get('Skirting_finish_is_right_and_aligned_with_wall_finish_Photo').setValue(this.imgURL15);
       this.upload15();
     });
   }
@@ -1664,17 +1650,16 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save15(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save15(): void {
+    console.log('Save clicked');
     this.showicon15 = true;
 
     this.kitchendata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Skirting_finish_and_aligned',
+      inpect_title: 'Skirting_finish_is_right_and_aligned_with_wall_finish',
       photourl: this.imgURL15,
-      Description: this.ionicForm.get('Skirting_finish_and_aligned_Description').value,
+      Description: this.ionicForm.get('Skirting_finish_is_right_and_aligned_with_wall_finish_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -1682,9 +1667,9 @@ export class KitchenPage implements OnInit {
   }
   sendMessage15(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Skirting_finish_and_aligned';
+    this.newItem.inpect_title = 'Skirting_finish_is_right_and_aligned_with_wall_finish';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Skirting_finish_and_aligned_Description').value;
+    this.newItem.Description = this.ionicForm.get('Skirting_finish_is_right_and_aligned_with_wall_finish_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -1696,7 +1681,7 @@ export class KitchenPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Skirting_finish_and_aligned',
+      subject: 'Skirting_finish_is_right_and_aligned_with_wall_finish',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -1728,9 +1713,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save16(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save16(): void {
+    console.log('Save clicked');
     this.showicon16 = true;
 
     this.kitchendata.push({
@@ -1792,9 +1776,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save17(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save17(): void {
+    console.log('Save clicked');
     this.showicon17 = true;
 
     this.kitchendata.push({
@@ -1856,9 +1839,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save18(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save18(): void {
+    console.log('Save clicked');
     this.showicon18 = true;
 
     this.kitchendata.push({
@@ -1908,7 +1890,7 @@ export class KitchenPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL19 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Photo').setValue(this.imgURL19);
+      this.ionicForm.get('Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Photo').setValue(this.imgURL19);
       this.upload19();
     });
   }
@@ -1920,17 +1902,16 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save19(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save19(): void {
+    console.log('Save clicked');
     this.showicon19 = true;
 
     this.kitchendata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Ceilings_are_free_of_stainss_or_undulations_or_stains_etc',
+      inpect_title: 'Ceilings_are_free_of_stains_or_undulations_or_cracks_etc',
       photourl: this.imgURL19,
-      Description: this.ionicForm.get('Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description').value,
+      Description: this.ionicForm.get('Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -1938,9 +1919,9 @@ export class KitchenPage implements OnInit {
   }
   sendMessage19(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Ceilings_are_free_of_stainss_or_undulations_or_stains_etc';
+    this.newItem.inpect_title = 'Ceilings_are_free_of_stains_or_undulations_or_cracks_etc';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description').value;
+    this.newItem.Description = this.ionicForm.get('Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -1952,7 +1933,7 @@ export class KitchenPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Ceilings_are_free_of_stainss_or_undulations_or_stains_etc',
+      subject: 'Ceilings_are_free_of_stains_or_undulations_or_cracks_etc',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -1984,9 +1965,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save20(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save20(): void {
+    console.log('Save clicked');
     this.showicon20 = true;
 
     this.kitchendata.push({
@@ -2048,9 +2028,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save21(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save21(): void {
+    console.log('Save clicked');
     this.showicon21 = true;
 
     this.kitchendata.push({
@@ -2112,9 +2091,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save22(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save22(): void {
+    console.log('Save clicked');
     this.showicon22 = true;
 
     this.kitchendata.push({
@@ -2176,9 +2154,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save23(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save23(): void {
+    console.log('Save clicked');
     this.showicon23 = true;
 
     this.kitchendata.push({
@@ -2240,9 +2217,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save24(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save24(): void {
+    console.log('Save clicked');
     this.showicon24 = true;
 
     this.kitchendata.push({
@@ -2304,9 +2280,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save25(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save25(): void {
+    console.log('Save clicked');
     this.showicon25 = true;
 
     this.kitchendata.push({
@@ -2368,9 +2343,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save26(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save26(): void {
+    console.log('Save clicked');
     this.showicon26 = true;
 
     this.kitchendata.push({
@@ -2432,9 +2406,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save27(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save27(): void {
+    console.log('Save clicked');
     this.showicon27 = true;
 
     this.kitchendata.push({
@@ -2496,9 +2469,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save28(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save28(): void {
+    console.log('Save clicked');
     this.showicon28 = true;
 
     this.kitchendata.push({
@@ -2548,7 +2520,7 @@ export class KitchenPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL29 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Tiles_are_laid_to_slope_without_hollowness_Photo').setValue(this.imgURL29);
+      this.ionicForm.get('Floor_Tiles_are_laid_to_slope_without_hollowness_Photo').setValue(this.imgURL29);
       this.upload29();
     });
   }
@@ -2560,17 +2532,16 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save29(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save29(): void {
+    console.log('Save clicked');
     this.showicon29 = true;
 
     this.kitchendata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Tiles_are_laid_to_slope_without_hollowness',
+      inpect_title: 'Floor_Tiles_are_laid_to_slope_without_hollowness',
       photourl: this.imgURL29,
-      Description: this.ionicForm.get('Tiles_are_laid_to_slope_without_hollowness_Description').value,
+      Description: this.ionicForm.get('Floor_Tiles_are_laid_to_slope_without_hollowness_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2578,9 +2549,9 @@ export class KitchenPage implements OnInit {
   }
   sendMessage29(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Tiles_are_laid_to_slope_without_hollowness';
+    this.newItem.inpect_title = 'Floor_Tiles_are_laid_to_slope_without_hollowness';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Tiles_are_laid_to_slope_without_hollowness_Description').value;
+    this.newItem.Description = this.ionicForm.get('Floor_Tiles_are_laid_to_slope_without_hollowness_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2592,7 +2563,7 @@ export class KitchenPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Tiles_are_laid_to_slope_without_hollowness',
+      subject: 'Floor_Tiles_are_laid_to_slope_without_hollowness',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2624,9 +2595,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save30(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save30(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.kitchendata.push({
@@ -2689,9 +2659,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save31(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.kitchendata.push({
@@ -2753,9 +2722,9 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save31(): void {
+    
+    console.log('Save clicked');
     this.showicon31 = true;
 
     this.kitchendata.push({
@@ -2817,9 +2786,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save32(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save32(): void {
+    console.log('Save clicked');
     this.showicon32 = true;
 
     this.kitchendata.push({
@@ -2881,9 +2849,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save33(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save33(): void {
+    console.log('Save clicked');
     this.showicon33 = true;
 
     this.kitchendata.push({
@@ -2945,9 +2912,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save34(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save34(): void {
+    console.log('Save clicked');
     this.showicon34 = true;
 
     this.kitchendata.push({
@@ -3009,9 +2975,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save35(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save35(): void {
+    console.log('Save clicked');
     this.showicon35 = true;
 
     this.kitchendata.push({
@@ -3073,9 +3038,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save36(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save36(): void {
+    console.log('Save clicked');
     this.showicon36 = true;
 
     this.kitchendata.push({
@@ -3137,9 +3101,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save37(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save37(): void {
+    console.log('Save clicked');
     this.showicon37 = true;
 
     this.kitchendata.push({
@@ -3202,9 +3165,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save38(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save38(): void {
+    console.log('Save clicked');
     this.showicon38 = true;
 
     this.kitchendata.push({
@@ -3266,9 +3228,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save39(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save39(): void {
+    console.log('Save clicked');
     this.showicon39 = true;
 
     this.kitchendata.push({
@@ -3330,9 +3291,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save40(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save40(): void {
+    console.log('Save clicked');
     this.showicon40 = true;
 
     this.kitchendata.push({
@@ -3394,9 +3354,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save41(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save41(): void {
+    console.log('Save clicked');
     this.showicon41 = true;
 
     this.kitchendata.push({
@@ -3459,9 +3418,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save43(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save43(): void {
+    console.log('Save clicked');
     this.showicon43 = true;
 
     this.kitchendata.push({
@@ -3523,9 +3481,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save44(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save44(): void {
+    console.log('Save clicked');
     this.showicon44 = true;
 
     this.kitchendata.push({
@@ -3587,9 +3544,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save45(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save45(): void {
+    console.log('Save clicked');
     this.showicon45 = true;
 
     this.kitchendata.push({
@@ -3651,9 +3607,8 @@ export class KitchenPage implements OnInit {
     });
   }
 
-  save46(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save46(): void {
+    console.log('Save clicked');
     this.showicon46 = true;
 
     this.kitchendata.push({
@@ -3707,7 +3662,7 @@ export class KitchenPage implements OnInit {
     this.issubmit = true;
 
     const db = firebase.firestore();
-    var washingtonRef = db.collection('test1').doc(this.recivedData);
+    var washingtonRef = db.collection('Krafturspace1').doc(this.recivedData);
     const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
 
@@ -3723,7 +3678,7 @@ export class KitchenPage implements OnInit {
       })
       .then(function () {
         console.log('foyer data is  updated');
-        this.isenabled=false;
+        this.isenabled = false;
       });
   }
   exportCSV() {
@@ -3928,8 +3883,8 @@ export class KitchenPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Skirting_finish_and_aligned(): void {
-    let Qvalue = this.ionicForm.get('Skirting_finish_and_aligned').value;
+  Skirting_finish_is_right_and_aligned_with_wall_finish(): void {
+    let Qvalue = this.ionicForm.get('Skirting_finish_is_right_and_aligned_with_wall_finish').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay15 = true;

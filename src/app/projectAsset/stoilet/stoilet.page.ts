@@ -64,9 +64,9 @@ interface StudentData {
   Hardware_is_as_per_standard_offering_Description: string;
 
   Electrical: string;
-  Exhaust_fan_connection: string;
-  Exhaust_fan_connection_Photo: any;
-  Exhaust_fan_connection_Description: string;
+  Exhaust_fan_connection_is_provided: string;
+  Exhaust_fan_connection_is_provided_Photo: any;
+  Exhaust_fan_connection_is_provided_Description: string;
 
   Electrical_points_are_as_per_standard_offering: string;
   Electrical_points_are_as_per_standard_offering_Photo: any;
@@ -162,9 +162,9 @@ interface StudentData {
   Wash_Basin_in_mm: string;
 
   Walls_and_ceiling: string;
-  Consistency_of_corner_beading: string;
-  Consistency_of_corner_beading_Photo: any;
-  Consistency_of_corner_beading_Description: string;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles: string;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Photo: any;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Description: string;
 
   Dado_top_line_is_uniform_and_consistent: string;
   Dado_top_line_is_uniform_and_consistent_Photo: any;
@@ -396,7 +396,7 @@ export class SToiletPage implements OnInit {
   subject: string;
   body: string;
 
-  issave = false;
+  isSave = false;
 
   eForm: FormGroup;
 
@@ -673,7 +673,7 @@ export class SToiletPage implements OnInit {
 
     const db = firebase.firestore();
 
-    db.collection('test1')
+    db.collection('Krafturspace1')
       .doc(this.recivedData)
       .get()
       .then(doc => {
@@ -683,7 +683,7 @@ export class SToiletPage implements OnInit {
 
     this.ionicForm = this.formBuilder.group({
       Doors_and_Windows: [''],
-      UPVC_ventilators_are_operable: ['', [Validators.required]],
+      UPVC_ventilators_are_operable: ['', [Validators.required]], //, [Validators.required]
       UPVC_ventilators_are_operable_Photo: [''],
       UPVC_ventilators_are_operable_Description: [''],
 
@@ -715,9 +715,9 @@ export class SToiletPage implements OnInit {
 
       Electrical: [''],
 
-      Exhaust_fan_connection: [''], //, [Validators.required]
-      Exhaust_fan_connection_Photo: [''],
-      Exhaust_fan_connection_Description: [''],
+      Exhaust_fan_connection_is_provided: ['', [Validators.required]], //, [Validators.required]
+      Exhaust_fan_connection_is_provided_Photo: [''],
+      Exhaust_fan_connection_is_provided_Description: [''],
 
       Electrical_points_are_as_per_standard_offering: [''],
       Electrical_points_are_as_per_standard_offering_Photo: [''],
@@ -774,7 +774,7 @@ export class SToiletPage implements OnInit {
       Health_Faucet_is_functional_Photo: [''],
       Health_Faucet_is_functional_Description: [''],
 
-      Washbasin_and_counter_edges_are_sealed: ['', [Validators.required]],
+      Washbasin_and_counter_edges_are_sealed: [''], //, [Validators.required]
       Washbasin_and_counter_edges_are_sealed_Photo: [''],
       Washbasin_and_counter_edges_are_sealed_Description: [''],
 
@@ -811,9 +811,9 @@ export class SToiletPage implements OnInit {
       Wash_Basin_in_mm: [''],
 
       Walls_and_ceiling: [''],
-      Consistency_of_corner_beading: [''], //, [Validators.required]
-      Consistency_of_corner_beading_Photo: [''],
-      Consistency_of_corner_beading_Description: [''],
+      Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles: [''], //, [Validators.required]
+      Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Photo: [''],
+      Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Description: [''],
 
       Dado_top_line_is_uniform_and_consistent: [''],
       Dado_top_line_is_uniform_and_consistent_Photo: [''],
@@ -843,11 +843,11 @@ export class SToiletPage implements OnInit {
       EWC_Ledge_wall_granite_coping_is_free_of_sharp_edges_Photo: [''],
       EWC_Ledge_wall_granite_coping_is_free_of_sharp_edges_Description: [''],
 
-      Area_above_false_ceiling_is_painted: [''],
+      Area_above_false_ceiling_is_painted: ['', [Validators.required]],
       Area_above_false_ceiling_is_painted_Photo: [''],
       Area_above_false_ceiling_is_painted_Description: [''],
 
-      Hollowness_in_wall_dado: ['', [Validators.required]],
+      Hollowness_in_wall_dado: [''], //, [Validators.required]
       Hollowness_in_wall_dado_Photo: [''],
       Hollowness_in_wall_dado_Description: ['']
     });
@@ -880,9 +880,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save1(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save1(): void {
+    console.log('Save clicked');
     this.showicon1 = true;
 
     this.stoilet.push({
@@ -954,9 +953,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save2(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save2(): void {
+    console.log('Save clicked');
     this.showicon2 = true;
 
     this.stoilet.push({
@@ -1031,9 +1029,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save3(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save3(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.stoilet.push({
@@ -1096,9 +1093,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save4(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save4(): void {
+    console.log('Save clicked');
     this.showicon4 = true;
 
     this.stoilet.push({
@@ -1160,9 +1156,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save5(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save5(): void {
+    console.log('Save clicked');
     this.showicon5 = true;
 
     this.stoilet.push({
@@ -1224,9 +1219,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save6(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save6(): void {
+    console.log('Save clicked');
     this.showicon6 = true;
 
     this.stoilet.push({
@@ -1288,9 +1282,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save7(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save7(): void {
+    console.log('Save clicked');
     this.showicon7 = true;
 
     this.stoilet.push({
@@ -1340,7 +1333,7 @@ export class SToiletPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL8 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Exhaust_fan_connection_Photo').setValue(this.imgURL8);
+      this.ionicForm.get('Exhaust_fan_connection_is_provided_Photo').setValue(this.imgURL8);
       this.upload8();
     });
   }
@@ -1352,17 +1345,16 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save8(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save8(): void {
+    console.log('Save clicked');
     this.showicon8 = true;
 
     this.stoilet.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Exhaust_fan_connection',
+      inpect_title: 'Exhaust_fan_connection_is_provided',
       photourl: this.imgURL8,
-      Description: this.ionicForm.get('Exhaust_fan_connection_Description').value,
+      Description: this.ionicForm.get('Exhaust_fan_connection_is_provided_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -1370,9 +1362,9 @@ export class SToiletPage implements OnInit {
   }
   sendMessage8(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Exhaust_fan_connection';
+    this.newItem.inpect_title = 'Exhaust_fan_connection_is_provided';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Exhaust_fan_connection_Description').value;
+    this.newItem.Description = this.ionicForm.get('Exhaust_fan_connection_is_provided_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -1384,7 +1376,7 @@ export class SToiletPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Exhaust_fan_connection',
+      subject: 'Exhaust_fan_connection_is_provided',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -1416,9 +1408,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save9(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save9(): void {
+    console.log('Save clicked');
     this.showicon9 = true;
     9;
     this.stoilet.push({
@@ -1481,9 +1472,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save10(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save10(): void {
+    console.log('Save clicked');
     this.showicon10 = true;
 
     this.stoilet.push({
@@ -1545,9 +1535,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save11() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save11() {
+    console.log('Save clicked');
     this.showicon11 = true;
 
     this.stoilet.push({
@@ -1610,9 +1599,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save12() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save12() {
+    console.log('Save clicked');
     this.showicon12 = true;
 
     this.stoilet.push({
@@ -1674,9 +1662,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save13(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save13(): void {
+    console.log('Save clicked');
     this.showicon13 = true;
 
     this.stoilet.push({
@@ -1738,9 +1725,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save14(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save14(): void {
+    console.log('Save clicked');
     this.showicon14 = true;
 
     this.stoilet.push({
@@ -1802,9 +1788,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save15(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save15(): void {
+    console.log('Save clicked');
     this.showicon15 = true;
 
     this.stoilet.push({
@@ -1866,9 +1851,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save16(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save16(): void {
+    console.log('Save clicked');
     this.showicon16 = true;
 
     this.stoilet.push({
@@ -1930,9 +1914,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save17(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save17(): void {
+    console.log('Save clicked');
     this.showicon17 = true;
 
     this.stoilet.push({
@@ -1994,9 +1977,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save18(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save18(): void {
+    console.log('Save clicked');
     this.showicon18 = true;
 
     this.stoilet.push({
@@ -2058,9 +2040,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save19(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save19(): void {
+    console.log('Save clicked');
     this.showicon19 = true;
 
     this.stoilet.push({
@@ -2122,9 +2103,9 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save20(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save20(): void {
+    
+    console.log('Save clicked');
     this.showicon20 = true;
 
     this.stoilet.push({
@@ -2174,7 +2155,7 @@ export class SToiletPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL21 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Video_door_phone_is_functional_Photo').setValue(this.imgURL21);
+      this.ionicForm.get('Video_Door_phone_is_aligned_or_fixed_right_Photo').setValue(this.imgURL21);
       this.upload21();
     });
   }
@@ -2186,17 +2167,17 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save21(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save21(): void {
+    
+    console.log('Save clicked');
     this.showicon21 = true;
 
     this.stoilet.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Video_door_phone_is_functional',
+      inpect_title: 'Video_Door_phone_is_aligned_or_fixed_right',
       photourl: this.imgURL21,
-      Description: this.ionicForm.get('Video_door_phone_is_functional_Description').value,
+      Description: this.ionicForm.get('Video_Door_phone_is_aligned_or_fixed_right_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2204,9 +2185,9 @@ export class SToiletPage implements OnInit {
   }
   sendMessage21(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Video_door_phone_is_functional';
+    this.newItem.inpect_title = 'Video_Door_phone_is_aligned_or_fixed_right';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Video_door_phone_is_functional_Description').value;
+    this.newItem.Description = this.ionicForm.get('Video_Door_phone_is_aligned_or_fixed_right_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2218,7 +2199,7 @@ export class SToiletPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Video_door_phone_is_functional',
+      subject: 'Video_Door_phone_is_aligned_or_fixed_right',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2250,9 +2231,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save22(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save22(): void {
+    console.log('Save clicked');
     this.showicon22 = true;
 
     this.stoilet.push({
@@ -2314,9 +2294,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save23(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save23(): void {
+    console.log('Save clicked');
     this.showicon23 = true;
 
     this.stoilet.push({
@@ -2378,9 +2357,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save24(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save24(): void {
+    console.log('Save clicked');
     this.showicon24 = true;
 
     this.stoilet.push({
@@ -2442,9 +2420,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save25(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save25(): void {
+    console.log('Save clicked');
     this.showicon25 = true;
 
     this.stoilet.push({
@@ -2506,9 +2483,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save26(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save26(): void {
+    console.log('Save clicked');
     this.showicon26 = true;
 
     this.stoilet.push({
@@ -2570,9 +2546,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save27(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save27(): void {
+    console.log('Save clicked');
     this.showicon27 = true;
 
     this.stoilet.push({
@@ -2634,9 +2609,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save28(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save28(): void {
+    console.log('Save clicked');
     this.showicon28 = true;
 
     this.stoilet.push({
@@ -2698,9 +2672,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save29(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save29(): void {
+    console.log('Save clicked');
     this.showicon29 = true;
 
     this.stoilet.push({
@@ -2763,9 +2736,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save30(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save30(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.stoilet.push({
@@ -2817,7 +2789,7 @@ export class SToiletPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL30 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Consistency_of_corner_beading_Photo').setValue(this.imgURL30);
+      this.ionicForm.get('Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Photo').setValue(this.imgURL30);
       this.upload31();
     });
   }
@@ -2829,17 +2801,16 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save31(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.stoilet.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Consistency_of_corner_beading',
+      inpect_title: 'Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles',
       photourl: this.imgURL30,
-      Description: this.ionicForm.get('Consistency_of_corner_beading_Description').value,
+      Description: this.ionicForm.get('Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2847,9 +2818,9 @@ export class SToiletPage implements OnInit {
   }
   sendMessage31(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Consistency_of_corner_beading';
+    this.newItem.inpect_title = 'Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Consistency_of_corner_beading_Description').value;
+    this.newItem.Description = this.ionicForm.get('Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2861,7 +2832,7 @@ export class SToiletPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Consistency_of_corner_beading',
+      subject: 'Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2893,9 +2864,9 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save31(): void {
+    
+    console.log('Save clicked');
     this.showicon31 = true;
 
     this.stoilet.push({
@@ -2957,9 +2928,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save32(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save32(): void {
+    console.log('Save clicked');
     this.showicon44 = true;
 
     this.stoilet.push({
@@ -3023,9 +2993,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save33(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save33(): void {
+    console.log('Save clicked');
     this.showicon33 = true;
 
     this.stoilet.push({
@@ -3087,9 +3056,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save34(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save34(): void {
+    console.log('Save clicked');
     this.showicon34 = true;
 
     this.stoilet.push({
@@ -3151,9 +3119,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save35(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save35(): void {
+    console.log('Save clicked');
     this.showicon35 = true;
 
     this.stoilet.push({
@@ -3215,9 +3182,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save36(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save36(): void {
+    console.log('Save clicked');
     this.showicon36 = true;
 
     this.stoilet.push({
@@ -3279,9 +3245,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save37(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save37(): void {
+    console.log('Save clicked');
     this.showicon37 = true;
 
     this.stoilet.push({
@@ -3344,9 +3309,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save38(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save38(): void {
+    console.log('Save clicked');
     this.showicon38 = true;
 
     this.stoilet.push({
@@ -3408,9 +3372,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save39(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save39(): void {
+    console.log('Save clicked');
     this.showicon39 = true;
 
     this.stoilet.push({
@@ -3472,9 +3435,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save41(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save41(): void {
+    console.log('Save clicked');
     this.showicon41 = true;
 
     this.stoilet.push({
@@ -3536,9 +3498,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save42(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save42(): void {
+    console.log('Save clicked');
     this.showicon42 = true;
 
     this.stoilet.push({
@@ -3601,9 +3562,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save43(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save43(): void {
+    console.log('Save clicked');
     this.showicon43 = true;
 
     this.stoilet.push({
@@ -3665,9 +3625,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save44(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save44(): void {
+    console.log('Save clicked');
     this.showicon44 = true;
 
     this.stoilet.push({
@@ -3729,9 +3688,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save45(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save45(): void {
+    console.log('Save clicked');
     this.showicon45 = true;
 
     this.stoilet.push({
@@ -3793,9 +3751,8 @@ export class SToiletPage implements OnInit {
     });
   }
 
-  save46(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save46(): void {
+    console.log('Save clicked');
     this.showicon46 = true;
 
     this.stoilet.push({
@@ -3849,7 +3806,7 @@ export class SToiletPage implements OnInit {
     this.issubmit = true;
 
     const db = firebase.firestore();
-    var washingtonRef = db.collection('test1').doc(this.recivedData);
+    var washingtonRef = db.collection('Krafturspace1').doc(this.recivedData);
     const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
 
@@ -3987,8 +3944,8 @@ export class SToiletPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Exhaust_fan_connection(): void {
-    let Qvalue = this.ionicForm.get('Exhaust_fan_connection').value;
+  Exhaust_fan_connection_is_provided(): void {
+    let Qvalue = this.ionicForm.get('Exhaust_fan_connection_is_provided').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay8 = true;
@@ -4263,8 +4220,8 @@ export class SToiletPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Consistency_of_corner_beading(): void {
-    let Qvalue = this.ionicForm.get('Consistency_of_corner_beading').value;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles(): void {
+    let Qvalue = this.ionicForm.get('Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay31 = true;

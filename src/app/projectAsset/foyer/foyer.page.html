@@ -338,7 +338,7 @@
         </ion-card-content>
         <ion-item>
           <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Confirm_door_opens_And_closes_properly_Description"></ion-input>
+          <ion-input formControlName="door_opens_And_closes_properly_Description"></ion-input>
         </ion-item>
       </ion-card>
       <!--section-->
@@ -628,8 +628,8 @@
       <!--section-->
       <ion-item *ngIf="isToggled2">
         <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon19"></ion-icon>
-        <ion-label position="floating">Shade variations in shutters</ion-label>
-        <ion-select formControlName="Shade_variations_in_shutters" (ionChange)="Shade_variations_in_shutters()">
+        <ion-label position="floating">Uniform shade/finish of shutters</ion-label>
+        <ion-select formControlName="Uniform_Shade_or_finsh_of_shutters" (ionChange)="Uniform_Shade_or_finsh_of_shutters()">
           <ion-select-option value="YES">Yes</ion-select-option>
           <ion-select-option value="No">No</ion-select-option>
         </ion-select>
@@ -656,7 +656,7 @@
         </ion-card-content>
         <ion-item>
           <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Shade_variations_in_shutters_Description"></ion-input>
+          <ion-input formControlName="Uniform_Shade_or_finsh_of_shutters_Description"></ion-input>
         </ion-item>
       </ion-card>
       <!--Miscellaneous-->
@@ -708,7 +708,7 @@
       <ion-item *ngIf="isToggled4">
         <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon21"></ion-icon>
         <ion-label position="floating"> Video door phone is functional</ion-label>
-        <ion-select formControlName="Video_door_phone_is_functional" (ionChange)="Video_door_phone_is_functional()">
+        <ion-select formControlName="Video_Door_phone_is_aligned_or_fixed_right" (ionChange)="Video_Door_phone_is_aligned_or_fixed_right()">
           <ion-select-option value="YES">Yes</ion-select-option>
           <ion-select-option value="No">No</ion-select-option>
         </ion-select>
@@ -735,14 +735,14 @@
         </ion-card-content>
         <ion-item>
           <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Video_door_phone_is_functionaly_Description"></ion-input>
+          <ion-input formControlName="Video_Door_phone_is_aligned_or_fixed_righty_Description"></ion-input>
         </ion-item>
       </ion-card>
       <!--endsection-->
       <ion-item *ngIf="isToggled4">
         <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon22"></ion-icon>
-        <ion-label position="floating"> Video door phone alignment</ion-label>
-        <ion-select formControlName="Video_door_phone_alignment_is_right" (ionChange)="Video_door_phone_alignment_is_right()">
+        <ion-label position="floating"> Video Door phone is aligned/fixed right</ion-label>
+        <ion-select formControlName="Video Door phone is aligned/fixed right" (ionChange)="Video_door_phone_alignment_is_right()">
           <ion-select-option value="YES">Yes</ion-select-option>
           <ion-select-option value="No">No</ion-select-option>
         </ion-select>
@@ -877,6 +877,7 @@
         </ion-card-content>
         <ion-item>
           <ion-label position="floating">Description</ion-label>
+
           <ion-input formControlName="Walls_are_free_of_stains_undulations_or_cracks_or_dampness_Description"></ion-input>
         </ion-item>
       </ion-card>

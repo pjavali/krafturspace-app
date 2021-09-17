@@ -138,9 +138,9 @@ interface StudentData {
   MS_Duct_doors_are_painted_on_both_sides_Photo: any;
   MS_Duct_doors_are_painted_on_both_sides_Description: string;
 
-  Shaft_internalss_to_be_free_of_debris: string;
-  Shaft_internalss_to_be_free_of_debris_Photo: any;
-  Shaft_internalss_to_be_free_of_debris_Description: string;
+  Shaft_internals_to_be_free_of_debris: string;
+  Shaft_internals_to_be_free_of_debris_Photo: any;
+  Shaft_internals_to_be_free_of_debris_Description: string;
 
   Internal_surfaces_is_cleaned_and_painted: string;
   Internal_surfaces_is_cleaned_and_painted_Photo: any;
@@ -159,9 +159,9 @@ interface StudentData {
   Walls_are_free_of_cracks_or__stains_etc_Photo: any;
   Walls_are_free_of_cracks_or__stains_etc_Description: string;
 
-  Ceilings_are_free_of_stainss_or_undulations_or_stains_etc: string;
-  Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Photo: any;
-  Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description: string;
+  Ceilings_are_free_of_stains_or_undulations_or_cracks_etc: string;
+  Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Photo: any;
+  Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Description: string;
 
   Elevational_ledge_horizontal_surface_finish: string;
   Elevational_ledge_horizontal_surface_finish_Photo: any;
@@ -348,7 +348,7 @@ export class B3DressPage implements OnInit {
   subject: string;
   body: string;
 
-  issave = false;
+  isSave = false;
 
   isenabled: boolean = true;
   eForm: FormGroup;
@@ -611,7 +611,7 @@ export class B3DressPage implements OnInit {
 
     const db = firebase.firestore();
 
-    db.collection('test1')
+    db.collection('Krafturspace1')
       .doc(this.recivedData)
       .get()
       .then(doc => {
@@ -639,7 +639,7 @@ export class B3DressPage implements OnInit {
       UPVC_balcony_doors_are_operable_Photo: [''],
       UPVC_balcony_doors_are_operable_Description: [''],
 
-      Aluminium_channel_below_balcony_door_is_cleaned: ['', [Validators.required]],
+      Aluminium_channel_below_balcony_door_is_cleaned: [''],
 
       Aluminium_channel_below_balcony_door_is_cleaned_Photo: [''],
       Aluminium_channel_below_balcony_door_is_cleaned_Description: [''],
@@ -671,14 +671,14 @@ export class B3DressPage implements OnInit {
       AC_Core_cut_pipe_is_finished_Photo: [''],
       AC_Core_cut_pipe_is_finished_Description: [''],
 
-      Switch_plates_are_aligned: ['', [Validators.required]],
+      Switch_plates_are_aligned: [''],
 
       Switch_plates_are_aligned_Photo: [''],
       Switch_plates_are_aligned_Description: [''],
 
       Floor_Traps: [''],
 
-      Edges_of_floor_trap_is_finished: ['', [Validators.required]],
+      Edges_of_floor_trap_is_finished: [''],
 
       Edges_of_floor_trap_is_finished_Photo: [''],
       Edges_of_floor_trap_is_finished_Description: [''],
@@ -690,7 +690,7 @@ export class B3DressPage implements OnInit {
 
       Flooring: [''],
 
-      Vitrified_tiles_are_uniform_and_free_of_cracks: ['', [Validators.required]],
+      Vitrified_tiles_are_uniform_and_free_of_cracks: [''],
 
       Vitrified_tiles_are_uniform_and_free_of_cracks_Photo: [''],
       Vitrified_tiles_are_uniform_and_free_of_cracks_Description: [''],
@@ -700,14 +700,14 @@ export class B3DressPage implements OnInit {
       Floor_Slopes_provided_are_adequate_Photo: [''],
       Floor_Slopes_provided_are_adequate_Description: [''],
 
-      Skirting_finish_and_alignment: ['', [Validators.required]],
+      Skirting_finish_and_alignment: [''],
 
       Skirting_finish_and_alignment_Photo: [''],
       Skirting_finish_and_alignment_Description: [''],
 
       Miscellaneous: [''],
 
-      Granite_coping_is_free_of_sharp_edges_or_dents_etc: ['', [Validators.required]],
+      Granite_coping_is_free_of_sharp_edges_or_dents_etc: [''],
 
       Granite_coping_is_free_of_sharp_edges_or_dents_etc_Photo: [''],
       Granite_coping_is_free_of_sharp_edges_or_dents_etc_Description: [''],
@@ -719,7 +719,7 @@ export class B3DressPage implements OnInit {
 
       Railing: [''],
 
-      SS_pipe_railing_end_caps_are_fixed_without_gaps: ['', [Validators.required]],
+      SS_pipe_railing_end_caps_are_fixed_without_gaps: [''],
 
       SS_pipe_railing_end_caps_are_fixed_without_gaps_Photo: [''],
       SS_pipe_railing_end_caps_are_fixed_without_gaps_Description: [''],
@@ -746,7 +746,7 @@ export class B3DressPage implements OnInit {
 
       Shafts: [''],
 
-      MS_Duct_door_frames_and_wall_junctions_are_sealed: ['', [Validators.required]],
+      MS_Duct_door_frames_and_wall_junctions_are_sealed: [''],
 
       MS_Duct_door_frames_and_wall_junctions_are_sealed_Photo: [''],
       MS_Duct_door_frames_and_wall_junctions_are_sealed_Description: [''],
@@ -756,24 +756,24 @@ export class B3DressPage implements OnInit {
       MS_Duct_doors_are_painted_on_both_sides_Photo: [''],
       MS_Duct_doors_are_painted_on_both_sides_Description: [''],
 
-      Shaft_internalss_to_be_free_of_debris: [''],
+      Shaft_internals_to_be_free_of_debris: [''],
 
-      Shaft_internalss_to_be_free_of_debris_Photo: [''],
-      Shaft_internalss_to_be_free_of_debris_Description: [''],
+      Shaft_internals_to_be_free_of_debris_Photo: [''],
+      Shaft_internals_to_be_free_of_debris_Description: [''],
 
       Internal_surfaces_is_cleaned_and_painted: [''],
 
       Internal_surfaces_is_cleaned_and_painted_Photo: [''],
       Internal_surfaces_is_cleaned_and_painted_Description: [''],
 
-      Shaft_internals_to_be_painted: ['', [Validators.required]],
+      Shaft_internals_to_be_painted: [''],
 
       Shaft_internals_to_be_painted_Photo: [''],
       Shaft_internals_to_be_painted_Description: [''],
 
       Walls_and_ceiling: [''],
 
-      Drip_moulds_in_ceiling_are_consistent: ['', [Validators.required]],
+      Drip_moulds_in_ceiling_are_consistent: [''],
 
       Drip_moulds_in_ceiling_are_consistent_Photo: [''],
       Drip_moulds_in_ceiling_are_consistent_Description: [''],
@@ -783,10 +783,10 @@ export class B3DressPage implements OnInit {
       Walls_are_free_of_cracks_or__stains_etc_Photo: [''],
       Walls_are_free_of_cracks_or__stains_etc_Description: [''],
 
-      Ceilings_are_free_of_stainss_or_undulations_or_stains_etc: [''],
+      Ceilings_are_free_of_stains_or_undulations_or_cracks_etc: [''],
 
-      Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Photo: [''],
-      Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description: [''],
+      Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Photo: [''],
+      Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Description: [''],
 
       Elevational_ledge_horizontal_surface_finish: ['', [Validators.required]],
 
@@ -822,9 +822,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save1(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save1(): void {
+    console.log('Save clicked');
     this.showicon1 = true;
 
     this.b3dressdata.push({
@@ -896,9 +895,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save2(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save2(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.b3dressdata.push({
@@ -973,9 +971,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save3(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save3(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.b3dressdata.push({
@@ -1038,9 +1035,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save4(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save4(): void {
+    console.log('Save clicked');
     this.showicon4 = true;
 
     this.b3dressdata.push({
@@ -1102,9 +1098,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save5(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save5(): void {
+    console.log('Save clicked');
     this.showicon5 = true;
 
     this.b3dressdata.push({
@@ -1166,9 +1161,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save6(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save6(): void {
+    console.log('Save clicked');
     this.showicon6 = true;
 
     this.b3dressdata.push({
@@ -1230,9 +1224,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save7(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save7(): void {
+    console.log('Save clicked');
     this.showicon7 = true;
 
     this.b3dressdata.push({
@@ -1294,9 +1287,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save8(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save8(): void {
+    console.log('Save clicked');
     this.showicon8 = true;
 
     this.b3dressdata.push({
@@ -1358,9 +1350,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save9(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save9(): void {
+    console.log('Save clicked');
     this.showicon9 = true;
     9;
     this.b3dressdata.push({
@@ -1423,9 +1414,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save10(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save10(): void {
+    console.log('Save clicked');
     this.showicon10 = true;
 
     this.b3dressdata.push({
@@ -1487,9 +1477,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save11() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save11() {
+    console.log('Save clicked');
     this.showicon11 = true;
 
     this.b3dressdata.push({
@@ -1552,9 +1541,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save12() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save12() {
+    console.log('Save clicked');
     this.showicon12 = true;
 
     this.b3dressdata.push({
@@ -1616,9 +1604,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save13(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save13(): void {
+    console.log('Save clicked');
     this.showicon13 = true;
 
     this.b3dressdata.push({
@@ -1680,9 +1667,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save14(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save14(): void {
+    console.log('Save clicked');
     this.showicon14 = true;
 
     this.b3dressdata.push({
@@ -1744,9 +1730,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save15(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save15(): void {
+    console.log('Save clicked');
     this.showicon15 = true;
 
     this.b3dressdata.push({
@@ -1808,9 +1793,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save16(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save16(): void {
+    console.log('Save clicked');
     this.showicon16 = true;
 
     this.b3dressdata.push({
@@ -1860,7 +1844,7 @@ export class B3DressPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL17 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('FUndulations_in_paint_due_to_textured_paints_on_vertical_surfaces_Photo').setValue(this.imgURL17);
+      this.ionicForm.get('Undulations_in_paint_due_to_textured_paints_on_vertical_surfaces_Photo').setValue(this.imgURL17);
       this.upload17();
     });
   }
@@ -1872,9 +1856,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save17(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save17(): void {
+    console.log('Save clicked');
     this.showicon17 = true;
 
     this.b3dressdata.push({
@@ -1936,9 +1919,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save18(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save18(): void {
+    console.log('Save clicked');
     this.showicon18 = true;
 
     this.b3dressdata.push({
@@ -2000,9 +1982,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save19(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save19(): void {
+    console.log('Save clicked');
     this.showicon19 = true;
 
     this.b3dressdata.push({
@@ -2064,9 +2045,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save20(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save20(): void {
+    console.log('Save clicked');
     this.showicon20 = true;
 
     this.b3dressdata.push({
@@ -2128,9 +2108,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save21(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save21(): void {
+    console.log('Save clicked');
     this.showicon21 = true;
 
     this.b3dressdata.push({
@@ -2192,9 +2171,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save22(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save22(): void {
+    console.log('Save clicked');
     this.showicon22 = true;
 
     this.b3dressdata.push({
@@ -2256,9 +2234,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save23(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save23(): void {
+    console.log('Save clicked');
     this.showicon23 = true;
 
     this.b3dressdata.push({
@@ -2320,9 +2297,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save24(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save24(): void {
+    console.log('Save clicked');
     this.showicon24 = true;
 
     this.b3dressdata.push({
@@ -2372,7 +2348,7 @@ export class B3DressPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL25 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Shaft_internalss_to_be_free_of_debris_Photo').setValue(this.imgURL25);
+      this.ionicForm.get('Shaft_internals_to_be_free_of_debris_Photo').setValue(this.imgURL25);
       this.upload25();
     });
   }
@@ -2384,17 +2360,16 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save25(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save25(): void {
+    console.log('Save clicked');
     this.showicon25 = true;
 
     this.b3dressdata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Shaft_internalss_to_be_free_of_debris',
+      inpect_title: 'Shaft_internals_to_be_free_of_debris',
       photourl: this.imgURL25,
-      Description: this.ionicForm.get('Shaft_internalss_to_be_free_of_debris_Description').value,
+      Description: this.ionicForm.get('Shaft_internals_to_be_free_of_debris_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2402,9 +2377,9 @@ export class B3DressPage implements OnInit {
   }
   sendMessage25(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Shaft_internalss_to_be_free_of_debris';
+    this.newItem.inpect_title = 'Shaft_internals_to_be_free_of_debris';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Shaft_internalss_to_be_free_of_debris_Description').value;
+    this.newItem.Description = this.ionicForm.get('Shaft_internals_to_be_free_of_debris_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2416,7 +2391,7 @@ export class B3DressPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Shaft_internalss_to_be_free_of_debris',
+      subject: 'Shaft_internals_to_be_free_of_debris',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2448,9 +2423,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save26(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save26(): void {
+    console.log('Save clicked');
     this.showicon26 = true;
 
     this.b3dressdata.push({
@@ -2512,9 +2486,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save27(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save27(): void {
+    console.log('Save clicked');
     this.showicon27 = true;
 
     this.b3dressdata.push({
@@ -2576,9 +2549,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save28(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save28(): void {
+    console.log('Save clicked');
     this.showicon28 = true;
 
     this.b3dressdata.push({
@@ -2640,9 +2612,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save29(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save29(): void {
+    console.log('Save clicked');
     this.showicon29 = true;
 
     this.b3dressdata.push({
@@ -2692,7 +2663,7 @@ export class B3DressPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL30 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Photo').setValue(this.imgURL30);
+      this.ionicForm.get('Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Photo').setValue(this.imgURL30);
       this.upload30();
     });
   }
@@ -2704,17 +2675,16 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save30(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save30(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.b3dressdata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Ceilings_are_free_of_stainss_or_undulations_or_stains_etc',
+      inpect_title: 'Ceilings_are_free_of_stains_or_undulations_or_cracks_etc',
       photourl: this.imgURL30,
-      Description: this.ionicForm.get('Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description').value,
+      Description: this.ionicForm.get('Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2722,9 +2692,9 @@ export class B3DressPage implements OnInit {
   }
   sendMessage30(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Ceilings_are_free_of_stainss_or_undulations_or_stains_etc';
+    this.newItem.inpect_title = 'Ceilings_are_free_of_stains_or_undulations_or_cracks_etc';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Ceilings_are_free_of_stainss_or_undulations_or_stains_etc_Description').value;
+    this.newItem.Description = this.ionicForm.get('Ceilings_are_free_of_stains_or_undulations_or_cracks_etc_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2736,7 +2706,7 @@ export class B3DressPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Ceilings_are_free_of_stainss_or_undulations_or_stains_etc',
+      subject: 'Ceilings_are_free_of_stains_or_undulations_or_cracks_etc',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2756,7 +2726,7 @@ export class B3DressPage implements OnInit {
 
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
-      this.imgURL30 = 'data:image/jpeg;base64,' + imageData;
+      this.imgURL31 = 'data:image/jpeg;base64,' + imageData;
       this.ionicForm.get('Elevational_ledge_horizontal_surface_finish_Photo').setValue(this.imgURL30);
       this.upload31();
     });
@@ -2769,10 +2739,9 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
-    this.showicon30 = true;
+  Save31(): void {
+    console.log('Save clicked');
+    this.showicon31 = true;
 
     this.b3dressdata.push({
       id: Date.now(),
@@ -2833,9 +2802,9 @@ export class B3DressPage implements OnInit {
    });
  }
 
- save31(): void {
-   this.storage.clear();
-   console.log('save clicked');
+ Save31(): void {
+   
+   console.log('Save clicked');
    this.showicon31 = true;
 
    this.b3dressdata.push({
@@ -2897,9 +2866,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save32(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save32(): void {
+    console.log('Save clicked');
     this.showicon32 = true;
 
     this.b3dressdata.push({
@@ -2961,9 +2929,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save33(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save33(): void {
+    console.log('Save clicked');
     this.showicon33 = true;
 
     this.b3dressdata.push({
@@ -3025,9 +2992,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save34(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save34(): void {
+    console.log('Save clicked');
     this.showicon34 = true;
 
     this.b3dressdata.push({
@@ -3089,9 +3055,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save35(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save35(): void {
+    console.log('Save clicked');
     this.showicon35 = true;
 
     this.b3dressdata.push({
@@ -3153,9 +3118,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save36(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save36(): void {
+    console.log('Save clicked');
     this.showicon36 = true;
 
     this.b3dressdata.push({
@@ -3217,9 +3181,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save37(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save37(): void {
+    console.log('Save clicked');
     this.showicon37 = true;
 
     this.b3dressdata.push({
@@ -3282,9 +3245,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save38(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save38(): void {
+    console.log('Save clicked');
     this.showicon38 = true;
 
     this.b3dressdata.push({
@@ -3346,9 +3308,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save39(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save39(): void {
+    console.log('Save clicked');
     this.showicon39 = true;
 
     this.b3dressdata.push({
@@ -3410,9 +3371,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save40(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save40(): void {
+    console.log('Save clicked');
     this.showicon40 = true;
 
     this.b3dressdata.push({
@@ -3474,9 +3434,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save41(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save41(): void {
+    console.log('Save clicked');
     this.showicon41 = true;
 
     this.b3dressdata.push({
@@ -3539,9 +3498,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save43(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save43(): void {
+    console.log('Save clicked');
     this.showicon43 = true;
 
     this.b3dressdata.push({
@@ -3603,9 +3561,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save44(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save44(): void {
+    console.log('Save clicked');
     this.showicon44 = true;
 
     this.b3dressdata.push({
@@ -3667,9 +3624,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save45(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save45(): void {
+    console.log('Save clicked');
     this.showicon45 = true;
 
     this.b3dressdata.push({
@@ -3731,9 +3687,8 @@ export class B3DressPage implements OnInit {
     });
   }
 
-  save46(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save46(): void {
+    console.log('Save clicked');
     this.showicon46 = true;
 
     this.b3dressdata.push({
@@ -3787,7 +3742,7 @@ export class B3DressPage implements OnInit {
     this.issubmit = true;
 
     const db = firebase.firestore();
-    var washingtonRef = db.collection('test1').doc(this.recivedData);
+    var washingtonRef = db.collection('Krafturspace1').doc(this.recivedData);
     const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
 
@@ -4129,8 +4084,8 @@ export class B3DressPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Shaft_internalss_to_be_free_of_debris(): void {
-    let Qvalue = this.ionicForm.get('Shaft_internalss_to_be_free_of_debris').value;
+  Shaft_internals_to_be_free_of_debris(): void {
+    let Qvalue = this.ionicForm.get('Shaft_internals_to_be_free_of_debris').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay25 = true;
@@ -4189,8 +4144,8 @@ export class B3DressPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Ceilings_are_free_of_stainss_or_undulations_or_stains_etc(): void {
-    let Qvalue = this.ionicForm.get('Ceilings_are_free_of_stainss_or_undulations_or_stains_etc').value;
+  Ceilings_are_free_of_stains_or_undulations_or_cracks_etc(): void {
+    let Qvalue = this.ionicForm.get('Ceilings_are_free_of_stains_or_undulations_or_cracks_etc').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay30 = true;

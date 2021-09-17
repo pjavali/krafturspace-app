@@ -35,9 +35,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save1()" [disabled]="showicon1" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save1()" [disabled]="showicon1" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage1()" color="primary" shape="round" size="small">
@@ -71,9 +71,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save2()" [disabled]="showicon2" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save2()" [disabled]="showicon2" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage2()" color="primary" shape="round" size="small">
@@ -106,9 +106,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save3()" [disabled]="showicon3" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save3()" [disabled]="showicon3" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage3()" color="primary" shape="round" size="small">
@@ -141,9 +141,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save4()" [disabled]="showicon4" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save4()" [disabled]="showicon4" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage4()" color="primary" shape="round" size="small">
@@ -175,9 +175,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save5()" [disabled]="showicon5" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save5()" [disabled]="showicon5" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage5()" color="primary" shape="round" size="small">
@@ -209,9 +209,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save6()" [disabled]="showicon6" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save6()" [disabled]="showicon6" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage6()" color="primary" shape="round" size="small">
@@ -245,9 +245,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save7()" [disabled]="showicon7" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save7()" [disabled]="showicon7" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage7()" color="primary" shape="round" size="small">
@@ -268,8 +268,8 @@
       <!--section-->
       <ion-item *ngIf="isToggled1">
         <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon8"></ion-icon>
-        <ion-label position="floating">Exhaust fan connection</ion-label>
-        <ion-select formControlName="Exhaust_fan_connection" (ionChange)="Exhaust_fan_connection()">
+        <ion-label position="floating">Exhaust fan connection is provided</ion-label>
+        <ion-select formControlName="Exhaust_fan_connection_is_provided" (ionChange)="Exhaust_fan_connection_is_provided()">
           <ion-select-option value="YES">Yes</ion-select-option>
           <ion-select-option value="No">No</ion-select-option>
         </ion-select>
@@ -285,9 +285,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save8()" [disabled]="showicon8" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save8()" [disabled]="showicon8" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage8()" color="primary" shape="round" size="small">
@@ -297,7 +297,7 @@
         </ion-card-content>
         <ion-item>
           <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Exhaust_fan_connection_Description"></ion-input>
+          <ion-input formControlName="Exhaust_fan_connection_is_provided_Description"></ion-input>
         </ion-item>
       </ion-card>
 
@@ -321,9 +321,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save9()" [disabled]="showicon9" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save9()" [disabled]="showicon9" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage9()" color="primary" shape="round" size="small">
@@ -356,9 +356,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save10()" [disabled]="showicon10" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save10()" [disabled]="showicon10" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage10()" color="primary" shape="round" size="small">
@@ -392,9 +392,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save11()" [disabled]="showicon11" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save11()" [disabled]="showicon11" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage11()" color="primary" shape="round" size="small">
@@ -428,9 +428,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save12()" [disabled]="showicon12" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save12()" [disabled]="showicon12" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage12()" color="primary" shape="round" size="small">
@@ -464,9 +464,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save13()" [disabled]="showicon13" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save13()" [disabled]="showicon13" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage13()" color="primary" shape="round" size="small">
@@ -500,9 +500,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save14()" [disabled]="showicon14" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save14()" [disabled]="showicon14" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage14()" color="primary" shape="round" size="small">
@@ -524,7 +524,7 @@
       <!--section-->
       <ion-item *ngIf="isToggled2">
         <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon15"></ion-icon>
-        <ion-label position="floating">EWC is fixed with brackets/seat covers & is functional</ion-label>
+        <ion-label position="floating">EWC is fixed with brackets,seat covers & is functional</ion-label>
         <ion-select formControlName="EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional" (ionChange)="EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional()">
           <ion-select-option value="YES">Yes</ion-select-option>
           <ion-select-option value="No">No</ion-select-option>
@@ -541,9 +541,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save15()" [disabled]="showicon15" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save15()" [disabled]="showicon15" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage15()" color="primary" shape="round" size="small">
@@ -577,9 +577,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save16()" [disabled]="showicon16" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save16()" [disabled]="showicon16" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage16()" color="primary" shape="round" size="small">
@@ -612,9 +612,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save17()" [disabled]="showicon17" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save17()" [disabled]="showicon17" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage17()" color="primary" shape="round" size="small">
@@ -648,9 +648,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save18()" [disabled]="showicon18" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save18()" [disabled]="showicon18" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage18()" color="primary" shape="round" size="small">
@@ -667,7 +667,7 @@
       <!--section-->
       <ion-item *ngIf="isToggled2">
         <ion-icon slot="end" name="checkmark-circle" *ngIf="showicon19"></ion-icon>
-        <ion-label position="floating">Floor trap cover is provided & is free of debris & rust</ion-label>
+        <ion-label position="floating">Floor trap cover is provided , is free of debris & rust</ion-label>
         <ion-select formControlName="Floor_trap_cover_is_provided_and_is_free_of_debris_and_rust" (ionChange)="Floor_trap_cover_is_provided_and_is_free_of_debris_and_rust()">
           <ion-select-option value="YES">Yes</ion-select-option>
           <ion-select-option value="No">No</ion-select-option>
@@ -683,9 +683,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save19()" [disabled]="showicon19" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save19()" [disabled]="showicon19" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage19()" color="primary" shape="round" size="small">
@@ -719,9 +719,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save22()" [disabled]="showicon22" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save22()" [disabled]="showicon22" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage22()" color="primary" shape="round" size="small">
@@ -755,9 +755,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save23()" [disabled]="showicon23" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save23()" [disabled]="showicon23" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage23()" color="primary" shape="round" size="small">
@@ -795,9 +795,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save24()" [disabled]="showicon24" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save24()" [disabled]="showicon24" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage24()" color="primary" shape="round" size="small">
@@ -831,9 +831,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save25()" [disabled]="showicon25" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save25()" [disabled]="showicon25" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage25()" color="primary" shape="round" size="small">
@@ -866,9 +866,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save26()" [disabled]="showicon26" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save26()" [disabled]="showicon26" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage26()" color="primary" shape="round" size="small">
@@ -885,7 +885,7 @@
       <!--section-->
       <ion-item *ngIf="isToggled3"
         ><ion-icon slot="end" name="checkmark-circle" *ngIf="showicon27"></ion-icon>
-        <ion-label position="floating">Tiles are laid to slopewithout hollowness</ion-label>
+        <ion-label position="floating">Floor Tiles are laid to slope without hollownes</ion-label>
         <ion-select formControlName="Tiles_are_laid_to_slopewithout_hollowness" (ionChange)="Tiles_are_laid_to_slopewithout_hollowness()">
           <ion-select-option value="YES">Yes</ion-select-option>
           <ion-select-option value="No">No</ion-select-option>
@@ -902,9 +902,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save27()" [disabled]="showicon27" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save27()" [disabled]="showicon27" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage27()" color="primary" shape="round" size="small">
@@ -943,9 +943,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save28()" [disabled]="showicon28" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save28()" [disabled]="showicon28" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage28()" color="primary" shape="round" size="small">
@@ -979,9 +979,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save29()" [disabled]="showicon29" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save29()" [disabled]="showicon29" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage29()" color="primary" shape="round" size="small">
@@ -1015,9 +1015,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save30()" [disabled]="showicon30" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save30()" [disabled]="showicon30" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage30()" color="primary" shape="round" size="small">
@@ -1042,8 +1042,8 @@
       <!--section-->
       <ion-item *ngIf="isToggled5"
         ><ion-icon slot="end" name="checkmark-circle" *ngIf="showicon31"></ion-icon>
-        <ion-label position="floating">Consistency of corner beading</ion-label>
-        <ion-select formControlName="Consistency_of_corner_beading" (ionChange)="Consistency_of_corner_beading()">
+        <ion-label position="floating">Corner beading is consistent & fixed flush with dado tiles</ion-label>
+        <ion-select formControlName="Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles" (ionChange)="Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles()">
           <ion-select-option value="YES">Yes</ion-select-option>
           <ion-select-option value="No">No</ion-select-option>
         </ion-select>
@@ -1059,9 +1059,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save31()" [disabled]="showicon31" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save31()" [disabled]="showicon31" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage31()" color="primary" shape="round" size="small">
@@ -1071,7 +1071,7 @@
         </ion-card-content>
         <ion-item>
           <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="Consistency_of_corner_beading_Description"></ion-input>
+          <ion-input formControlName="Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Description"></ion-input>
         </ion-item>
       </ion-card>
 
@@ -1095,9 +1095,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save32()" [disabled]="showicon32" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save32()" [disabled]="showicon32" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage32()" color="primary" shape="round" size="small">
@@ -1130,9 +1130,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save33()" [disabled]="showicon33" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save33()" [disabled]="showicon33" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage33()" color="primary" shape="round" size="small">
@@ -1166,9 +1166,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save34()" [disabled]="showicon34" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save34()" [disabled]="showicon34" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage34()" color="primary" shape="round" size="small">
@@ -1201,9 +1201,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save35()" [disabled]="showicon35" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save35()" [disabled]="showicon35" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage35()" color="primary" shape="round" size="small">
@@ -1236,9 +1236,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save36()" [disabled]="showicon36" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save36()" [disabled]="showicon36" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage36()" color="primary" shape="round" size="small">
@@ -1272,9 +1272,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save37()" [disabled]="showicon37" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save37()" [disabled]="showicon37" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage37()" color="primary" shape="round" size="small">
@@ -1308,9 +1308,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save38()" [disabled]="showicon38" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save38()" [disabled]="showicon38" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage38()" color="primary" shape="round" size="small">
@@ -1344,9 +1344,9 @@
             <ion-icon size="small" slot="icon-only" name="folder"></ion-icon>
             &nbsp;Camera
           </ion-button>
-          <ion-button (click)="save39()" [disabled]="showicon39" color="primary" shape="round" size="small">
-            <ion-icon size="small" slot="icon-only" name="save"></ion-icon>
-            &nbsp;save
+          <ion-button (click)="Save39()" [disabled]="showicon39" color="primary" shape="round" size="small">
+            <ion-icon size="small" slot="icon-only" name="Save"></ion-icon>
+            &nbsp;Save
           </ion-button>
 
           <ion-button (click)="sendMessage39()" color="primary" shape="round" size="small">

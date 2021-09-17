@@ -109,9 +109,9 @@ interface StudentData {
   Door_frame_and_wall_junctions_are_sealed_Photo: any;
   Door_frame_and_wall_junctions_are_sealed_Description: string;
 
-  Shade_variations_in_shutters: string;
-  Shade_variations_in_shutters_Photo: any;
-  Shade_variations_in_shutters_Description: string;
+  Uniform_Shade_or_finsh_of_shutters: string;
+  Uniform_Shade_or_finsh_of_shutters_Photo: any;
+  Uniform_Shade_or_finsh_of_shutters_Description: string;
 
   Miscellaneous: string;
   Granite_ledge_provided_is_free_of_cracks_and_sharp_edges: string;
@@ -119,9 +119,9 @@ interface StudentData {
   Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Description: string;
 
   Video_Door_Phone: string;
-  Video_door_phone_is_functional: string;
-  Video_door_phone_is_functional_Photo: any;
-  Video_door_phone_is_functional_Description: string;
+  Video_Door_phone_is_aligned_or_fixed_right: string;
+  Video_Door_phone_is_aligned_or_fixed_right_Photo: any;
+  Video_Door_phone_is_aligned_or_fixed_right_Description: string;
 
   Video_door_phone_alignment_is_right: string;
   Video_door_phone_alignment_is_right_Photo: any;
@@ -138,7 +138,7 @@ interface StudentData {
 
   Walls_are_free_of_stains_undulations_or_cracks_or_dampness: string;
   Walls_are_free_of_stains_undulations_or_cracks_or_dampness_Photo: any;
-  Walls_are_free_of_stains_undulations_or_cracks_dampness_Description: string;
+  Walls_are_free_of_stains_undulations_or_cracks_or_dampness_Description: string;
 }
 
 @Component({
@@ -222,7 +222,7 @@ export class FoyerPage implements OnInit {
   attachment: any;
   subject: string;
   body: string;
-  isenabled:boolean=true;
+  isenabled: boolean = true;
 
   cameradisplay1: boolean;
   cameradisplay2: boolean;
@@ -270,7 +270,7 @@ export class FoyerPage implements OnInit {
   cameradisplay44: boolean;
   cameradisplay45: boolean;
 
-  issave = false;
+  isSave = false;
 
   isSubmitted = false;
   ionicForm: FormGroup;
@@ -618,7 +618,7 @@ export class FoyerPage implements OnInit {
 
     const db = firebase.firestore();
 
-    db.collection('test1')
+    db.collection('Krafturspace1')
       .doc(this.recivedData)
       .get()
       .then(doc => {
@@ -677,11 +677,11 @@ export class FoyerPage implements OnInit {
       Main_Door: [''],
       Gaskets_sealants_are_intact: ['', [Validators.required]], //, [Validators.required]
       Gaskets_sealants_are_intact_Photo: [''],
-      Gaskets_ealants_are_intact_Description: [''],
+      Gaskets_sealants_are_intact_Description: [''],
 
       door_opens_And_closes_properly: [''],
       door_opens_And_closes_properly_Photo: [''],
-      door_opens_And_closes_properly_Photo_Description: [''],
+      door_opens_And_closes_properly_Description: [''],
 
       Finishing_around_the_hardware: [''],
       Finishing_around_the_hardware_Photo: [''],
@@ -715,18 +715,20 @@ export class FoyerPage implements OnInit {
       Door_frame_and_wall_junctions_are_sealed_Photo: [''],
       Door_frame_and_wall_junctions_are_sealed_Description: [''],
 
-      Shade_variations_in_shutters: [''], //, [Validators.required]
-      Shade_variations_in_shutters_Photo: [''],
-      Shade_variations_in_shutters_Description: [''],
+      Uniform_Shade_or_finsh_of_shutters: [''], //, [Validators.required]
+      Uniform_Shade_or_finsh_of_shutters_Photo: [''],
+      Uniform_Shade_or_finsh_of_shutters_Description: [''],
+
       Miscellaneous: [''],
+
       Granite_ledge_provided_is_free_of_cracks_and_sharp_edges: [''], //,[Validators.required]
       Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Photo: [''],
       Granite_ledge_provided_is_free_of_cracks_and_sharp_edges_Description: [''],
 
       Video_Door_Phone: [''],
-      Video_door_phone_is_functional: [''], //, [Validators.required]
-      Video_door_phone_is_functional_Photo: [''],
-      Video_door_phone_is_functional_Description: [''],
+      Video_Door_phone_is_aligned_or_fixed_right: [''], //, [Validators.required]
+      Video_Door_phone_is_aligned_or_fixed_right_Photo: [''],
+      Video_Door_phone_is_aligned_or_fixed_right_Description: [''],
 
       Video_door_phone_alignment_is_right: [''],
       Video_door_phone_alignment_is_right_Photo: [''],
@@ -743,7 +745,7 @@ export class FoyerPage implements OnInit {
 
       Walls_are_free_of_stains_undulations_or_cracks_or_dampness: ['', [Validators.required]], //, [Validators.required]
       Walls_are_free_of_stains_undulations_or_cracks_or_dampness_Photo: [''],
-      Walls_are_free_of_stains_undulations_or_cracks_dampness_Description: ['']
+      Walls_are_free_of_stains_undulations_or_cracks_or_dampness_Description: ['']
     });
   }
 
@@ -772,9 +774,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save1(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save1(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon1 = true;
 
     this.foyerdata.push({
@@ -805,8 +807,9 @@ export class FoyerPage implements OnInit {
 
     let email: any = {
       app: 'gmail',
-      to: 'j.prajwal@gmail.com',
-      cc: 'j.prajwal@gmail.com',
+
+      to: 'krafturspace@gmail.com',
+      cc: 'sumathi@kraft-urspace.com',
       attachments: [],
       subject: 'Electrical_wall_and_ceiling_points_are_covered',
       body: [JSON.stringify(this.newItem)],
@@ -853,9 +856,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save3(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save3(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.foyerdata.push({
@@ -919,9 +922,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save4(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save4(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon4 = true;
 
     this.foyerdata.push({
@@ -983,9 +986,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save5(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save5(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon5 = true;
 
     this.foyerdata.push({
@@ -1047,9 +1050,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save6(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save6(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon6 = true;
 
     this.foyerdata.push({
@@ -1061,7 +1064,7 @@ export class FoyerPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    console.log('foyerdata', JSON.stringify(this.foyerdata));
   }
   sendMessage6(): void {
     this.newItem.user = this.au.email;
@@ -1111,9 +1114,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save7(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save7(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon7 = true;
 
     this.foyerdata.push({
@@ -1175,9 +1178,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save8(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save8(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon8 = true;
 
     this.foyerdata.push({
@@ -1189,7 +1192,7 @@ export class FoyerPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    console.log('foyerdata', JSON.stringify(this.foyerdata));
   }
   sendMessage8(): void {
     this.newItem.user = this.au.email;
@@ -1239,11 +1242,11 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save9(): void {
+  Save9(): void {
     this.storage.clear();
-    console.log('save clicked');
+    console.log('Save clicked');
     this.showicon9 = true;
-    9;
+
     this.foyerdata.push({
       id: Date.now(),
       user: this.au.email,
@@ -1304,9 +1307,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save10(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save10(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon10 = true;
 
     this.foyerdata.push({
@@ -1318,7 +1321,7 @@ export class FoyerPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    console.log('foyerdata', JSON.stringify(this.foyerdata));
   }
   sendMessage10(): void {
     this.newItem.user = this.au.email;
@@ -1368,9 +1371,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save11() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save11() {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon11 = true;
 
     this.foyerdata.push({
@@ -1382,7 +1385,7 @@ export class FoyerPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    console.log('foyerdata', JSON.stringify(this.foyerdata));
   }
   sendMessage11() {
     this.newItem.user = this.au.email;
@@ -1433,9 +1436,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save12() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save12() {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon12 = true;
 
     this.foyerdata.push({
@@ -1447,7 +1450,7 @@ export class FoyerPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    console.log('foyerdata', JSON.stringify(this.foyerdata));
   }
   sendMessage12(): void {
     this.newItem.user = this.au.email;
@@ -1497,9 +1500,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save13(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save13(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon13 = true;
 
     this.foyerdata.push({
@@ -1511,7 +1514,7 @@ export class FoyerPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    console.log('foyerdata', JSON.stringify(this.foyerdata));
   }
   sendMessage13(): void {
     this.newItem.user = this.au.email;
@@ -1561,9 +1564,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save14(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save14(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon14 = true;
 
     this.foyerdata.push({
@@ -1625,9 +1628,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save15(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save15(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon15 = true;
 
     this.foyerdata.push({
@@ -1639,7 +1642,7 @@ export class FoyerPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    console.log('foyerdata', JSON.stringify(this.foyerdata));
   }
   sendMessage15(): void {
     this.newItem.user = this.au.email;
@@ -1689,9 +1692,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save16(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save16(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon16 = true;
 
     this.foyerdata.push({
@@ -1703,7 +1706,7 @@ export class FoyerPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    console.log('foyerdata', JSON.stringify(this.foyerdata));
   }
   sendMessage16(): void {
     this.newItem.user = this.au.email;
@@ -1753,9 +1756,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save17(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save17(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon17 = true;
 
     this.foyerdata.push({
@@ -1817,9 +1820,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save18(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save18(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon18 = true;
 
     this.foyerdata.push({
@@ -1869,7 +1872,7 @@ export class FoyerPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL19 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Shade_variations_in_shutters_Photo').setValue(this.imgURL19);
+      this.ionicForm.get('Uniform_Shade_or_finsh_of_shutters_Photo').setValue(this.imgURL19);
       this.upload19();
     });
   }
@@ -1881,17 +1884,17 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save19(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save19(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon19 = true;
 
     this.foyerdata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Shade_variations_in_shutters',
+      inpect_title: 'Uniform_Shade_or_finsh_of_shutters',
       photourl: this.imgURL19,
-      Description: this.ionicForm.get('Shade_variations_in_shutters_Description').value,
+      Description: this.ionicForm.get('Uniform_Shade_or_finsh_of_shutters_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -1899,9 +1902,9 @@ export class FoyerPage implements OnInit {
   }
   sendMessage19(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Shade_variations_in_shutters';
+    this.newItem.inpect_title = 'Uniform_Shade_or_finsh_of_shutters';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Shade_variations_in_shutters_Description').value;
+    this.newItem.Description = this.ionicForm.get('Uniform_Shade_or_finsh_of_shutters_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -1913,7 +1916,7 @@ export class FoyerPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Shade_variations_in_shutters',
+      subject: 'Uniform_Shade_or_finsh_of_shutters',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -1945,9 +1948,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save20(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save20(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon20 = true;
 
     this.foyerdata.push({
@@ -1997,7 +2000,7 @@ export class FoyerPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL21 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Video_door_phone_is_functional_Photo').setValue(this.imgURL21);
+      this.ionicForm.get('Video_Door_phone_is_aligned_or_fixed_right_Photo').setValue(this.imgURL21);
       this.upload21();
     });
   }
@@ -2009,17 +2012,17 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save21(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save21(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon21 = true;
 
     this.foyerdata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Video_door_phone_is_functional',
+      inpect_title: 'Video_Door_phone_is_aligned_or_fixed_right',
       photourl: this.imgURL21,
-      Description: this.ionicForm.get('Video_door_phone_is_functional_Description').value,
+      Description: this.ionicForm.get('Video_Door_phone_is_aligned_or_fixed_right_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2027,9 +2030,9 @@ export class FoyerPage implements OnInit {
   }
   sendMessage21(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Video_door_phone_is_functional';
+    this.newItem.inpect_title = 'Video_Door_phone_is_aligned_or_fixed_right';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Video_door_phone_is_functional_Description').value;
+    this.newItem.Description = this.ionicForm.get('Video_Door_phone_is_aligned_or_fixed_right_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2041,7 +2044,7 @@ export class FoyerPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Video_door_phone_is_functional',
+      subject: 'Video_Door_phone_is_aligned_or_fixed_right',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2073,9 +2076,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save22(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save22(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon22 = true;
 
     this.foyerdata.push({
@@ -2137,9 +2140,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save23(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save23(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon23 = true;
 
     this.foyerdata.push({
@@ -2201,9 +2204,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save24(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save24(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon24 = true;
 
     this.foyerdata.push({
@@ -2265,9 +2268,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save25(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save25(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon25 = true;
 
     this.foyerdata.push({
@@ -2329,9 +2332,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save26(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save26(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon26 = true;
 
     this.foyerdata.push({
@@ -2393,9 +2396,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save27(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save27(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon27 = true;
 
     this.foyerdata.push({
@@ -2457,9 +2460,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save28(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save28(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon28 = true;
 
     this.foyerdata.push({
@@ -2521,9 +2524,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save29(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save29(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon29 = true;
 
     this.foyerdata.push({
@@ -2585,9 +2588,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save30(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save30(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.foyerdata.push({
@@ -2649,9 +2652,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save31(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon31 = true;
 
     this.foyerdata.push({
@@ -2713,9 +2716,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save32(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save32(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon32 = true;
 
     this.foyerdata.push({
@@ -2777,9 +2780,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save33(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save33(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon33 = true;
 
     this.foyerdata.push({
@@ -2841,9 +2844,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save34(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save34(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon34 = true;
 
     this.foyerdata.push({
@@ -2905,9 +2908,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save35(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save35(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon35 = true;
 
     this.foyerdata.push({
@@ -2969,9 +2972,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save36(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save36(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon36 = true;
 
     this.foyerdata.push({
@@ -3033,9 +3036,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save37(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save37(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon37 = true;
 
     this.foyerdata.push({
@@ -3098,9 +3101,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save38(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save38(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon38 = true;
 
     this.foyerdata.push({
@@ -3162,9 +3165,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save40(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save40(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon40 = true;
 
     this.foyerdata.push({
@@ -3226,9 +3229,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save41(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save41(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon41 = true;
 
     this.foyerdata.push({
@@ -3290,9 +3293,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save42(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save42(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon42 = true;
 
     this.foyerdata.push({
@@ -3355,9 +3358,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save43(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save43(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon43 = true;
 
     this.foyerdata.push({
@@ -3419,9 +3422,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save44(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save44(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon44 = true;
 
     this.foyerdata.push({
@@ -3483,9 +3486,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save45(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save45(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon45 = true;
 
     this.foyerdata.push({
@@ -3547,9 +3550,9 @@ export class FoyerPage implements OnInit {
     });
   }
 
-  save46(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save46(): void {
+    //this.storage.clear();
+    console.log('Save clicked');
     this.showicon46 = true;
 
     this.foyerdata.push({
@@ -3617,7 +3620,7 @@ export class FoyerPage implements OnInit {
     this.issubmit = true;
 
     const db = firebase.firestore();
-    var washingtonRef = db.collection('test1').doc(this.recivedData);
+    var washingtonRef = db.collection('Krafturspace1').doc(this.recivedData);
     const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
 
@@ -3633,8 +3636,7 @@ export class FoyerPage implements OnInit {
       })
       .then(function () {
         console.log('foyer data is  updated');
-        this.isenabled=false;
-
+        this.isenabled = false;
       });
   }
   exportCSV() {
@@ -3890,8 +3892,8 @@ export class FoyerPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Shade_variations_in_shutters(): void {
-    let Qvalue = this.ionicForm.get('Shade_variations_in_shutters').value;
+  Uniform_Shade_or_finsh_of_shutters(): void {
+    let Qvalue = this.ionicForm.get('Uniform_Shade_or_finsh_of_shutters').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay19 = true;
@@ -3914,8 +3916,8 @@ export class FoyerPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Video_door_phone_is_functional(): void {
-    let Qvalue = this.ionicForm.get('Video_door_phone_is_functional').value;
+  Video_Door_phone_is_aligned_or_fixed_right(): void {
+    let Qvalue = this.ionicForm.get('Video_Door_phone_is_aligned_or_fixed_right').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay21 = true;

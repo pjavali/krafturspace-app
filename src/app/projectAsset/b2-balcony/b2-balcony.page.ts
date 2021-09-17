@@ -122,9 +122,9 @@ interface StudentData {
   MS_Duct_doors_are_painted_on_both_sides_Photo: any;
   MS_Duct_doors_are_painted_on_both_sides_Description: string;
 
-  Shaft_internalss_to_be_free_of_debris: string;
-  Shaft_internalss_to_be_free_of_debris_Photo: any;
-  Shaft_internalss_to_be_free_of_debris_Description: string;
+  Shaft_internals_to_be_free_of_debris: string;
+  Shaft_internals_to_be_free_of_debris_Photo: any;
+  Shaft_internals_to_be_free_of_debris_Description: string;
 
   Internal_surfaces_is_cleaned_and_painted: string;
   Internal_surfaces_is_cleaned_and_painted_Photo: any;
@@ -280,8 +280,7 @@ export class B2BalconyPage implements OnInit {
   imgURL49: any;
   imgURL50: any;
 
-
-  isenabled:boolean=true;
+  isenabled: boolean = true;
   isToggled1: boolean;
   isToggled2: boolean;
   isToggled3: boolean;
@@ -304,7 +303,7 @@ export class B2BalconyPage implements OnInit {
   newItem2: Item = <Item>{};
   newItem3: Item = <Item>{};
   newItem4: Item = <Item>{};
-  foyerdata: any[] = [];
+  b2balconydata: any[] = [];
   foyerproject: any[] = [];
 
   getall: Item = <Item>{};
@@ -348,11 +347,10 @@ export class B2BalconyPage implements OnInit {
   subject: string;
   body: string;
 
-  issave = false;
+  isSave = false;
 
   eForm: FormGroup;
 
-  
   showicon1: boolean;
   showicon2: boolean;
   showicon3: boolean;
@@ -611,7 +609,7 @@ export class B2BalconyPage implements OnInit {
 
     const db = firebase.firestore();
 
-    db.collection('test1')
+    db.collection('Krafturspace1')
       .doc(this.recivedData)
       .get()
       .then(doc => {
@@ -639,14 +637,14 @@ export class B2BalconyPage implements OnInit {
       Drip_moulds_in_ceiling_are_consistent_Photo: [''],
       Drip_moulds_in_ceiling_are_consistent_Description: [''],
 
-      Elevational_ledge_horizontal_surface_is_finished_or_painted: ['', [Validators.required]],
+      Elevational_ledge_horizontal_surface_is_finished_or_painted: [''],
 
       Elevational_ledge_horizontal_surface_is_finished_or_painted_Photo: [''],
       Elevational_ledge_horizontal_surface_is_finished_or_painted_Description: [''],
 
       Flooring: [''],
 
-      Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness: ['', [Validators.required]],
+      Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness: [''],
 
       Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness_Photo: [''],
       Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness_Description: [''],
@@ -656,14 +654,14 @@ export class B2BalconyPage implements OnInit {
       Floor_Slopes_provided_are_adequate_Photo: [''],
       Floor_Slopes_provided_are_adequate_Description: [''],
 
-      Skirting_finish_and_alignment_is_correct: ['', [Validators.required]],
+      Skirting_finish_and_alignment_is_correct: [''],
 
       Skirting_finish_and_alignment_is_correct_Photo: [''],
       Skirting_finish_and_alignment_is_correct_Description: [''],
 
       Floor_Traps: [''],
 
-      Edges_of_floor_trap_is_finished: ['', [Validators.required]],
+      Edges_of_floor_trap_is_finished: [''],
 
       Edges_of_floor_trap_is_finished_Photo: [''],
       Edges_of_floor_trap_is_finished_Description: [''],
@@ -675,7 +673,7 @@ export class B2BalconyPage implements OnInit {
 
       Doors_and_Windows: [''],
 
-      UPVC_balcony_doors_are_operable: ['', [Validators.required]],
+      UPVC_balcony_doors_are_operable: [''],
 
       UPVC_balcony_doors_are_operable_Photo: [''],
       UPVC_balcony_doors_are_operable_Description: [''],
@@ -690,7 +688,7 @@ export class B2BalconyPage implements OnInit {
       Gaskets_or_sealents_are_intact_Photo: [''],
       Gaskets_or_sealents_are_intact_Description: [''],
 
-      Aluminium_channel_below_balcony_door_is_cleaned: ['', [Validators.required]],
+      Aluminium_channel_below_balcony_door_is_cleaned: [''],
 
       Aluminium_channel_below_balcony_door_is_cleaned_Photo: [''],
       Aluminium_channel_below_balcony_door_is_cleaned_Description: [''],
@@ -717,20 +715,20 @@ export class B2BalconyPage implements OnInit {
       Switch_plates_are_aligned_Photo: [''],
       Switch_plates_are_aligned_Description: [''],
 
-      AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster: [''],
+      AC_Core_cut_pipe_is_cleaned_and_finished_flsh_with_plaster: [''],
 
-      AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster_Photo: [''],
+      AC_Core_cut_pipe_is_cleaned_and_finished_flsh_with_plaster_Photo: [''],
 
-      AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster_Description: [''],
+      AC_Core_cut_pipe_is_cleaned_and_finished_flsh_with_plaster_Description: [''],
 
-      AC_Core_cut_pipe_is_finished: ['', [Validators.required]],
+      AC_Core_cut_pipe_is_finished: [''],
 
       AC_Core_cut_pipe_is_finished_Photo: [''],
       AC_Core_cut_pipe_is_finished_Description: [''],
 
       Shafts: [''],
 
-      MS_Duct_door_frames_and_wall_junctions_are_sealed: ['', [Validators.required]],
+      MS_Duct_door_frames_and_wall_junctions_are_sealed: [''],
 
       MS_Duct_door_frames_and_wall_junctions_are_sealed_Photo: [''],
       MS_Duct_door_frames_and_wall_junctions_are_sealed_Description: [''],
@@ -740,10 +738,10 @@ export class B2BalconyPage implements OnInit {
       MS_Duct_doors_are_painted_on_both_sides_Photo: [''],
       MS_Duct_doors_are_painted_on_both_sides_Description: [''],
 
-      Shaft_internalss_to_be_free_of_debris: [''],
+      Shaft_internals_to_be_free_of_debris: [''],
 
-      Shaft_internalss_to_be_free_of_debris_Photo: [''],
-      Shaft_internalss_to_be_free_of_debris_Description: [''],
+      Shaft_internals_to_be_free_of_debris_Photo: [''],
+      Shaft_internals_to_be_free_of_debris_Description: [''],
 
       Internal_shaft_surfaces_are_cleaned_and_painted: [''],
 
@@ -751,14 +749,14 @@ export class B2BalconyPage implements OnInit {
 
       Internal_shaft_surfaces_are_cleaned_and_painted_Description: [''],
 
-      Shaft_internals_to_be_painted: ['', [Validators.required]],
+      Shaft_internals_to_be_painted: [''],
 
       Shaft_internals_to_be_painted_Photo: [''],
       Shaft_internals_to_be_painted_Description: [''],
 
       Railing: [''],
 
-      SS_pipe_railing_end_caps_are_fixed_without_gaps: ['', [Validators.required]],
+      SS_pipe_railing_end_caps_are_fixed_without_gaps: [''],
 
       SS_pipe_railing_end_caps_are_fixed_without_gaps_Photo: [''],
       SS_pipe_railing_end_caps_are_fixed_without_gaps_Description: [''],
@@ -778,7 +776,7 @@ export class B2BalconyPage implements OnInit {
       SS_pipe_railing_height_is_consistent_Photo: [''],
       SS_pipe_railing_height_is_consistent_Description: [''],
 
-      Glass_railing_assembly_is_sturdy: ['', [Validators.required]],
+      Glass_railing_assembly_is_sturdy: [''],
 
       Glass_railing_assembly_is_sturdy_Photo: [''],
       Glass_railing_assembly_is_sturdy_Description: [''],
@@ -824,21 +822,24 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save1(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save1(): void {
+    console.log('Save clicked');
     this.showicon1 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
+      project_Name: this.project_Name,
+      Project_Type: this.Project_Type,
+      project_Address: this.project_Address,
+      Flat_Number: this.Flat_Number,
       inpect_title: 'Walls_are_free_of_cracks_or__stains_etc',
       photourl: this.picdata,
       Description: this.ionicForm.get('Walls_are_free_of_cracks_or__stains_etc_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    console.log('foyerdata', JSON.stringify(this.foyerdata));
+    console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage1(): void {
     this.newItem.user = this.au.email;
@@ -894,12 +895,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save2(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save2(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Electrical_points_are_as_per_standard_offering',
@@ -908,7 +908,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    console.log('foyerdata', JSON.stringify(this.foyerdata));
+    console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage2() {
     this.newItem.user = this.au.email;
@@ -971,12 +971,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save3(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save3(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Drip_moulds_in_ceiling_are_consistent',
@@ -985,7 +984,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    console.log('foyerdata', JSON.stringify(this.foyerdata));
+    console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage3() {
     this.newItem.user = this.au.email;
@@ -1036,12 +1035,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save4(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save4(): void {
+    console.log('Save clicked');
     this.showicon4 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Elevational_ledge_horizontal_surface_is_finished_or_painted',
@@ -1050,7 +1048,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    console.log('foyerdata', JSON.stringify(this.foyerdata));
+    console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage4(): void {
     this.newItem.user = this.au.email;
@@ -1100,12 +1098,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save5(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save5(): void {
+    console.log('Save clicked');
     this.showicon5 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness',
@@ -1114,7 +1111,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    console.log('foyerdata', JSON.stringify(this.foyerdata));
+    console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage5(): void {
     this.newItem.user = this.au.email;
@@ -1164,12 +1161,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save6(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save6(): void {
+    console.log('Save clicked');
     this.showicon6 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Floor_Slopes_provided_are_adequate',
@@ -1178,7 +1174,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage6(): void {
     this.newItem.user = this.au.email;
@@ -1228,12 +1224,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save7(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save7(): void {
+    console.log('Save clicked');
     this.showicon7 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Skirting_finish_and_alignment_is_correct',
@@ -1242,7 +1237,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage7(): void {
     this.newItem.user = this.au.email;
@@ -1292,12 +1287,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save8(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save8(): void {
+    console.log('Save clicked');
     this.showicon8 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Edges_of_floor_trap_is_finished',
@@ -1306,7 +1300,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage8(): void {
     this.newItem.user = this.au.email;
@@ -1356,12 +1350,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save9(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save9(): void {
+    console.log('Save clicked');
     this.showicon9 = true;
     9;
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Floor_trap_below_cover_is_clean',
@@ -1370,7 +1363,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage9(): void {
     this.newItem.user = this.au.email;
@@ -1421,12 +1414,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save10(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save10(): void {
+    console.log('Save clicked');
     this.showicon10 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'UPVC_balcony_doors_are_operable',
@@ -1435,7 +1427,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage10(): void {
     this.newItem.user = this.au.email;
@@ -1485,12 +1477,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save11() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save11() {
+    console.log('Save clicked');
     this.showicon11 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'UPVC_balcony_doors_are_without_sharp_edges',
@@ -1499,7 +1490,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage11() {
     this.newItem.user = this.au.email;
@@ -1550,12 +1541,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save12() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save12() {
+    console.log('Save clicked');
     this.showicon12 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Gaskets_or_sealents_are_intact',
@@ -1564,7 +1554,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage12(): void {
     this.newItem.user = this.au.email;
@@ -1614,12 +1604,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save13(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save13(): void {
+    console.log('Save clicked');
     this.showicon13 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Aluminium_channel_below_balcony_door_is_cleaned',
@@ -1628,7 +1617,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage13(): void {
     this.newItem.user = this.au.email;
@@ -1678,12 +1667,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save14(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save14(): void {
+    console.log('Save clicked');
     this.showicon14 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Electrical_points_are_as_per_standard_offering',
@@ -1692,7 +1680,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage14(): void {
     this.newItem.user = this.au.email;
@@ -1742,12 +1730,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save15(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save15(): void {
+    console.log('Save clicked');
     this.showicon15 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Ceiling_and_wall_electrical_points_are_covered_or_capped_properly',
@@ -1756,7 +1743,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage15(): void {
     this.newItem.user = this.au.email;
@@ -1806,12 +1793,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save16(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save16(): void {
+    console.log('Save clicked');
     this.showicon16 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Granite_coping_is_free_of_sharp_edges_or_dents_etc',
@@ -1820,7 +1806,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage16(): void {
     this.newItem.user = this.au.email;
@@ -1870,12 +1856,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save17(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save17(): void {
+    console.log('Save clicked');
     this.showicon17 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Switch_plates_are_aligned',
@@ -1884,7 +1869,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage17(): void {
     this.newItem.user = this.au.email;
@@ -1922,7 +1907,7 @@ export class B2BalconyPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL18 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster_Photo').setValue(this.imgURL18);
+      this.ionicForm.get('AC_Core_cut_pipe_is_cleaned_and_finished_flsh_with_plaster_Photo').setValue(this.imgURL18);
       this.upload18();
     });
   }
@@ -1934,27 +1919,26 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save18(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save18(): void {
+    console.log('Save clicked');
     this.showicon18 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster',
+      inpect_title: 'AC_Core_cut_pipe_is_cleaned_and_finished_flsh_with_plaster',
       photourl: this.imgURL18,
-      Description: this.ionicForm.get('AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster_Description').value,
+      Description: this.ionicForm.get('AC_Core_cut_pipe_is_cleaned_and_finished_flsh_with_plaster_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage18(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster';
+    this.newItem.inpect_title = 'AC_Core_cut_pipe_is_cleaned_and_finished_flsh_with_plaster';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster_Description').value;
+    this.newItem.Description = this.ionicForm.get('AC_Core_cut_pipe_is_cleaned_and_finished_flsh_with_plaster_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -1966,7 +1950,7 @@ export class B2BalconyPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster',
+      subject: 'AC_Core_cut_pipe_is_cleaned_and_finished_flsh_with_plaster',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -1998,12 +1982,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save19(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save19(): void {
+    console.log('Save clicked');
     this.showicon19 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Glass_in_railing_is_free_of_scratches',
@@ -2012,7 +1995,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage19(): void {
     this.newItem.user = this.au.email;
@@ -2062,12 +2045,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save20(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save20(): void {
+    console.log('Save clicked');
     this.showicon20 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'MS_Duct_door_frames_and_wall_junctions_are_sealed',
@@ -2076,7 +2058,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage20(): void {
     this.newItem.user = this.au.email;
@@ -2126,12 +2108,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save21(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save21(): void {
+    console.log('Save clicked');
     this.showicon21 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'MS_Duct_doors_are_painted_on_both_sides',
@@ -2140,7 +2121,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage21(): void {
     this.newItem.user = this.au.email;
@@ -2178,7 +2159,7 @@ export class B2BalconyPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL22 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Shaft_internalss_to_be_free_of_debris_Photo').setValue(this.imgURL22);
+      this.ionicForm.get('Shaft_internals_to_be_free_of_debris_Photo').setValue(this.imgURL22);
       this.upload22();
     });
   }
@@ -2190,27 +2171,26 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save22(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save22(): void {
+    console.log('Save clicked');
     this.showicon22 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Shaft_internalss_to_be_free_of_debris',
+      inpect_title: 'Shaft_internals_to_be_free_of_debris',
       photourl: this.imgURL22,
-      Description: this.ionicForm.get('Shaft_internalss_to_be_free_of_debris_Description').value,
+      Description: this.ionicForm.get('Shaft_internals_to_be_free_of_debris_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage22(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Shaft_internalss_to_be_free_of_debris';
+    this.newItem.inpect_title = 'Shaft_internals_to_be_free_of_debris';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Shaft_internalss_to_be_free_of_debris_Description').value;
+    this.newItem.Description = this.ionicForm.get('Shaft_internals_to_be_free_of_debris_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2222,7 +2202,7 @@ export class B2BalconyPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Shaft_internalss_to_be_free_of_debris',
+      subject: 'Shaft_internals_to_be_free_of_debris',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2254,12 +2234,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save23(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save23(): void {
+    console.log('Save clicked');
     this.showicon23 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Internal_shaft_surfaces_are_cleaned_and_painted',
@@ -2268,7 +2247,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage23(): void {
     this.newItem.user = this.au.email;
@@ -2318,12 +2297,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save24(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save24(): void {
+    console.log('Save clicked');
     this.showicon24 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'MS_Duct_doors_are_painted_on_both_sides',
@@ -2332,7 +2310,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage24(): void {
     this.newItem.user = this.au.email;
@@ -2382,12 +2360,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save25(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save25(): void {
+    console.log('Save clicked');
     this.showicon25 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'SS_pipe_railing_end_caps_are_fixed_without_gaps',
@@ -2396,7 +2373,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage25(): void {
     this.newItem.user = this.au.email;
@@ -2446,12 +2423,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save26(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save26(): void {
+    console.log('Save clicked');
     this.showicon26 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Glass_in_railing_is_free_of_scratches',
@@ -2460,7 +2436,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage26(): void {
     this.newItem.user = this.au.email;
@@ -2510,12 +2486,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save27(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save27(): void {
+    console.log('Save clicked');
     this.showicon27 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'SS_pipe_railing_is_finshed_with_smooth_edges',
@@ -2524,7 +2499,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage27(): void {
     this.newItem.user = this.au.email;
@@ -2574,12 +2549,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save28(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save28(): void {
+    console.log('Save clicked');
     this.showicon28 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'SS_pipe_railing_height_is_consistent',
@@ -2588,7 +2562,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage28(): void {
     this.newItem.user = this.au.email;
@@ -2638,12 +2612,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save29(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save29(): void {
+    console.log('Save clicked');
     this.showicon29 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Glass_railing_assembly_is_sturdy',
@@ -2652,7 +2625,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage29(): void {
     this.newItem.user = this.au.email;
@@ -2702,12 +2675,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save30(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save30(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Granite_ledge_provided_is_free_of_cracks_and_sharp_edges',
@@ -2716,7 +2688,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage30(): void {
     this.newItem.user = this.au.email;
@@ -2767,12 +2739,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save31(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Vertical_texture_painted_surfaces_are_free_of_undulations',
@@ -2781,7 +2752,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage31(): void {
     this.newItem.user = this.au.email;
@@ -2831,12 +2802,12 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save31(): void {
+    
+    console.log('Save clicked');
     this.showicon31 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Electrical_wall_and_ceiling_points_are_covered',
@@ -2845,7 +2816,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage31(): void {
     this.newItem.user = this.au.email;
@@ -2895,12 +2866,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save32(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save32(): void {
+    console.log('Save clicked');
     this.showicon32 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Dado_top_line_is_uniform_and_consistent',
@@ -2909,7 +2879,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage32(): void {
     this.newItem.user = this.au.email;
@@ -2959,12 +2929,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save33(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save33(): void {
+    console.log('Save clicked');
     this.showicon33 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'False_ceiling_channels_are_consistent',
@@ -2973,7 +2942,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage33(): void {
     this.newItem.user = this.au.email;
@@ -3023,12 +2992,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save34(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save34(): void {
+    console.log('Save clicked');
     this.showicon34 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Tile_Dado_surface_is_consistent_and_without_hollowness',
@@ -3037,7 +3005,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage34(): void {
     this.newItem.user = this.au.email;
@@ -3087,12 +3055,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save35(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save35(): void {
+    console.log('Save clicked');
     this.showicon35 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'EWC_Ledge_wall_granite_coping_is_free_of_sharp_edges',
@@ -3101,7 +3068,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage35(): void {
     this.newItem.user = this.au.email;
@@ -3151,12 +3118,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save36(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save36(): void {
+    console.log('Save clicked');
     this.showicon36 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Vertical_Tiles_joints_and_ceiling_support_members_are_aligned',
@@ -3165,7 +3131,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage36(): void {
     this.newItem.user = this.au.email;
@@ -3215,12 +3181,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save37(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save37(): void {
+    console.log('Save clicked');
     this.showicon37 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Dado_top_line_is_uniform_and_consistent',
@@ -3229,7 +3194,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage37(): void {
     this.newItem.user = this.au.email;
@@ -3280,12 +3245,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save38(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save38(): void {
+    console.log('Save clicked');
     this.showicon38 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Service_ledge_is_painted_and_clean',
@@ -3294,7 +3258,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage38(): void {
     this.newItem.user = this.au.email;
@@ -3344,12 +3308,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save39(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save39(): void {
+    console.log('Save clicked');
     this.showicon39 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_or_hollowness_etc',
@@ -3358,7 +3321,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage39(): void {
     this.newItem.user = this.au.email;
@@ -3408,12 +3371,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save40(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save40(): void {
+    console.log('Save clicked');
     this.showicon40 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Electrical_wall_and_ceiling_points_are_covered',
@@ -3422,7 +3384,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage40(): void {
     this.newItem.user = this.au.email;
@@ -3472,12 +3434,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save41(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save41(): void {
+    console.log('Save clicked');
     this.showicon41 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Area_above_false_ceiling_is_painted',
@@ -3486,7 +3447,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage41(): void {
     this.newItem.user = this.au.email;
@@ -3537,12 +3498,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save43(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save43(): void {
+    console.log('Save clicked');
     this.showicon43 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Electrical_wall_and_ceiling_points_are_covered',
@@ -3551,7 +3511,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage43(): void {
     this.newItem.user = this.au.email;
@@ -3601,12 +3561,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save44(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save44(): void {
+    console.log('Save clicked');
     this.showicon44 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Electrical_wall_and_ceiling_points_are_covered',
@@ -3615,7 +3574,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage44(): void {
     this.newItem.user = this.au.email;
@@ -3665,12 +3624,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save45(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save45(): void {
+    console.log('Save clicked');
     this.showicon45 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Electrical_wall_and_ceiling_points_are_covered',
@@ -3679,7 +3637,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage45(): void {
     this.newItem.user = this.au.email;
@@ -3729,12 +3687,11 @@ export class B2BalconyPage implements OnInit {
     });
   }
 
-  save46(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save46(): void {
+    console.log('Save clicked');
     this.showicon46 = true;
 
-    this.foyerdata.push({
+    this.b2balconydata.push({
       id: Date.now(),
       user: this.au.email,
       inpect_title: 'Electrical_wall_and_ceiling_points_are_covered',
@@ -3743,7 +3700,7 @@ export class B2BalconyPage implements OnInit {
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
-    //console.log('foyerdata', JSON.stringify(this.foyerdata));
+    //console.log('b2balconydata', JSON.stringify(this.b2balconydata));
   }
   sendMessage46(): void {
     this.newItem.user = this.au.email;
@@ -3781,113 +3738,59 @@ export class B2BalconyPage implements OnInit {
   }
 
   //end camer
-  arrayToCSV(objArray) {
-    const array = typeof objArray !== 'object' ? JSON.parse(objArray) : objArray;
-    let str =
-      `${Object.keys(array[0])
-        .map(value => `"${value}"`)
-        .join(',')}` + '\r\n';
-
-    return array.reduce((str, next) => {
-      str +=
-        `${Object.values(next)
-          .map(value => `"${value}"`)
-          .join(',')}` + '\r\n';
-      return str;
-    }, str);
-  }
-
-  starttime() {
-    this.dateTime = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
-    const db = firebase.firestore();
-    const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
-    const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
-    var starttimeref = db.collection('test1').doc(this.recivedData);
-
-    starttimeref
-      .update({
-        Dining: arrayUnion({
-          'start time': this.dateTime,
-          user: this.au.email
-        })
-      })
-      .then(function () {
-        console.log('starttime time is updated');
-      });
-
-    console.log('enter time', this.dateTime);
-    //return this.dateTime
-  }
-
-  sendmail() {
-    this.storageService
-      .getObject('mbalcony form csv')
-      .then(result => {
-        if (result != null) {
-          this.idata = result;
-        }
-      })
-      .catch(e => {
-        console.log('error: ', e);
-      });
-    let email = {
-      to: 'krafturspace@gmail.com',
-      cc: 'sumathi@kraft-urspace.com',
-
-      attachments: [this.idata],
-      subject: 'Report',
-      body: 'report from krafturspace app sent by' + this.au + 'for Flat number' + this.flatnumber + 'time of completion' + this.completiontime,
-      isHtml: true
-    };
-
-    this.emailComposer.open(email);
-  }
-
-  submitForm() {
+  submitForm(): void {
     this.issubmit = true;
 
     const db = firebase.firestore();
+    var washingtonRef = db.collection('Krafturspace1').doc(this.recivedData);
     const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
-    let date = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
-    this.completiontime = date;
 
-    this.AssetData = JSON.stringify(this.ionicForm.value);
-
+    this.AssetData = JSON.stringify(this.b2balconydata);
     this.DiningData = JSON.parse(this.AssetData);
+    console.log('formdata collection', this.DiningData);
 
-    this.arr = [this.DiningData];
-    console.log('arr1', this.arr);
-
-    this.stdata = this.arrayToCSV(this.arr);
-    this.storageService.setObject('mbalcony form csv', this.stdata);
-
-    var addtimeref = db.collection('test1').doc(this.recivedData);
-
-    // Atomically add a new region to the "regions" array field.
-    addtimeref
-      .update({
-        Dining: arrayUnion({
-          'end time': date
-        })
-      })
-      .then(function () {
-        console.log('end time is updated');
-      });
-
-    var washingtonRef = db.collection('test1').doc(this.recivedData);
-
-    // Atomically add a new region to the "regions" array field.
     washingtonRef
       .update({
-        Dining: arrayUnion({
-          mmbalcony: this.DiningData
+        foryer: arrayUnion({
+          foyeru: this.DiningData
         })
       })
       .then(function () {
-        console.log('dining data is  updated');
-        this.isenabled=false;
+        console.log('foyer data is  updated');
       });
+  }
+  exportCSV() {
+    this.storageService.setObject('socialdata', this.b2balconydata);
+
+    var csv = this.papa.unparse(this.b2balconydata);
+
+    if (this.platform.is('cordova')) {
+      this.file.writeFile(this.file.dataDirectory, 'data.csv', csv, { replace: true }).then(
+        res => {
+          this.socialSharing
+            .share(null, null, res.nativeURL, null)
+            .then(e => {
+              // Success
+            })
+            .catch(e => {
+              console.log('Share failed:', e);
+            });
+        },
+        err => {
+          console.log('Error: ', err);
+        }
+      );
+    } else {
+      // Dummy implementation for Desktop download purpose
+      var blob = new Blob([csv]);
+      var a = window.document.createElement('a');
+      a.href = window.URL.createObjectURL(blob);
+      a.download = 'newdata.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
   }
 
   //new end
@@ -4096,8 +3999,8 @@ export class B2BalconyPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster(): void {
-    let Qvalue = this.ionicForm.get('AC_Core_cut_pipe_is_cleaned_and_finished_fush_with_plaster').value;
+  AC_Core_cut_pipe_is_cleaned_and_finished_flsh_with_plaster(): void {
+    let Qvalue = this.ionicForm.get('AC_Core_cut_pipe_is_cleaned_and_finished_flsh_with_plaster').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay18 = true;
@@ -4144,8 +4047,8 @@ export class B2BalconyPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Shaft_internalss_to_be_free_of_debris(): void {
-    let Qvalue = this.ionicForm.get('Shaft_internalss_to_be_free_of_debris').value;
+  Shaft_internals_to_be_free_of_debris(): void {
+    let Qvalue = this.ionicForm.get('Shaft_internals_to_be_free_of_debris').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay22 = true;

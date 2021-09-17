@@ -33,9 +33,9 @@ import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 interface StudentData {
   Doors_and_Windows: string;
 
-  UPVC_hardware_is_standard: string;
-  UPVC_hardware_is_standard_Photo: any;
-  UPVC_hardware_is_standard_Description: string;
+  UPVC_hardware_is_as_per_standard: string;
+  UPVC_hardware_is_as_per_standard_Photo: any;
+  UPVC_hardware_is_as_per_standard_Description: string;
 
   Hardware_is_as_per_standard_offering: string;
   Hardware_is_as_per_standard_offering_Photo: any;
@@ -87,9 +87,9 @@ interface StudentData {
   Electrical_points_are_as_per_standard_offering_Photo: any;
   Electrical_points_are_as_per_standard_offering_Description: string;
 
-  Exhaust_fan_connection: string;
-  Exhaust_fan_connection_Photo: any;
-  Exhaust_fan_connection_Description: string;
+  Exhaust_fan_connection_is_provided: string;
+  Exhaust_fan_connection_is_provided_Photo: any;
+  Exhaust_fan_connection_is_provided_Description: string;
 
   Switches_are_operable: string;
   Switches_are_operable_Photo: any;
@@ -199,9 +199,9 @@ interface StudentData {
   Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Photo: any;
   Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Description: string;
 
-  Consistency_of_corner_beading: string;
-  Consistency_of_corner_beading_Photo: any;
-  Consistency_of_corner_beading_Description: string;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles: string;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Photo: any;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Description: string;
 
   Area_above_false_ceiling_is_painted: string;
   Area_above_false_ceiling_is_painted_Photo: any;
@@ -286,7 +286,7 @@ export class B4ToiletPage implements OnInit {
   isSubmitted = false;
   ionicForm: FormGroup;
 
-  isenabled:boolean=true;
+  isenabled: boolean = true;
   inspectionList = [];
   inspectionData: StudentData;
   inspectionForm: FormGroup;
@@ -408,7 +408,7 @@ export class B4ToiletPage implements OnInit {
   subject: string;
   body: string;
 
-  issave = false;
+  isSave = false;
 
   eForm: FormGroup;
 
@@ -678,7 +678,7 @@ export class B4ToiletPage implements OnInit {
     this.storage.create();
     const db = firebase.firestore();
 
-    db.collection('test1')
+    db.collection('Krafturspace1')
       .doc(this.recivedData)
       .get()
       .then(doc => {
@@ -690,9 +690,9 @@ export class B4ToiletPage implements OnInit {
 
     this.ionicForm = this.formBuilder.group({
       Doors_and_Windows: [''],
-      UPVC_hardware_is_standard: ['', [Validators.required]],
-      UPVC_hardware_is_standard_Photo: [''],
-      UPVC_hardware_is_standard_Description: [''],
+      UPVC_hardware_is_as_per_standard: ['', [Validators.required]],
+      UPVC_hardware_is_as_per_standard_Photo: [''],
+      UPVC_hardware_is_as_per_standard_Description: [''],
 
       Hardware_is_as_per_standard_offering: [''],
       Hardware_is_as_per_standard_offering_Photo: [''],
@@ -718,13 +718,13 @@ export class B4ToiletPage implements OnInit {
       Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Photo: [''],
       Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Description: [''],
 
-      Door_frame_and_shutter_gaps_are_consistent: ['', [Validators.required]],
+      Door_frame_and_shutter_gaps_are_consistent: [''],
       Door_frame_and_shutter_gaps_are_consistent_Photo: [''],
       Door_frame_and_shutter_gaps_are_consistent_Description: [''],
 
       Electrical: [''],
 
-      Ceiling_electrical_points_are_covered_or_capped_properly: ['', [Validators.required]],
+      Ceiling_electrical_points_are_covered_or_capped_properly: [''],
       Ceiling_electrical_points_are_covered_or_capped_properly_Photo: [''],
       Ceiling_electrical_points_are_covered_or_capped_properly_Description: [''],
 
@@ -744,9 +744,9 @@ export class B4ToiletPage implements OnInit {
       Electrical_points_are_as_per_standard_offering_Photo: [''],
       Electrical_points_are_as_per_standard_offering_Description: [''],
 
-      Exhaust_fan_connection: [''],
-      Exhaust_fan_connection_Photo: [''],
-      Exhaust_fan_connection_Description: [''],
+      Exhaust_fan_connection_is_provided: [''],
+      Exhaust_fan_connection_is_provided_Photo: [''],
+      Exhaust_fan_connection_is_provided_Description: [''],
 
       Switches_are_operable: ['', [Validators.required]],
       Switches_are_operable_Photo: [''],
@@ -754,7 +754,7 @@ export class B4ToiletPage implements OnInit {
 
       Fixtures_and_Fittings: [''],
 
-      Wash_basin_faucet_is_operable: ['', [Validators.required]],
+      Wash_basin_faucet_is_operable: [''],
       Wash_basin_faucet_is_operable_Photo: [''],
       Wash_basin_faucet_is_operable_Description: [''],
 
@@ -792,13 +792,13 @@ export class B4ToiletPage implements OnInit {
       Toilet_Paper_Holder_Photo: [''],
       Toilet_Paper_Holder_Description: [''],
 
-      EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional: ['', [Validators.required]],
+      EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional: [''],
       EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional_Photo: [''],
       EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional_Description: [''],
 
       Flooring: [''],
 
-      Slopes_provided_are_adequate: ['', [Validators.required]],
+      Slopes_provided_are_adequate: [''],
 
       Slopes_provided_are_adequate_Photo: [''],
 
@@ -808,19 +808,19 @@ export class B4ToiletPage implements OnInit {
       Tile_drop_between_dry_and_wet_areas_exists_Photo: [''],
       Tile_drop_between_dry_and_wet_areas_exists_Description: [''],
 
-      Transition_member_betweeen_wooden_flooring_and_toilet_at_entry: [''],
+      Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided: [''],
 
-      Transition_member_betweeen_wooden_flooring_and_toilet_at_entry_Photo: [''],
+      Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Photo: [''],
 
-      Transition_member_betweeen_wooden_flooring_and_toilet_at_entry_Description: [''],
+      Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Description: [''],
 
-      Tiles_are_laid_to_slope_without_hollowness: ['', [Validators.required]],
-      Tiles_are_laid_to_slope_without_hollowness_Photo: [''],
-      Tiles_are_laid_to_slope_without_hollowness_Description: [''],
+      Floor_Tiles_are_laid_to_slope_without_hollowness: [''],
+      Floor_Tiles_are_laid_to_slope_without_hollowness_Photo: [''],
+      Floor_Tiles_are_laid_to_slope_without_hollowness_Description: [''],
 
       Standard_heights_of_fixtures: [''],
 
-      EWC: ['', [Validators.required]],
+      EWC: [''],
       EWC_Photo: [''],
       EWC_Description: [''],
 
@@ -828,14 +828,14 @@ export class B4ToiletPage implements OnInit {
       Shower_head_Photo: [''],
       Shower_head_Description: [''],
 
-      Wash_Basin: ['', [Validators.required]],
+      Wash_Basin: [''],
       Wash_Basin_Photo: [''],
       Wash_Basin_Description: [''],
       Wash_Basin_in_mm: [''],
 
       Walls_and_ceiling: [''],
 
-      False_ceiling_channels_are_consistent: ['', [Validators.required]],
+      False_ceiling_channels_are_consistent: [''],
       False_ceiling_channels_are_consistent_Photo: [''],
       False_ceiling_channels_are_consistent_Description: [''],
 
@@ -863,15 +863,15 @@ export class B4ToiletPage implements OnInit {
       Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Photo: [''],
       Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Description: [''],
 
-      Consistency_of_corner_beading: [''],
-      Consistency_of_corner_beading_Photo: [''],
-      Consistency_of_corner_beading_Description: [''],
+      Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles: [''],
+      Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Photo: [''],
+      Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Description: [''],
 
-      Area_above_false_ceiling_is_painted: [''],
+      Area_above_false_ceiling_is_painted: ['', [Validators.required]],
       Area_above_false_ceiling_is_painted_Photo: [''],
       Area_above_false_ceiling_is_painted_Description: [''],
 
-      Hollowness_in_wall_dado: ['', [Validators.required]],
+      Hollowness_in_wall_dado: [''],
       Hollowness_in_wall_dado_Photo: [''],
       Hollowness_in_wall_dado_Description: ['']
     });
@@ -892,7 +892,7 @@ export class B4ToiletPage implements OnInit {
       this.picdata = imageData;
 
       this.imgURL1 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('UPVC_hardware_is_standard"_Photo').setValue(this.imgURL1);
+      this.ionicForm.get('UPVC_hardware_is_as_per_standard()"_Photo').setValue(this.imgURL1);
       this.upload1();
     });
   }
@@ -904,9 +904,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save1(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save1(): void {
+    console.log('Save clicked');
     this.showicon1 = true;
 
     this.b4toiletdata.push({
@@ -916,9 +915,9 @@ export class B4ToiletPage implements OnInit {
       Project_Type: this.Project_Type,
       project_Address: this.project_Address,
       Flat_Number: this.Flat_Number,
-      inpect_title: 'UPVC_hardware_is_standard"',
+      inpect_title: 'UPVC_hardware_is_as_per_standard()"',
       photourl: this.picdata,
-      Description: this.ionicForm.get('UPVC_hardware_is_standard"_Description').value,
+      Description: this.ionicForm.get('UPVC_hardware_is_as_per_standard()"_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -926,9 +925,9 @@ export class B4ToiletPage implements OnInit {
   }
   sendMessage1(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'UPVC_hardware_is_standard"';
+    this.newItem.inpect_title = 'UPVC_hardware_is_as_per_standard()"';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('UPVC_hardware_is_standard"_Description').value;
+    this.newItem.Description = this.ionicForm.get('UPVC_hardware_is_as_per_standard()"_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -940,7 +939,7 @@ export class B4ToiletPage implements OnInit {
       to: 'j.prajwal@gmail.com',
       cc: 'j.prajwal@gmail.com',
       attachments: [],
-      subject: 'UPVC_hardware_is_standard"',
+      subject: 'UPVC_hardware_is_as_per_standard()"',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -978,9 +977,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save2(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save2(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.b4toiletdata.push({
@@ -1055,9 +1053,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save3(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save3(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.b4toiletdata.push({
@@ -1120,9 +1117,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save4(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save4(): void {
+    console.log('Save clicked');
     this.showicon4 = true;
 
     this.b4toiletdata.push({
@@ -1184,9 +1180,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save5(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save5(): void {
+    console.log('Save clicked');
     this.showicon5 = true;
 
     this.b4toiletdata.push({
@@ -1248,9 +1243,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save6(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save6(): void {
+    console.log('Save clicked');
     this.showicon6 = true;
 
     this.b4toiletdata.push({
@@ -1312,9 +1306,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save7(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save7(): void {
+    console.log('Save clicked');
     this.showicon7 = true;
 
     this.b4toiletdata.push({
@@ -1376,9 +1369,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save8(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save8(): void {
+    console.log('Save clicked');
     this.showicon8 = true;
 
     this.b4toiletdata.push({
@@ -1440,9 +1432,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save9(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save9(): void {
+    console.log('Save clicked');
     this.showicon9 = true;
     9;
     this.b4toiletdata.push({
@@ -1505,9 +1496,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save10(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save10(): void {
+    console.log('Save clicked');
     this.showicon10 = true;
 
     this.b4toiletdata.push({
@@ -1569,9 +1559,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save11() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save11() {
+    console.log('Save clicked');
     this.showicon11 = true;
 
     this.b4toiletdata.push({
@@ -1634,9 +1623,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save12() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save12() {
+    console.log('Save clicked');
     this.showicon12 = true;
 
     this.b4toiletdata.push({
@@ -1698,9 +1686,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save13(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save13(): void {
+    console.log('Save clicked');
     this.showicon13 = true;
 
     this.b4toiletdata.push({
@@ -1750,7 +1737,7 @@ export class B4ToiletPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL14 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Exhaust_fan_connection_Photo').setValue(this.imgURL14);
+      this.ionicForm.get('Exhaust_fan_connection_is_provided_Photo').setValue(this.imgURL14);
       this.upload14();
     });
   }
@@ -1762,17 +1749,16 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save14(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save14(): void {
+    console.log('Save clicked');
     this.showicon14 = true;
 
     this.b4toiletdata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Exhaust_fan_connection',
+      inpect_title: 'Exhaust_fan_connection_is_provided',
       photourl: this.imgURL14,
-      Description: this.ionicForm.get('Exhaust_fan_connection_Description').value,
+      Description: this.ionicForm.get('Exhaust_fan_connection_is_provided_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -1780,9 +1766,9 @@ export class B4ToiletPage implements OnInit {
   }
   sendMessage14(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Exhaust_fan_connection';
+    this.newItem.inpect_title = 'Exhaust_fan_connection_is_provided';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Exhaust_fan_connection_Description').value;
+    this.newItem.Description = this.ionicForm.get('Exhaust_fan_connection_is_provided_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -1794,7 +1780,7 @@ export class B4ToiletPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Exhaust_fan_connection',
+      subject: 'Exhaust_fan_connection_is_provided',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -1826,9 +1812,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save15(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save15(): void {
+    console.log('Save clicked');
     this.showicon15 = true;
 
     this.b4toiletdata.push({
@@ -1890,9 +1875,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save16(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save16(): void {
+    console.log('Save clicked');
     this.showicon16 = true;
 
     this.b4toiletdata.push({
@@ -1954,9 +1938,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save17(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save17(): void {
+    console.log('Save clicked');
     this.showicon17 = true;
 
     this.b4toiletdata.push({
@@ -2018,9 +2001,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save18(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save18(): void {
+    console.log('Save clicked');
     this.showicon18 = true;
 
     this.b4toiletdata.push({
@@ -2082,9 +2064,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save19(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save19(): void {
+    console.log('Save clicked');
     this.showicon19 = true;
 
     this.b4toiletdata.push({
@@ -2146,9 +2127,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save20(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save20(): void {
+    console.log('Save clicked');
     this.showicon20 = true;
 
     this.b4toiletdata.push({
@@ -2210,9 +2190,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save21(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save21(): void {
+    console.log('Save clicked');
     this.showicon21 = true;
 
     this.b4toiletdata.push({
@@ -2274,9 +2253,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save22(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save22(): void {
+    console.log('Save clicked');
     this.showicon22 = true;
 
     this.b4toiletdata.push({
@@ -2338,9 +2316,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save23(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save23(): void {
+    console.log('Save clicked');
     this.showicon23 = true;
 
     this.b4toiletdata.push({
@@ -2402,9 +2379,9 @@ export class B4ToiletPage implements OnInit {
      });
    }
  
-   save24(): void {
-     this.storage.clear();
-     console.log('save clicked');
+   Save24(): void {
+     
+     console.log('Save clicked');
      this.showicon24 = true;
  
      this.b4toiletdata.push({
@@ -2466,9 +2443,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save25(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save25(): void {
+    console.log('Save clicked');
     this.showicon25 = true;
 
     this.b4toiletdata.push({
@@ -2530,9 +2506,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save26(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save26(): void {
+    console.log('Save clicked');
     this.showicon26 = true;
 
     this.b4toiletdata.push({
@@ -2594,9 +2569,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save27(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save27(): void {
+    console.log('Save clicked');
     this.showicon27 = true;
 
     this.b4toiletdata.push({
@@ -2646,7 +2620,7 @@ export class B4ToiletPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL28 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('STransition_member_betweeen_wooden_flooring_and_toilet_at_entry_Photo').setValue(this.imgURL28);
+      this.ionicForm.get('STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Photo').setValue(this.imgURL28);
       this.upload28();
     });
   }
@@ -2658,17 +2632,16 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save28(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save28(): void {
+    console.log('Save clicked');
     this.showicon28 = true;
 
     this.b4toiletdata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'STransition_member_betweeen_wooden_flooring_and_toilet_at_entry',
+      inpect_title: 'STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided',
       photourl: this.imgURL28,
-      Description: this.ionicForm.get('STransition_member_betweeen_wooden_flooring_and_toilet_at_entry_Description').value,
+      Description: this.ionicForm.get('STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2676,9 +2649,9 @@ export class B4ToiletPage implements OnInit {
   }
   sendMessage28(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'STransition_member_betweeen_wooden_flooring_and_toilet_at_entry';
+    this.newItem.inpect_title = 'STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('STransition_member_betweeen_wooden_flooring_and_toilet_at_entry_Description').value;
+    this.newItem.Description = this.ionicForm.get('STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2690,7 +2663,7 @@ export class B4ToiletPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'STransition_member_betweeen_wooden_flooring_and_toilet_at_entry',
+      subject: 'STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2710,7 +2683,7 @@ export class B4ToiletPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL29 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Tiles_are_laid_to_slope_without_hollowness_Photo').setValue(this.imgURL29);
+      this.ionicForm.get('Floor_Tiles_are_laid_to_slope_without_hollowness_Photo').setValue(this.imgURL29);
       this.upload29();
     });
   }
@@ -2722,17 +2695,16 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save29(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save29(): void {
+    console.log('Save clicked');
     this.showicon29 = true;
 
     this.b4toiletdata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Tiles_are_laid_to_slope_without_hollowness',
+      inpect_title: 'Floor_Tiles_are_laid_to_slope_without_hollowness',
       photourl: this.imgURL29,
-      Description: this.ionicForm.get('Tiles_are_laid_to_slope_without_hollowness_Description').value,
+      Description: this.ionicForm.get('Floor_Tiles_are_laid_to_slope_without_hollowness_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2740,9 +2712,9 @@ export class B4ToiletPage implements OnInit {
   }
   sendMessage29(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Tiles_are_laid_to_slope_without_hollowness';
+    this.newItem.inpect_title = 'Floor_Tiles_are_laid_to_slope_without_hollowness';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Tiles_are_laid_to_slope_without_hollowness_Description').value;
+    this.newItem.Description = this.ionicForm.get('Floor_Tiles_are_laid_to_slope_without_hollowness_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2754,7 +2726,7 @@ export class B4ToiletPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Tiles_are_laid_to_slope_without_hollowness',
+      subject: 'Floor_Tiles_are_laid_to_slope_without_hollowness',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2786,9 +2758,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save30(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save30(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.b4toiletdata.push({
@@ -2851,9 +2822,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save31(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.b4toiletdata.push({
@@ -2915,9 +2885,9 @@ export class B4ToiletPage implements OnInit {
      });
    }
  
-   save31(): void {
-     this.storage.clear();
-     console.log('save clicked');
+   Save31(): void {
+     
+     console.log('Save clicked');
      this.showicon31 = true;
  
      this.b4toiletdata.push({
@@ -2979,9 +2949,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save32(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save32(): void {
+    console.log('Save clicked');
     this.showicon44 = true;
 
     this.b4toiletdata.push({
@@ -3022,8 +2991,6 @@ export class B4ToiletPage implements OnInit {
     this.emailComposer.addAlias('gmail', 'com.google.android.gm');
   }
 
-
-  
   getGallery33() {
     var options: CameraOptions = {
       quality: 100,
@@ -3048,9 +3015,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save33(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save33(): void {
+    console.log('Save clicked');
     this.showicon33 = true;
 
     this.b4toiletdata.push({
@@ -3112,9 +3078,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save34(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save34(): void {
+    console.log('Save clicked');
     this.showicon34 = true;
 
     this.b4toiletdata.push({
@@ -3176,9 +3141,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save35(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save35(): void {
+    console.log('Save clicked');
     this.showicon35 = true;
 
     this.b4toiletdata.push({
@@ -3240,9 +3204,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save36(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save36(): void {
+    console.log('Save clicked');
     this.showicon36 = true;
 
     this.b4toiletdata.push({
@@ -3304,9 +3267,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save37(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save37(): void {
+    console.log('Save clicked');
     this.showicon37 = true;
 
     this.b4toiletdata.push({
@@ -3369,9 +3331,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save38(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save38(): void {
+    console.log('Save clicked');
     this.showicon38 = true;
 
     this.b4toiletdata.push({
@@ -3433,9 +3394,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save39(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save39(): void {
+    console.log('Save clicked');
     this.showicon39 = true;
 
     this.b4toiletdata.push({
@@ -3497,9 +3457,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save40(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save40(): void {
+    console.log('Save clicked');
     this.showicon40 = true;
 
     this.b4toiletdata.push({
@@ -3561,9 +3520,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save41(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save41(): void {
+    console.log('Save clicked');
     this.showicon41 = true;
 
     this.b4toiletdata.push({
@@ -3626,9 +3584,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save43(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save43(): void {
+    console.log('Save clicked');
     this.showicon43 = true;
 
     this.b4toiletdata.push({
@@ -3690,9 +3647,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save44(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save44(): void {
+    console.log('Save clicked');
     this.showicon44 = true;
 
     this.b4toiletdata.push({
@@ -3754,9 +3710,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save45(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save45(): void {
+    console.log('Save clicked');
     this.showicon45 = true;
 
     this.b4toiletdata.push({
@@ -3818,9 +3773,8 @@ export class B4ToiletPage implements OnInit {
     });
   }
 
-  save46(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save46(): void {
+    console.log('Save clicked');
     this.showicon46 = true;
 
     this.b4toiletdata.push({
@@ -3874,7 +3828,7 @@ export class B4ToiletPage implements OnInit {
     this.issubmit = true;
 
     const db = firebase.firestore();
-    var washingtonRef = db.collection('test1').doc(this.recivedData);
+    var washingtonRef = db.collection('Krafturspace1').doc(this.recivedData);
     const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
 
@@ -3890,7 +3844,7 @@ export class B4ToiletPage implements OnInit {
       })
       .then(function () {
         console.log('foyer data is  updated');
-        this.isenabled=false;
+        this.isenabled = false;
       });
   }
   exportCSV() {
@@ -3928,8 +3882,8 @@ export class B4ToiletPage implements OnInit {
 
   //new end
 
-  UPVC_hardware_is_standard(): void {
-    let Qvalue = this.ionicForm.get('UPVC_hardware_is_standard').value;
+  UPVC_hardware_is_as_per_standard(): void {
+    let Qvalue = this.ionicForm.get('UPVC_hardware_is_as_per_standard()').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay1 = true;
@@ -4084,8 +4038,8 @@ export class B4ToiletPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Exhaust_fan_connection(): void {
-    let Qvalue = this.ionicForm.get('Exhaust_fan_connection').value;
+  Exhaust_fan_connection_is_provided(): void {
+    let Qvalue = this.ionicForm.get('Exhaust_fan_connection_is_provided').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay14 = true;
@@ -4252,8 +4206,8 @@ export class B4ToiletPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Transition_member_betweeen_wooden_flooring_and_toilet_at_entry(): void {
-    let Qvalue = this.ionicForm.get('Transition_member_betweeen_wooden_flooring_and_toilet_at_entry').value;
+  Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided(): void {
+    let Qvalue = this.ionicForm.get('Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay28 = true;
@@ -4264,8 +4218,8 @@ export class B4ToiletPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Tiles_are_laid_to_slope_without_hollowness(): void {
-    let Qvalue = this.ionicForm.get('Tiles_are_laid_to_slope_without_hollowness').value;
+  Floor_Tiles_are_laid_to_slope_without_hollowness(): void {
+    let Qvalue = this.ionicForm.get('Floor_Tiles_are_laid_to_slope_without_hollowness').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay29 = true;
@@ -4396,8 +4350,8 @@ export class B4ToiletPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Consistency_of_corner_beading(): void {
-    let Qvalue = this.ionicForm.get('Consistency_of_corner_beading').value;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles(): void {
+    let Qvalue = this.ionicForm.get('Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay40 = true;

@@ -60,9 +60,9 @@ interface StudentData {
   Dado_top_line_is_uniform_and_consistent_Photo: any;
   Dado_top_line_is_uniform_and_consistent_Description: string;
 
-  Consistency_of_corner_beading: string;
-  Consistency_of_corner_beading_Photo: any;
-  Consistency_of_corner_beading_Description: string;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles: string;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Photo: any;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Description: string;
   Service_ledge_is_painted_and_clean: string;
   Service_ledge_is_painted_and_clean_Photo: any;
   Service_ledge_is_painted_and_clean_Description: string;
@@ -80,9 +80,9 @@ interface StudentData {
   Tile_drop_between_dry_and_wet_areas_exists_Photo: any;
   Tile_drop_between_dry_and_wet_areas_exists_Description: string;
 
-  Transition_member_betweeen_wooden_flooring_and_toilet_at_entry: string;
-  Transition_member_betweeen_wooden_flooring_and_toilet_at_entry_Photo: any;
-  Transition_member_betweeen_wooden_flooring_and_toilet_at_entry_Description: string;
+  Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided: string;
+  Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Photo: any;
+  Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Description: string;
 
   Doors_and_Windows: string;
 
@@ -107,9 +107,9 @@ interface StudentData {
   Lock_can_be_operated_from_both_sides_Photo: any;
   Lock_can_be_operated_from_both_sides_Description: string;
 
-  UPVC_hardware_is_standard: string;
-  UPVC_hardware_is_standard_Photo: any;
-  UPVC_hardware_is_standard_Description: string;
+  UPVC_hardware_is_as_per_standard: string;
+  UPVC_hardware_is_as_per_standard_Photo: any;
+  UPVC_hardware_is_as_per_standard_Description: string;
 
   UPVC_ventilators_are_operable: string;
   UPVC_ventilators_are_operable_Photo: any;
@@ -140,9 +140,9 @@ interface StudentData {
   Switches_are_operable_Photo: any;
   Switches_are_operable_Description: string;
 
-  Exhaust_fan_connection: string;
-  Exhaust_fan_connection_Photo: any;
-  Exhaust_fan_connection_Description: string;
+  Exhaust_fan_connection_is_provided: string;
+  Exhaust_fan_connection_is_provided_Photo: any;
+  Exhaust_fan_connection_is_provided_Description: string;
 
   All_sockets_or_switches_above_false_ceiling_are_functional: string;
   All_sockets_or_switches_above_false_ceiling_are_functional_Photo: any;
@@ -347,7 +347,7 @@ export class CToiletPage implements OnInit {
   subject: string;
   body: string;
 
-  issave = false;
+  isSave = false;
   isshare = false;
   eForm: FormGroup;
 
@@ -688,7 +688,7 @@ export class CToiletPage implements OnInit {
 
     const db = firebase.firestore();
 
-    db.collection('test1')
+    db.collection('Krafturspace1')
       .doc(this.recivedData)
       .get()
       .then(doc => {
@@ -732,9 +732,9 @@ export class CToiletPage implements OnInit {
       Dado_top_line_is_uniform_and_consistent_Photo: [''],
       Dado_top_line_is_uniform_and_consistent_Description: [''],
 
-      Consistency_of_corner_beading: [''],
-      Consistency_of_corner_beading_Photo: [''],
-      Consistency_of_corner_beading_Description: [''],
+      Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles: [''],
+      Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Photo: [''],
+      Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Description: [''],
 
       Service_ledge_is_painted_and_clean: [''], //, [Validators.required]
       Service_ledge_is_painted_and_clean_Photo: [''],
@@ -753,9 +753,9 @@ export class CToiletPage implements OnInit {
       Tile_drop_between_dry_and_wet_areas_exists_Photo: [''],
       Tile_drop_between_dry_and_wet_areas_exists_Description: [''],
 
-      Transition_member_betweeen_wooden_flooring_and_toilet_at_entry: [''],
-      Transition_member_betweeen_wooden_flooring_and_toilet_at_entry_Photo: [''],
-      Transition_member_betweeen_wooden_flooring_and_toilet_at_entry_Description: [''],
+      Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided: [''],
+      Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Photo: [''],
+      Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Description: [''],
 
       Doors_and_Windows: [''],
 
@@ -780,9 +780,9 @@ export class CToiletPage implements OnInit {
       Lock_can_be_operated_from_both_sides_Photo: [''],
       Lock_can_be_operated_from_both_sides_Description: [''],
 
-      UPVC_hardware_is_standard: [''],
-      UPVC_hardware_is_standard_Photo: [''],
-      UPVC_hardware_is_standard_Description: [''],
+      UPVC_hardware_is_as_per_standard: [''],
+      UPVC_hardware_is_as_per_standard_Photo: [''],
+      UPVC_hardware_is_as_per_standard_Description: [''],
 
       UPVC_ventilators_are_operable: [''],
       UPVC_ventilators_are_operable_Photo: [''],
@@ -793,7 +793,7 @@ export class CToiletPage implements OnInit {
       Gaskets_or_sealents_are_intact_Description: [''],
 
       Electrical: [''],
-      Electrical_points_are_as_per_standard_offering: [''], //, [Validators.required]
+      Electrical_points_are_as_per_standard_offering: ['', [Validators.required]], //, [Validators.required]
       Electrical_points_are_as_per_standard_offering_Photo: [''],
       Electrical_points_are_as_per_standard_offering_Description: [''],
 
@@ -813,9 +813,9 @@ export class CToiletPage implements OnInit {
       Switches_are_operable_Photo: [''],
       Switches_are_operable_Description: [''],
 
-      Exhaust_fan_connection: [''],
-      Exhaust_fan_connection_Photo: [''],
-      Exhaust_fan_connection_Description: [''],
+      Exhaust_fan_connection_is_provided: [''],
+      Exhaust_fan_connection_is_provided_Photo: [''],
+      Exhaust_fan_connection_is_provided_Description: [''],
 
       All_sockets_or_switches_above_false_ceiling_are_functional: [''],
       All_sockets_or_switches_above_false_ceiling_are_functional_Photo: [''],
@@ -913,9 +913,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save1(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save1(): void {
+    console.log('Save clicked');
     this.showicon1 = true;
 
     this.ctoiletdata.push({
@@ -987,9 +986,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save2(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save2(): void {
+    console.log('Save clicked');
     this.showicon2 = true;
 
     this.ctoiletdata.push({
@@ -1064,9 +1062,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save3(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save3(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.ctoiletdata.push({
@@ -1129,9 +1126,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save4(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save4(): void {
+    console.log('Save clicked');
     this.showicon4 = true;
 
     this.ctoiletdata.push({
@@ -1193,9 +1189,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save5(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save5(): void {
+    console.log('Save clicked');
     this.showicon5 = true;
 
     this.ctoiletdata.push({
@@ -1257,9 +1252,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save6(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save6(): void {
+    console.log('Save clicked');
     this.showicon6 = true;
 
     this.ctoiletdata.push({
@@ -1321,9 +1315,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save7(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save7(): void {
+    console.log('Save clicked');
     this.showicon7 = true;
 
     this.ctoiletdata.push({
@@ -1385,9 +1378,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save8(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save8(): void {
+    console.log('Save clicked');
     this.showicon8 = true;
 
     this.ctoiletdata.push({
@@ -1437,7 +1429,7 @@ export class CToiletPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL9 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Consistency_of_corner_beading_Photo').setValue(this.imgURL9);
+      this.ionicForm.get('Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Photo').setValue(this.imgURL9);
       this.upload9();
     });
   }
@@ -1449,17 +1441,16 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save9(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save9(): void {
+    console.log('Save clicked');
     this.showicon9 = true;
     9;
     this.ctoiletdata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Consistency_of_corner_beading',
+      inpect_title: 'Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles',
       photourl: this.imgURL9,
-      Description: this.ionicForm.get('Consistency_of_corner_beading_Description').value,
+      Description: this.ionicForm.get('Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -1467,9 +1458,9 @@ export class CToiletPage implements OnInit {
   }
   sendMessage9(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Consistency_of_corner_beading';
+    this.newItem.inpect_title = 'Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Consistency_of_corner_beading_Description').value;
+    this.newItem.Description = this.ionicForm.get('Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -1481,7 +1472,7 @@ export class CToiletPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Consistency_of_corner_beading',
+      subject: 'Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -1514,9 +1505,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save10(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save10(): void {
+    console.log('Save clicked');
     this.showicon10 = true;
 
     this.ctoiletdata.push({
@@ -1578,9 +1568,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save11() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save11() {
+    console.log('Save clicked');
     this.showicon11 = true;
 
     this.ctoiletdata.push({
@@ -1643,9 +1632,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save12() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save12() {
+    console.log('Save clicked');
     this.showicon12 = true;
 
     this.ctoiletdata.push({
@@ -1707,9 +1695,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save13(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save13(): void {
+    console.log('Save clicked');
     this.showicon13 = true;
 
     this.ctoiletdata.push({
@@ -1759,7 +1746,7 @@ export class CToiletPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL14 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Transition_member_betweeen_wooden_flooring_and_toilet_at_entry_Photo').setValue(this.imgURL14);
+      this.ionicForm.get('Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Photo').setValue(this.imgURL14);
       this.upload14();
     });
   }
@@ -1771,17 +1758,16 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save14(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save14(): void {
+    console.log('Save clicked');
     this.showicon14 = true;
 
     this.ctoiletdata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Transition_member_betweeen_wooden_flooring_and_toilet_at_entry',
+      inpect_title: 'Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided',
       photourl: this.imgURL14,
-      Description: this.ionicForm.get('Transition_member_betweeen_wooden_flooring_and_toilet_at_entry_Description').value,
+      Description: this.ionicForm.get('Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -1789,9 +1775,9 @@ export class CToiletPage implements OnInit {
   }
   sendMessage14(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Transition_member_betweeen_wooden_flooring_and_toilet_at_entry';
+    this.newItem.inpect_title = 'Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Transition_member_betweeen_wooden_flooring_and_toilet_at_entry_Description').value;
+    this.newItem.Description = this.ionicForm.get('Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -1803,7 +1789,7 @@ export class CToiletPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Transition_member_betweeen_wooden_flooring_and_toilet_at_entry',
+      subject: 'Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -1835,9 +1821,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save15(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save15(): void {
+    console.log('Save clicked');
     this.showicon15 = true;
 
     this.ctoiletdata.push({
@@ -1899,9 +1884,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save16(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save16(): void {
+    console.log('Save clicked');
     this.showicon16 = true;
 
     this.ctoiletdata.push({
@@ -1963,9 +1947,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save17(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save17(): void {
+    console.log('Save clicked');
     this.showicon17 = true;
 
     this.ctoiletdata.push({
@@ -2027,9 +2010,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save18(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save18(): void {
+    console.log('Save clicked');
     this.showicon18 = true;
 
     this.ctoiletdata.push({
@@ -2091,9 +2073,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save19(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save19(): void {
+    console.log('Save clicked');
     this.showicon19 = true;
 
     this.ctoiletdata.push({
@@ -2143,7 +2124,7 @@ export class CToiletPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL20 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('UPVC_hardware_is_standard_Photo').setValue(this.imgURL20);
+      this.ionicForm.get('UPVC_hardware_is_as_per_standard()_Photo').setValue(this.imgURL20);
       this.upload20();
     });
   }
@@ -2155,17 +2136,16 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save20(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save20(): void {
+    console.log('Save clicked');
     this.showicon20 = true;
 
     this.ctoiletdata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'UPVC_hardware_is_standard',
+      inpect_title: 'UPVC_hardware_is_as_per_standard()',
       photourl: this.imgURL20,
-      Description: this.ionicForm.get('UPVC_hardware_is_standard_Description').value,
+      Description: this.ionicForm.get('UPVC_hardware_is_as_per_standard()_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2173,9 +2153,9 @@ export class CToiletPage implements OnInit {
   }
   sendMessage20(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'UPVC_hardware_is_standard';
+    this.newItem.inpect_title = 'UPVC_hardware_is_as_per_standard()';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('UPVC_hardware_is_standard_Description').value;
+    this.newItem.Description = this.ionicForm.get('UPVC_hardware_is_as_per_standard()_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2187,7 +2167,7 @@ export class CToiletPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'UPVC_hardware_is_standard',
+      subject: 'UPVC_hardware_is_as_per_standard()',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2219,9 +2199,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save21(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save21(): void {
+    console.log('Save clicked');
     this.showicon21 = true;
 
     this.ctoiletdata.push({
@@ -2283,9 +2262,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save22(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save22(): void {
+    console.log('Save clicked');
     this.showicon22 = true;
 
     this.ctoiletdata.push({
@@ -2347,9 +2325,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save23(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save23(): void {
+    console.log('Save clicked');
     this.showicon23 = true;
 
     this.ctoiletdata.push({
@@ -2411,9 +2388,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save24(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save24(): void {
+    console.log('Save clicked');
     this.showicon24 = true;
 
     this.ctoiletdata.push({
@@ -2475,9 +2451,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save25(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save25(): void {
+    console.log('Save clicked');
     this.showicon25 = true;
 
     this.ctoiletdata.push({
@@ -2539,9 +2514,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save26(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save26(): void {
+    console.log('Save clicked');
     this.showicon26 = true;
 
     this.ctoiletdata.push({
@@ -2603,9 +2577,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save27(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save27(): void {
+    console.log('Save clicked');
     this.showicon27 = true;
 
     this.ctoiletdata.push({
@@ -2655,7 +2628,7 @@ export class CToiletPage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL28 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Exhaust_fan_connection_Photo').setValue(this.imgURL28);
+      this.ionicForm.get('Exhaust_fan_connection_is_provided_Photo').setValue(this.imgURL28);
       this.upload28();
     });
   }
@@ -2667,17 +2640,16 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save28(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save28(): void {
+    console.log('Save clicked');
     this.showicon28 = true;
 
     this.ctoiletdata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Exhaust_fan_connection',
+      inpect_title: 'Exhaust_fan_connection_is_provided',
       photourl: this.imgURL28,
-      Description: this.ionicForm.get('Exhaust_fan_connection_Description').value,
+      Description: this.ionicForm.get('Exhaust_fan_connection_is_provided_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2685,9 +2657,9 @@ export class CToiletPage implements OnInit {
   }
   sendMessage28(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Exhaust_fan_connection';
+    this.newItem.inpect_title = 'Exhaust_fan_connection_is_provided';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Exhaust_fan_connection_Description').value;
+    this.newItem.Description = this.ionicForm.get('Exhaust_fan_connection_is_provided_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2699,7 +2671,7 @@ export class CToiletPage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Exhaust_fan_connection',
+      subject: 'Exhaust_fan_connection_is_provided',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2731,9 +2703,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save29(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save29(): void {
+    console.log('Save clicked');
     this.showicon29 = true;
 
     this.ctoiletdata.push({
@@ -2795,9 +2766,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save30(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save30(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.ctoiletdata.push({
@@ -2860,9 +2830,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save31(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.ctoiletdata.push({
@@ -2925,9 +2894,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save32(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save32(): void {
+    console.log('Save clicked');
     this.showicon32 = true;
 
     this.ctoiletdata.push({
@@ -2989,9 +2957,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save33(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save33(): void {
+    console.log('Save clicked');
     this.showicon33 = true;
 
     this.ctoiletdata.push({
@@ -3053,9 +3020,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save34(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save34(): void {
+    console.log('Save clicked');
     this.showicon34 = true;
 
     this.ctoiletdata.push({
@@ -3117,9 +3083,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save35(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save35(): void {
+    console.log('Save clicked');
     this.showicon35 = true;
 
     this.ctoiletdata.push({
@@ -3181,9 +3146,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save36(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save36(): void {
+    console.log('Save clicked');
     this.showicon36 = true;
 
     this.ctoiletdata.push({
@@ -3245,9 +3209,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save37(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save37(): void {
+    console.log('Save clicked');
     this.showicon37 = true;
 
     this.ctoiletdata.push({
@@ -3310,9 +3273,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save38(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save38(): void {
+    console.log('Save clicked');
     this.showicon38 = true;
 
     this.ctoiletdata.push({
@@ -3374,9 +3336,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save39(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save39(): void {
+    console.log('Save clicked');
     this.showicon39 = true;
 
     this.ctoiletdata.push({
@@ -3438,9 +3399,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save40(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save40(): void {
+    console.log('Save clicked');
     this.showicon40 = true;
 
     this.ctoiletdata.push({
@@ -3502,9 +3462,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save41(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save41(): void {
+    console.log('Save clicked');
     this.showicon41 = true;
 
     this.ctoiletdata.push({
@@ -3567,9 +3526,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save42(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save42(): void {
+    console.log('Save clicked');
     this.showicon43 = true;
 
     this.ctoiletdata.push({
@@ -3631,9 +3589,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save43(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save43(): void {
+    console.log('Save clicked');
     this.showicon43 = true;
 
     this.ctoiletdata.push({
@@ -3695,9 +3652,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save44(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save44(): void {
+    console.log('Save clicked');
     this.showicon44 = true;
 
     this.ctoiletdata.push({
@@ -3761,9 +3717,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save45(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save45(): void {
+    console.log('Save clicked');
     this.showicon45 = true;
 
     this.ctoiletdata.push({
@@ -3825,9 +3780,8 @@ export class CToiletPage implements OnInit {
     });
   }
 
-  save46(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save46(): void {
+    console.log('Save clicked');
     this.showicon46 = true;
 
     this.ctoiletdata.push({
@@ -3884,7 +3838,7 @@ export class CToiletPage implements OnInit {
     this.issubmit = true;
 
     const db = firebase.firestore();
-    var washingtonRef = db.collection('test1').doc(this.recivedData);
+    var washingtonRef = db.collection('Krafturspace1').doc(this.recivedData);
     const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
 
@@ -4034,8 +3988,8 @@ export class CToiletPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Consistency_of_corner_beading(): void {
-    let Qvalue = this.ionicForm.get('Consistency_of_corner_beading').value;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles(): void {
+    let Qvalue = this.ionicForm.get('Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay9 = true;
@@ -4094,8 +4048,8 @@ export class CToiletPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Transition_member_betweeen_wooden_flooring_and_toilet_at_entry(): void {
-    let Qvalue = this.ionicForm.get('Transition_member_betweeen_wooden_flooring_and_toilet_at_entry').value;
+  Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided(): void {
+    let Qvalue = this.ionicForm.get('Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay14 = true;
@@ -4166,8 +4120,8 @@ export class CToiletPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  UPVC_hardware_is_standard(): void {
-    let Qvalue = this.ionicForm.get('UPVC_hardware_is_standard').value;
+  UPVC_hardware_is_as_per_standard(): void {
+    let Qvalue = this.ionicForm.get('UPVC_hardware_is_as_per_standard()').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay20 = true;
@@ -4262,8 +4216,8 @@ export class CToiletPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Exhaust_fan_connection(): void {
-    let Qvalue = this.ionicForm.get('Exhaust_fan_connection').value;
+  Exhaust_fan_connection_is_provided(): void {
+    let Qvalue = this.ionicForm.get('Exhaust_fan_connection_is_provided').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay28 = true;
@@ -4389,18 +4343,6 @@ export class CToiletPage implements OnInit {
       this.cameradisplay38 = true;
     } else {
       this.cameradisplay39 = false;
-    }
-
-    this._cdr.detectChanges();
-  }
-
-  Wash_Basinf(): void {
-    let Qvalue = this.ionicForm.get('Wash_Basinf').value;
-    console.log('Q---->', Qvalue);
-    if (Qvalue === 'No') {
-      this.cameradisplay40 = true;
-    } else {
-      this.cameradisplay40 = false;
     }
 
     this._cdr.detectChanges();

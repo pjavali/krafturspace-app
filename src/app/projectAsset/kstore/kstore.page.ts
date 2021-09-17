@@ -41,9 +41,9 @@ interface StudentData {
   Door_frame_and_shutter_gaps_are_consistent_Photo: any;
   Door_frame_and_shutter_gaps_are_consistent_Description: string;
 
-  UPVC_hardware_is_standard: string;
-  UPVC_hardware_is_standard_Photo: any;
-  UPVC_hardware_is_standard_Description: string;
+  UPVC_hardware_is_as_per_standard: string;
+  UPVC_hardware_is_as_per_standard_Photo: any;
+  UPVC_hardware_is_as_per_standard_Description: string;
 
   Gaskets_or_ealents_are_intact: string;
   Gaskets_or_ealents_are_intact_Photo: any;
@@ -284,7 +284,7 @@ export class KStorePage implements OnInit {
   subject: string;
   body: string;
 
-  issave = false;
+  isSave = false;
 
   eForm: FormGroup;
 
@@ -339,7 +339,7 @@ export class KStorePage implements OnInit {
   showicon49: boolean;
   showicon50: boolean;
 
-  isenabled:boolean=true;
+  isenabled: boolean = true;
   static newItem: any;
 
   constructor(
@@ -534,7 +534,7 @@ export class KStorePage implements OnInit {
     this.storage.create();
     const db = firebase.firestore();
 
-    db.collection('test1')
+    db.collection('Krafturspace1')
       .doc(this.recivedData)
       .get()
       .then(doc => {
@@ -554,9 +554,9 @@ export class KStorePage implements OnInit {
       Door_frame_and_shutter_gaps_are_consistent_Photo: [''],
       Door_frame_and_shutter_gaps_are_consistent_Description: [''],
 
-      UPVC_hardware_is_standard: [''],
-      UPVC_hardware_is_standard_Photo: [''],
-      UPVC_hardware_is_standard_Description: [''],
+      UPVC_hardware_is_as_per_standard: [''],
+      UPVC_hardware_is_as_per_standard_Photo: [''],
+      UPVC_hardware_is_as_per_standard_Description: [''],
 
       Gaskets_or_ealents_are_intact: [''],
       Gaskets_or_ealents_are_intact_Photo: [''],
@@ -654,9 +654,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save1(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save1(): void {
+    console.log('Save clicked');
     this.showicon1 = true;
 
     this.kstoreData.push({
@@ -728,9 +727,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save2(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save2(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.kstoreData.push({
@@ -781,7 +779,7 @@ export class KStorePage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL3 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('UPVC_hardware_is_standard_Photo').setValue(this.imgURL3);
+      this.ionicForm.get('UPVC_hardware_is_as_per_standard()_Photo').setValue(this.imgURL3);
       ///this.ionicForm[].Electrical_wall_and_ceiling_points_are_covered_Photo=this.imgURL1;
       // this.currentImage = this.imgURL1;
 
@@ -805,17 +803,16 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save3(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save3(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.kstoreData.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'UPVC_hardware_is_standard',
+      inpect_title: 'UPVC_hardware_is_as_per_standard()',
       photourl: this.imgURL3,
-      Description: this.ionicForm.get('UPVC_hardware_is_standard_Description').value,
+      Description: this.ionicForm.get('UPVC_hardware_is_as_per_standard()_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -823,9 +820,9 @@ export class KStorePage implements OnInit {
   }
   sendMessage3() {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'UPVC_hardware_is_standard';
+    this.newItem.inpect_title = 'UPVC_hardware_is_as_per_standard()';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('UPVC_hardware_is_standard_Description').value;
+    this.newItem.Description = this.ionicForm.get('UPVC_hardware_is_as_per_standard()_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem1(this.newItem).then(item => {
@@ -837,7 +834,7 @@ export class KStorePage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'UPVC_hardware_is_standard',
+      subject: 'UPVC_hardware_is_as_per_standard()',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -870,9 +867,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save4(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save4(): void {
+    console.log('Save clicked');
     this.showicon4 = true;
 
     this.kstoreData.push({
@@ -934,9 +930,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save5(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save5(): void {
+    console.log('Save clicked');
     this.showicon5 = true;
 
     this.kstoreData.push({
@@ -998,9 +993,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save6(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save6(): void {
+    console.log('Save clicked');
     this.showicon6 = true;
 
     this.kstoreData.push({
@@ -1062,9 +1056,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save7(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save7(): void {
+    console.log('Save clicked');
     this.showicon7 = true;
 
     this.kstoreData.push({
@@ -1126,9 +1119,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save8(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save8(): void {
+    console.log('Save clicked');
     this.showicon8 = true;
 
     this.kstoreData.push({
@@ -1190,9 +1182,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save9(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save9(): void {
+    console.log('Save clicked');
     this.showicon9 = true;
     9;
     this.kstoreData.push({
@@ -1255,9 +1246,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save10(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save10(): void {
+    console.log('Save clicked');
     this.showicon10 = true;
 
     this.kstoreData.push({
@@ -1319,9 +1309,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save11() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save11() {
+    console.log('Save clicked');
     this.showicon11 = true;
 
     this.kstoreData.push({
@@ -1384,9 +1373,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save12() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save12() {
+    console.log('Save clicked');
     this.showicon12 = true;
 
     this.kstoreData.push({
@@ -1448,9 +1436,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save13(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save13(): void {
+    console.log('Save clicked');
     this.showicon13 = true;
 
     this.kstoreData.push({
@@ -1512,9 +1499,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save14(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save14(): void {
+    console.log('Save clicked');
     this.showicon14 = true;
 
     this.kstoreData.push({
@@ -1576,9 +1562,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save15(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save15(): void {
+    console.log('Save clicked');
     this.showicon15 = true;
 
     this.kstoreData.push({
@@ -1640,9 +1625,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save16(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save16(): void {
+    console.log('Save clicked');
     this.showicon16 = true;
 
     this.kstoreData.push({
@@ -1704,9 +1688,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save17(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save17(): void {
+    console.log('Save clicked');
     this.showicon17 = true;
 
     this.kstoreData.push({
@@ -1768,9 +1751,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save18(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save18(): void {
+    console.log('Save clicked');
     this.showicon18 = true;
 
     this.kstoreData.push({
@@ -1832,9 +1814,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save19(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save19(): void {
+    console.log('Save clicked');
     this.showicon19 = true;
 
     this.kstoreData.push({
@@ -1896,9 +1877,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save20(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save20(): void {
+    console.log('Save clicked');
     this.showicon20 = true;
 
     this.kstoreData.push({
@@ -1960,9 +1940,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save21(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save21(): void {
+    console.log('Save clicked');
     this.showicon21 = true;
 
     this.kstoreData.push({
@@ -2024,9 +2003,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save22(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save22(): void {
+    console.log('Save clicked');
     this.showicon22 = true;
 
     this.kstoreData.push({
@@ -2088,9 +2066,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save23(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save23(): void {
+    console.log('Save clicked');
     this.showicon23 = true;
 
     this.kstoreData.push({
@@ -2152,9 +2129,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save24(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save24(): void {
+    console.log('Save clicked');
     this.showicon24 = true;
 
     this.kstoreData.push({
@@ -2216,9 +2192,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save25(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save25(): void {
+    console.log('Save clicked');
     this.showicon25 = true;
 
     this.kstoreData.push({
@@ -2280,9 +2255,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save26(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save26(): void {
+    console.log('Save clicked');
     this.showicon26 = true;
 
     this.kstoreData.push({
@@ -2344,9 +2318,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save27(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save27(): void {
+    console.log('Save clicked');
     this.showicon27 = true;
 
     this.kstoreData.push({
@@ -2396,7 +2369,7 @@ export class KStorePage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL28 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('STransition_member_betweeen_wooden_flooring_and_toilet_at_entry_Photo').setValue(this.imgURL28);
+      this.ionicForm.get('STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Photo').setValue(this.imgURL28);
       this.upload28();
     });
   }
@@ -2408,17 +2381,16 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save28(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save28(): void {
+    console.log('Save clicked');
     this.showicon28 = true;
 
     this.kstoreData.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'STransition_member_betweeen_wooden_flooring_and_toilet_at_entry',
+      inpect_title: 'STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided',
       photourl: this.imgURL28,
-      Description: this.ionicForm.get('STransition_member_betweeen_wooden_flooring_and_toilet_at_entry_Description').value,
+      Description: this.ionicForm.get('STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2426,9 +2398,9 @@ export class KStorePage implements OnInit {
   }
   sendMessage28(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'STransition_member_betweeen_wooden_flooring_and_toilet_at_entry';
+    this.newItem.inpect_title = 'STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('STransition_member_betweeen_wooden_flooring_and_toilet_at_entry_Description').value;
+    this.newItem.Description = this.ionicForm.get('STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2440,7 +2412,7 @@ export class KStorePage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'STransition_member_betweeen_wooden_flooring_and_toilet_at_entry',
+      subject: 'STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2460,7 +2432,7 @@ export class KStorePage implements OnInit {
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL29 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Tiles_are_laid_to_slope_without_hollowness_Photo').setValue(this.imgURL29);
+      this.ionicForm.get('Floor_Tiles_are_laid_to_slope_without_hollowness_Photo').setValue(this.imgURL29);
       this.upload29();
     });
   }
@@ -2472,17 +2444,16 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save29(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save29(): void {
+    console.log('Save clicked');
     this.showicon29 = true;
 
     this.kstoreData.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Tiles_are_laid_to_slope_without_hollowness',
+      inpect_title: 'Floor_Tiles_are_laid_to_slope_without_hollowness',
       photourl: this.imgURL29,
-      Description: this.ionicForm.get('Tiles_are_laid_to_slope_without_hollowness_Description').value,
+      Description: this.ionicForm.get('Floor_Tiles_are_laid_to_slope_without_hollowness_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2490,9 +2461,9 @@ export class KStorePage implements OnInit {
   }
   sendMessage29(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Tiles_are_laid_to_slope_without_hollowness';
+    this.newItem.inpect_title = 'Floor_Tiles_are_laid_to_slope_without_hollowness';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Tiles_are_laid_to_slope_without_hollowness_Description').value;
+    this.newItem.Description = this.ionicForm.get('Floor_Tiles_are_laid_to_slope_without_hollowness_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2504,7 +2475,7 @@ export class KStorePage implements OnInit {
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Tiles_are_laid_to_slope_without_hollowness',
+      subject: 'Floor_Tiles_are_laid_to_slope_without_hollowness',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2536,9 +2507,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save30(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save30(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.kstoreData.push({
@@ -2601,9 +2571,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save31(): void {
+    console.log('Save clicked');
     this.showicon31 = true;
 
     this.kstoreData.push({
@@ -2665,9 +2634,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save32(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save32(): void {
+    console.log('Save clicked');
     this.showicon32 = true;
 
     this.kstoreData.push({
@@ -2729,9 +2697,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save33(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save33(): void {
+    console.log('Save clicked');
     this.showicon33 = true;
 
     this.kstoreData.push({
@@ -2793,9 +2760,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save34(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save34(): void {
+    console.log('Save clicked');
     this.showicon34 = true;
 
     this.kstoreData.push({
@@ -2857,9 +2823,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save35(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save35(): void {
+    console.log('Save clicked');
     this.showicon35 = true;
 
     this.kstoreData.push({
@@ -2921,9 +2886,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save36(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save36(): void {
+    console.log('Save clicked');
     this.showicon36 = true;
 
     this.kstoreData.push({
@@ -2985,9 +2949,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save37(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save37(): void {
+    console.log('Save clicked');
     this.showicon37 = true;
 
     this.kstoreData.push({
@@ -3050,9 +3013,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save38(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save38(): void {
+    console.log('Save clicked');
     this.showicon38 = true;
 
     this.kstoreData.push({
@@ -3114,9 +3076,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save39(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save39(): void {
+    console.log('Save clicked');
     this.showicon39 = true;
 
     this.kstoreData.push({
@@ -3178,9 +3139,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save40(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save40(): void {
+    console.log('Save clicked');
     this.showicon40 = true;
 
     this.kstoreData.push({
@@ -3242,9 +3202,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save41(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save41(): void {
+    console.log('Save clicked');
     this.showicon41 = true;
 
     this.kstoreData.push({
@@ -3307,9 +3266,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save43(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save43(): void {
+    console.log('Save clicked');
     this.showicon43 = true;
 
     this.kstoreData.push({
@@ -3371,9 +3329,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save44(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save44(): void {
+    console.log('Save clicked');
     this.showicon44 = true;
 
     this.kstoreData.push({
@@ -3435,9 +3392,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save45(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save45(): void {
+    console.log('Save clicked');
     this.showicon45 = true;
 
     this.kstoreData.push({
@@ -3499,9 +3455,8 @@ export class KStorePage implements OnInit {
     });
   }
 
-  save46(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save46(): void {
+    console.log('Save clicked');
     this.showicon46 = true;
 
     this.kstoreData.push({
@@ -3556,7 +3511,7 @@ export class KStorePage implements OnInit {
     this.issubmit = true;
 
     const db = firebase.firestore();
-    var washingtonRef = db.collection('test1').doc(this.recivedData);
+    var washingtonRef = db.collection('Krafturspace1').doc(this.recivedData);
     const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
 
@@ -3572,7 +3527,7 @@ export class KStorePage implements OnInit {
       })
       .then(function () {
         console.log('foyer data is  updated');
-        this.isenabled=false;
+        this.isenabled = false;
       });
   }
   exportCSV() {
@@ -3633,8 +3588,8 @@ export class KStorePage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  UPVC_hardware_is_standard(): void {
-    let Qvalue = this.ionicForm.get('UPVC_hardware_is_standard').value;
+  UPVC_hardware_is_as_per_standard(): void {
+    let Qvalue = this.ionicForm.get('UPVC_hardware_is_as_per_standard()').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay3 = true;

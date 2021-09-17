@@ -131,9 +131,9 @@ interface StudentData {
   Internal_surfaces_is_cleaned_and_painted_Photo: any;
   Internal_surfaces_is_cleaned_and_painted_Description: string;
 
-  Shaft_internalss_to_be_free_of_debris: string;
-  Shaft_internalss_to_be_free_of_debris_Photo: any;
-  Shaft_internalss_to_be_free_of_debris_Description: string;
+  Shaft_internals_to_be_free_of_debris: string;
+  Shaft_internals_to_be_free_of_debris_Photo: any;
+  Shaft_internals_to_be_free_of_debris_Description: string;
 
   MS_Duct_door_frames_and_wall_junctions_are_sealed: string;
   MS_Duct_door_frames_and_wall_junctions_are_sealed_Photo: any;
@@ -202,7 +202,6 @@ export class LBalconyPage implements OnInit {
 
   getdata1: any;
 
- 
   //new
 
   value: any;
@@ -239,7 +238,7 @@ export class LBalconyPage implements OnInit {
   subject: string;
   body: string;
 
-  issave = false;
+  isSave = false;
 
   eForm: FormGroup;
 
@@ -248,7 +247,7 @@ export class LBalconyPage implements OnInit {
   data: any;
   mypicref: any;
   currentId: any[];
-  isenabled:boolean=true;
+  isenabled: boolean = true;
   cameradisplay1: boolean;
   cameradisplay2: boolean;
   cameradisplay3: boolean;
@@ -349,7 +348,7 @@ export class LBalconyPage implements OnInit {
   isToggled8: boolean;
   isToggled9: boolean;
   isToggled10: boolean;
-  
+
   showicon1: boolean;
   showicon2: boolean;
   showicon3: boolean;
@@ -607,7 +606,7 @@ export class LBalconyPage implements OnInit {
 
     const db = firebase.firestore();
 
-    db.collection('test1')
+    db.collection('Krafturspace1')
       .doc(this.recivedData)
       .get()
       .then(doc => {
@@ -631,12 +630,12 @@ export class LBalconyPage implements OnInit {
       Gaskets_or_Sealants_are_intact_Photo: [''],
       Gaskets_or_Sealants_are_intact_Description: [''],
 
-      UPVC_balcony_doors_are_without_sharp_edges: ['', [Validators.required]],
+      UPVC_balcony_doors_are_without_sharp_edges: [''],
       UPVC_balcony_doors_are_without_sharp_edges_Photo: [''],
       UPVC_balcony_doors_are_without_sharp_edges_Description: [''],
 
       Electrical: [''],
-      Switch_plates_are_aligned: ['', [Validators.required]],
+      Switch_plates_are_aligned: [''],
       Switch_plates_are_aligned_Photo: [''],
       Switch_plates_are_aligned_Description: [''],
 
@@ -656,12 +655,12 @@ export class LBalconyPage implements OnInit {
       Wall_Light_points_are_covered_or_capped_properly_Photo: [''],
       Wall_Light_points_are_covered_or_capped_properly_Description: [''],
 
-      AC_Core_cut_pipe_is_cleaned: ['', [Validators.required]],
+      AC_Core_cut_pipe_is_cleaned: [''],
       AC_Core_cut_pipe_is_cleaned_Photo: [''],
       AC_Core_cut_pipe_is_cleaned_Description: [''],
 
       Floor_Traps: [''],
-      Edges_of_floor_trap_is_finished: ['', [Validators.required]],
+      Edges_of_floor_trap_is_finished: [''],
       Edges_of_floor_trap_is_finished_Photo: [''],
       Edges_of_floor_trap_is_finished_Description: [''],
 
@@ -678,12 +677,12 @@ export class LBalconyPage implements OnInit {
       Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness_Photo: [''],
       Vitrified_tiles_are_uniform_free_of_cracks_and_hollowness_Description: [''],
 
-      Skirting_finish_and_alignment_is_correct: ['', [Validators.required]],
+      Skirting_finish_and_alignment_is_correct: [''],
       Skirting_finish_and_alignment_is_correct_Photo: [''],
       Skirting_finish_and_alignment_is_correct_Description: [''],
 
       Miscellaneous: [''],
-      Granite_edge_provided_is_free_of_cracks_and_sharp_edges: ['', [Validators.required]],
+      Granite_edge_provided_is_free_of_cracks_and_sharp_edges: [''],
       Granite_edge_provided_is_free_of_cracks_and_sharp_edges_Photo: [''],
       Granite_edge_provided_is_free_of_cracks_and_sharp_edges_Description: [''],
 
@@ -692,7 +691,7 @@ export class LBalconyPage implements OnInit {
       Vertical_texture_painted_surfaces_are_free_of_undulations_Description: [''],
 
       Railing: [''],
-      SS_pipe_railing_is_finshed_with_smooth_edges: ['', [Validators.required]],
+      SS_pipe_railing_is_finshed_with_smooth_edges: [''],
       SS_pipe_railing_is_finshed_with_smooth_edges_Photo: [''],
       SS_pipe_railing_is_finshed_with_smooth_edges_Description: [''],
 
@@ -708,30 +707,30 @@ export class LBalconyPage implements OnInit {
       Glass_in_railing_is_free_of_scratches_Photo: [''],
       Glass_in_railing_is_free_of_scratches_Description: [''],
 
-      Glass_railing_assembly_is_sturdy: ['', [Validators.required]],
+      Glass_railing_assembly_is_sturdy: [''],
       Glass_railing_assembly_is_sturdy_Photo: [''],
       Glass_railing_assembly_is_sturdy_Description: [''],
 
       Shafts: [''],
-      Internal_surfaces_is_cleaned_and_painted: ['', [Validators.required]],
+      Internal_surfaces_is_cleaned_and_painted: [''],
       Internal_surfaces_is_cleaned_and_painted_Photo: [''],
       Internal_surfaces_is_cleaned_and_painted_Description: [''],
 
-      Shaft_internalss_to_be_free_of_debris: [''],
-      Shaft_internalss_to_be_free_of_debris_Photo: [''],
-      Shaft_internalss_to_be_free_of_debris_Description: [''],
+      Shaft_internals_to_be_free_of_debris: [''],
+      Shaft_internals_to_be_free_of_debris_Photo: [''],
+      Shaft_internals_to_be_free_of_debris_Description: [''],
 
       MS_Duct_door_frames_and_wall_junctions_are_sealed: [''],
       MS_Duct_door_frames_and_wall_junctions_are_sealed_Photo: [''],
       MS_Duct_door_frames_and_wall_junctions_are_sealed_Description: [''],
 
-      Shaft_internals_to_be_painted: ['', [Validators.required]],
+      Shaft_internals_to_be_painted: [''],
       Shaft_internals_to_be_painted_Photo: [''],
       Shaft_internals_to_be_painted_Description: [''],
 
       Walls_and_Ceiling: [''],
 
-      Drip_moulds_in_ceiling_are_consistent: ['', [Validators.required]],
+      Drip_moulds_in_ceiling_are_consistent: [''],
       Drip_moulds_in_ceiling_are_consistent_Photo: [''],
       Drip_moulds_in_ceiling_are_consistent_Description: [''],
 
@@ -776,9 +775,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save1(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save1(): void {
+    console.log('Save clicked');
     this.showicon1 = true;
 
     this.lbalconydata.push({
@@ -850,9 +848,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save2(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save2(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.lbalconydata.push({
@@ -927,9 +924,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save3(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save3(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.lbalconydata.push({
@@ -992,9 +988,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save4(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save4(): void {
+    console.log('Save clicked');
     this.showicon4 = true;
 
     this.lbalconydata.push({
@@ -1056,9 +1051,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save5(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save5(): void {
+    console.log('Save clicked');
     this.showicon5 = true;
 
     this.lbalconydata.push({
@@ -1120,9 +1114,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save6(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save6(): void {
+    console.log('Save clicked');
     this.showicon6 = true;
 
     this.lbalconydata.push({
@@ -1184,9 +1177,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save7(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save7(): void {
+    console.log('Save clicked');
     this.showicon7 = true;
 
     this.lbalconydata.push({
@@ -1248,9 +1240,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save8(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save8(): void {
+    console.log('Save clicked');
     this.showicon8 = true;
 
     this.lbalconydata.push({
@@ -1312,9 +1303,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save9(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save9(): void {
+    console.log('Save clicked');
     this.showicon9 = true;
     9;
     this.lbalconydata.push({
@@ -1377,9 +1367,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save10(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save10(): void {
+    console.log('Save clicked');
     this.showicon10 = true;
 
     this.lbalconydata.push({
@@ -1441,9 +1430,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save11() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save11() {
+    console.log('Save clicked');
     this.showicon11 = true;
 
     this.lbalconydata.push({
@@ -1506,9 +1494,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save12() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save12() {
+    console.log('Save clicked');
     this.showicon12 = true;
 
     this.lbalconydata.push({
@@ -1570,9 +1557,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save13(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save13(): void {
+    console.log('Save clicked');
     this.showicon13 = true;
 
     this.lbalconydata.push({
@@ -1634,9 +1620,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save14(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save14(): void {
+    console.log('Save clicked');
     this.showicon14 = true;
 
     this.lbalconydata.push({
@@ -1698,9 +1683,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save15(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save15(): void {
+    console.log('Save clicked');
     this.showicon15 = true;
 
     this.lbalconydata.push({
@@ -1762,9 +1746,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save16(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save16(): void {
+    console.log('Save clicked');
     this.showicon16 = true;
 
     this.lbalconydata.push({
@@ -1826,9 +1809,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save17(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save17(): void {
+    console.log('Save clicked');
     this.showicon17 = true;
 
     this.lbalconydata.push({
@@ -1890,9 +1872,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save18(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save18(): void {
+    console.log('Save clicked');
     this.showicon18 = true;
 
     this.lbalconydata.push({
@@ -1954,9 +1935,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save19(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save19(): void {
+    console.log('Save clicked');
     this.showicon19 = true;
 
     this.lbalconydata.push({
@@ -2018,9 +1998,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save20(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save20(): void {
+    console.log('Save clicked');
     this.showicon20 = true;
 
     this.lbalconydata.push({
@@ -2082,9 +2061,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save21(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save21(): void {
+    console.log('Save clicked');
     this.showicon21 = true;
 
     this.lbalconydata.push({
@@ -2146,9 +2124,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save22(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save22(): void {
+    console.log('Save clicked');
     this.showicon22 = true;
 
     this.lbalconydata.push({
@@ -2210,9 +2187,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save23(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save23(): void {
+    console.log('Save clicked');
     this.showicon23 = true;
 
     this.lbalconydata.push({
@@ -2274,9 +2250,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save24(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save24(): void {
+    console.log('Save clicked');
     this.showicon24 = true;
 
     this.lbalconydata.push({
@@ -2338,9 +2313,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save25(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save25(): void {
+    console.log('Save clicked');
     this.showicon25 = true;
 
     this.lbalconydata.push({
@@ -2402,9 +2376,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save26(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save26(): void {
+    console.log('Save clicked');
     this.showicon26 = true;
 
     this.lbalconydata.push({
@@ -2466,9 +2439,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save27(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save27(): void {
+    console.log('Save clicked');
     this.showicon27 = true;
 
     this.lbalconydata.push({
@@ -2530,9 +2502,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save28(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save28(): void {
+    console.log('Save clicked');
     this.showicon28 = true;
 
     this.lbalconydata.push({
@@ -2594,9 +2565,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save29(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save29(): void {
+    console.log('Save clicked');
     this.showicon29 = true;
 
     this.lbalconydata.push({
@@ -2658,9 +2628,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save30(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save30(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.lbalconydata.push({
@@ -2723,9 +2692,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save31(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.lbalconydata.push({
@@ -2787,9 +2755,9 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save31(): void {
+    
+    console.log('Save clicked');
     this.showicon31 = true;
 
     this.lbalconydata.push({
@@ -2851,9 +2819,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save32(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save32(): void {
+    console.log('Save clicked');
     this.showicon32 = true;
 
     this.lbalconydata.push({
@@ -2915,9 +2882,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save33(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save33(): void {
+    console.log('Save clicked');
     this.showicon33 = true;
 
     this.lbalconydata.push({
@@ -2979,9 +2945,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save34(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save34(): void {
+    console.log('Save clicked');
     this.showicon34 = true;
 
     this.lbalconydata.push({
@@ -3043,9 +3008,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save35(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save35(): void {
+    console.log('Save clicked');
     this.showicon35 = true;
 
     this.lbalconydata.push({
@@ -3107,9 +3071,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save36(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save36(): void {
+    console.log('Save clicked');
     this.showicon36 = true;
 
     this.lbalconydata.push({
@@ -3171,9 +3134,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save37(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save37(): void {
+    console.log('Save clicked');
     this.showicon37 = true;
 
     this.lbalconydata.push({
@@ -3236,9 +3198,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save38(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save38(): void {
+    console.log('Save clicked');
     this.showicon38 = true;
 
     this.lbalconydata.push({
@@ -3300,9 +3261,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save39(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save39(): void {
+    console.log('Save clicked');
     this.showicon39 = true;
 
     this.lbalconydata.push({
@@ -3364,9 +3324,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save40(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save40(): void {
+    console.log('Save clicked');
     this.showicon40 = true;
 
     this.lbalconydata.push({
@@ -3428,9 +3387,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save41(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save41(): void {
+    console.log('Save clicked');
     this.showicon41 = true;
 
     this.lbalconydata.push({
@@ -3493,9 +3451,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save43(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save43(): void {
+    console.log('Save clicked');
     this.showicon43 = true;
 
     this.lbalconydata.push({
@@ -3557,9 +3514,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save44(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save44(): void {
+    console.log('Save clicked');
     this.showicon44 = true;
 
     this.lbalconydata.push({
@@ -3622,9 +3578,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save45(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save45(): void {
+    console.log('Save clicked');
     this.showicon45 = true;
 
     this.lbalconydata.push({
@@ -3686,9 +3641,8 @@ export class LBalconyPage implements OnInit {
     });
   }
 
-  save46(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save46(): void {
+    console.log('Save clicked');
     this.showicon46 = true;
 
     this.lbalconydata.push({
@@ -3743,10 +3697,9 @@ export class LBalconyPage implements OnInit {
     this.issubmit = true;
 
     const db = firebase.firestore();
-    var washingtonRef = db.collection('test1').doc(this.recivedData);
+    var washingtonRef = db.collection('Krafturspace1').doc(this.recivedData);
     const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
-
 
     this.AssetData = JSON.stringify(this.lbalconydata);
     this.DiningData = JSON.parse(this.AssetData);
@@ -4073,8 +4026,8 @@ export class LBalconyPage implements OnInit {
     this._cdr.detectChanges();
   }
 
-  Shaft_internalss_to_be_free_of_debris(): void {
-    let Qvalue = this.ionicForm.get('Shaft_internalss_to_be_free_of_debris').value;
+  Shaft_internals_to_be_free_of_debris(): void {
+    let Qvalue = this.ionicForm.get('Shaft_internals_to_be_free_of_debris').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay24 = true;

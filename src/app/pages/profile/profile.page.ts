@@ -41,7 +41,7 @@ export class ProfilePage implements OnInit {
       buttons: [
         { text: 'Cancel' },
         {
-          text: 'save',
+          text: 'Save',
           handler: data => {
             this.profileService.updateName(data.fullName);
           }
@@ -60,7 +60,7 @@ export class ProfilePage implements OnInit {
       buttons: [
         { text: 'Cancel' },
         {
-          text: 'save',
+          text: 'Save',
           handler: data => {
             this.profileService
               .updateEmail(data.newEmail, data.password)
@@ -86,7 +86,7 @@ export class ProfilePage implements OnInit {
       buttons: [
         { text: 'Cancel' },
         {
-          text: 'save',
+          text: 'Save',
           handler: data => {
             this.profileService.updatePassword(data.newPassword, data.oldPassword);
           }

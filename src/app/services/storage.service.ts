@@ -73,9 +73,7 @@ export class StorageService {
     this.storage.remove(key);
   }
   //  delete all data from your application:
-  clear() {
-    this.storage.clear();
-  }
+  clear() {}
   ITEMS_KEY = 'my-items';
   ITEMS_KEY1 = 'my-items1';
 

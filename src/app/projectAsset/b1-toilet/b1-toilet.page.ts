@@ -34,9 +34,9 @@ import { EmailComposer } from '@ionic-native/email-composer/ngx';
 interface StudentData {
   Doors_and_Windows: string;
 
-  UPVC_hardware_is_standard: string;
-  UPVC_hardware_is_standard_Photo: any;
-  UPVC_hardware_is_standard_Description: string;
+  UPVC_hardware_is_as_per_standard: string;
+  UPVC_hardware_is_as_per_standard_Photo: any;
+  UPVC_hardware_is_as_per_standard_Description: string;
 
   Hardware_is_as_per_standard_offering: string;
   Hardware_is_as_per_standard_offering_Photo: any;
@@ -88,9 +88,9 @@ interface StudentData {
   Electrical_points_are_as_per_standard_offering_Photo: any;
   Electrical_points_are_as_per_standard_offering_Description: string;
 
-  Exhaust_fan_connection: string;
-  Exhaust_fan_connection_Photo: any;
-  Exhaust_fan_connection_Description: string;
+  Exhaust_fan_connection_is_provided: string;
+  Exhaust_fan_connection_is_provided_Photo: any;
+  Exhaust_fan_connection_is_provided_Description: string;
 
   Switches_are_operable: string;
   Switches_are_operable_Photo: any;
@@ -200,9 +200,9 @@ interface StudentData {
   Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Photo: any;
   Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Description: string;
 
-  Consistency_of_corner_beading: string;
-  Consistency_of_corner_beading_Photo: any;
-  Consistency_of_corner_beading_Description: string;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles: string;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Photo: any;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Description: string;
 
   Area_above_false_ceiling_is_painted: string;
   Area_above_false_ceiling_is_painted_Photo: any;
@@ -238,8 +238,8 @@ export class B1ToiletPage implements OnInit {
   data: any;
   mypicref: any;
   currentId: any[];
-  
-isenabled:boolean=true;
+
+  isenabled: boolean = true;
   cameradisplay1: boolean;
   cameradisplay2: boolean;
   cameradisplay3: boolean;
@@ -410,7 +410,7 @@ isenabled:boolean=true;
   subject: string;
   body: string;
 
-  issave = false;
+  isSave = false;
 
   eForm: FormGroup;
 
@@ -680,7 +680,7 @@ isenabled:boolean=true;
     this.storage.create();
     const db = firebase.firestore();
 
-    db.collection('test1')
+    db.collection('Krafturspace1')
       .doc(this.recivedData)
       .get()
       .then(doc => {
@@ -692,9 +692,9 @@ isenabled:boolean=true;
 
     this.ionicForm = this.formBuilder.group({
       Doors_and_Windows: [''],
-      UPVC_hardware_is_standard: ['', [Validators.required]],
-      UPVC_hardware_is_standard_Photo: [''],
-      UPVC_hardware_is_standard_Description: [''],
+      UPVC_hardware_is_as_per_standard: ['', [Validators.required]],
+      UPVC_hardware_is_as_per_standard_Photo: [''],
+      UPVC_hardware_is_as_per_standard_Description: [''],
 
       Hardware_is_as_per_standard_offering: [''],
       Hardware_is_as_per_standard_offering_Photo: [''],
@@ -720,7 +720,7 @@ isenabled:boolean=true;
       Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Photo: [''],
       Door_frame_and_shutter_doesnot_have_dent_or_scratches_or_marks_Description: [''],
 
-      Door_frame_and_shutter_gaps_are_consistent: ['', [Validators.required]],
+      Door_frame_and_shutter_gaps_are_consistent: [''],
       Door_frame_and_shutter_gaps_are_consistent_Photo: [''],
       Door_frame_and_shutter_gaps_are_consistent_Description: [''],
 
@@ -746,17 +746,17 @@ isenabled:boolean=true;
       Electrical_points_are_as_per_standard_offering_Photo: [''],
       Electrical_points_are_as_per_standard_offering_Description: [''],
 
-      Exhaust_fan_connection: [''],
-      Exhaust_fan_connection_Photo: [''],
-      Exhaust_fan_connection_Description: [''],
+      Exhaust_fan_connection_is_provided: [''],
+      Exhaust_fan_connection_is_provided_Photo: [''],
+      Exhaust_fan_connection_is_provided_Description: [''],
 
-      Switches_are_operable: ['', [Validators.required]],
+      Switches_are_operable: [''],
       Switches_are_operable_Photo: [''],
       Switches_are_operable_Description: [''],
 
       Fixtures_and_Fittings: [''],
 
-      Wash_basin_faucet_is_operable: ['', [Validators.required]],
+      Wash_basin_faucet_is_operable: [''],
       Wash_basin_faucet_is_operable_Photo: [''],
       Wash_basin_faucet_is_operable_Description: [''],
 
@@ -794,13 +794,13 @@ isenabled:boolean=true;
       Toilet_Paper_Holder_Photo: [''],
       Toilet_Paper_Holder_Description: [''],
 
-      EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional: ['', [Validators.required]],
+      EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional: [''],
       EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional_Photo: [''],
       EWC_is_fixed_with_brackets_or_seat_covers_and_is_functional_Description: [''],
 
       Flooring: [''],
 
-      Slopes_provided_are_adequate: ['', [Validators.required]],
+      Slopes_provided_are_adequate: [''],
 
       Slopes_provided_are_adequate_Photo: [''],
 
@@ -810,19 +810,19 @@ isenabled:boolean=true;
       Tile_drop_between_dry_and_wet_areas_exists_Photo: [''],
       Tile_drop_between_dry_and_wet_areas_exists_Description: [''],
 
-      Transition_member_betweeen_wooden_flooring_and_toilet_at_entry: [''],
+      Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided: [''],
 
-      Transition_member_betweeen_wooden_flooring_and_toilet_at_entry_Photo: [''],
+      Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Photo: [''],
 
-      Transition_member_betweeen_wooden_flooring_and_toilet_at_entry_Description: [''],
+      Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Description: [''],
 
-      Tiles_are_laid_to_slope_without_hollowness: ['', [Validators.required]],
-      Tiles_are_laid_to_slope_without_hollowness_Photo: [''],
-      Tiles_are_laid_to_slope_without_hollowness_Description: [''],
+      Floor_Tiles_are_laid_to_slope_without_hollowness: [''],
+      Floor_Tiles_are_laid_to_slope_without_hollowness_Photo: [''],
+      Floor_Tiles_are_laid_to_slope_without_hollowness_Description: [''],
 
       Standard_heights_of_fixtures: [''],
 
-      EWC: ['', [Validators.required]],
+      EWC: [''],
       EWC_Photo: [''],
       EWC_Description: [''],
 
@@ -830,14 +830,14 @@ isenabled:boolean=true;
       Shower_head_Photo: [''],
       Shower_head_Description: [''],
 
-      Wash_Basin: ['', [Validators.required]],
+      Wash_Basin: [''],
       Wash_Basin_Photo: [''],
       Wash_Basin_Description: [''],
       Wash_Basin_in_mm: [''],
 
       Walls_and_ceiling: [''],
 
-      False_ceiling_channels_are_consistent: ['', [Validators.required]],
+      False_ceiling_channels_are_consistent: [''],
       False_ceiling_channels_are_consistent_Photo: [''],
       False_ceiling_channels_are_consistent_Description: [''],
 
@@ -865,15 +865,15 @@ isenabled:boolean=true;
       Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Photo: [''],
       Ceiling_tiles_are_free_of_stains_or_undulations_or_cracks_etc_Description: [''],
 
-      Consistency_of_corner_beading: [''],
-      Consistency_of_corner_beading_Photo: [''],
-      Consistency_of_corner_beading_Description: [''],
+      Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles: [''],
+      Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Photo: [''],
+      Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles_Description: [''],
 
-      Area_above_false_ceiling_is_painted: [''],
+      Area_above_false_ceiling_is_painted: ['', [Validators.required]],
       Area_above_false_ceiling_is_painted_Photo: [''],
       Area_above_false_ceiling_is_painted_Description: [''],
 
-      Hollowness_in_wall_dado: ['', [Validators.required]],
+      Hollowness_in_wall_dado: [''],
       Hollowness_in_wall_dado_Photo: [''],
       Hollowness_in_wall_dado_Description: ['']
     });
@@ -894,7 +894,7 @@ isenabled:boolean=true;
       this.picdata = imageData;
 
       this.imgURL1 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('UPVC_hardware_is_standard"_Photo').setValue(this.imgURL1);
+      this.ionicForm.get('UPVC_hardware_is_as_per_standard()"_Photo').setValue(this.imgURL1);
       this.upload1();
     });
   }
@@ -906,9 +906,8 @@ isenabled:boolean=true;
     });
   }
 
-  save1(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save1(): void {
+    console.log('Save clicked');
     this.showicon1 = true;
 
     this.b1toiletdata.push({
@@ -918,9 +917,9 @@ isenabled:boolean=true;
       Project_Type: this.Project_Type,
       project_Address: this.project_Address,
       Flat_Number: this.Flat_Number,
-      inpect_title: 'UPVC_hardware_is_standard"',
+      inpect_title: 'UPVC_hardware_is_as_per_standard()"',
       photourl: this.picdata,
-      Description: this.ionicForm.get('UPVC_hardware_is_standard"_Description').value,
+      Description: this.ionicForm.get('UPVC_hardware_is_as_per_standard()"_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -928,9 +927,9 @@ isenabled:boolean=true;
   }
   sendMessage1(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'UPVC_hardware_is_standard"';
+    this.newItem.inpect_title = 'UPVC_hardware_is_as_per_standard()"';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('UPVC_hardware_is_standard"_Description').value;
+    this.newItem.Description = this.ionicForm.get('UPVC_hardware_is_as_per_standard()"_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -942,7 +941,7 @@ isenabled:boolean=true;
       to: 'j.prajwal@gmail.com',
       cc: 'j.prajwal@gmail.com',
       attachments: [],
-      subject: 'UPVC_hardware_is_standard"',
+      subject: 'UPVC_hardware_is_as_per_standard()"',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -980,9 +979,8 @@ isenabled:boolean=true;
     });
   }
 
-  save2(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save2(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.b1toiletdata.push({
@@ -1057,9 +1055,8 @@ isenabled:boolean=true;
     });
   }
 
-  save3(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save3(): void {
+    console.log('Save clicked');
     this.showicon3 = true;
 
     this.b1toiletdata.push({
@@ -1122,9 +1119,8 @@ isenabled:boolean=true;
     });
   }
 
-  save4(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save4(): void {
+    console.log('Save clicked');
     this.showicon4 = true;
 
     this.b1toiletdata.push({
@@ -1186,9 +1182,8 @@ isenabled:boolean=true;
     });
   }
 
-  save5(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save5(): void {
+    console.log('Save clicked');
     this.showicon5 = true;
 
     this.b1toiletdata.push({
@@ -1250,9 +1245,8 @@ isenabled:boolean=true;
     });
   }
 
-  save6(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save6(): void {
+    console.log('Save clicked');
     this.showicon6 = true;
 
     this.b1toiletdata.push({
@@ -1314,9 +1308,8 @@ isenabled:boolean=true;
     });
   }
 
-  save7(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save7(): void {
+    console.log('Save clicked');
     this.showicon7 = true;
 
     this.b1toiletdata.push({
@@ -1378,9 +1371,8 @@ isenabled:boolean=true;
     });
   }
 
-  save8(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save8(): void {
+    console.log('Save clicked');
     this.showicon8 = true;
 
     this.b1toiletdata.push({
@@ -1442,9 +1434,8 @@ isenabled:boolean=true;
     });
   }
 
-  save9(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save9(): void {
+    console.log('Save clicked');
     this.showicon9 = true;
     9;
     this.b1toiletdata.push({
@@ -1507,9 +1498,8 @@ isenabled:boolean=true;
     });
   }
 
-  save10(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save10(): void {
+    console.log('Save clicked');
     this.showicon10 = true;
 
     this.b1toiletdata.push({
@@ -1571,9 +1561,8 @@ isenabled:boolean=true;
     });
   }
 
-  save11() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save11() {
+    console.log('Save clicked');
     this.showicon11 = true;
 
     this.b1toiletdata.push({
@@ -1636,9 +1625,8 @@ isenabled:boolean=true;
     });
   }
 
-  save12() {
-    this.storage.clear();
-    console.log('save clicked');
+  Save12() {
+    console.log('Save clicked');
     this.showicon12 = true;
 
     this.b1toiletdata.push({
@@ -1700,9 +1688,8 @@ isenabled:boolean=true;
     });
   }
 
-  save13(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save13(): void {
+    console.log('Save clicked');
     this.showicon13 = true;
 
     this.b1toiletdata.push({
@@ -1752,7 +1739,7 @@ isenabled:boolean=true;
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL14 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Exhaust_fan_connection_Photo').setValue(this.imgURL14);
+      this.ionicForm.get('Exhaust_fan_connection_is_provided_Photo').setValue(this.imgURL14);
       this.upload14();
     });
   }
@@ -1764,17 +1751,16 @@ isenabled:boolean=true;
     });
   }
 
-  save14(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save14(): void {
+    console.log('Save clicked');
     this.showicon14 = true;
 
     this.b1toiletdata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Exhaust_fan_connection',
+      inpect_title: 'Exhaust_fan_connection_is_provided',
       photourl: this.imgURL14,
-      Description: this.ionicForm.get('Exhaust_fan_connection_Description').value,
+      Description: this.ionicForm.get('Exhaust_fan_connection_is_provided_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -1782,9 +1768,9 @@ isenabled:boolean=true;
   }
   sendMessage14(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Exhaust_fan_connection';
+    this.newItem.inpect_title = 'Exhaust_fan_connection_is_provided';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Exhaust_fan_connection_Description').value;
+    this.newItem.Description = this.ionicForm.get('Exhaust_fan_connection_is_provided_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -1796,7 +1782,7 @@ isenabled:boolean=true;
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Exhaust_fan_connection',
+      subject: 'Exhaust_fan_connection_is_provided',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -1828,9 +1814,8 @@ isenabled:boolean=true;
     });
   }
 
-  save15(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save15(): void {
+    console.log('Save clicked');
     this.showicon15 = true;
 
     this.b1toiletdata.push({
@@ -1892,9 +1877,8 @@ isenabled:boolean=true;
     });
   }
 
-  save16(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save16(): void {
+    console.log('Save clicked');
     this.showicon16 = true;
 
     this.b1toiletdata.push({
@@ -1956,9 +1940,8 @@ isenabled:boolean=true;
     });
   }
 
-  save17(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save17(): void {
+    console.log('Save clicked');
     this.showicon17 = true;
 
     this.b1toiletdata.push({
@@ -2020,9 +2003,8 @@ isenabled:boolean=true;
     });
   }
 
-  save18(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save18(): void {
+    console.log('Save clicked');
     this.showicon18 = true;
 
     this.b1toiletdata.push({
@@ -2084,9 +2066,8 @@ isenabled:boolean=true;
     });
   }
 
-  save19(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save19(): void {
+    console.log('Save clicked');
     this.showicon19 = true;
 
     this.b1toiletdata.push({
@@ -2148,9 +2129,8 @@ isenabled:boolean=true;
     });
   }
 
-  save20(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save20(): void {
+    console.log('Save clicked');
     this.showicon20 = true;
 
     this.b1toiletdata.push({
@@ -2212,9 +2192,8 @@ isenabled:boolean=true;
     });
   }
 
-  save21(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save21(): void {
+    console.log('Save clicked');
     this.showicon21 = true;
 
     this.b1toiletdata.push({
@@ -2276,9 +2255,8 @@ isenabled:boolean=true;
     });
   }
 
-  save22(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save22(): void {
+    console.log('Save clicked');
     this.showicon22 = true;
 
     this.b1toiletdata.push({
@@ -2340,9 +2318,8 @@ isenabled:boolean=true;
     });
   }
 
-  save23(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save23(): void {
+    console.log('Save clicked');
     this.showicon23 = true;
 
     this.b1toiletdata.push({
@@ -2404,9 +2381,9 @@ isenabled:boolean=true;
     });
   }
 
-  save24(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save24(): void {
+    
+    console.log('Save clicked');
     this.showicon24 = true;
 
     this.b1toiletdata.push({
@@ -2468,9 +2445,8 @@ isenabled:boolean=true;
     });
   }
 
-  save25(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save25(): void {
+    console.log('Save clicked');
     this.showicon25 = true;
 
     this.b1toiletdata.push({
@@ -2532,9 +2508,8 @@ isenabled:boolean=true;
     });
   }
 
-  save26(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save26(): void {
+    console.log('Save clicked');
     this.showicon26 = true;
 
     this.b1toiletdata.push({
@@ -2596,9 +2571,8 @@ isenabled:boolean=true;
     });
   }
 
-  save27(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save27(): void {
+    console.log('Save clicked');
     this.showicon27 = true;
 
     this.b1toiletdata.push({
@@ -2648,7 +2622,7 @@ isenabled:boolean=true;
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL28 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('STransition_member_betweeen_wooden_flooring_and_toilet_at_entry_Photo').setValue(this.imgURL28);
+      this.ionicForm.get('STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Photo').setValue(this.imgURL28);
       this.upload28();
     });
   }
@@ -2660,17 +2634,16 @@ isenabled:boolean=true;
     });
   }
 
-  save28(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save28(): void {
+    console.log('Save clicked');
     this.showicon28 = true;
 
     this.b1toiletdata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'STransition_member_betweeen_wooden_flooring_and_toilet_at_entry',
+      inpect_title: 'STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided',
       photourl: this.imgURL28,
-      Description: this.ionicForm.get('STransition_member_betweeen_wooden_flooring_and_toilet_at_entry_Description').value,
+      Description: this.ionicForm.get('STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2678,9 +2651,9 @@ isenabled:boolean=true;
   }
   sendMessage28(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'STransition_member_betweeen_wooden_flooring_and_toilet_at_entry';
+    this.newItem.inpect_title = 'STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('STransition_member_betweeen_wooden_flooring_and_toilet_at_entry_Description').value;
+    this.newItem.Description = this.ionicForm.get('STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2692,7 +2665,7 @@ isenabled:boolean=true;
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'STransition_member_betweeen_wooden_flooring_and_toilet_at_entry',
+      subject: 'STransition_member_between_wooden_flooring_and_toilet_at_entry_is_provided',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2712,7 +2685,7 @@ isenabled:boolean=true;
     this.camera.getPicture(options).then(imageData => {
       this.picdata = imageData;
       this.imgURL29 = 'data:image/jpeg;base64,' + imageData;
-      this.ionicForm.get('Tiles_are_laid_to_slope_without_hollowness_Photo').setValue(this.imgURL29);
+      this.ionicForm.get('Floor_Tiles_are_laid_to_slope_without_hollowness_Photo').setValue(this.imgURL29);
       this.upload29();
     });
   }
@@ -2724,17 +2697,16 @@ isenabled:boolean=true;
     });
   }
 
-  save29(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save29(): void {
+    console.log('Save clicked');
     this.showicon29 = true;
 
     this.b1toiletdata.push({
       id: Date.now(),
       user: this.au.email,
-      inpect_title: 'Tiles_are_laid_to_slope_without_hollowness',
+      inpect_title: 'Floor_Tiles_are_laid_to_slope_without_hollowness',
       photourl: this.imgURL29,
-      Description: this.ionicForm.get('Tiles_are_laid_to_slope_without_hollowness_Description').value,
+      Description: this.ionicForm.get('Floor_Tiles_are_laid_to_slope_without_hollowness_Description').value,
       timestamp: new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })
     });
 
@@ -2742,9 +2714,9 @@ isenabled:boolean=true;
   }
   sendMessage29(): void {
     this.newItem.user = this.au.email;
-    this.newItem.inpect_title = 'Tiles_are_laid_to_slope_without_hollowness';
+    this.newItem.inpect_title = 'Floor_Tiles_are_laid_to_slope_without_hollowness';
     //this.newItem1.photourl = this.imgURL1;
-    this.newItem.Description = this.ionicForm.get('Tiles_are_laid_to_slope_without_hollowness_Description').value;
+    this.newItem.Description = this.ionicForm.get('Floor_Tiles_are_laid_to_slope_without_hollowness_Description').value;
     this.newItem.timestamp = new Date().toLocaleString(undefined, { timeZone: 'Asia/Kolkata' });
 
     this.storageService.addItem(this.newItem).then(item => {
@@ -2756,7 +2728,7 @@ isenabled:boolean=true;
       to: 'krafturspace@gmail.com',
       cc: 'sumathi@kraft-urspace.com',
       attachments: [],
-      subject: 'Tiles_are_laid_to_slope_without_hollowness',
+      subject: 'Floor_Tiles_are_laid_to_slope_without_hollowness',
       body: [JSON.stringify(this.newItem)],
       isHtml: true
     };
@@ -2788,9 +2760,8 @@ isenabled:boolean=true;
     });
   }
 
-  save30(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save30(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.b1toiletdata.push({
@@ -2853,9 +2824,8 @@ isenabled:boolean=true;
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save31(): void {
+    console.log('Save clicked');
     this.showicon30 = true;
 
     this.b1toiletdata.push({
@@ -2917,9 +2887,9 @@ isenabled:boolean=true;
     });
   }
 
-  save31(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save31(): void {
+    
+    console.log('Save clicked');
     this.showicon31 = true;
 
     this.b1toiletdata.push({
@@ -2981,9 +2951,8 @@ isenabled:boolean=true;
     });
   }
 
-  save32(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save32(): void {
+    console.log('Save clicked');
     this.showicon44 = true;
 
     this.b1toiletdata.push({
@@ -3046,9 +3015,8 @@ isenabled:boolean=true;
     });
   }
 
-  save33(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save33(): void {
+    console.log('Save clicked');
     this.showicon33 = true;
 
     this.b1toiletdata.push({
@@ -3110,9 +3078,8 @@ isenabled:boolean=true;
     });
   }
 
-  save34(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save34(): void {
+    console.log('Save clicked');
     this.showicon34 = true;
 
     this.b1toiletdata.push({
@@ -3174,9 +3141,8 @@ isenabled:boolean=true;
     });
   }
 
-  save35(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save35(): void {
+    console.log('Save clicked');
     this.showicon35 = true;
 
     this.b1toiletdata.push({
@@ -3238,9 +3204,8 @@ isenabled:boolean=true;
     });
   }
 
-  save36(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save36(): void {
+    console.log('Save clicked');
     this.showicon36 = true;
 
     this.b1toiletdata.push({
@@ -3302,9 +3267,8 @@ isenabled:boolean=true;
     });
   }
 
-  save37(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save37(): void {
+    console.log('Save clicked');
     this.showicon37 = true;
 
     this.b1toiletdata.push({
@@ -3367,9 +3331,8 @@ isenabled:boolean=true;
     });
   }
 
-  save38(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save38(): void {
+    console.log('Save clicked');
     this.showicon38 = true;
 
     this.b1toiletdata.push({
@@ -3431,9 +3394,8 @@ isenabled:boolean=true;
     });
   }
 
-  save39(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save39(): void {
+    console.log('Save clicked');
     this.showicon39 = true;
 
     this.b1toiletdata.push({
@@ -3495,9 +3457,8 @@ isenabled:boolean=true;
     });
   }
 
-  save40(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save40(): void {
+    console.log('Save clicked');
     this.showicon40 = true;
 
     this.b1toiletdata.push({
@@ -3559,9 +3520,8 @@ isenabled:boolean=true;
     });
   }
 
-  save41(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save41(): void {
+    console.log('Save clicked');
     this.showicon41 = true;
 
     this.b1toiletdata.push({
@@ -3624,9 +3584,8 @@ isenabled:boolean=true;
     });
   }
 
-  save43(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save43(): void {
+    console.log('Save clicked');
     this.showicon43 = true;
 
     this.b1toiletdata.push({
@@ -3688,9 +3647,8 @@ isenabled:boolean=true;
     });
   }
 
-  save44(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save44(): void {
+    console.log('Save clicked');
     this.showicon44 = true;
 
     this.b1toiletdata.push({
@@ -3752,9 +3710,8 @@ isenabled:boolean=true;
     });
   }
 
-  save45(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save45(): void {
+    console.log('Save clicked');
     this.showicon45 = true;
 
     this.b1toiletdata.push({
@@ -3816,9 +3773,8 @@ isenabled:boolean=true;
     });
   }
 
-  save46(): void {
-    this.storage.clear();
-    console.log('save clicked');
+  Save46(): void {
+    console.log('Save clicked');
     this.showicon46 = true;
 
     this.b1toiletdata.push({
@@ -3872,7 +3828,7 @@ isenabled:boolean=true;
     this.issubmit = true;
 
     const db = firebase.firestore();
-    var washingtonRef = db.collection('test1').doc(this.recivedData);
+    var washingtonRef = db.collection('Krafturspace1').doc(this.recivedData);
     const arrayUnion = firebase.firestore.FieldValue.arrayUnion;
     const arrayRemove = firebase.firestore.FieldValue.arrayRemove;
 
@@ -3888,7 +3844,7 @@ isenabled:boolean=true;
       })
       .then(function () {
         console.log('foyer data is  updated');
-        this.isenabled=false;
+        this.isenabled = false;
       });
   }
   exportCSV() {
@@ -3926,8 +3882,8 @@ isenabled:boolean=true;
 
   //new end
 
-  UPVC_hardware_is_standard(): void {
-    let Qvalue = this.ionicForm.get('UPVC_hardware_is_standard').value;
+  UPVC_hardware_is_as_per_standard(): void {
+    let Qvalue = this.ionicForm.get('UPVC_hardware_is_as_per_standard()').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay1 = true;
@@ -4082,8 +4038,8 @@ isenabled:boolean=true;
     this._cdr.detectChanges();
   }
 
-  Exhaust_fan_connection(): void {
-    let Qvalue = this.ionicForm.get('Exhaust_fan_connection').value;
+  Exhaust_fan_connection_is_provided(): void {
+    let Qvalue = this.ionicForm.get('Exhaust_fan_connection_is_provided').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay14 = true;
@@ -4250,8 +4206,8 @@ isenabled:boolean=true;
     this._cdr.detectChanges();
   }
 
-  Transition_member_betweeen_wooden_flooring_and_toilet_at_entry(): void {
-    let Qvalue = this.ionicForm.get('Transition_member_betweeen_wooden_flooring_and_toilet_at_entry').value;
+  Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided(): void {
+    let Qvalue = this.ionicForm.get('Transition_member_between_wooden_flooring_and_toilet_at_entry_is_provided').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay28 = true;
@@ -4262,8 +4218,8 @@ isenabled:boolean=true;
     this._cdr.detectChanges();
   }
 
-  Tiles_are_laid_to_slope_without_hollowness(): void {
-    let Qvalue = this.ionicForm.get('Tiles_are_laid_to_slope_without_hollowness').value;
+  Floor_Tiles_are_laid_to_slope_without_hollowness(): void {
+    let Qvalue = this.ionicForm.get('Floor_Tiles_are_laid_to_slope_without_hollowness').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay29 = true;
@@ -4394,8 +4350,8 @@ isenabled:boolean=true;
     this._cdr.detectChanges();
   }
 
-  Consistency_of_corner_beading(): void {
-    let Qvalue = this.ionicForm.get('Consistency_of_corner_beading').value;
+  Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles(): void {
+    let Qvalue = this.ionicForm.get('Corner_beading_is_consistent_and_fixed_flush_with_dado_tiles').value;
     console.log('Q---->', Qvalue);
     if (Qvalue === 'No') {
       this.cameradisplay40 = true;

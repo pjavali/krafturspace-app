@@ -77,7 +77,7 @@ export class InspectionPage implements OnInit {
             this.inspectlist = [];
             this.inspectuser = [];
 
-            db.collection('test1')
+            db.collection('Krafturspace1')
               .where('' + 'Assigned' + '', '==', ustr1)
               .get()
               .then(snapshot => {
